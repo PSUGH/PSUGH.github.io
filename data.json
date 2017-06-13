@@ -1,0 +1,22 @@
+{ 
+  "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
+  "Datum"  : "16.06.2017", 
+  "Zeit"   : "18:30", 
+  "Ort"    : "Netzweise",
+  "Strasse": "Freundallee 13A",
+  "Stadt"  : "30173 Hannover",
+  "Thema"  : [
+    {
+		"Id"      : 1,
+      	"Vortrag" : "Kurzer Objekt-Refresher und Einstieg in dynamische Parameter mit Tobias."
+    },
+    {
+		"Id"	  : 2,
+      	"Vortrag" : "Christian stellt die neue Homepage vor."
+    },
+    {
+		"Id"	  : 3,
+      	"Vortrag" : "Bring your Script"
+    }
+  ]   
+}

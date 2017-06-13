@@ -1,0 +1,31 @@
+#meetingbox {
+    background-color: LightBlue;
+    border: 2px solid #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#topicbox {
+    background-color: MistyRose;
+    border: 2px solid #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#terminalbox {
+    background-color: WhiteSmoke;
+    border: 2px solid #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#pscode {
+    padding: 5px;
+    border: 1px dashed grey;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
