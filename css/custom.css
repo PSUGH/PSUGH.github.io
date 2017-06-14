@@ -30,7 +30,7 @@
     border-radius: 5px;
 }
 
-/* Make equal height with table styles */
+/* Die "table styles" sorgen für gleiche Höhe bei den 3 Boxen/Spalten */
 
 @media (min-width: 768px) {
   .table-row {
