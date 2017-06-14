@@ -24,8 +24,8 @@ function copyright() {
 		loadJSON(function(response) {
 			var data = JSON.parse(response);
 			document.getElementById("Treffen").innerHTML = '<p>Das <strong>nächste Treffen findet am ' + data.Datum + 
-			' um ' + data.Zeit + ' in den Räumen von ' + data.Ort + ',</strong> ' + data.Strasse + 
-			', ' + data.Stadt + ' statt.</p>';
+			' um ' + data.Zeit + ' bei ' + data.Ort + ' statt.</strong></p>' + 
+			'<p>Die Adresse lautet: ' + data.Strasse + ', ' + data.Stadt + '.</p>';
 
 			var mapsStreet = data.Strasse.replace(" ","+");
 			var mapsPlace  = data.Stadt.replace(" ","+");
