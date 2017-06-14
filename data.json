@@ -5,7 +5,7 @@
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
   "Stadt"  : "30173 Hannover",
-  "Themen"  : [
+  "Themen" : [
     {
 	"Id"      : 1,
       	"Vortrag" : "Kurzer Objekt-Refresher und Einstieg in dynamische Parameter mit Tobias."
