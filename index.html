@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
+    
     <meta name="description" content="Homepage der PowerShell Usergroup Hannover">
     <meta name="keywords" content="PowerShell,Azure,Microsoft,Hannover, Windows Server,Hyper-V">
     <meta name="author" content="Christian Imhorst">
     <link rel="icon" href="favicon.ico">
-
     <title>Powershell Usergroup Hannover</title>
 
     <!-- Bootstrap-CSS -->
@@ -21,9 +21,7 @@
     <!-- Eigene Stile für diese Vorlage -->
     <link href="css/custom.css" rel="stylesheet">
   </head>
-
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -90,23 +88,23 @@
       <div class="row">
         <div class="col-md-4" id="meetingbox">
           <h2>Treffen</h2>
-          <p id="Treffen"></p>
-          <p id="Route"></p>
+          <p id="Treffen"></p> <!-- Platzhalter für die "Treffen" Box -->
+          <p id="Route"></p>   <!-- Platzhalter für den Button "Route planen", er wird in der custom.js gebaut -->
         </div>
         <div class="col-md-4" id="topicbox">
           <h2>Themen</h2>
-          <p id="Themen"></p>
+          <p id="Themen"></p>  <!-- Platzhalter für die "Themen" Box -->
           <a class="btn btn-default" href="https://www.youtube.com/channel/UCkGSUWhTNIPMoIhTDYT_fOg" target="_blank" role="button">Auf YouTube schauen &raquo;</a></p>
         </div>
         <div class="col-md-4" id="terminalbox">
           <h2>Terminal</h2>
-          <p id="Terminal"></p>
+          <p id="Terminal"></p> <!-- Platzhalter für die "Terminal" Box -->
           <p><a class="btn btn-default" href="https://github.com/PSUGH/PowerShell"  target="_blank" role="button">Skripte auf Github &raquo;</a></p>
        </div>
       </div>
       <hr />
       <footer>
-        <p id="copyright"></p>
+        <p id="copyright"></p> <!-- Platzhalter für's Copyright: Die Jahreszahl liefert JavaScript -->
       </footer>
     </div> <!-- /container -->
 
@@ -117,6 +115,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Eigenes JavaScript für diese Vorlage -->
     <script src="js/custom.js"></script>
   </body>
 </html>
