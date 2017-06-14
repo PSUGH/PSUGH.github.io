@@ -5,17 +5,17 @@
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
   "Stadt"  : "30173 Hannover",
-  "Thema"  : [
+  "Themen"  : [
     {
-		"Id"      : 1,
+	"Id"      : 1,
       	"Vortrag" : "Kurzer Objekt-Refresher und Einstieg in dynamische Parameter mit Tobias."
     },
     {
-		"Id"	  : 2,
+	"Id"	  : 2,
       	"Vortrag" : "Christian stellt die neue Homepage vor."
     },
     {
-		"Id"	  : 3,
+	"Id"	  : 3,
       	"Vortrag" : "Bring your Script"
     }
   ]   
