@@ -34,8 +34,8 @@ function copyright() {
 			document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
 
 			var themen = '';
-			for ( var i = 0; i < data.Thema.length; i++ ) {
-    			var obj = data.Thema[i];
+			for ( var i = 0; i < data.Themen.length; i++ ) {
+    			var obj = data.Themen[i];
     			// console.log(obj.Id);
 				themen += '<p><b>' + obj.Id + '.</b> ' + obj.Vortrag + '</p>';
 			}
