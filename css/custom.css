@@ -29,3 +29,17 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
+
+/* Make equal height with table styles */
+
+@media (min-width: 768px) {
+  .table-row {
+    display: table;
+    table-layout: fixed;
+  }
+
+  .table-row [class^="col-"] {
+    display: table-cell;
+    float: none;
+  }
+}
