@@ -3,7 +3,6 @@
 function copyright() {
 	// Die Funktion erstellt den Eintrag für das Copyright
 	// inkl. aktueller Jahreszahl
-	
 	var jetzt = new Date(),
 	jahr = jetzt.getFullYear(),
         text = '&copy; PowerShell Usergroup Hannover ' + jahr;
