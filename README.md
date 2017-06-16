@@ -8,7 +8,7 @@ Der _username_ muss genau mit dem Benutzername bei Git übereinstimmen.
 
 In unserem Beispiel 
 
-    datenteiler.github.io
+    psugh.github.io
 
 Die Website http://www.psconf.eu/ liegt bspw. in diesem Repo:
 
