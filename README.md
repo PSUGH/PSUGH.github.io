@@ -1,3 +1,7 @@
+# Wie die Seite für PSUGH entstanden ist #
+
+Die PowerShell Usergroup Hannover (PSUGH) brauchte dringend eine Website. Die Idee war, sie mit _Github Pages_ zu erstellen.
+
 # Wie erstellt man eine Github-Seite (_Github Pages_) #
 
 Auf Github ein neues öffentliches Repo anlegen:
@@ -29,4 +33,12 @@ Um die Seite online zu bringen, nimmt man _add_, _commit_ und _push_:
     git commit -m "Initial commit"
     git push -u origin master
 
+# _Bootstrap_ als Framework #
 
+Bootstrap (http://holdirbootstrap.de/) ist ein anpassungsfähiges CSS-Framework für alle Geräte-Typen wie Smartphones, PC etc. von Twitter. 
+
+Egal, wie gut man sich auskennt, kann man damit einfach und schnell kleine und große Projekte entwickeln.
+
+ Es wird unter anderem von der NASA und dem US Nachrichtensender MSNBC oder für die Website der PSConfEU eingesetzt.
+ 
+ 
