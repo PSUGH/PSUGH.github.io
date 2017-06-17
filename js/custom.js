@@ -43,7 +43,7 @@ function copyright() {
 			// Button zu Google Maps
 			var mapsStreet = data.Strasse.replace(" ","+");
 			var mapsPlace  = data.Stadt.replace(" ","+");
-			var mapsUrl = 'http://maps.google.com/maps?f=q&source=s_q&hl=de&geocode=&q=' +
+			var mapsUrl = 'https://maps.google.com/maps?f=q&source=s_q&hl=de&geocode=&q=' +
 			          mapsStreet + ',+' + mapsPlace;
 			document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
 			
