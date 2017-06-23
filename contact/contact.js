@@ -4,7 +4,7 @@ $(function () {
 
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            var url = "https://www.datenteiler.de/contact.php";
 
             $.ajax({
                 type: "POST",
