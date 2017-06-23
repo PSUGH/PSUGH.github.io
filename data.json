@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Kurzer Objekt-Refresher und Einstieg in dynamische Parameter mit Tobias."
+      	"Vortrag" : "Ein Thema steht noch aus."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Christian stellt die neue Homepage vor."
+      	"Vortrag" : "Eventuell wird gegrillt."
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Bring your Script"
+      	"Vortrag" : "Auf jeden Fall: Bring your Script"
     }
   ]   
 }
