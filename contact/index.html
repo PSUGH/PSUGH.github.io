@@ -1,31 +1,49 @@
 <html>
     <head>
-        <title>Contact Form Tutorial by Bootstrapious.com</title>
+        <meta name="description" content="Homepage der PowerShell Usergroup Hannover">
+        <meta name="keywords" content="PowerShell,Azure,Microsoft,Hannover, Windows Server,Hyper-V">
+        <meta name="author" content="Christian Imhorst">
+        <link rel="icon" href="../favicon.ico">
+        <title>PowerShell Usergroup Hannover</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link href='custom.css' rel='stylesheet' type='text/css'>
+        <link href='../css/custom.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
-
+        <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Navigation ein-/ausblenden</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">#PSUGH>_</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            <!--<form class="navbar-form navbar-right">
+                <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                <input type="password" placeholder="Passwort" class="form-control">
+                </div>
+            <button type="submit" class="btn btn-success">Anmelden</button> 
+            </form>-->
+            </div><!--/.navbar-collapse -->
+        </div>
+        </nav>
+        <div class="container">
             <div class="row">
-
                 <div class="col-lg-8 col-lg-offset-2">
-
-                    <h1>Contact form Tutorial from <a href="http://bootstrapious.com">Bootstrapious.com</a></h1>
-
-                    <p class="lead">This is a demo for our tutorial dedicated to crafting working Bootstrap contact form with PHP and AJAX background. At this part, we will add Google's ReCaptcha too.</p>
-
-
+                    <h1>Kontakt zur PowerShell Usergroup Hannover</h1>
+                    <p class="lead">Schreib uns eine Nachricht...</p>
                     <form id="contact-form" method="post" action="https://datenteiler.de/contact.php" role="form">
-
                         <div class="messages"></div>
-
                         <div class="controls">
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -86,15 +104,11 @@
                         </div>
 
                     </form>
-
                 </div><!-- /.8 -->
-
             </div> <!-- /.row-->
-
         </div> <!-- /.container-->
-
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="validator.js"></script>
         <script src="contact.js"></script>
