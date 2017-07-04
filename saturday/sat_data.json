@@ -4,5 +4,19 @@
   "Zeit"   : "09:00", 
   "Ort"    : "Elanity Network Partner GmbH",
   "Strasse": "Rendsburger Strasse 34",
-  "Stadt"  : "30659 Hannover" 
+  "Stadt"  : "30659 Hannover",
+  "Themen" : [
+    {
+	"Id"     : 1,
+      	"Vortrag" : "Melde dich noch heute zum kostenfreien PowerShell Saturday an!"
+    },
+    {
+	"Id"	   : 2,
+      	"Vortrag" : "Die Teilnehmerzahl ist auf 40 Plätze begrenzt."
+    },
+    {
+	"Id"	   : 3,
+      	"Vortrag" : "Essen und Getränke sind inklusive."
+    }
+  ]   
 }
