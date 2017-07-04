@@ -46,6 +46,16 @@ function copyright() {
 			var mapsUrl = 'https://maps.google.com/maps?f=q&source=s_q&hl=de&geocode=&q=' +
 			          mapsStreet + ',+' + mapsPlace;
 			document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
+
+			// Themen-Box mit For-Schleife über das JSON-Array "Themen":
+			var themen = '';
+			for ( var i = 0; i < data.Themen.length; i++ ) {
+    			var obj = data.Themen[i];
+    			// console.log(obj.Id);
+				themen += '<p><b>' + obj.Id + '.</b> ' + obj.Vortrag + '</p>';
+			}
+			document.getElementById("Themen").innerHTML = themen;
+			
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
