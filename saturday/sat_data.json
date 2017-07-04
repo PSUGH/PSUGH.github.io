@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"     : 1,
-      	"Vortrag" : "Melde dich noch heute zum kostenfreien PowerShell Saturday an!"
+      	"Vortrag" : "Der Eintritt zum PowerShell Saturday ist frei!"
     },
     {
 	"Id"	   : 2,
-      	"Vortrag" : "Die Teilnehmerzahl ist auf 40 Plätze begrenzt."
+      	"Vortrag" : "Essen und Getränke sind inklusive."
     },
     {
 	"Id"	   : 3,
-      	"Vortrag" : "Essen und Getränke sind inklusive."
+      	"Vortrag" : "Die Teilnehmerzahl ist auf 40 Plätze begrenzt."
     }
   ]   
 }
