@@ -5,7 +5,7 @@ function copyright() {
 	// inkl. aktueller Jahreszahl
 	var jetzt = new Date(),
 	jahr = jetzt.getFullYear(),
-        text = '&copy; PowerShell Usergroup Hannover ' + jahr;
+        text = '&copy; PowerShell Usergroup Hannover ' + jahr + ' <a href="#" data-toggle="modal" data-target="#Impressum">Impressum</a>';
 	document.getElementById('copyright').innerHTML = text;
 	}
 	
