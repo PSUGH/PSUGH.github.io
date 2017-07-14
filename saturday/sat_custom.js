@@ -56,6 +56,9 @@ function copyright() {
 			}
 			document.getElementById("Themen").innerHTML = themen;
 			
+			// Terminal-Box
+			var currentLocation = window.location;
+			document.getElementById("Terminal").innerHTML = '<p>Speaker</p>';
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
