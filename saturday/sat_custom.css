@@ -1,0 +1,8 @@
+#meetingbox {
+    background-color: LightBlue;
+    border: 2px dashed #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
