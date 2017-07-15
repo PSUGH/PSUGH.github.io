@@ -58,7 +58,8 @@ function copyright() {
 			
 			// Terminal-Box
 			var currentLocation = window.location;
-			document.getElementById("Terminal").innerHTML = '<p>Speaker</p>';
+			document.getElementById("Terminal").innerHTML = '<p>Unsere Windows, PowerShell und Azure-Experten am Samstag sind</p>' +
+			'<p><ul><li><strong>Tobias Weltner</strong>, Microsoft MVP für Automation und PowerShell und  Autor von mehr als 130 IT-Büchern</li></p>';
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
