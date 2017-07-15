@@ -58,10 +58,10 @@ function copyright() {
 			
 			// Terminal-Box
 			var currentLocation = window.location;
-			document.getElementById("Terminal").innerHTML = '<p>Unsere Windows, PowerShell und Azure-Experten am Samstag sind:</p>' +
-			'<p><ul><li><strong>Tobias Weltner</strong> - Microsoft MVP für Automation und PowerShell und  Autor von mehr als 130 IT-Büchern</li></p>' +
-			'<p><ul><li><strong>Peter Kirchner</strong> - Technical Evangelist bei Microsoft Deutschland</li></p>' +
-			'<p><ul><li><strong>Thorsten Butz</strong> - langjähriger Microsoft Certified Trainer (MCT), Consultant, Buchautor und Podcaster</li></p>';
+			document.getElementById("Terminal").innerHTML = '<p>Unsere Windows-, PowerShell- und Azure-Experten:</p>' +
+			'<p><strong>Tobias Weltner</strong> - Microsoft MVP fürPowerShell</p>' +
+			'<p>Peter Kirchner</strong> - Technical Evangelist bei Microsoft</p>' +
+			'<p>Thorsten Butz</strong> -  Microsoft Certified Trainer, Consultant, Autor, Podcaster</p>';
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
