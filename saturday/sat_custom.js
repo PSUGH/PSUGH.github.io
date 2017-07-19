@@ -60,8 +60,7 @@ function copyright() {
 			var currentLocation = window.location;
 			document.getElementById("Terminal").innerHTML = '<p><strong>Tobias Weltner</strong>, Microsoft MVP fürPowerShell</p>' +
 			'<p><strong>Peter Kirchner</strong>, Technical Evangelist bei Microsoft</p>' +
-			'<p><strong>Thorsten Butz</strong>, MCT, Consultant, Autor, Podcaster</p>' +
-			'<p><strong>Christian Imhorst</strong>, PowerShell Usergroup Hannover</p>';
+			'<p><strong>Thorsten Butz</strong>, MCT, Consultant, Autor, Podcaster</p>';
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
