@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Ein Thema steht noch aus."
+      	"Vortrag" : "Weitere Planung des PowerShell Saturdays."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Eventuell wird gegrillt."
+      	"Vortrag" : "Es wird gegrillt."
     },
     {
 	"Id"	  : 3,
