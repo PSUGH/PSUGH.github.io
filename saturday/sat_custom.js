@@ -41,10 +41,8 @@ function copyright() {
 			'<p>Die Adresse lautet: <strong>' + data.Strasse + ', ' + data.Stadt + '<strong>.</p>';
 			
 			// Button zu Google Maps
-			var mapsStreet = data.Strasse.replace(" ","+");
-			var mapsPlace  = data.Stadt.replace(" ","+");
-			var mapsUrl = 'https://maps.google.com/maps?f=q&source=s_q&hl=de&geocode=&q=' +
-			          mapsStreet + ',+' + mapsPlace;
+			
+			var mapsUrl = 'https://goo.gl/maps/AKg33MQbiKQ2';
 			document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
 
 			// Themen-Box mit For-Schleife über das JSON-Array "Themen":
