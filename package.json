@@ -1,0 +1,19 @@
+{
+  "name": "psugh-website",
+  "version": "1.0.0",
+  "description": "Die PowerShell Usergroup Hannover (PSUGH) brauchte dringend eine Website. Die Idee war, sie mit _Github Pages_ zu erstellen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSUGH/PSUGH.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSUGH/PSUGH.github.io/issues"
+  },
+  "homepage": "https://github.com/PSUGH/PSUGH.github.io#readme"
+}
