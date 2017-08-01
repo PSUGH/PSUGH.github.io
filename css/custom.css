@@ -30,6 +30,11 @@
     border-radius: 5px;
 }
 
+#Bottom {
+    position:absolute;
+    bottom: 0;
+}
+
 /* Die "table styles" sorgen für gleiche Höhe bei den 3 Boxen/Spalten */
 
 @media (min-width: 768px) {
