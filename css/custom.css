@@ -30,7 +30,7 @@
     border-radius: 5px;
 }
 
-#Bottom {
+#btn_bottom {
     position:absolute;
     bottom: 0;
 }
