@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "15.09.2017", 
+  "Datum"  : "20.10.2017", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,7 +8,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Paketierungsautomatiesierung mit Powershell und App-V mit Andreas."
+      	"Vortrag" : "Wir suchen noch ein Thema."
     },
     {
 	"Id"	  : 2,
