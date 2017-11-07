@@ -8,7 +8,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Frank Kresse von der Firma Appsense stellt das Produkt Scriptrunner vor, mit dem man Powershell-Skripte über eine GUI planen und starten kann."
+      	"Vortrag" : "Frank Kresse von Appsense stellt Scriptrunner vor, mit dem man Powershell-Skripte über eine GUI planen und starten kann."
     },
     {
 	"Id"	  : 2,
