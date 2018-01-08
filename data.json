@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "17.11.2017", 
+  "Datum"  : "19.01.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Frank Kresse von Appsense stellt Scriptrunner vor, mit dem man Powershell-Skripte über eine GUI planen und starten kann."
+      	"Vortrag" : "Christian zeigt PDF-Hacks mit iTextSharp und PowerShell."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Arne Tiedemann stellt sein PowerShell-Script GUI zum Windows Deployment vor."
+      	"Vortrag" : "Holger macht PowerShell Remoting."
     },
     {
 	"Id"	  : 3,
