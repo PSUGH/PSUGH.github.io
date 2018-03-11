@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "16.02.2018", 
+  "Datum"  : "16.03.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Tomi zeigt, wie man PowerShell CmdLets aus eigenen Softwareprojekten (C#) zur Verfügung stellen kann."
+      	"Vortrag" : "Christian macht was zu PowerShell Core/PowerShell 6 und Docker."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Holger macht den 2. Teil von PowerShell Remoting."
+      	"Vortrag" : "Wir essen Pizze und fachsimpeln."
     },
     {
 	"Id"	  : 3,
