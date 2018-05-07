@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "16.03.2018", 
+  "Datum"  : "18.05.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,7 +8,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Christian macht was zu PowerShell Core/PowerShell 6 und Docker."
+      	"Vortrag" : "Andreas hat ein Tetris-Spiel in PowerShell entwickelt und stellt es uns vor."
     },
     {
 	"Id"	  : 2,
