@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "18.05.2018", 
+  "Datum"  : "15.06.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Andreas hat ein Tetris-Spiel in PowerShell entwickelt und stellt es uns vor."
+      	"Vortrag" : "Funktionen und Parameter mit Holger."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Marco bringt uns DBA-Tools und DBAChecks näher."
+      	"Vortrag" : "Sommergrillen mit Würstchen."
     },
     {
 	"Id"	  : 3,
