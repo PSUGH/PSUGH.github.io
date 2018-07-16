@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "15.06.2018", 
+  "Datum"  : "20.07.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Funktionen und Parameter mit Holger."
+      	"Vortrag" : "Funktionen und Parameter Teil 2 mit Holger."
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Sommergrillen mit Würstchen."
+      	"Vortrag" : "Anschließend Besuch des nächsten Biergartens."
     },
     {
 	"Id"	  : 3,
