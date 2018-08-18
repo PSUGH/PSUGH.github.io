@@ -118,34 +118,41 @@
           <h4 class="modal-title" id="myModalLabel">Speaker Lineup und Agenda PowerShell Saturday Hannover</h4>
         </div>
         <div class="modal-body">
-          <p>09:00 – 09:30 – Registrierung</p>
           <p>09:30 – 10:00 – Begrüßung</p>
-          <p>10:00 – 11:00 – <i>PowerShell DeepDive</i> mit Tobias Weltner</p>          
-          <p>11:00 – 11:15 – Pause</p>
-          <p>11:15 – 12:15 – <i>Die Zukunft des NANO Server</i> mit Thorsten Butz</p>
+          <p>10:00 – 11:00 – <i>PowerShell Script Block Logging</i> mit Tobias Weltner</p>
           <div id="abstract">
-          Der NANO Server bietet bei Windows Server 2016 einen wegweisenden Ansatz zur Serverhärtung, Skalierbarkeit 
-          und Miniaturisierung. Die Entwicklung wird aber nur als Containerimage fortgeführt. Wir werfen einen 
-          praktischen Blick auf die Containertechnologie - nicht nur in Hinblick auf Microsofts
-          Implementierung sondern auch in Hinblick auf das Original unter Linux. Wir untersuchen Anwendungsfälle 
-          für Container und gehen der Frage nach, in wie fern Containerimages zentrale Aufgaben des Windows Server-
-          Betriebs übernehmen können. Wie sehen zukünftig sinnvolle Anwendungsfälle für den NANO-Container aus?
+          Mit der PowerShell 5 wird mit PowerShell Script Block Logging eine zusätzliche Logging-Funktion eingeführt. 
+          Ist das Logging aktiviert, werden alle durch PowerShell ausgeführten Skriptblöcke 
+          aufgezeichnet. Wird dann in einem Skriptblock dynamischer Code benutzt, wird neben 
+          diesem Code, auch der generierte und tatsächlich ausgeführte Code protokolliert. Dadurch kann man den Code von 
+          Anwendungen protokollieren, die bewusst dynamische Codegenerierung zur Verschleierung von Kodierungs- oder 
+          Verschlüsselungsmethoden einsetzen, was eine verbreitete Methode zur Umgehung von Sicherheitslösungen unter Windows ist.
+          </div>
+          <p>11:00 – 11:15 – Pause</p>
+          <p>11:15 – 12:15 – <i>Einführung in .Net Core und PowerShell 6</i> mit Christian Imhorst</p>
+          <div id="abstract">
+          PowerShell 6 ist eine neue plattformübergreifende (Windows, macOS und Linux) Open Source-Edition von PowerShell, die 
+          für heterogene Umgebungen und die Cloud entwickelt wurde und auf das plattformübergreifende .Net Core beruht. Die 
+          Frage ist, was bringt uns .Net Core und was sind die Unterschiede von PowerShell 5 zur Version 6?
           </div>
           <p>12:15 – 12:30 – Pause</p>
-          <p>12:30 – 13:00 – <i>Flashtalk: Flüssige Oberflächen mit Windows Forms, PowerShell Runspaces und Timern</i> mit Dennis Meier</p>
+          <p>12:30 – 13:00 – <i>State  of  the  Union:  PwSh,  rModule, SSH</i> mit Thorsten Butz</p>
           <div id="abstract">
-          Viele Admins sind beim Verwalten von Windows-Umgebungen auch heutzutage noch bevorzugt mit einer GUI unterwegs und können sich nur 
-          schwer mit der PowerShell als Alleskönner anfreunden. Außerdem lassen sich mit Oberflächen auch komplexe PowerShell-Skripte 
-          benutzerfreundlich bereitstellen. Der einfachste Weg zu Oberflächen in PowerShell ist der .NET-Namepace System.Windows.Forms.
-          In diesem Flashtalk wird gezeigt, wie man einfach und schnell UIs in Windows Forms umsetzt und diese mithilfe von PowerShell Runspaces 
-          auch bei längeren Hintergrundaufgaben flüssig darstellt.
+          PowerShell  Core  und  OpenSSH  bringen  Windows  und  Linux-Administratoren  auf  unerwartete  Weise
+          zueinander.  Entfaltet  sich  aber  jenseits  „nerdiger“  Neugier  ein  echter  Nutzen  bei  der  Administration
+          hetereogener  Netzwerke  mit  der  PowerShell  Core  (PwSh)?  Und  welches  Interesse  könnte  ein X-affiner  DevOp  
+          an  Microsofts  Technologie  entwickeln?  Wir  werfen  einen  praktischen  Blick  auf  die  aktuelle  PwSh,  das  
+          Remoting  via  SSH,  die  Funktionalität des  "rModule"  (Windows  PowerShell  Compatibility  Pack)  und  gehen  
+          der  Frage  nach,  ob  die  PwSh von  den  Linux-Distributoren  wahrgenommen  wird.  
           </div>
+          <--!
           <div style="border: 2px dashed red; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 10px; margin-bottom: 5px; border-radius: 5px;"> 
           <p>10:00 – 13:00 – <i>Alternativ in Raum 2: Einführung in die PowerShell für Beginner</i> mit Holger Voges</p>
           <div id="abstract">
           Für alle, die PowerShell kennenlernen und frisch einsteigen möchten, bieten wir eine Einführung am Vormittag an.
           </div>
           </div>
+          -->
           <p>13:00 – 14:00 – Mittagessen</p>
           <p>14:00 – 15:00 – <i>Das 1x1 der Automatisierung in Azure</i> mit Peter Kirchner</p>
           <div id="abstract">
@@ -183,12 +190,11 @@
           und so die Arbeit eines DBAs deutlich erleichtert wird.
           </div>
           <p>17:25 – 17:30 – Pause</p>
-          <p>17:30 – 18:00 – <i>Flashtalk: Das DataVisualization Toolkit mit einer PowerShell WPF GUI</i> mit Andreas Nick</p>
+          <p>17:30 – 18:00 – <i>Was zu Azure</i> mit Jan-Henrik Damaschke</p>
           <div id="abstract">
-          Das WPFToolkit ermöglicht es, mit der Komponente DataVisualization verschiedene Chart Grafiken (Linien-, Torten-, 
-          Balkendiagramm etc.) in die eigene WPF GUI einzubetten. Eine Nutzung ist erst durch die .Net-Komponente 
-          System.Windows.Controls.DataVisualization.Toolkit möglich. In diesem Vortag wird ein kleines Projekt vorgestellt, 
-          um lokale Leistungsdaten zu visualisieren, und es wird gezeigt, wie diese Komponenten genutzt werden können.
+          Bei Microsoft Azure handelt es sich um Clouddienste, die stetig erweitert werden, um Ihre Organisation bei geschäftlichen 
+          Herausforderungen zu unterstützen. Sie können Anwendungen mithilfe Ihrer bevorzugten Tools und Frameworks in einem großen 
+          globalen Netzwerk erstellen, verwalten und bereitstellen.
           </div>
           <p>18:00 – Open End – Grillen und Getränke</p>
         </div>
