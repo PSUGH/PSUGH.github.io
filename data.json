@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "21.09.2018", 
+  "Datum"  : "19.10.2018", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Paketerstellung und Softwareverteilung in App-V mit PowerShell von Andreas"
+      	"Vortrag" : "Windows Server 2016 mit Bordmitteln sicherer machen mit Holger"
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Cmdlets bauen in .NET Core von Christian"
+      	"Vortrag" : "Import-Excel vorstellen mit Marco"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Bring your Script: Perfmon-Logs in SQL-Server laden von Marco"
+      	"Vortrag" : "Bring your Script: Verwaltung eines Netzwerks mit Dennis"
     }
   ]   
 }
