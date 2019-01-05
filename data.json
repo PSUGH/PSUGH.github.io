@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "16.11.2018", 
+  "Datum"  : "18.01.2019", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "AppImage, Linux und PowerShell mit Christian" 
+      	"Vortrag" :  "Mit PowerShell Ereignissen im Ereignisprotokoll nachvollziehen mit Peter" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Import-Excel vorstellen mit Marco"
+      	"Vortrag" : "Read-MsgFile - MSG-Dateien mit PowerShell ohne Outlook lesen mit Christian"
     },
     {
 	"Id"	  : 3,
