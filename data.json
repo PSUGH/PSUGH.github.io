@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Mit Powershell das Windows Eventlog auswerten, Holger" 
+      	"Vortrag" :  "Mit Powershell das Windows Eventlog auswerten" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Grundlagenvortrag: Powershell Remoting, Constrainede Endpoints und JEA, Holger"
+      	"Vortrag" : "Grundlagenvortrag: Powershell Remoting, Constrainede Endpoints und JEA"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Bring your Script: Outlook-Regeln erstellen, Christian"
+      	"Vortrag" : "Bring your Script: Outlook-Regeln erstellen"
     }
   ]   
 }
