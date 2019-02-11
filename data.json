@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Mit PowerShell Ereignissen im Ereignisprotokoll nachvollziehen mit Peter" 
+      	"Vortrag" :  "Mit Powershell das Windows Eventlog auswerten, Holger" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Read-MsgFile - MSG-Dateien mit PowerShell ohne Outlook lesen mit Christian"
+      	"Vortrag" : "Grundlagenvortrag: Powershell Remoting, Constrainede Endpoints und JEA, Holger"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Bring your Script mit Holger"
+      	"Vortrag" : "Bring your Script: Outlook-Regeln erstellen, Christian"
     }
   ]   
 }
