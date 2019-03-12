@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "15.02.2019", 
+  "Datum"  : "15.03.2019", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Mit Powershell das Windows Eventlog auswerten" 
+      	"Vortrag" :  "Dynamische Konvertierung von Kreuztabellendaten" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Grundlagenvortrag: Powershell Remoting, Constrainede Endpoints und JEA"
+      	"Vortrag" : "SQL-Server Always on einrichten mit PowerShell"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Bring your Script: Outlook-Regeln erstellen"
+      	"Vortrag" : "Daten visualisieren mit PowerShell"
     }
   ]   
 }
