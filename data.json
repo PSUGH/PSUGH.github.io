@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "15.03.2019", 
+  "Datum"  : "12.04.2019", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Dynamische Konvertierung von Kreuztabellendaten" 
+      	"Vortrag" :  "Ich könnte was zu WSUS machen macht Peter" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "SQL-Server Always on einrichten mit PowerShell"
+      	"Vortrag" : "Speech-Bots ansprechen macht Evegenij"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Daten visualisieren mit PowerShell"
+      	"Vortrag" : "Powershell überwachen mit Skriptblock-Logging macht Holger"
     }
   ]   
 }
