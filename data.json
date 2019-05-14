@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "12.04.2019", 
+  "Datum"  : "17.05.2019", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Ich könnte was zu WSUS machen macht Peter" 
+      	"Vortrag" :  "Windows Update-Client per Powershell steuern mit Peter" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Speech-Bots ansprechen macht Evegenij"
+      	"Vortrag" : "Daten mit Powershell in SQLite speichern mit Christian"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Powershell überwachen mit Skriptblock-Logging macht Holger"
+      	"Vortrag" : "Hands-On zu JEA mit Holger"
     }
   ]   
 }
