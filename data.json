@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "17.05.2019", 
+  "Datum"  : "21.06.2019", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Windows Update-Client per Powershell steuern mit Peter" 
+      	"Vortrag" :  "Scripting mit Visual Studio Code mit Holger" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Daten mit Powershell in SQLite speichern mit Christian"
+      	"Vortrag" : "Codeverwaltung mit Git mit Holger"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : "Hands-On zu JEA mit Holger"
+      	"Vortrag" : "Bring Your Script"
     }
   ]   
 }
