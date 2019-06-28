@@ -56,8 +56,8 @@ function copyright() {
 			
 			// Terminal-Box
 			var currentLocation = window.location;
-			document.getElementById("Terminal").innerHTML = '<p><strong>Holger Voges</strong>, Trainer und Consultant, Inhaber Netz-Weise</p>' +
-			'<p><strong>Thorsten Butz</strong>, MCT, Consultant, Autor, Podcaster</p>';
+			document.getElementById("Terminal").innerHTML = '<p><strong>Thorsten Butz</strong>, MCT, Consultant, Autor, Podcaster</p>' + 
+			'<p><strong>Holger Voges</strong>, Trainer und Consultant, Inhaber Netz-Weise</p>';
 		}); // loadJSON
 	}); // addEventListener
 }()); // function
