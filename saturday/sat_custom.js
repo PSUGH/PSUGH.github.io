@@ -56,8 +56,7 @@ function copyright() {
 			
 			// Terminal-Box
 			var currentLocation = window.location;
-			document.getElementById("Terminal").innerHTML = '<--!<p><strong>Tobias Weltner</strong>, Microsoft MVP für PowerShell</p>-->' +
-			'<p><strong>Holger Voges</strong>, Trainer und Consultant, Inhaber Netz-Weise</p>' +
+			document.getElementById("Terminal").innerHTML = '<p><strong>Holger Voges</strong>, Trainer und Consultant, Inhaber Netz-Weise</p>' +
 			'<p><strong>Thorsten Butz</strong>, MCT, Consultant, Autor, Podcaster</p>';
 		}); // loadJSON
 	}); // addEventListener
