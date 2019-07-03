@@ -52,7 +52,8 @@ function copyright() {
     			// console.log(obj.Id);
 				themen += '<p><b>' + obj.Id + '.</b> ' + obj.Vortrag + '</p>';
 			}
-			document.getElementById("Themen").innerHTML = themen + '<a class="btn btn-default" href='https://www.meetup.com/de-DE/PowerShell-Usergroup-Hannover/events/262836522/' role="button" target="_blank">Gleich anmelden &raquo;</a>';
+			themen  += '<a class="btn btn-default" href="https://www.meetup.com/de-DE/PowerShell-Usergroup-Hannover/events/262836522/" role="button" target="_blank">Gleich anmelden &raquo;</a>'
+			document.getElementById("Themen").innerHTML = themen;
 			
 			// Terminal-Box
 			var currentLocation = window.location;
