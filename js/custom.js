@@ -54,7 +54,7 @@ function copyright() {
     			// console.log(obj.Id);
 				themen += '<p><b>' + obj.Id + '.</b> ' + obj.Vortrag + '</p>';
 			}
-			document.getElementById("Themen").innerHTML = themen;
+			document.getElementById("Themen").innerHTML = themen + '<a class="btn btn-default" href='https://www.meetup.com/de-DE/PowerShell-Usergroup-Hannover/events/262836522/' role="button" target="_blank">Gleich anmelden &raquo;</a>';
 			
 			// Terminal-Box
 			var currentLocation = window.location;
