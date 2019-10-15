@@ -8,7 +8,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Einführung in Compilerbau mit einem Minimalistischer Compiler in PowerShell für PowerShell mit Andreas" 
+      	"Vortrag" :  "Einführung in den Compilerbau mit einem minimalistischen Compiler in PowerShell für PowerShell mit Andreas" 
     },
     {
 	"Id"	  : 2,
