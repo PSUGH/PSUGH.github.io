@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "18.10.2019", 
+  "Datum"  : "17.01.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Einführung in den Compilerbau mit einem minimalistischen Compiler in PowerShell für PowerShell mit Andreas" 
+      	"Vortrag" :  "Windows Services in Powershell mit Frank" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "PowerShell Azure Backup-Modul für SQL Server in Azure VMs mit Marco"
+      	"Vortrag" : "GPS Tracking mit Universal Dashboard auch mit Frank"
     },
     {
 	"Id"	  : 3,
