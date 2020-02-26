@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "17.01.2020", 
+  "Datum"  : "28.02.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Windows Services in Powershell mit Frank" 
+      	"Vortrag" :  "DSC und Powershell mit Thomas via Teams" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "GPS Tracking mit Universal Dashboard auch mit Frank"
+      	"Vortrag" : "Script-Credentials mit Holger"
     },
     {
 	"Id"	  : 3,
