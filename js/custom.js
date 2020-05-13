@@ -45,7 +45,7 @@ function copyright() {
 			var mapsPlace  = data.Stadt.replace(" ","+");
 			var mapsUrl = 'https://maps.google.com/maps?f=q&source=s_q&hl=de&geocode=&q=' +
 			          mapsStreet + ',+' + mapsPlace;
-			document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
+			// document.getElementById("Route").innerHTML = '<a class="btn btn-default" href=' + mapsUrl + ' role="button" target="_blank">Route planen &raquo;</a>';
 			
 			// Themen-Box mit For-Schleife über das JSON-Array "Themen":
 			var themen = '';
