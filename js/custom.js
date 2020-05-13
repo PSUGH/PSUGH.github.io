@@ -37,7 +37,9 @@ function copyright() {
 			
 			// Treffen-Box:
 			document.getElementById("Treffen").innerHTML = '<p>Das nächste Treffen ist <strong>am ' + data.Datum + 
-			' um ' + data.Zeit + '</p></strong> <p><a href="http://onlineclass.netz-weise.de/b/hol-nc4-72g">Online Treffen starten...</a></p>'; // + data.Ort + '.</strong></p>' + 
+			' um ' + data.Zeit + 
+			'</p></strong> <p><a href="http://onlineclass.netz-weise.de/b/hol-nc4-72g">Online Treffen starten...</a></p>'; 
+			// + data.Ort + '.</strong></p>' + 
 			// '<p>Die Adresse lautet: <strong>' + data.Strasse + ', ' + data.Stadt + '<strong>.</p>';
 			
 			// Button zu Google Maps
