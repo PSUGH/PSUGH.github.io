@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "DSC und Powershell mit Thomas via Teams" 
+      	"Vortrag" :  "Thema steht noch aus" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Script-Credentials mit Holger"
+      	"Vortrag" : "OTPEdit management tool for One Time Passwords, Andreas"
     },
     {
 	"Id"	  : 3,
