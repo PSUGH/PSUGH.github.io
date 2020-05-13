@@ -37,8 +37,8 @@ function copyright() {
 			
 			// Treffen-Box:
 			document.getElementById("Treffen").innerHTML = '<p>Das nächste Treffen ist <strong>am ' + data.Datum + 
-			' um ' + data.Zeit + ' bei ' + data.Ort + '.</strong></p>' + 
-			'<p>Die Adresse lautet: <strong>' + data.Strasse + ', ' + data.Stadt + '<strong>.</p>';
+			' um ' + data.Zeit + '</p> <p>' + data.Ort + '.</strong></p>' + 
+			// '<p>Die Adresse lautet: <strong>' + data.Strasse + ', ' + data.Stadt + '<strong>.</p>';
 			
 			// Button zu Google Maps
 			var mapsStreet = data.Strasse.replace(" ","+");
