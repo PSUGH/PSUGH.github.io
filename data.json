@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "15.05.2020", 
+  "Datum"  : "19.06.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Invoke-SQLPackage, Marco" 
+      	"Vortrag" :  "7 Mythen über Powershell 7, Thorsten" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "OTPEdit management tool for One Time Passwords, Andreas"
+      	"Vortrag" : "Invoke-SQLPackage, Marco"
     },
     {
 	"Id"	  : 3,
