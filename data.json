@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "19.06.2020", 
+  "Datum"  : "17.07.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "7 Mythen über Powershell 7, Thorsten" 
+      	"Vortrag" :  "Poshgui & Admin Script Editor, Holger" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Invoke-SQLPackage, Marco"
+      	"Vortrag" : "PowerShell & WPF in Visual Studio , Tobias"
     },
     {
 	"Id"	  : 3,
