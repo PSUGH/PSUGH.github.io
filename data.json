@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "17.07.2020", 
+  "Datum"  : "17.09.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Poshgui & Admin Script Editor, Holger" 
+      	"Vortrag" :  "Windows-Sicherheit & PowerShell, Holger" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "PowerShell & WPF in Visual Studio , Tobias"
+      	"Vortrag" : "Powershell & das neue MSIX-Format, Andreas"
     },
     {
 	"Id"	  : 3,
