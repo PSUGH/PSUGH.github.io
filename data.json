@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "16.10.2020", 
+  "Datum"  : "20.11.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,15 +8,15 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Mit PowerShell auf .NET zugreifen, Holger" 
+      	"Vortrag" :  "Powershell in Docker-Containern" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Bring your Script"
+      	"Vortrag" : "Micro Service mit PowerShell"
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : ""
+      	"Vortrag" : "Bring your Script"
     }
   ]   
 }
