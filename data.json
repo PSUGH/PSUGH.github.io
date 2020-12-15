@@ -8,7 +8,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Webster and PowerShell" 
+      	"Vortrag" : "Webster and PowerShell:" 
     },
     {
 	"Id"	  : 2,
