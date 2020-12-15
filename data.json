@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "20.11.2020", 
+  "Datum"  : "18.12.2020", 
   "Zeit"   : "18:30", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -8,11 +8,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" :  "Powershell in Docker-Containern" 
+      	"Vortrag" :  "Webster and PowerShell" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Micro Service mit PowerShell"
+      	"Vortrag" : "Carl Webster on AD and Citrix health checks"
     },
     {
 	"Id"	  : 3,
