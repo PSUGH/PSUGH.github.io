@@ -5,6 +5,8 @@
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
   "Stadt"  : "30173 Hannover",
+  "Online" : "http://onlineclass.netz-weise.de/b/hol-nc4-72g",
+  "Code"   : "601730",
   "Themen" : [
     {
 	"Id"      : 1,
