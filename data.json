@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "18.12.2020", 
+  "Datum"  : "15.01.2020", 
   "Zeit"   : "18:30h", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -10,11 +10,11 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Webster and PowerShell:" 
+      	"Vortrag" : "Pode - a Cross-Platform framework, mit Robin" 
     },
     {
 	"Id"	  : 2,
-      	"Vortrag" : "Carl Webster on AD and Citrix health checks"
+      	"Vortrag" : "Azure Graph API, mit Holger"
     },
     {
 	"Id"	  : 3,
