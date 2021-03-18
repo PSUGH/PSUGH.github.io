@@ -1,6 +1,6 @@
 { 
   "Treffen": "PowerShell Usergroup Hannover (PSUGH)",
-  "Datum"  : "19.02.2021", 
+  "Datum"  : "19.03.2021", 
   "Zeit"   : "18:30h", 
   "Ort"    : "Netzweise",
   "Strasse": "Freundallee 13A",
@@ -10,7 +10,7 @@
   "Themen" : [
     {
 	"Id"      : 1,
-      	"Vortrag" : "Das Modul PSFramework, mit Fred" 
+      	"Vortrag" : "PSDeviceManager mit Frank " 
     },
     {
 	"Id"	  : 2,
@@ -18,7 +18,7 @@
     },
     {
 	"Id"	  : 3,
-      	"Vortrag" : ""
+      	"Vortrag" : "Fachlicher Austausch"
     }
   ]   
 }
