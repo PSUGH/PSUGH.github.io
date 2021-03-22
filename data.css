@@ -1,6 +1,5 @@
 .naechsterTermin::after {
-    content: " 16.04.2021, 18:30h";
-    text-decoration: underline;
+    content: "Nächstes Treffen am 16.04.2021, 18:30h";
 }
 
 .Thema1::after {
