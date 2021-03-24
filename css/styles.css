@@ -310,49 +310,6 @@ code {
     margin-right: 20%;
 }
 
-
-@media (max-width: 900px) {
-#kontakt-icons {
-    margin-right: 10%;
-  }
-}
-
-@media (max-width: 768px) {
-#treffen, #themen, #terminal, #kontakt {
-  content: "";
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-  height: auto;
- }
-
-
-.row::after {
-  content: "";
-  clear: both;
-  display: block;
- }
-
-
-#kontakt-icons {
-    margin-right: 20%;
-  }
-}
-
-@media (max-width: 430px) {
-#kontakt-icons {
-    margin-right: 10%;
-  }
-}
-
-@media (max-width: 371px){
-#kontakt-icons {
-    margin: 10% 10% 0 0;
-    padding: 0;
-}
-}
-
 /* == LEGO HINTERGRUND == */
 
 #psugh-lego {
@@ -408,8 +365,51 @@ code {
 }
 
 footer {
+	clear: both;
 	background: #3D3F45;
 	height: 40px;
 	padding: 10px;
 	color: #fff;
+}
+
+@media (max-width: 900px) {
+#kontakt-icons {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+#treffen, #themen, #terminal, #kontakt {
+  content: "";
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
+  height: auto;
+ }
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+ }
+
+
+#kontakt-icons {
+    margin-right: 20%;
+  }
+}
+
+@media (max-width: 430px) {
+#kontakt-icons {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 371px){
+#kontakt-icons {
+    margin: 10% 10% 0 0;
+    padding: 0;
+  }
 }
