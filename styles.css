@@ -1,3 +1,10 @@
+/*
+* PowerShell Usergroup Hannover
+* Autor  : Christian Imhorst (datenteiler)
+* Version: v1.0.0
+* Datum  : 24.03.2021
+*/
+
 /* === GLOBAL === */
 
 * {
@@ -21,8 +28,13 @@ html {
 body {
   background: #fff;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1 {
@@ -201,7 +213,9 @@ a {
 /* == WILLKOMMEN == */
 
 article {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -240,8 +254,6 @@ article {
 #pscode {
     padding: .5rem;
     border: 1px dashed grey;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     margin: .5rem 0;
 }
@@ -269,13 +281,15 @@ code {
   margin-right: auto;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
 }
 
 .kontakt-icon:hover {
   -webkit-transform: rotateZ(360deg);
-          transform: rotateZ(360deg);
+          -ms-transform: rotate(360deg);
+      transform: rotateZ(360deg);
 }
 
 #twitter-icon {
@@ -326,7 +340,7 @@ code {
   }
 }
 
-@media (max-width: 371px)
+@media (max-width: 371px){
 #kontakt-icons {
     margin: 10% 10% 0 0;
     padding: 0;
@@ -393,4 +407,3 @@ footer {
 	padding: 10px;
 	color: #fff;
 }
-
