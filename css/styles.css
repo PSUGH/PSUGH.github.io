@@ -241,9 +241,11 @@ a {
   height: 250px;
 }
 
-.row {
-  clear:both;
-}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
 
 #terminal {
   background-color: WhiteSmoke;
