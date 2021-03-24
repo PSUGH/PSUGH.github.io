@@ -241,12 +241,6 @@ a {
   height: 250px;
 }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-
 #terminal {
   background-color: WhiteSmoke;
   float: left;
@@ -332,6 +326,14 @@ code {
   width: 100%;
   height: auto;
  }
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+ }
+
 
 #kontakt-icons {
     margin-right: 20%;
