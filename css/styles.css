@@ -325,7 +325,9 @@ code {
 
 @media (max-width: 768px) {
 #treffen, #themen, #terminal, #kontakt {
+  content: "";
   clear: both;
+  display: block;
   float: left;
   width: 100%;
   height: auto;
