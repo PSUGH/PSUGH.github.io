@@ -1,176 +1,170 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Die 3 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
-    
-    <meta name="description" content="Homepage der PowerShell Usergroup Hannover">
-    <meta name="keywords" content="PowerShell,Azure,Microsoft,Hannover, Windows Server,Hyper-V">
-    <meta name="author" content="Christian Imhorst">
-    <link rel="icon" href="favicon.ico">
-    <title>PowerShell Usergroup Hannover</title>
 
-    <!-- Bootstrap-CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<head>
 
-    <!-- Besondere Stile für diese Vorlage -->
-    <link href="css/jumbotron.css" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PowerShell Usergroup Hannover</title>
 
-    <!-- Eigene Stile für diese Vorlage -->
-    <link href="css/custom.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img width="150px" height="30px" src="Logo.png"</img></a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <!-- Home -->
-            <li><a data-scroll href="">Home</a></li>
+		<!-- FAVICONS -->
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+		<link rel="manifest" href="./img/favicons/site.webmanifest">
+		<link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="./img/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#f0f0f0">
+		<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
 
-            <li><a data-scroll href="https://psugh.github.io/saturday">PowerShell Saturday</a></li>
+<!-- AUTOREN-STYLESHEET -->
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="data.css">
+</head>
+<body>
 
-            <!-- Contact 
-            <li><a data-scroll href="https://psugh.github.io/contact">Kontakt</a></li>
-            -->
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <!-- Haupt-Jumbotron für eine primäre Marketing-Botschaft oder einen Aufruf zu einer Aktion -->
-    <div class="jumbotron">
-      <div class="container">
-        <p>Hallo und herzlich Willkommen!</p>
-        <h1>PowerShell Usergroup Hannover</h1>
-        <p>Die PowerShell Usergroup ist eine für jeden offene Gruppe von Nutzern, die sich für die Windows PowerShell interessieren und 
-           über die PowerShell mehr erfahren und sich austauschen möchten.</p>
-        <br />
-         <p><a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#Usergroup" role="button">Mehr erfahren &raquo;</a></p>
-      </div>
-    </div>
+<nav id="header-nav">
+	
+<a href="index.html" class="logo-link">
+	<img src="./img/psugh-logo.png" alt="Logo PowerShell Usergroup Hannover">
+</a>
+	
+ <!-- DESKTOP-NAVIGATION -->
+ <div class="container" id="desktop-nav">
+ <ul>
+   <li class="active"><a href="index.html">Startseite</a></li>
+   <li><a href="impressum.html">Impressum</a></li>
+ </ul>
+ </div>
 
-    <!-- Usergroup -->
-    <div class="modal fade" id="Usergroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Die PowerShell Usergroup Hannover</h4>
-        </div>
-        <div class="modal-body">
-          <p>Das Ziel der Usergroup ist es, die Kommunikation zwischen den Nutzern zu fördern, von anderen zu lernen und sich 
-            einfach mit Menschen gleichen Interesses auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis 
-            gedacht, sondern auch für Einsteiger.</strong></p>
+ <!-- MOBILE-NAVIGATION -->
+ <div class="container" id="mobile-nav">
+  <div class="clearfix" id="mobile-nav-dropdown" onclick="void(0)">
+  <div id="mobile-nav-button"><span>&equiv;</span></div>
+   <div class="clearfix" id="mobile-nav-content">
+    <ul>
+     <li class="active"><a href="index.html">Startseite</a></li>
+     <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+ </div>
+</div>
+</nav>
 
-            <p>Die Usergroup ist ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. 
-              Bei den regelmässigen Treffen werden verschiedene Themen vorgestellt. Die Usergroup lebt dabei auch von den 
-              Beiträgen der Mitglieder. Daher ist es wünschenswert, wenn auch die Mitglieder der Usergroup sich mit eigenen 
-              Beiträgen beteiligen. Pflicht ist das jedoch ausdrücklich nicht! Seit Februar 2015 sind wir auch Mitglied im Microsoft 
-              CLIP Programm, dass Community-Projekte unterstützt.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-        </div>
-      </div>
-    </div>
-    </div>
-        <!-- Impressum -->
-    <div class="modal fade" id="Impressum" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Impressum &amp; Datenschutzerklärung</h4>
-        </div>
-        <div class="modal-body">
-          <p>Verantwortlich im Sinne der Datenschutz-Grundverordnung (EU-DSGVO) und sonstiger datenschutzrechtlicher Bestimmungen ist:</p>
-            V.i.S.d.P.<br />
-            Christian Imhorst<br />
-            Heinrich-Heine-Str. 19<br />
-            30173 Hannover</p>
+<header id="header-banner">
+	<img src="./img/hintergrund.jpg" alt="Logo PowerShell Usergroup Hannover">
+</header>	
 
-          <p>email: info(at)psugh.de</p>
+		<!-- WILLKOMMENS-BEREICH -->
 
-          <p>Inhaltlich Verantwortlicher gemäß § 6 MDStV: Christian Imhorst</p>
+		<section id="willkommens-bereich">
+			<div class="container">
+			<div id="willkommen">
+				<!-- <h3>Hallo und herzlich Willkommen zur</h3> -->
+				<h1>PowerShell Usergroup Hannover</h1>
+				<p>
+				Die PowerShell Usergroup ist eine für alle offene Gruppe. Wir wollen unser Wissen mit anderen teilen und selbst weiterlernen.
+				</p>
+			</div>
+			<div class="row">
+					<div id="treffen">
+						<article class="willkommens-box">
+							<h2>Treffen</h2>
+							<p><strong>Jeden 3. Freitag</strong> im Monat bei:</p>
+							<p>Netz-Weise<br /> Freundallee 13A<br /> 30173 Hannover
+							</p>
+							<br />
+							<p class="naechsterTermin"><strong>Nächstes Treffen am </strong></p>
+						</article>
+					</div>
+					<div id="themen">
+						<article class="willkommens-box">
+							<h2>Themen</h2>
+							<p class="Thema1"></p>
+							<p class="Thema2"></p>
+							<p class="Thema3"></p>
+							<br />
+							<p><a href="http://onlineclass.netz-weise.de/b/hol-nc4-72g" target="_blank">Online teilnehmen</a> und <strong>Aufzeichnungen</strong> erh&auml;ltst du mit dem Raumzugangscode: <strong>601730</strong></p>
+						</article>
+					</div>
+				</div>
+				<div class="row">
+					<div id="terminal" >
+						<article class="willkommens-box">
+							<h2>Terminal</h2>
+							<p>Lass dir unseren n&auml;chsten Termin in der PowerShell anzeigen:</p>
+							<p id="pscode"><code>iwr https://www.psugh.de/data.css | sls ':?".*"' -a | foreach {$_.Matches.Value}</code></p>
+							<p><strong>iwr</strong> &mdash; ist die Kurzform (Alias) des Cmdlets <i>Invoke-Webrequest</i>, um Daten aus dem Internet zu laden.</p>
+							<p><strong>|</strong> &mdash; ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das nächste weiterzuleiten. 
+						    <p><strong>sls</strong> &mdash; ist der Alias des Cmdlets <i>Select-String</i>, mit dem man Text nach Mustern (Regul&auml;rer Ausdr&uuml;cke) durchsuchen kann. Der Parameter '-a' zeigt alle Treffer an.</p>
+						    <p><strong>foreach</strong> &mdash; ist der Alias für das Cmdlet <i>ForEach-Object</i>, das nur die Treffer ausgibt, die unter 'value' stehen.</p>						
+						</article>
+					</div>
+                    <div id="kontakt">
+						<article class="willkommens-box">
+							<h2>Kontakt</h2>
+							<p>Du kannst uns auf <strong>Twitter</strong> folgen, mit uns in <strong>Slack</strong> diskutieren oder unsere Skripte auf <strong>Github</strong> einsehen:</p>
+						    <div id="kontakt-icons">
+						    <a href="https://twitter.com/psughannover"><div id="twitter-icon" class="kontakt-icon"></div></a>
+						    <a href="https://psugh.slack.com"><div id="slack-icon" class="kontakt-icon"></div></a>
+						    <a href="https://github.com/PSUGH/PowerShell"><div id="github-icon" class="kontakt-icon"></div></a>
+						    </div>
+						</article>
+					</div>
+				</div>
+				</div>
+			</div>
+		</section>
+		
+				<!-- LEGO-LOGO -->
+	    <section id="lego-logo-bereich">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+				        <div id="psugh-lego"><img src="./img/psugh-lego.jpg" alt="Logo PowerShell Usergroup Hannover"></div>
+					</div>
+				</div>
 
-          <p> <strong>Hinweis:</strong> Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. 
-              Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Die Inhalte dieser Webseite 
-              wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch 
-              keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Webseite nach den 
-              allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, 
-              übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine 
-              rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den 
-              allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis 
-              einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte 
-              umgehend entfernen.Die durch uns erstellten Inhalte und Werke auf dieser Webseite unterliegen dem deutschen Urheberrecht. 
-              <a href="https://creativecommons.org/licenses/by-sa/2.0/de/">Einige Rechte Vorbehalten</a>.<br /><br />
-         
-              <strong>Nutzung von GitHub</strong><br /><br />
-              Unsere Webseite nutzt GitHub. Anbieter ist die GitHub, Inc., 88 Colin P Kelly Jr St San Francisco, CA 94107 USA. Bei 
-              jedem Aufruf der Seite wird eine Verbindung zu Servern von GitHub in den USA hergestellt. Dabei erfolgt nach unserer 
-              Kenntnis keine Speicherung von personenbezogenen Daten.<br /><br />
+			</div>
+		</section>
+		
+		<!-- UEBER UNS -->
+	    <section id="ueber-uns-bereich">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<article id="ueber-uns-container">
+							<h1>Das sind wir</h1>
+							<p>Unser Ziel ist es, Kommunikation zu fördern, von anderen zu lernen und sich mit anderen auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis gedacht.</strong></p>
+                            <p>Wir sind ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. Bei regelmässigen Treffen werden verschiedene Themen vorgestellt und wir freuen uns &uuml;ber alle, die mitmachen wollen und sich mit Vorträgen beteiligen. Pflicht ist das jedoch ausdrücklich nicht!</p> 
+                            <p>Seit Februar 2015 sind wir auch Mitglied im Microsoft CLIP Programm, dass Community-Projekte unterstützt.</p>
+						</article>
+					</div>
+				</div>
 
-              Wenn man mit seinem Konto bei GitHub eingeloggt ist, kann GitHub das Surfverhalten dem persönlichen Profil zuordnen. 
-              Möchte man das nicht, darf man nicht angemeldet sein. Weitere Informationen zum Datenschutz bei Github findet man in der 
-              Datenschutzerklärung unter: <a href="https://help.github.com/en/articles/github-privacy-statement">help.github.com/en/articles/github-privacy-statement</a><br /><br />
+			</div>
+		</section>
+		
+		<!-- VIDEO-BEREICH -->
 
-              <strong>Aktualität und Änderung dieser Datenschutzerklärung</strong><br /><br />
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand September 2019.<br /><br />
+		<section id="video-bereich">
 
-              Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann 
-              es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf 
-              dieser Webseite abgerufen werden.<br /><br />
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="container">
-      <!-- 3 Spalten mit "table-row" für "table styles" im custom.css, damit die Boxen gleich groß sind. -->
-      <div class="row table-row">
-        <div class="col-md-4" id="meetingbox">
-          <h2>Treffen</h2>
-          <p id="Treffen"></p> <!-- Platzhalter für die "Treffen" Box -->
-          <p id="Route"></p>   <!-- Platzhalter für den Button "Route planen", er wird in der custom.js gebaut --> 
-        </div>
-        <div class="col-md-4" id="topicbox">
-          <h2>Themen</h2>
-          <p id="Themen"></p>  <!-- Platzhalter für die "Themen" Box -->
-          <!-- <p><a class="btn btn-default" href="https://www.meetup.com/de-DE/PowerShell-Usergroup-Hannover/" target="_blank" role="button">Gleich anmelden &raquo;</a></p> -->
-        </div>
-        <div class="col-md-4" id="terminalbox">
-          <h2>Terminal</h2>
-          <p id="Terminal"></p> <!-- Platzhalter für die "Terminal" Box -->
-          <p><a class="btn btn-default" href="https://github.com/PSUGH/PowerShell" target="_blank" role="button">Skripte auf Github &raquo;</a></p>
-       </div>
-      </div>
-      <hr />
-      <footer>
-        <p id="copyright"> </p> <!-- Platzhalter für's Copyright: Die Jahreszahl liefert JavaScript -->
-      </footer>
-    </div> <!-- /container -->
-
-    <!-- Bootstrap-JavaScript
-    ================================================== -->
-    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <!-- Eigenes JavaScript für diese Vorlage -->
-    <script src="js/custom.js"></script>
-  </body>
+			<div class="container">
+				<div class="row">
+						<header class="intro-container">
+							<h1>PowerShell lernen</h1>
+							<p>Im Einführungskurs von Holger werden dir <strong>erste Kenntnisse</strong> ohne <strong>komplizierte Konstrukte</strong> vermittelt.</p>
+							<p>Wie finde ich <strong>nützliche Cmdlets</strong> und welche Konzepte erleichtern mir das Leben als Admin und helfen mir, die <strong>PowerShell besser zu verstehen</strong>?</p>					
+						</header>
+				</div>
+				<div class="row">
+						<p align="center">							
+							<div class="video-container-wrapper"><div class="video-container"><iframe src="https://www.youtube.com/embed/jvKU7JoFl0c"  frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>
+					    </p>
+				</div>
+			</div>
+		</section>
+<footer>PowerShell Usergroup Hannover 2021</footer>
+</body>
 </html>

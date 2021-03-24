@@ -1,0 +1,19 @@
+.Treffen {
+   content: "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:";
+}
+
+.naechsterTermin::after {
+    content: "16.04.2021, 18:30h";
+}
+
+.Thema1::after {
+    content: "1. To be done...";
+}
+
+.Thema2::after {
+    content: "2. Bring your Script";
+}
+
+.Thema3::after {
+    content: "3. Fachlicher Austausch";
+}
