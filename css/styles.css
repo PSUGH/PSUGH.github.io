@@ -294,17 +294,17 @@ code {
 
 #twitter-icon {
   float: left;
-  background: #3D3F45 url("./img/kontakt-sprite.png") left 0 top 0;
+  background: #3D3F45 url("../img/kontakt-sprite.png") left 0 top 0;
 }
 
 #slack-icon {
   float: left;
-  background: #3D3F45 url("./img/kontakt-sprite.png") left -60px top 0;
+  background: #3D3F45 url("../img/kontakt-sprite.png") left -60px top 0;
 }
 
 #github-icon {
   float: left;
-  background: #3D3F45 url("./img/kontakt-sprite.png") left -120px top 0;
+  background: #3D3F45 url("../img/kontakt-sprite.png") left -120px top 0;
 }
 
 #kontakt-icons {
