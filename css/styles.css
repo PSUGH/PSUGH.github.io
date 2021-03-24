@@ -57,6 +57,16 @@ h3 {
     text-align: center;
 }
 
+article {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
 p {
   padding: 0.4rem .2rem;
   color: #3D3F45;
@@ -211,15 +221,6 @@ a {
 
 
 /* == WILLKOMMEN == */
-
-article {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 #willkommen {
   padding: .5rem;
