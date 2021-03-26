@@ -6,16 +6,6 @@ Description: CSS der PowerShell Usergroup Hannover
 Version: 1.0
 */
 
-/*
-
-Farben: 
- 
-#3D3F45 Dunkelgrau
-#716F72 Helleres Grau
-}
-
- 
-*/
 @font-face {
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Regular.ttf') format('truetype');
@@ -229,19 +219,20 @@ h1 {
 
 .content p {
 	margin: 0 0 .6rem 0;
-	opacity: .7;
+	opacity: .8;
 }
 
 .content > article > ul {
 	margin-bottom: 1rem;
-	list-style-image: url('img/sqr.png');
+	list-style-image: url('../img/sqr.png');
 	padding-left: .8rem;
 }
 
 .content > article > ul > li {
     padding-left: 1rem;
     margin: .2rem .5rem;
-    opacity: .7;
+    opacity: .8;
+    color: #3D3F45;
 }
 
 .content > article > ul > li > ul {
@@ -277,6 +268,10 @@ h1 {
 
 #powershell-lernen {
 	padding: 1rem;
+}
+
+#powershell-lernen li a {
+	font-size: .8rem;
 }
 
 /* Footer */
@@ -458,6 +453,7 @@ h1 {
     border: 2px solid lightgrey;
     padding: .4rem .6rem;
     -webkit-transition: border .5s ease-in-out;
+    -o-transition: border .5s ease-in-out;
     transition: border .5s ease-in-out;
     font-size: .8rem;
     font-weight: bold;
@@ -616,4 +612,3 @@ code {
     width: auto;
   }
 }
-
