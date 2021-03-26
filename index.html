@@ -1,162 +1,143 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="de-DE">
 <head>
-
-		<meta charset="utf-8">
-		<meta name="description" content="PowerShell Usergroup Hannover Homepage">
-                <meta name="keywords" content="PowerShell, Hannover">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>PowerShell Usergroup Hannover</title>
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="./css/normalize.css">
-
-                <!-- AUTOREN-STYLESHEET -->
-		<link rel="stylesheet" type="text/css" href="./css/styles.css">
-		<link rel="stylesheet" type="text/css" href="data.css">
+	<meta charset="UTF-8">
+    <meta name="description" content="Homepage der PowerShell Usergroup Hannover">
+    <meta name="keywords" content="PowerShell, Hannover, Azure, Systemadministrator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell Usergroup Hannover</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="data.css">
 </head>
+
 <body>
-
-<nav id="header-nav">
 	
-<a href="index.html" class="logo-link">
-	<img src="./img/psugh-logo.png" alt="Logo PowerShell Usergroup Hannover">
-</a>
-	
- <!-- DESKTOP-NAVIGATION -->
- <div class="container" id="desktop-nav">
- <ul>
-   <li class="active"><a href="index.html">Startseite</a></li>
-   <li><a href="impressum.html">Impressum</a></li>
- </ul>
- </div>
+<div id="container">
 
- <!-- MOBILE-NAVIGATION -->
- <div class="container" id="mobile-nav">
-  <div class="clearfix" id="mobile-nav-dropdown" onclick="void(0)">
-  <div id="mobile-nav-button"><span>&equiv;</span></div>
-   <div class="clearfix" id="mobile-nav-content">
-    <ul>
-     <li class="active"><a href="index.html">Startseite</a></li>
-     <li><a href="impressum.html">Impressum</a></li>
-    </ul>
+<header class="header">
+<div id="header">
+<!-- Navigation -->
+  <nav id="site-nav">
+    <a href="https://psugh.de" class="logo-link">
+        <img src="./img/psugh-logo.png" alt="Logo der PowerShell Usergroup Hannover">
+    </a>
+      <ul>
+      <li class="current-menu-item"><a href="index.html">Start</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+  </nav>
+
+<!-- Mobile Navigation -->
+
+  <nav id="mobile-nav">
+    <a href="<?php echo home_url('/');?>" class="logo-link">
+      <img src="./img/psugh-logo.png" alt="Logo der PowerShell Usergroup Hannover">
+    </a>
+    <div class="clearfix" id="mobile-nav-dropdown" onclick="void(0)">
+	  <div id="mobile-nav-button"><span>&equiv;</span></div>
+		  <div class="clearfix" id="mobile-nav-content">
+			   <ul>
+				  <li class="current-menu-item"><a href="index.html">Start</a></li>
+				  <li><a href="impressum.html">Impressum</a></li>
+			  </ul>
+		  </div> <!-- Clearfix -->
+    </div> <!-- Clearfix -->
+  </nav>
+
+
+<!-- Störer 
+  <div id="aktuell_box">
+		<p id="post_title">Der Titel</p>
+		<p id="post_content">Hier der Text.</p>
   </div>
- </div>
-</div>
-</nav>
+-->
 
-<header id="header-banner">
-	<img src="./img/hintergrund.jpg" alt="Logo PowerShell Usergroup Hannover">
-</header>	
+</div> <!-- Ende Header Div -->
+</header>
 
-		<!-- WILLKOMMENS-BEREICH -->
+<div id="container">
+<div class='flex-container'>
+  <div class="willkommen">
+	<article>
+			<h1>PowerShell Usergroup Hannover</h1>
+			<p>Willkommen bei der PowerShell Usergroup Hannover! Wir sind eine für alle offene Gruppe. Unser Ziel ist es, Wissen mit anderen zu teilen und selbst dazuzulernen.</p>
+	</article>
+  </div> <!-- willkommen -->
 
-		<section id="willkommens-bereich">
-			<div class="container">
-			<div id="willkommen">
-				<!-- <h3>Hallo und herzlich Willkommen zur</h3> -->
-				<h1>PowerShell Usergroup Hannover</h1>
-				<p>
-				Die PowerShell Usergroup ist eine für alle offene Gruppe. Wir wollen unser Wissen mit anderen teilen und selbst weiterlernen.
-				</p>
-			</div>
-			<div class="row">
-					<div id="treffen">
-						<article class="willkommens-box">
-							<h2>Treffen</h2>
-							<p><strong>Jeden 3. Freitag</strong> im Monat bei:</p>
-							<p>Netz-Weise<br /> Freundallee 13A<br /> 30173 Hannover
-							</p>
-							<br />
-							<p class="naechsterTermin"><strong>Nächstes Treffen am </strong></p>
-						</article>
-					</div>
-					<div id="themen">
-						<article class="willkommens-box">
-							<h2>Themen</h2>
-							<p class="Thema1"></p>
-							<p class="Thema2"></p>
-							<p class="Thema3"></p>
-							<br />
-							<p><a href="http://onlineclass.netz-weise.de/b/hol-nc4-72g" target="_blank">Online teilnehmen</a> und <strong>Aufzeichnungen</strong> erh&auml;ltst du mit dem Raumzugangscode: <strong>601730</strong></p>
-						</article>
-					</div>
-				</div>
-				<div class="row">
-					<div id="terminal" >
-						<article class="willkommens-box">
-							<h2>Terminal</h2>
-							<p>Lass dir unseren n&auml;chsten Termin in der PowerShell anzeigen:</p>
-							<p id="pscode"><code>iwr https://www.psugh.de/data.css | sls ':?".*"' -a | foreach {$_.Matches.Value}</code></p>
-							<p><strong>iwr</strong> &mdash; ist die Kurzform (Alias) des Cmdlets <i>Invoke-Webrequest</i>, um Daten aus dem Internet zu laden.</p>
-							<p><strong>|</strong> &mdash; ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das nächste weiterzuleiten. 
-						    <p><strong>sls</strong> &mdash; ist der Alias des Cmdlets <i>Select-String</i>, mit dem man Text nach Mustern (Regul&auml;rer Ausdr&uuml;cke) durchsuchen kann. Der Parameter '-a' zeigt alle Treffer an.</p>
-						    <p><strong>foreach</strong> &mdash; ist der Alias für das Cmdlet <i>ForEach-Object</i>, das nur die Treffer ausgibt, die unter 'value' stehen.</p>						
-						</article>
-					</div>
-                    <div id="kontakt">
-						<article class="willkommens-box">
-							<h2>Kontakt</h2>
-							<p>Du kannst uns auf <strong>Twitter</strong> folgen, mit uns in <strong>Slack</strong> diskutieren oder unsere Skripte auf <strong>Github</strong> einsehen:</p>
-						    <div id="kontakt-icons">
-						    <a href="https://twitter.com/psughannover"><div id="twitter-icon" class="kontakt-icon"></div></a>
-						    <a href="https://psugh.slack.com"><div id="slack-icon" class="kontakt-icon"></div></a>
-						    <a href="https://github.com/PSUGH/PowerShell"><div id="github-icon" class="kontakt-icon"></div></a>
-						    </div>
-						</article>
-					</div>
-				</div>
-				</div>
-			</div>
-		</section>
-		
-				<!-- LEGO-LOGO -->
-	    <section id="lego-logo-bereich">
-			<div class="container">
-				<div class="row">
-					<div class="col-6">
-				        <div id="psugh-lego"><img src="./img/psugh-lego.jpg" alt="Logo PowerShell Usergroup Hannover"></div>
-					</div>
-				</div>
+  <div class="sidebar" id="content-sidebar">
+	<div class="row">
+	  <div class="col">        
+        <h3>Treffen:</h3>
+		<p><strong>Jeden 3. Freitag</strong> im Monat bei:</p>
+		<address>
+			Netz-Weise<br />
+			Freundallee 13A<br />
+			30173 Hannover<br />
+		</address>
+		<p class="naechsterTermin"><strong>N&auml;chstes Treffen:</strong> </p>
+      </div>		
+	  <div class="col">
+		<h3>Themen:</h3>
+		<p>
+		<span class="Thema1"></span><br />
+		<span class="Thema2"></span><br />
+		<span class="Thema3"></span><br />
+		</p>
+		<p><a href="http://onlineclass.netz-weise.de/b/hol-nc4-72g" target="_blank">Online teilnehmen</a> oder <strong>Aufzeichnungen</strong> anschauen mit Raumzugangscode <strong>601730</strong></p>					
+      </div>			
+      <div class="col">	
+		<h3>Kontakt:</h3>
+		<div id="kontakt-icons">
+			<a href="https://twitter.com/psughannover"><div id="twitter-icon" class="kontakt-icon"></div></a>
+			<a href="https://psugh.slack.com"><div id="slack-icon" class="kontakt-icon"></div></a>
+			<a href="https://github.com/PSUGH/PowerShell"><div id="github-icon" class="kontakt-icon"></div></a>
+		</div> <!-- Kontakt -->
+      </div>
 
-			</div>
-		</section>
-		
-		<!-- UEBER UNS -->
-	    <section id="ueber-uns-bereich">
-			<div class="container">
-				<div class="row">
-					<div class="col-6">
-						<article id="ueber-uns-container">
-							<h1>Das sind wir</h1>
-							<p>Unser Ziel ist es, Kommunikation zu fördern, von anderen zu lernen und sich mit anderen auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis gedacht.</strong></p>
-                            <p>Wir sind ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. Bei regelmässigen Treffen werden verschiedene Themen vorgestellt und wir freuen uns &uuml;ber alle, die mitmachen wollen und sich mit Vorträgen beteiligen. Pflicht ist das jedoch ausdrücklich nicht!</p> 
-                            <p>Seit Februar 2015 sind wir auch Mitglied im Microsoft CLIP Programm, dass Community-Projekte unterstützt.</p>
-						</article>
-					</div>
-				</div>
-
-			</div>
-		</section>
-		
-		<!-- VIDEO-BEREICH -->
-
-		<section id="video-bereich">
-
-			<div class="container">
-				<div class="row">
-						<header class="intro-container">
-							<h1>PowerShell lernen</h1>
-							<p>Im Einführungskurs von Holger werden dir <strong>erste Kenntnisse</strong> ohne <strong>komplizierte Konstrukte</strong> vermittelt.</p>
-							<p>Wie finde ich <strong>nützliche Cmdlets</strong> und welche Konzepte erleichtern mir das Leben als Admin und helfen mir, die <strong>PowerShell besser zu verstehen</strong>?</p>					
-						</header>
-				</div>
-				<div class="row">
-						<p align="center">							
- </p>
-				</div>
-			</div>
-		</section>
-<footer>PowerShell Usergroup Hannover 2021</footer>
+   </div> <!-- row -->
+  </div> <!-- sidebar -->
+  
+  <div class="content">
+	<article id="terminal">
+		<h2>Terminal</h2>
+		<p>Lass dir unseren n&auml;chsten Termin in der PowerShell anzeigen:</p>
+		<p id="pscode"><code>iwr https://www.psugh.de/data.css | sls ':?".*"' -a | foreach {$_.Matches.Value}</code></p>
+		<p><strong>iwr</strong> &mdash; ist die Kurzform (Alias) des Cmdlets <i>Invoke-Webrequest</i>, um Daten aus dem Internet zu laden.</p>
+		<p><strong>|</strong> &mdash; ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das nächste weiterzuleiten. 
+		<p><strong>sls</strong> &mdash; ist der Alias des Cmdlets <i>Select-String</i>, mit dem man Text nach Mustern (Regul&auml;rer Ausdr&uuml;cke oder Regex, s.u. <strong>PowerShell lernen</strong>) durchsuchen kann. Der Parameter '-a' zeigt alle Treffer an.</p>
+		<p><strong>foreach</strong> &mdash; ist der Alias für das Cmdlet <i>ForEach-Object</i>, das nur die Treffer ausgibt, die unter 'value' stehen.</p>						
+	    <p>Noch mehr PowerShell-Skripte von uns findest du auf <a href="https://github.com/PSUGH/PowerShell" target="_blank">Github</a>.</p>
+	</article>
+	<br /><br />
+	<article id="das-sind-wir">
+		<h2>Das sind wir</h2>
+		<p>Unser Ziel ist es, Kommunikation zu fördern, von anderen zu lernen und sich mit anderen auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis gedacht</strong>.</p>
+		<p>Wir sind ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. Bei regelmässigen Treffen werden verschiedene Themen vorgestellt und wir freuen uns über alle, die mitmachen wollen und sich mit Vorträgen beteiligen. Pflicht ist das jedoch ausdrücklich nicht!</p>
+        <p>Seit Februar 2015 sind wir auch <strong>Mitglied im Microsoft CLIP Programm</strong>, das Community-Projekte unterstützt.</p>	
+	</article>
+	<br /><br />
+	<article id="powershell-lernen">
+		<h2>PowerShell lernen</h2>
+		<p>In den Videos <a href="https://www.youtube.com/watch?v=jvKU7JoFl0c" target="_blank">PowerShell Basics für Admins - Teil 1-3</a> von Holger werden dir <strong>erste Kenntnisse ohne komplizierte Konstrukte</strong> vermittelt. Wie finde ich nützliche Cmdlets und welche Konzepte erleichtern mir das Leben als Admin und helfen mir, die <strong>PowerShell besser zu verstehen</strong>?</p>
+		<p>Auf der <a href="https://www.netz-weise-it.training/" target="_blank">Homepage seiner Firma Netz-Weise</a> gibt es noch mehr für den <strong>Einstieg in PowerShell</strong>, z.B das <a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Cheat%20Sheet%201.0.pdf" target="_blank">Powershell Cheat-Sheet - Regex und wichtige Powershell-Features auf einen Blick </a>, oder das E-Book <a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Grundlagen%20und%20AD.pdf" target="_blank">Einführung in Windows Powershell und AD-Verwaltung mit Powershell</a>.</p>
+	</article>
+	<!--
+	<article id="psugh-lego">
+		<p><img src="./img/psugh-lego.jpg" alt="Logo PowerShell Usergroup Hannover"></p>
+	</article>
+	-->
+	<article id="footer">
+		<p>&copy; PowerShell Usergroup 2021 &mdash; <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">Einige Rechte vorbehalten (CC BY 3.0)</a></p>
+	</article>
+  </div> <!-- Content -->
+			<!--
+			<div class="sidebar" id="footer-sidebar">
+			<footer id="footer">
+			</footer>
+			-->
+  </div> <!-- Flex-Container -->
+</div> <!-- Container -->
 </body>
 </html>
