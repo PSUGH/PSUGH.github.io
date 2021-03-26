@@ -509,8 +509,6 @@ h1 {
 
 #pscode {
     padding: .5rem;
-    border: 1px dashed grey;
-    border-radius: 5px;
     margin: .5rem 0;
 }
 
@@ -598,7 +596,7 @@ code {
     margin-right: auto;
   }
 code {
-    font-size: 60%;
+    font-size: 55%;
   }
 #kontakt-icons {
     padding: 1rem;
@@ -610,5 +608,8 @@ code {
   #mobile-nav a > img {
     height: 20px;
     width: auto;
+  }
+ code {
+    font-size: 50%;
   }
 }
