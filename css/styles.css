@@ -363,11 +363,11 @@ h1 {
 }
 
 #site-nav ul .current-menu-item a {
-	color: #9ACD32;  
+	color: #0073AE;
 }
 
 #site-nav ul .current-menu-item a:visited {
-	color: #9ACD32;  
+	color: #0073AE; 
 }
 
 .logo-link {
@@ -418,11 +418,11 @@ h1 {
 }
 
 #mobile-nav-content ul .current-menu-item a {
-	color: #9ACD32;  
+	color: #0073AE;  
 }
 
 #mobile-nav-content ul .current-menu-item a:visited {
-	color: #9ACD32;  
+	color: #0073AE;  
 }
 
 #mobile-nav-dropdown {
