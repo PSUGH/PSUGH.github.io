@@ -103,7 +103,11 @@
 	<article id="terminal">
 		<h2>Terminal</h2>
 		<p>Lass dir unseren n&auml;chsten Termin in der PowerShell anzeigen:</p>
-		<p id="pscode"><code>iwr https://www.psugh.de/data.css | sls ':?".*"' -a | foreach {$_.Matches.Value}</code></p>
+		<p id="pscode">
+			<code>iwr https://www.psugh.de/data.css | </code><br />
+			<code>sls ':?".*"' -a | </code><br />
+			<code>foreach {$_.Matches.Value} </code><br />
+		</p>
 		<p><strong>iwr</strong> &mdash; ist die Kurzform (Alias) des Cmdlets <i>Invoke-Webrequest</i>, um Daten aus dem Internet zu laden.</p>
 		<p><strong>|</strong> &mdash; ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das nächste weiterzuleiten. 
 		<p><strong>sls</strong> &mdash; ist der Alias des Cmdlets <i>Select-String</i>, mit dem man Text nach Mustern (Regul&auml;rer Ausdr&uuml;cke oder Regex, s.u. <strong>PowerShell lernen</strong>) durchsuchen kann. Der Parameter '-a' zeigt alle Treffer an.</p>
