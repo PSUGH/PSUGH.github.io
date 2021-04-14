@@ -7,11 +7,11 @@
 }
 
 .Thema1::after {
-    content: "1. To be done...";
+    content: "1. PoshGUI - grafische Oberflächen in Powershell mit Maciej";
 }
 
 .Thema2::after {
-    content: "2. Bring your Script";
+    content: "2. Powershell und ADSI - AD abfragen ohne RSAT mit Holger ";
 }
 
 .Thema3::after {
