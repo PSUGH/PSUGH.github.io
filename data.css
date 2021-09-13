@@ -1,19 +1,19 @@
 .Treffen {
-   content: "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:";
+   content: "Die PowerShell Usergroup Hannover (PSUGH) trifft sich (es gilt 2G-Regel) am:";
 }
 
 .naechsterTermin::after {
-    content: "16.04.2021, 18:30h";
+    content: "17.09.2021, 18:30h";
 }
 
 .Thema1::after {
-    content: "1. PoshGUI - grafische Oberflächen in Powershell mit Maciej";
+    content: "1. FSLogix App Masking und PowerShell mit Andreas";
 }
 
 .Thema2::after {
-    content: "2. Powershell und ADSI - AD abfragen ohne RSAT mit Holger ";
+    content: "2. cURL vs. Invoke-WebRequest mit Christian";
 }
 
 .Thema3::after {
-    content: "3. Fachlicher Austausch";
+    content: "3. Fachlicher Austausch & Bring your Script";
 }
