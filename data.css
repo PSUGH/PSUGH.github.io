@@ -7,11 +7,11 @@
 }
 
 .Thema1::after {
-    content: "1. FSLogix App Masking und PowerShell mit Andreas";
+    content: "1. Ansible für Win Admins mit Stephan";
 }
 
 .Thema2::after {
-    content: "2. cURL vs. Invoke-WebRequest mit Christian";
+    content: "2. Einführung in Kerberos mit Holger";
 }
 
 .Thema3::after {
