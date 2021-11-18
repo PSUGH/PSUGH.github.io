@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "15.10.2021, 18:30h (mit 2G-Regel)";
+    content: "18.11.2021, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Ansible für Win Admins mit Stephan";
+    content: "1. Erweiterte Szenarien von Kerberos mit Holger";
 }
 
 .Thema2::after {
-    content: "2. Einführung in Kerberos mit Holger";
+    content: "2. Powershell und Webservices mit Holger";
 }
 
 .Thema3::after {
