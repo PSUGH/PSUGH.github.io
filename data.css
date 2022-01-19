@@ -3,17 +3,17 @@
 }
 
 .naechsterTermin::after {
-    content: "19.11.2021, 18:30h (mit 2G-Regel)";
+    content: "21.01.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Erweiterte Szenarien von Kerberos mit Holger";
+    content: "1. Hinter den Kulissen von WinGet mit Thorsten";
 }
 
 .Thema2::after {
-    content: "2. Powershell und Webservices mit Holger";
+    content: "2. Fachlicher Austausch";
 }
 
 .Thema3::after {
-    content: "3. Fachlicher Austausch & Bring your Script";
+    content: "3. Bring your Script";
 }
