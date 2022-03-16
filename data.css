@@ -3,11 +3,11 @@
 }
 
 .naechsterTermin::after {
-    content: "21.01.2022, 18:30h (mit 2G-Regel)";
+    content: "18.03.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Hinter den Kulissen von WinGet mit Thorsten";
+    content: "1. Code Analyse & Umwandlung einfach gemacht mit Fred";
 }
 
 .Thema2::after {
