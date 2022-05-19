@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "18.03.2022, 18:30h (mit 2G-Regel)";
+    content: "20.05.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Code Analyse & Umwandlung einfach gemacht mit Fred";
+    content: "1. DNS-Einträge für Microsoft 365 per Rest-Api setzen mit Peter";
 }
 
 .Thema2::after {
-    content: "2. Fachlicher Austausch";
+    content: "2. Updates für virtuelle Maschinen automatisieren mit Holger";
 }
 
 .Thema3::after {
