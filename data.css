@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "20.05.2022, 18:30h (mit 2G-Regel)";
+    content: "17.06.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. DNS-Einträge für Microsoft 365 per Rest-Api setzen mit Peter";
+    content: "1. Microsoft Graph-Api beglücken mit Marco";
 }
 
 .Thema2::after {
-    content: "2. Updates für virtuelle Maschinen automatisieren mit Holger";
+    content: "2. Legacy WMI mit Holger";
 }
 
 .Thema3::after {
