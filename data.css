@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "17.06.2022, 18:30h (mit 2G-Regel)";
+    content: "16.09.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Microsoft Graph-Api beglücken mit Marco";
+    content: "1. FSLogix Profile als Ersatz für Roaming Profiles und ideal für Office 365 mit Andreas";
 }
 
 .Thema2::after {
-    content: "2. Legacy WMI mit Holger";
+    content: "2. Windows Update und WSUS mit Holger";
 }
 
 .Thema3::after {
