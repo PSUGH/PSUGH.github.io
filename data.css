@@ -3,17 +3,17 @@
 }
 
 .naechsterTermin::after {
-    content: "21.10.2022, 18:30h (mit 2G-Regel)";
+    content: "18.11.2022, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Windows Defender Application Control mit Holger";
+    content: "1. Modern & UWP Apps mit Andreas";
 }
 
 .Thema2::after {
-    content: "2. Bring your Script";
+    content: "2. Alte Azure-Objekte aufräumen mit Marco";
 }
 
 .Thema3::after {
-    content: "";
+    content: "Bring your script";
 }
