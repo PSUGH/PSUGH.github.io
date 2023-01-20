@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "18.11.2022, 18:30h (mit 2G-Regel)";
+    content: "20.01.2023, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Modern & UWP Apps mit Andreas";
+    content: "1. Modern & UWP Apps Teil 2 mit Andreas";
 }
 
 .Thema2::after {
-    content: "2. Alte Azure-Objekte aufräumen mit Marco";
+    content: "2. Bring your script";
 }
 
 .Thema3::after {
