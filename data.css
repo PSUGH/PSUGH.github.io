@@ -3,11 +3,11 @@
 }
 
 .naechsterTermin::after {
-    content: "20.01.2023, 18:30h (mit 2G-Regel)";
+    content: "10.02.2023, 18:30h (mit 2G-Regel)";
 }
 
 .Thema1::after {
-    content: "1. Modern & UWP Apps Teil 2 mit Andreas";
+    content: "1. Github Custom Actions mit Julia Kordick";
 }
 
 .Thema2::after {
