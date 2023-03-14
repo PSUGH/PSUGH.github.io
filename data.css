@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "10.02.2023, 18:30h (mit 2G-Regel)";
+    content: "17.03.2023, 18:30h";
 }
 
 .Thema1::after {
-    content: "1. Github Custom Actions mit Julia Kordick";
+    content: "1. Die Zwischenablage - Helferlein im Untergrund mit Frank Lindenblatt";
 }
 
 .Thema2::after {
-    content: "2. Bring your script";
+    content: "2. Benutzerdefinierte Sicherheitsattribute in Azure Active Directory  mit Marco Kleinert";
 }
 
 .Thema3::after {
