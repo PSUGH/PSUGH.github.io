@@ -3,15 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "17.03.2023, 18:30h";
+    content: "21.04.2023, 18:30h";
 }
 
 .Thema1::after {
-    content: "1. Die Zwischenablage - Helferlein im Untergrund mit Frank Lindenblatt";
+    content: "1. Domänen hacken mit Windows Zertifikatsservern mit Holger Voges";
 }
 
 .Thema2::after {
-    content: "2. Benutzerdefinierte Sicherheitsattribute in Azure Active Directory mit Marco Kleinert";
+    content: "2. Bring your script";
 }
 
 .Thema3::after {
