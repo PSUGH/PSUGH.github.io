@@ -3,7 +3,7 @@
 }
 
 .naechsterTermin::after {
-    content: "21.04.2023, 18:30h";
+    content: "16.06.2023, 18:30h";
 }
 
 .Thema1::after {
@@ -15,5 +15,5 @@
 }
 
 .Thema3::after {
-    content: "3. Bring your script";
+    content: "3. Besuch eines Biergartens";
 }
