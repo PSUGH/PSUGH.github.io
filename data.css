@@ -3,17 +3,15 @@
 }
 
 .naechsterTermin::after {
-    content: "16.06.2023, 18:30h";
+    content: "21.07.2023, 18:30h";
 }
 
 .Thema1::after {
-    content: "1. Domänen hacken mit Windows Zertifikatsservern mit Holger Voges";
+    content: "1. Spaß mit Containern (nicht Docker!) mit Julia Kordick";
 }
 
 .Thema2::after {
     content: "2. Bring your script";
 }
 
-.Thema3::after {
-    content: "3. Besuch eines Biergartens";
-}
+
