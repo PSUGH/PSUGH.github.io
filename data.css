@@ -9,6 +9,9 @@
 .Thema1::after {
     content: "1. Spaß mit Containern (nicht Docker!) mit Julia Kordick";
 }
+.Detail1::after {
+    content: "Wir dürfen wieder Julia Kordick von Microsoft begrüßen. Es handelt sich wie üblich um eine Hybrid-Veranstaltung. Die Idee der Containerisierung existiert seit 1979 - heute sind sie die Basis der cloud native Softwareentwicklung. Aber wieso haben sich Container durchgesetzt, welche Möglichkeiten zur Orchestrierung gibt es und wie finde ich auf der Azure Platform die richtige compute Lösung für meinen Container?";
+}
 
 .Thema2::after {
     content: "2. Bring your script";
