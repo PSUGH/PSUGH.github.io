@@ -1,7 +1,5 @@
 /*
 CSS Name: PowerShell Usergroup
-Author: Christian Imhorst
-Author URI: https://datenteiler.de/
 Description: CSS der PowerShell Usergroup Hannover
 Version: 1.0
 */
@@ -158,7 +156,7 @@ h1 {
 }
 
 .sidebar h3 {
-	margin: .2rem 0 0 0;
+	margin: 2rem 0 0 0;
 	font-weight: bolder;
 	opacity: 1;
 	font-size: 1.1rem;
@@ -490,7 +488,7 @@ h1 {
   background: #3D3F45 url("../img/kontakt-sprite.png") left 0 top 0;
 }
 
-#slack-icon {
+#mastodon-icon {
   float: left;
   background: #3D3F45 url("../img/kontakt-sprite.png") left -60px top 0;
 }
@@ -580,6 +578,9 @@ code {
   .col {
     width: 100%; 
   }  
+  #leer {
+    display: none;
+  }
 }
 
 @media (max-width: 370px) {
