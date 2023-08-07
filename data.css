@@ -16,5 +16,6 @@
 .Thema2::after {
     content: "2. Bring your script";
 }
-
-
+.Detail2::after {
+    content: "Ihr könnt zu jedem Treffen eure Skripte mitbringen, Fragen stellen und Probleme mit uns gemeinsam lösen.";
+}
