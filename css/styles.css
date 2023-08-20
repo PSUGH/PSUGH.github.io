@@ -498,6 +498,11 @@ h1 {
   background: #3D3F45 url("../img/kontakt-sprite.png") left -120px top 0;
 }
 
+#discord-icon {
+  float: left;
+  background: #3D3F45 url("../img/kontakt-sprite.png") left -180px top 0;
+}
+
 #kontakt-icons {
     padding: 2rem;
     float: left;
