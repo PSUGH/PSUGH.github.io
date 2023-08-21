@@ -3,19 +3,19 @@
 }
 
 .naechsterTermin::after {
-    content: "21.07.2023, 18:30h";
+    content: "Samstag, den 16.09.2023, ab 9h zum PowerShell Saturday";
 }
 
 .Thema1::after {
-    content: "1. Spaß mit Containern (nicht Docker!) mit Julia Kordick";
+    content: "Powershell, Getränke, Grillen";
 }
 .Detail1::after {
-    content: "Wir dürfen wieder Julia Kordick von Microsoft begrüßen. Es handelt sich wie üblich um eine Hybrid-Veranstaltung. Die Idee der Containerisierung existiert seit 1979 - heute sind sie die Basis der cloud native Softwareentwicklung. Aber wieso haben sich Container durchgesetzt, welche Möglichkeiten zur Orchestrierung gibt es und wie finde ich auf der Azure Platform die richtige compute Lösung für meinen Container?";
+    content: "Der PowerShell Saturday ist die jährliche Veranstaltung der PowerShell Usergroup Hannover, bei der das gemeinsame Wiedersehen und Kennenlernen den Rahmen bildet. Neben hochklassigen Vorträgen (in deutscher Sprache) steht das Miteinander im Vordergrund. Die Veranstaltung ist kostenfrei. Wir freuen uns über Eure Anregungen, Verbesserungsvorschläge und Mithilfe.";
 }
 
 .Thema2::after {
-    content: "2. Bring your script";
+    content: "Einsteiger*innen Workshop auf dem PowerShell Saturday";
 }
 .Detail2::after {
-    content: "Ihr könnt zu jedem Treffen eure Skripte mitbringen, Fragen stellen und Probleme mit uns gemeinsam lösen.";
+    content: "Neben den Vorträgen wird es einen Workshop für Einsteiger*innen geben. Hier könnt ihr die PowerShell näher kennenlernen und erste Skripte schreiben.";
 }
