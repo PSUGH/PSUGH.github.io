@@ -3,19 +3,19 @@
 }
 
 .naechsterTermin::after {
-    content: "Samstag, den 16.09.2023, ab 9h zum PowerShell Saturday";
+    content: "Freitag, den 20.10.2023, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "Powershell, Getränke, Grillen";
+    content: "Powershell und Ansible einträchtig gemeinsam";
 }
 .Detail1::after {
-    content: "Der PowerShell Saturday ist die jährliche Veranstaltung der PowerShell Usergroup Hannover, bei der das gemeinsame Wiedersehen und Kennenlernen den Rahmen bildet. Neben hochklassigen Vorträgen (in deutscher Sprache) steht das Miteinander im Vordergrund. Die Veranstaltung ist kostenfrei.";
+    content: "Powershell DSC und Ansible im direkten Vergleich an einem konkreten Beispiel";
 }
 
 .Thema2::after {
-    content: "Einsteiger*innen Workshop auf dem PowerShell Saturday";
+    content: "Powershell und Ansible gemeinsam in einem Projekt „Datenschleuse“";
 }
 .Detail2::after {
-    content: "Neben den Vorträgen wird es einen Workshop für Einsteiger*innen geben. Hier könnt ihr die PowerShell näher kennenlernen und erste Skripte schreiben.";
+    content: "3 Begriffe für fast das selbe: Ansible Automation Platform/Tower/AWXAuch hier eine Demo, einschließlich Datenübergabe aus der Powershell an den Tower.";
 }
