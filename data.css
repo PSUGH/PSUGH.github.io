@@ -3,19 +3,22 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 20.10.2023, ab 18:30h";
+    content: "Freitag, den 17.11.2023, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "Powershell und Ansible einträchtig gemeinsam";
+    content: "Christian Ritter präsentiert sein PSMermaid-Modul";
 }
+/*
 .Detail1::after {
-    content: "Powershell DSC und Ansible im direkten Vergleich an einem konkreten Beispiel";
+    content: "";
 }
-
+*/
 .Thema2::after {
-    content: "Powershell und Ansible gemeinsam in einem Projekt „Datenschleuse“";
+    content: "LAPS-Tool Deep Dive";
 }
+/*
 .Detail2::after {
-    content: "3 Begriffe für fast das selbe: Ansible Automation Platform/Tower/AWXAuch hier eine Demo, einschließlich Datenübergabe aus der Powershell an den Tower.";
+    content: "";
 }
+*/
