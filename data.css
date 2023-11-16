@@ -7,7 +7,7 @@
 }
 
 .Thema1::after {
-    content: "Christian Ritter präsentiert sein PSMermaid-Modul";
+    content: "1. Christian Ritter präsentiert sein PSMermaid-Modul";
 }
 /*
 .Detail1::after {
@@ -15,7 +15,7 @@
 }
 */
 .Thema2::after {
-    content: "LAPS-Tool Deep Dive";
+    content: "2. LAPS-Tool Deep Dive";
 }
 /*
 .Detail2::after {
