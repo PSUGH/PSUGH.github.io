@@ -3,11 +3,11 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 17.11.2023, ab 18:30h";
+    content: "Freitag, den 15.12.2023, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1. Christian Ritter präsentiert sein PSMermaid-Modul";
+    content: "1.  Windows Security mit Powershell einrichten - ein Arbeitsplan";
 }
 /*
 .Detail1::after {
