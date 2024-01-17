@@ -3,14 +3,14 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 15.12.2023, ab 18:30h";
+    content: "Freitag, den 19.01.2023, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1.  Windows Security mit Powershell einrichten - ein Arbeitsplan";
+    content: "1.  Mit Graph X-Ray die Azure AD Graph API meistern";
 }
 .Detail1::after {
-    content: "Holger möchte das Thema Windows Security ansprechen und mit uns einen Plan entwickeln, wie man einen Assistenten zur Absicherung von Windows-Netzwerken für den durchschnittlichen Admin entwickeln kann - der natürlich auf Powershell basieren soll.";
+    content: "Fabian Bader wird und Graph X-Ray näher bringen: 'Graph X-Ray displays the Graph API commands run to execute actions in consoles like the Azure AD admin center and the Intune admin center.'";
 }
 /*
 .Thema2::after {
