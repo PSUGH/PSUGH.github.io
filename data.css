@@ -3,22 +3,18 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 19.01.2023, ab 18:30h";
+    content: "Freitag, den 16.02.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1.  Mit Graph X-Ray die Azure AD Graph API meistern";
+    content: "1.  Große Skripte mit mehr als 1000 Zeilen sinnvoll aufteilen.";
 }
 .Detail1::after {
-    content: "Fabian Bader wird uns Graph X-Ray näher bringen: 'Graph X-Ray displays the Graph API commands run to execute actions in consoles like the Azure AD admin center and the Intune admin center.'";
+    content: "Holger präsentiert seine Module zur automatischen Verwaltung seiner Schulungsumgebung.";
 }
-/*
 .Thema2::after {
-    content: "2. LAPS-Tool Deep Dive";
+    content: "2.  Github Copilot mit Powershell sinnvoll einsetzen";
 }
-*/
-/*
 .Detail2::after {
-    content: "";
+    content: "... oder wo man vorsichtig sein muss.";
 }
-*/
