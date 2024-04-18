@@ -3,18 +3,18 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 16.02.2024, ab 18:30h";
+    content: "Freitag, den 19.04.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1.  Große Skripte mit mehr als 1000 Zeilen sinnvoll aufteilen.";
+    content: "1. IOT und PowerShell mit Frank.";
 }
 .Detail1::after {
-    content: "Holger präsentiert seine Module zur automatischen Verwaltung seiner Schulungsumgebung.";
+    content: "Frank zeigt uns, wie sich mit seinem Powershell-Modul und der Custom Firmware "Awtrix3" von Blueforcer, einer Ulanzi Punktmatrix Pixel Clock Leben einhauchen lässt.";
 }
 .Thema2::after {
-    content: "2.  Github Copilot mit Powershell sinnvoll einsetzen";
+    content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
 }
 .Detail2::after {
-    content: "... oder wo man vorsichtig sein muss.";
+    content: "Holger hat mit der .NET-Bibliothek npgsql ein kleines Modul geschrieben, um PostgreSQL-Abfragen mit PowerShell zu machen.";
 }
