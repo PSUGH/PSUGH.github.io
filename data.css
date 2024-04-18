@@ -10,7 +10,7 @@
     content: "1. IOT und PowerShell mit Frank.";
 }
 .Detail1::after {
-    content: "Frank zeigt uns, wie sich mit seinem Powershell-Modul und der Custom Firmware "Awtrix3" von Blueforcer, einer Ulanzi Punktmatrix Pixel Clock Leben einhauchen lässt.";
+    content: "Frank zeigt uns, wie sich mit seinem Powershell-Modul und der Custom Firmware Awtrix3 von Blueforcer, einer Ulanzi Punktmatrix Pixel Clock Leben einhauchen lässt.";
 }
 .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
