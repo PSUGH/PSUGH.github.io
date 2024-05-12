@@ -3,18 +3,18 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 19.04.2024, ab 18:30h";
+    content: "Freitag, den 17.05.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1. IOT und PowerShell mit Frank.";
+    content: "1. GUIs mit Pode und Pode Web als Website bauchen";
 }
 .Detail1::after {
-    content: "Frank zeigt uns, wie sich mit seinem Powershell-Modul und der Custom Firmware Awtrix3 von Blueforcer, einer Ulanzi Punktmatrix Pixel Clock Leben einhauchen lässt.";
+    content: "In diesem Vortrag zeigt Holger Voges, wie er mit Pode und Pode Web eine HTML-Oberfläche für seine Installationsskripte gebaut hat.";
 }
 .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
 }
 .Detail2::after {
-    content: "Holger hat mit der .NET-Bibliothek npgsql ein kleines Modul geschrieben, um PostgreSQL-Abfragen mit PowerShell zu machen.";
+    content: "Holger hat mit der .NET-Bibliothek npgsql ein kleines Modul geschrieben, um PostgreSQL-Abfragen mit PowerShell zu machen. In diesem Vortrag zeige ich, wie man mit Postgresql und Pode eine REST-API baut.";
 }
