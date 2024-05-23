@@ -3,18 +3,25 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 17.05.2024, ab 18:30h";
+    content: "Freitag, den 21.06.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "1. GUIs mit Pode und Pode Web als Website bauchen";
+    content: "M365 Investigations mit PowerShell";
 }
 .Detail1::after {
-    content: "In diesem Vortrag zeigt Holger Voges, wie er mit Pode und Pode Web eine HTML-Oberfläche für seine Installationsskripte gebaut hat.";
+    content: "Martin Willing (@Evild3ad79) wird uns die Microsoft-Extractor-Suite von Invictus Incident Response (NL) sowie seine Microsoft-Analyzer-Suite (Community Edition) vorstellen.
+  
+    Mit der Microsoft-Extractor-Suite können die verschiedenen Microsoft 365 (M365) und Microsoft Entra ID Logs akquiriert und anschließend mit der Microsoft-Analyzer-Suite automatisiert analysiert werden. Mit diesem Tool-Set können M365 Konten oder Microsoft Entra ID Events regelmässig auf Anomalien überprüft werden und insbesondere kompromittierte M365 Konten nach Business Email Compromise (BEC) Angriffen, z.B. via Adversary-in-The-Middle (AiTM) Phishing, entsprechend ausgewertet werden.
+    
+    Beim AiTM-Phishing schalten Angreifer einen Proxy-Server zwischen das Opfer und die Website, die der Benutzer besuchen möchte. Auf diese Weise kann der Angreifer das Passwort der Zielperson und das Session Cookie stehlen sowie abfangen. Da AiTM-Phishing das Sitzungs-Cookie stiehlt, wird der Angreifer im Namen des Benutzers für eine Sitzung authentifiziert und eine eventuell implementierte Multi-Faktor Authentifizierung, wenn nicht Phishing-resistent, einfach umgangen.
+
+    Neben der Tool-Vorstellung werden Euch auch die verschiedenen M365 und Microsoft Entra ID Logs, deren ermittlungsrelevanter Inhalt sowie deren Aufbewahrungsdauer detailliert erklärt.";
 }
-.Thema2::after {
+/* .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
 }
 .Detail2::after {
     content: "Holger hat mit der .NET-Bibliothek npgsql ein kleines Modul geschrieben, um PostgreSQL-Abfragen mit PowerShell zu machen. In diesem Vortrag zeige ich, wie man mit Postgresql und Pode eine REST-API baut.";
 }
+*/
