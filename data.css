@@ -10,12 +10,8 @@
     content: "M365 Investigations mit PowerShell";
 }
 .Detail1::after {
-    content: "Martin Willing (@Evild3ad79) wird uns die Microsoft-Extractor-Suite von Invictus Incident Response (NL) sowie seine Microsoft-Analyzer-Suite (Community Edition) vorstellen.
-  
-    Mit der Microsoft-Extractor-Suite können die verschiedenen Microsoft 365 (M365) und Microsoft Entra ID Logs akquiriert und anschließend mit der Microsoft-Analyzer-Suite automatisiert analysiert werden. Mit diesem Tool-Set können M365 Konten oder Microsoft Entra ID Events regelmässig auf Anomalien überprüft werden und insbesondere kompromittierte M365 Konten nach Business Email Compromise (BEC) Angriffen, z.B. via Adversary-in-The-Middle (AiTM) Phishing, entsprechend ausgewertet werden.
-    
+    content: "Martin Willing (@Evild3ad79) wird uns die Microsoft-Extractor-Suite von Invictus Incident Response (NL) sowie seine Microsoft-Analyzer-Suite (Community Edition) vorstellen. Mit der Microsoft-Extractor-Suite können die verschiedenen Microsoft 365 (M365) und Microsoft Entra ID Logs akquiriert und anschließend mit der Microsoft-Analyzer-Suite automatisiert analysiert werden. Mit diesem Tool-Set können M365 Konten oder Microsoft Entra ID Events regelmässig auf Anomalien überprüft werden und insbesondere kompromittierte M365 Konten nach Business Email Compromise (BEC) Angriffen, z.B. via Adversary-in-The-Middle (AiTM) Phishing, entsprechend ausgewertet werden.
     Beim AiTM-Phishing schalten Angreifer einen Proxy-Server zwischen das Opfer und die Website, die der Benutzer besuchen möchte. Auf diese Weise kann der Angreifer das Passwort der Zielperson und das Session Cookie stehlen sowie abfangen. Da AiTM-Phishing das Sitzungs-Cookie stiehlt, wird der Angreifer im Namen des Benutzers für eine Sitzung authentifiziert und eine eventuell implementierte Multi-Faktor Authentifizierung, wenn nicht Phishing-resistent, einfach umgangen.
-
     Neben der Tool-Vorstellung werden Euch auch die verschiedenen M365 und Microsoft Entra ID Logs, deren ermittlungsrelevanter Inhalt sowie deren Aufbewahrungsdauer detailliert erklärt.";
 }
 /* .Thema2::after {
