@@ -3,14 +3,18 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 21.06.2024, ab 18:30h";
+    content: "Freitag, den 19.07.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "M365 Investigations mit PowerShell";
+    content: "Windows Updates mit Powershell verwalten + Grillen";
 }
 .Detail1::after {
-    content: "Martin Willing wird uns die Microsoft-Extractor-Suite von Invictus Incident Response (NL) sowie seine Microsoft-Analyzer-Suite (Community Edition) vorstellen. Mit der Microsoft-Extractor-Suite können die verschiedenen Microsoft 365 (M365) und Microsoft Entra ID Logs akquiriert und anschließend mit der Microsoft-Analyzer-Suite automatisiert analysiert werden. Mit diesem Tool-Set können M365 Konten oder Microsoft Entra ID Events regelmässig auf Anomalien überprüft werden und insbesondere kompromittierte M365 Konten nach Business Email Compromise (BEC) Angriffen, z.B. via Adversary-in-The-Middle (AiTM) Phishing, entsprechend ausgewertet werden.     Beim AiTM-Phishing schalten Angreifer einen Proxy-Server zwischen das Opfer und die Website, die der Benutzer besuchen möchte. Auf diese Weise kann der Angreifer das Passwort der Zielperson und das Session Cookie stehlen sowie abfangen. Da AiTM-Phishing das Sitzungs-Cookie stiehlt, wird der Angreifer im Namen des Benutzers für eine Sitzung authentifiziert und eine eventuell implementierte Multi-Faktor Authentifizierung, wenn nicht Phishing-resistent, einfach umgangen. Neben der Tool-Vorstellung werden Euch auch die verschiedenen M365 und Microsoft Entra ID Logs, deren ermittlungsrelevanter Inhalt sowie deren Aufbewahrungsdauer detailliert erklärt.";
+    content: "Diesen Freitag beschäftigen wir uns mit dem Thema Windows Updates und wie man die Updateverwaltung mit Powershell automatisieren kann. Dazu werde ich verschiedene Powershell-Module zur Verwaltung von Windows Updates vorstellen und verschiedene Wege zeigen, wie man Windows Updates mit der Konsole verwalten kann.
+- PSWindowsUpdate zur Update-Verwaltung vom Client aus.
+- PoshWsus zur Verwaltung von Updates auf dem WSUS-Server
+Die Veranstaltung ist als offene Diskussionsrunde geplant. Jeder, der eigene Wege zur Verwaltung von Updates hat, ist herzlich eingeladen, selber Beizutragen.
+Anschließend werden wir den Grill an - Salate uns sonstige Beiträge sind gerne gesehen - am Besten vorher bei mir ankündigen. Für Getränke ist gesorgt.";
 }
 /* .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
