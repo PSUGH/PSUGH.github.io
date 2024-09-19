@@ -3,14 +3,14 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 19.07.2024, ab 18:30h";
+    content: "Freitag, den 20.09.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "Windows Updates mit Powershell verwalten + Grillen";
+    content: "DuckDB und PowerShell";
 }
 .Detail1::after {
-    content: "Diesen Freitag beschäftigen wir uns mit dem Thema Windows Updates und wie man die Updateverwaltung mit Powershell automatisieren kann. Dazu werde ich verschiedene Powershell-Module zur Verwaltung von Windows Updates vorstellen und verschiedene Wege zeigen, wie man Windows Updates mit der Konsole verwalten kann. Anschließend wird gegrillt.";
+    content: "Dieses Mal wird uns Marco Kleinert zeigen, was man mit den neuen, hippen Datenbanksystem DuckDB und dem Modul von Doug Finke so alles machen kann.";
 }
 /* .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
