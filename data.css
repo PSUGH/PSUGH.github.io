@@ -3,14 +3,14 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 20.09.2024, ab 18:30h";
+    content: "Freitag, den 15.11.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "DuckDB und PowerShell";
+    content: "M365 Notfallzugriffskonten absichern mit Fido2";
 }
 .Detail1::after {
-    content: "Dieses Mal wird uns Marco Kleinert zeigen, was man mit den neuen, hippen Datenbanksystem DuckDB und dem Modul von Doug Finke so alles machen kann.";
+    content: "Break Glass Accounts (die Hintertür, wenn man nicht mehr auf seinen Tenant kommt) mit Fido2-Sticks absicher.";
 }
 /* .Thema2::after {
     content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
