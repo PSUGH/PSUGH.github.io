@@ -3,19 +3,19 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 15.11.2024, ab 18:30h";
+    content: "Freitag, den 20.12.2024, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "M365 Notfallzugriffskonten absichern mit Fido2";
+    content: "Powershell-Code generieren mit KI und Security Keys (aka Yubikeys) Nachlese";
 }
 .Detail1::after {
-    content: "Break Glass Accounts (die Hintertür, wenn man nicht mehr auf seinen Tenant kommt) mit Fido2-Sticks absicher.";
+    content: "Die Funktionsweise von Security-Keys erklärt: Fido, TOTP, HOTP und mehr.";
 }
 /* .Thema2::after {
-    content: "2.  PostgreSQL als Datenbank-Backend in Powershell";
+    content: "Powershell-Code generieren mit KI-Tools.";
 }
 .Detail2::after {
-    content: "Holger hat mit der .NET-Bibliothek npgsql ein kleines Modul geschrieben, um PostgreSQL-Abfragen mit PowerShell zu machen. In diesem Vortrag zeige ich, wie man mit Postgresql und Pode eine REST-API baut.";
+    content: "Holger Voges wird zeigen, wie weit die Codegenerierung mit KI inzwischen ist, und welche Tools heute State of the Art sind.";
 }
 */
