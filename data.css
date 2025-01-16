@@ -10,12 +10,12 @@
     content: "Umgehen von Intune Compliant Device Conditional Access";
 }
 .Detail1::after {
-    content: "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. ";
+    content: "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. Eine neue Lücke ermöglicht es aber, sie zu umgehen und unberechtigt Zugriff auf geschützte Ressourcen zu erlangen.";
 }
-/* .Thema2::after {
+.Thema2::after {
     content: "Effektiv Module in Powershell erstellt.";
 }
 .Detail2::after {
     content: "Holger Voges zeigt, wie effektiv Module in Powershell erstellt werden.";
 }
-*/
+
