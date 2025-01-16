@@ -3,19 +3,19 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 20.12.2024, ab 18:30h";
+    content: "Freitag, den 17.01.2025, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "Powershell-Code generieren mit KI und Security Keys (aka Yubikeys) Nachlese";
+    content: "Umgehen von Intune Compliant Device Conditional Access";
 }
 .Detail1::after {
-    content: "Die Funktionsweise von Security-Keys erklärt: Fido, TOTP, HOTP und mehr.";
+    content: "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. ";
 }
 /* .Thema2::after {
-    content: "Powershell-Code generieren mit KI-Tools.";
+    content: "Effektiv Module in Powershell erstellt.";
 }
 .Detail2::after {
-    content: "Holger Voges wird zeigen, wie weit die Codegenerierung mit KI inzwischen ist, und welche Tools heute State of the Art sind.";
+    content: "Holger Voges zeigt, wie effektiv Module in Powershell erstellt werden.";
 }
 */
