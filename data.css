@@ -7,15 +7,31 @@
 }
 
 .Thema1::after {
-    content: "Umgehen von Intune Compliant Device Conditional Access";
+    content: "Device Code Flow Abuse – Angriffe erkennen & abwehren";
 }
 .Detail1::after {
-    content: "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. Eine neue Lücke ermöglicht es aber, sie zu umgehen und unberechtigt Zugriff auf geschützte Ressourcen zu erlangen.";
+    content: "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und Token-Diebstahl. In diesem kompakten Talk für Cloud-Security-Experten zeigen wir:
+
+✅ Wie Angreifer den Device Code Flow ausnutzen
+– Typische Angriffsvektoren (z.B. „MFA Fatigue“-Attacken)
+– Real-World-Beispiele aus Entra ID-Umgebungen
+
+✅ Praktische Schutzmaßnahmen
+– Detektion verdächtiger Anmeldeversuche (Log-Analyse, Microsoft-Analyzer-Suite)
+– Härtung von MFA & Conditional Access Policies
+– Incident Response bei kompromittierten Tokens
+
+💡 Key Takeaways:
+– Erkennen von Anomalien im Device Code Flow
+– Konfiguration „sicherer Defaults“ für OAuth-Apps
+– Proaktive Defense-Strategien für Identity-Systeme
+
+Ob Red Team, Blue Team oder Architekt – dieser Talk liefert nützliche Insights für alle, die Identity-Systeme in der Cloud absichern.";
 }
-.Thema2::after {
+/* .Thema2::after {
     content: "Effektiv Module in Powershell erstellt.";
 }
 .Detail2::after {
     content: "Holger zeigt, wie effektiv Module in Powershell erstellt werden.";
-}
+} */
 
