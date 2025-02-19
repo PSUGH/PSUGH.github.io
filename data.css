@@ -18,6 +18,7 @@
              "– Typische Angriffsvektoren (z.B. „MFA Fatigue"-Attacken)\A"
              "– Real-World-Beispiele aus Entra ID-Umgebungen\A\A"
              /* rest of text with proper line breaks */;
+    display: block;
     white-space: pre-wrap;
     padding: 10px;
     background-color: #f0f0f0;
@@ -25,6 +26,10 @@
     margin-top: 10px;
     font-size: 14px;
     line-height: 1.5;
+    color: #333; /* Add text color */
+    visibility: visible; /* Ensure visibility */
+    position: relative; /* Establish stacking context */
+    z-index: 1; /* Ensure content stays on top */
 }
 
 
