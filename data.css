@@ -9,9 +9,15 @@
 .Thema1::after {
     content: "Device Code Flow Abuse – Angriffe erkennen & abwehren";
 }
-.Detail1 {
-    content: "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und Token-Diebstahl. In diesem kompakten Talk für Cloud-Security-Experten zeigen wir:\A\A✅ Wie Angreifer den Device Code Flow ausnutzen\A– Typische Angriffsvektoren (z.B. MFA Fatigue-Attacken)\A– Real-World-Beispiele aus Entra ID-Umgebungen\A\A✅ Praktische Schutzmaßnahmen\A– Detektion verdächtiger Anmeldeversuche (Log-Analyse, Microsoft-Analyzer-Suite)\A– Härtung von MFA & Conditional Access Policies\A– Incident Response bei kompromittierten Tokens\A\A💡 Key Takeaways:\A– Erkennen von Anomalien im Device Code Flow\A– Konfiguration sicherer Defaults für OAuth-Apps\A– Proaktive Defense-Strategien für Identity-Systeme\A\AOb Red Team, Blue Team oder Architekt – dieser Talk liefert nützliche Insights für alle, die Identity-Systeme in der Cloud absichern.";
-    display: block;
+.Detail1::after {
+    content: "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – "
+             "doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und "
+             "Token-Diebstahl. In diesem kompakten Talk für Cloud-Security-Experten zeigen wir:"
+             "\A\A" /* double line break */
+             "✅ Wie Angreifer den Device Code Flow ausnutzen\A"
+             "– Typische Angriffsvektoren (z.B. „MFA Fatigue"-Attacken)\A"
+             "– Real-World-Beispiele aus Entra ID-Umgebungen\A\A"
+             /* rest of text with proper line breaks */;
     white-space: pre-wrap;
     padding: 10px;
     background-color: #f0f0f0;
@@ -20,6 +26,7 @@
     font-size: 14px;
     line-height: 1.5;
 }
+
 
 /* .Thema2::after {
     content: "Effektiv Module in Powershell erstellt.";
