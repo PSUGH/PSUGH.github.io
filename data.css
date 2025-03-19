@@ -7,27 +7,11 @@
 }
 
 .Thema1::after {
-    content: "Device Code Flow Abuse – Angriffe erkennen & abwehren";
+    content: "PowerShell Refactoring mit Frank";
 }
 .Detail1::after {
-    content: "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – " 
-             "doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und " 
-             "Token-Diebstahl. In diesem kompakten Talk für Cloud-Security-Experten zeigen wir:\A\A" 
-             "✅ Wie Angreifer den Device Code Flow ausnutzen\A" 
-             "– Typische Angriffsvektoren (z.B. „MFA Fatigue"-Attacken)\A" 
-             "– Real-World-Beispiele aus Entra ID-Umgebungen\A\A" 
-             "✅ Praktische Schutzmaßnahmen\A" 
-             "– Detektion verdächtiger Anmeldeversuche (Log-Analyse, Microsoft-Analyzer-Suite)\A" 
-             "– Härtung von MFA & Conditional Access Policies\A" 
-             "– Incident Response bei kompromittierten Tokens\A\A" 
-             "💡 Key Takeaways:\A" 
-             "– Erkennen von Anomalien im Device Code Flow\A" 
-             "– Konfiguration „sicherer Defaults" für OAuth-Apps\A" 
-             "– Proaktive Defense-Strategien für Identity-Systeme\A\A" 
-             "Ob Red Team, Blue Team oder Architekt – dieser Talk liefert nützliche Insights für alle, die Identity-Systeme in der Cloud absichern.";
+    content: "wird ein oder zwei unbekannte Powershell-Skripte einem Refactoring zu unterziehen. Ziel wird sein, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere Advanced Feature einbauen - ohne die Gesamtfunktion zu beeinflussen.";
 }
-
-
 
 /* .Thema2::after {
     content: "Effektiv Module in Powershell erstellt.";
