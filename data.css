@@ -10,7 +10,7 @@
     content: "PowerShell Refactoring mit Frank";
 }
 .Detail1::after {
-    content: "wird ein oder zwei unbekannte Powershell-Skripte einem Refactoring zu unterziehen. Ziel wird sein, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere Advanced Feature einbauen - ohne die Gesamtfunktion zu beeinflussen.";
+    content: "Frank wird 1 oder 2 unbekannte Powershell-Skripte einem Refactoring unterziehen, mit dem Ziel, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere advanced Feature einzubauen - ohne die Gesamtfunktion zu beeinflussen.";
 }
 
 /* .Thema2::after {
