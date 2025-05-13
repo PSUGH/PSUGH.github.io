@@ -3,14 +3,14 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 21.03.2025, ab 18:30h";
+    content: "Freitag, den 16.05.2025, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "PowerShell Refactoring mit Frank";
+    content: "Powershell-Skripte per Webservice aufrufen mit Pode";
 }
 .Detail1::after {
-    content: "Frank wird 1 oder 2 unbekannte Powershell-Skripte einem Refactoring unterziehen, mit dem Ziel, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere advanced Feature einzubauen - ohne die Gesamtfunktion zu beeinflussen.";
+    content: "Holger Voges wird zeigen, wie man mit Hilfe von Pode Powershell-Skripte über eine Web-API implementieren und aufrufen kann. Pode ist ein Open-Source Webserver, der in Powershell implentiert ist und direkt Powershell-Code ausführen kann.";
 }
 
 /* .Thema2::after {
