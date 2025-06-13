@@ -1,18 +1,4 @@
 {
-    "nextMeeting": {
-        "date": "Freitag, den 20.06.2025, ab 18:30h",
-        "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
-        "topics": [
-            {
-                "title": "🚀 AI Agents: Real Work with GitHub Copilot Agents in VS Code 🚀",
-                "description": "Wir tauchen tief ein in die praktische Anwendung von AI Agents und zeigen dir, wie sie den Unterschied machen können – weit über \"Hello World\" hinaus!"
-            },
-            {
-                "title": "Bereit, deine Arbeitsweise mit KI auf das nächste Level zu heben?",
-                "description": "✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.\n🧠 Das \"Context, Model, Prompt\" Framework praxisnah erleben.\n🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).\n💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze."
-            }
-        ]
-    },
     "pastEvents": [
         {
             "date": "2024-09-20",
@@ -98,20 +84,6 @@
                 }
             ],
             "materials": "https://github.com/PSUGH/PowerShell/tree/master/PSSaturday%202023"
-        }
-    ],
-    "upcomingEvents": [
-        {
-            "date": "2025-07-18",
-            "dateDisplay": "Freitag, den 18.07.2025",
-            "title": "PowerShell 8.0 Preview & Community Projects",
-            "status": "planned"
-        },
-        {
-            "date": "2025-08-15",
-            "dateDisplay": "Freitag, den 15.08.2025",
-            "title": "Azure DevOps & PowerShell Automation",
-            "status": "planned"
         }
     ]
 }

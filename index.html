@@ -492,12 +492,10 @@
                     });
                 }
             });
-        });
-
-        // Load meeting data from JSON
+        });        // Load meeting data from JSON
         async function loadMeetingData() {
             try {
-                const response = await fetch('./meeting-data.json');
+                const response = await fetch('./current-meeting.json');
                 const data = await response.json();
                 const meeting = data.nextMeeting;
 

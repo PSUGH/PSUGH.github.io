@@ -89,9 +89,14 @@ PSUGH.github.io/
 
 ### Updating Meeting Information
 
-Edit the `meeting-data.json` file to update meeting dates and topics:
+Edit the respective JSON files to update meeting information:
+
+- `current-meeting.json` - Current/next meeting information
+- `past-events.json` - Historical events and materials
+- `upcoming-events.json` - Planned future events
 
 ```json
+// current-meeting.json
 {
   "nextMeeting": {
     "date": "Freitag, den 20.06.2025, ab 18:30h",

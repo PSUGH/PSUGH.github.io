@@ -450,20 +450,26 @@
                 await this.loadEvents();
                 this.render();
                 this.bindEvents();
-            }
-
-            async loadEvents() {
+            } async loadEvents() {
                 try {
-                    const response = await fetch('./meeting-data.json');
-                    const data = await response.json();
+                    // Load all three data files
+                    const [currentResponse, pastResponse, upcomingResponse] = await Promise.all([
+                        fetch('./current-meeting.json'),
+                        fetch('./past-events.json'),
+                        fetch('./upcoming-events.json')
+                    ]);
+
+                    const currentData = await currentResponse.json();
+                    const pastData = await pastResponse.json();
+                    const upcomingData = await upcomingResponse.json();
 
                     // Process all events
                     this.events = [];
 
                     // Add next meeting
-                    if (data.nextMeeting) {
+                    if (currentData.nextMeeting) {
                         // Extract date from "Freitag, den 20.06.2025, ab 18:30h"
-                        const dateMatch = data.nextMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                        const dateMatch = currentData.nextMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
                         if (dateMatch) {
                             const [, day, month, year] = dateMatch;
                             this.events.push({
@@ -475,8 +481,8 @@
                     }
 
                     // Add past events
-                    if (data.pastEvents) {
-                        data.pastEvents.forEach(event => {
+                    if (pastData.pastEvents) {
+                        pastData.pastEvents.forEach(event => {
                             this.events.push({
                                 date: new Date(event.date),
                                 title: event.title,
@@ -486,8 +492,8 @@
                     }
 
                     // Add upcoming events
-                    if (data.upcomingEvents) {
-                        data.upcomingEvents.forEach(event => {
+                    if (upcomingData.upcomingEvents) {
+                        upcomingData.upcomingEvents.forEach(event => {
                             this.events.push({
                                 date: new Date(event.date),
                                 title: event.title,
@@ -573,19 +579,23 @@
                     }
                 }
             }
-        }
-
-        // Event data loading and rendering
+        }        // Event data loading and rendering
         async function loadAndRenderEvents() {
             try {
-                const response = await fetch('./meeting-data.json');
-                const data = await response.json();
+                // Load all three data files
+                const [pastResponse, upcomingResponse] = await Promise.all([
+                    fetch('./past-events.json'),
+                    fetch('./upcoming-events.json')
+                ]);
+
+                const pastData = await pastResponse.json();
+                const upcomingData = await upcomingResponse.json();
 
                 // Render past events
-                renderPastEvents(data.pastEvents || []);
+                renderPastEvents(pastData.pastEvents || []);
 
                 // Render upcoming events
-                renderUpcomingEvents(data.upcomingEvents || []);
+                renderUpcomingEvents(upcomingData.upcomingEvents || []);
 
             } catch (error) {
                 console.error('Error loading events:', error);
