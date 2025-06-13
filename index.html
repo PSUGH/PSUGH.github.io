@@ -284,15 +284,13 @@
                         </div>
                         <span class="terminal-title">PowerShell</span>
                     </div>
-                    <div class="terminal-content">
-                        <code class="terminal-command">
-                            <span class="command-line">PS C:\&gt; iwr https://www.psugh.org/data.css |</span>
-                            <span class="command-line">sls ':?".*"' -a |</span>
-                            <span class="command-line">foreach {$_.Matches.Value}</span>
+                    <div class="terminal-content"> <code class="terminal-command">
+                            <span class="command-line">PS C:\&gt; iwr https://www.psugh.org/meeting-data.json |</span>
+                            <span class="command-line">ConvertFrom-Json |</span>
+                            <span class="command-line">Select-Object -ExpandProperty nextMeeting</span>
                         </code>
                     </div>
                 </div>
-
                 <div class="command-explanations">
                     <div class="explanation">
                         <strong>iwr</strong> — ist die Kurzform (Alias) des Cmdlets <em>Invoke-Webrequest</em>, um Daten
@@ -303,12 +301,12 @@
                         nächste weiterzuleiten.
                     </div>
                     <div class="explanation">
-                        <strong>sls</strong> — ist der Alias des Cmdlets <em>Select-String</em>, mit dem man Text nach
-                        Mustern durchsuchen kann.
+                        <strong>ConvertFrom-Json</strong> — wandelt JSON-Daten in PowerShell-Objekte um, die einfach zu
+                        verarbeiten sind.
                     </div>
                     <div class="explanation">
-                        <strong>foreach</strong> — ist der Alias für das Cmdlet <em>ForEach-Object</em>, das nur die
-                        Treffer ausgibt.
+                        <strong>Select-Object</strong> — wählt bestimmte Eigenschaften von Objekten aus und erweitert
+                        sie mit <em>-ExpandProperty</em>.
                     </div>
                 </div>
 

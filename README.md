@@ -38,8 +38,8 @@ PSUGH.github.io/
 │   └── styles-new.css    # Modern styles
 ├── fonts/                # Local font files
 ├── img/                  # Images and assets
-├── data.css             # Dynamic content (meeting info)
-├── index.html           # Legacy homepage
+├── meeting-data.json     # Dynamic content (meeting info)
+├── index.html           # Modern homepage
 ├── index-new.html       # Modern homepage
 ├── impressum.html       # Legal notice
 └── package.json         # Node.js configuration
@@ -89,17 +89,23 @@ PSUGH.github.io/
 
 ### Updating Meeting Information
 
-Edit the `data.css` file to update meeting dates and topics:
+Edit the `meeting-data.json` file to update meeting dates and topics:
 
-```css
-.naechsterTermin::after {
-    content: "Freitag, den 20.06.2025, ab 18:30h";
-}
-
-.Thema1::after {
-    content: "🚀 Your Next Topic Title 🚀";
+```json
+{
+  "nextMeeting": {
+    "date": "Freitag, den 20.06.2025, ab 18:30h",
+    "topics": [
+      {
+        "title": "🚀 Your Next Topic Title 🚀",
+        "description": "Topic description with details"
+      }
+    ]
+  }
 }
 ```
+
+For detailed instructions, see `MEETING-CONTENT.md`.
 
 ### Adding New Content
 
