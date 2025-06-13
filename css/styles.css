@@ -358,7 +358,6 @@ a:focus {
 }
 
 .mobile-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -366,6 +365,21 @@ a:focus {
   background-color: var(--bg-overlay);
   backdrop-filter: blur(10px);
   padding: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-nav-links {
@@ -383,7 +397,17 @@ a:focus {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-lg);
   display: block;
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-md) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-base);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-inverse);
+  text-decoration: none;
+  transform: translateX(4px);
 }
 
 /* Hero Content */
@@ -884,8 +908,36 @@ a:focus {
     display: flex;
   }
 
-  .mobile-menu.active {
-    display: block;
+  /* Mobile navigation centering */
+  .nav-container {
+    justify-content: center;
+    position: relative;
+  }
+
+  .mobile-menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 101;
+    /* Enhanced hamburger styling */
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .hamburger-line {
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 
   .hero-actions {
@@ -936,6 +988,30 @@ a:focus {
   .social-links {
     grid-template-columns: 1fr;
   }
+
+  /* Smaller logo on very small screens */
+  .logo-link img {
+    height: 50px;
+  }
+
+  /* Adjust mobile menu toggle for smaller screens */
+  .mobile-menu-toggle {
+    padding: var(--spacing-sm);
+  }
+
+  .hamburger-line {
+    width: 22px;
+    height: 2px;
+  }
+
+  /* Adjust container padding */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .nav-container {
+    padding: 0 var(--spacing-md);
+  }
 }
 
 /* Animations */
@@ -969,6 +1045,19 @@ button:focus,
 .social-link:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Mobile menu focus styles */
+.mobile-menu-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Reduced motion preferences */
