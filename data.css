@@ -3,20 +3,25 @@
 }
 
 .naechsterTermin::after {
-    content: "Freitag, den 16.05.2025, ab 18:30h";
+    content: "Freitag, den 20.06.2025, ab 18:30h";
 }
 
 .Thema1::after {
-    content: "Powershell-Skripte per Webservice aufrufen mit Pode";
+    content: "🚀 AI Agents: Real Work with GitHub Copilot Agents in VS Code 🚀";
 }
 .Detail1::after {
-    content: "Holger Voges wird zeigen, wie man mit Hilfe von Pode Powershell-Skripte über eine Web-API implementieren und aufrufen kann. Pode ist ein Open-Source Webserver, der in Powershell implentiert ist und direkt Powershell-Code ausführen kann.";
+    content: "Wir tauchen tief ein in die praktische Anwendung von AI Agents und zeigen dir, wie sie den Unterschied machen können – weit über "Hello World" hinaus!
+Freu dich auf:
+✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.
+🧠 Das "Context, Model, Prompt" Framework praxisnah erleben.
+🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).
+💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze.";
 }
 
 /* .Thema2::after {
-    content: "Effektiv Module in Powershell erstellt.";
+    content: "";
 }
 .Detail2::after {
-    content: "Holger zeigt, wie effektiv Module in Powershell erstellt werden.";
+    content: "";
 } */
 
