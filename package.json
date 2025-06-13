@@ -36,7 +36,7 @@
   "homepage": "https://www.psugh.org",
   "devDependencies": {
     "clean-css-cli": "^5.6.2",
-    "htmlhint": "^1.1.4",
+    "htmlhint": "1.1.4",
     "imagemin-cli": "^3.0.0",
     "live-server": "^1.2.0",
     "stylelint": "^15.11.0",
