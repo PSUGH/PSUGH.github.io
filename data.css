@@ -10,12 +10,7 @@
     content: "🚀 AI Agents: Real Work with GitHub Copilot Agents in VS Code 🚀";
 }
 .Detail1::after {
-    content: "Wir tauchen tief ein in die praktische Anwendung von AI Agents und zeigen dir, wie sie den Unterschied machen können – weit über "Hello World" hinaus!
-Freu dich auf:
-✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.
-🧠 Das "Context, Model, Prompt" Framework praxisnah erleben.
-🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).
-💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze.";
+    content: "Wir tauchen tief ein in die praktische Anwendung von AI Agents und zeigen dir, wie sie den Unterschied machen können – weit über "Hello World" hinaus!";
 }
 
 /* .Thema2::after {
