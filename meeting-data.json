@@ -12,5 +12,106 @@
                 "description": "✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.\n🧠 Das \"Context, Model, Prompt\" Framework praxisnah erleben.\n🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).\n💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze."
             }
         ]
-    }
+    },
+    "pastEvents": [
+        {
+            "date": "2024-09-20",
+            "dateDisplay": "Freitag, den 20.09.2024",
+            "title": "DuckDB mit PowerShell",
+            "topics": [
+                {
+                    "title": "DuckDB: Die schnelle analytische Datenbank für PowerShell",
+                    "speaker": "Marco Kleinert",
+                    "description": "Einführung in DuckDB und wie man es effektiv mit PowerShell für Datenanalyse nutzt. Praktische Beispiele und Performance-Vergleiche."
+                }
+            ],
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2024-09-20%20DuckDB"
+        },
+        {
+            "date": "2021-09-17",
+            "dateDisplay": "Freitag, den 17.09.2021",
+            "title": "FSLogix AppMasking mit PowerShell",
+            "topics": [
+                {
+                    "title": "FSLogix AppMasking mit PowerShell",
+                    "speaker": "Andreas Nick",
+                    "description": "Praktische Anwendung von FSLogix AppMasking und Automatisierung mit PowerShell. Notebook-basierte Präsentation."
+                }
+            ],
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-09-17%20FSLogix"
+        },
+        {
+            "date": "2021-02-19",
+            "dateDisplay": "Freitag, den 19.02.2021",
+            "title": "PSFramework - PowerShell Framework",
+            "topics": [
+                {
+                    "title": "PSFramework: Das ultimative PowerShell Framework",
+                    "speaker": "Friedrich Weinmann",
+                    "description": "Einführung in das PSFramework für professionelle PowerShell-Entwicklung. Konfiguration, Logging und Best Practices."
+                }
+            ],
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-02-19%20PSFramework"
+        },
+        {
+            "date": "2018-03-16",
+            "dateDisplay": "Freitag, den 16.03.2018",
+            "title": "PowerShell Core & Docker",
+            "topics": [
+                {
+                    "title": "Into the Core - PowerShell 6 unter Linux und Windows",
+                    "speaker": "Christian Imhorst",
+                    "description": "PowerShell Core, Docker Container und plattformübergreifende PowerShell-Entwicklung. Breaking Changes und neue Möglichkeiten."
+                }
+            ],
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2018-03-16%20Docker"
+        },
+        {
+            "date": "2023-09-16",
+            "dateDisplay": "Samstag, den 16.09.2023",
+            "title": "PowerShell Saturday Hannover 2023",
+            "topics": [
+                {
+                    "title": "Deep dive in eine komfortable Implementierung der MS Graph API",
+                    "speaker": "Andi Bellstedt",
+                    "description": "Tiefgreifende Analyse der Microsoft Graph API Implementierung mit PowerShell"
+                },
+                {
+                    "title": "Eine Paketverwaltung für Windows - Eine Geschichte voller Missverständnisse",
+                    "speaker": "Andreas Nick & Thorsten Butz",
+                    "description": "Umfassender Überblick über Package Management unter Windows mit WinGet, Scoop und anderen Tools"
+                },
+                {
+                    "title": "Websites oder Web APIs mit PowerShell? Ja, mit Pode(.Web)!",
+                    "speaker": "Robin Beismann",
+                    "description": "Webentwicklung mit PowerShell - Pode Framework für APIs und Webanwendungen"
+                },
+                {
+                    "title": "PowerShell Performance- und Technik-Kniffe",
+                    "speaker": "Christian Ritter",
+                    "description": "Praktische Tipps für bessere PowerShell Performance und elegante Coding-Techniken"
+                },
+                {
+                    "title": "PowerShell Klassen - Warum man sie benutzen sollte!",
+                    "speaker": "Christoph Burmeister",
+                    "description": "Objektorientierte Programmierung in PowerShell mit Klassen und deren Vorteile"
+                }
+            ],
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/PSSaturday%202023"
+        }
+    ],
+    "upcomingEvents": [
+        {
+            "date": "2025-07-18",
+            "dateDisplay": "Freitag, den 18.07.2025",
+            "title": "PowerShell 8.0 Preview & Community Projects",
+            "status": "planned"
+        },
+        {
+            "date": "2025-08-15",
+            "dateDisplay": "Freitag, den 15.08.2025",
+            "title": "Azure DevOps & PowerShell Automation",
+            "status": "planned"
+        }
+    ]
 }

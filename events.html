@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="PowerShell Usergroup Hannover - Vergangene Treffen, Aufzeichnungen und Event-Kalender">
+    <meta name="keywords" content="PowerShell, Hannover, Events, Treffen, Aufzeichnungen, Kalender, Community">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0073AE">
+    <meta name="author" content="PowerShell Usergroup Hannover">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="geo.region" content="DE-NI">
+    <meta name="geo.placename" content="Hannover">
+    <meta name="geo.position" content="52.3759;9.7320">
+    <meta name="ICBM" content="52.3759, 9.7320">
+    <link rel="canonical" href="https://psugh.github.io/events.html">
+    <title>Events & Kalender - PowerShell Usergroup Hannover</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TWCEG7YCEQ', {
+            page_title: document.title,
+            page_location: window.location.href,
+            anonymize_ip: true,
+            allow_ad_personalization_signals: false
+        });
+
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, {
+                event_category: 'Community Engagement',
+                event_label: parameters.label || '',
+                value: parameters.value || 1,
+                ...parameters
+            });
+        }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="img/psugh-logo.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psugh.github.io/events.html">
+    <meta property="og:title" content="Events & Kalender - PowerShell Usergroup Hannover">
+    <meta property="og:description"
+        content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
+    <meta property="og:image" content="https://psugh.github.io/img/psugh-logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@psughannover">
+    <meta name="twitter:title" content="Events & Kalender - PowerShell Usergroup Hannover">
+    <meta name="twitter:description"
+        content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
+    <meta name="twitter:image" content="https://psugh.github.io/img/psugh-logo.png">
+
+    <style>
+        /* Calendar Styles */
+        .calendar-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .calendar-nav {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-nav:hover {
+            background-color: #f0f0f0;
+        }
+
+        .calendar-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0073AE;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .calendar-day-header {
+            background-color: #0073AE;
+            color: white;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day {
+            background-color: white;
+            padding: 0.5rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-day:hover {
+            background-color: #f8f9fa;
+        }
+
+        .calendar-day.other-month {
+            background-color: #f5f5f5;
+            color: #999;
+        }
+
+        .calendar-day.has-event {
+            background-color: #e3f2fd;
+            color: #0073AE;
+            font-weight: bold;
+        }
+
+        .calendar-day.has-event::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: #0073AE;
+            border-radius: 50%;
+        }
+
+        /* Event Cards */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-date {
+            background: linear-gradient(135deg, #0073AE, #005a8b);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .event-topics {
+            margin: 1rem 0;
+        }
+
+        .topic-item {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0073AE;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .topic-title {
+            font-weight: bold;
+            color: #0073AE;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-speaker {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-description {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .event-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .event-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #0073AE;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .event-link:hover {
+            background-color: #005a8b;
+            color: white;
+        }
+
+        .event-link.secondary {
+            background-color: #6c757d;
+        }
+
+        .event-link.secondary:hover {
+            background-color: #545b62;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .calendar-grid {
+                font-size: 0.9rem;
+            }
+
+            .calendar-day {
+                min-height: 35px;
+                padding: 0.25rem;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-links {
+                flex-direction: column;
+            }
+
+            .event-link {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <!-- Header with Navigation -->
+    <header class="hero-header" role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="index.html" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
+                    <img src="./img/psugh-logo.png" alt="PSUGH Logo" width="180" height="60">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="index.html" class="nav-link" role="menuitem">Start</a></li>
+                    <li role="none"><a href="events.html" class="nav-link active" role="menuitem"
+                            aria-current="page">Events</a></li>
+                    <li role="none"><a href="http://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li role="none"><a href="impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Menü öffnen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
+                    <li><a href="events.html" class="mobile-nav-link active" role="menuitem">Events</a></li>
+                    <li><a href="http://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li><a href="impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Events & Kalender</h1>
+                <p class="hero-subtitle">Entdecke vergangene Treffen, schaue Aufzeichnungen an und plane kommende Events
+                    der PowerShell Usergroup Hannover.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Event Calendar Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Event-Kalender</h2>
+                <p class="section-subtitle">Übersicht aller PowerShell Usergroup Treffen - jeden 3. Freitag im Monat</p>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth" aria-label="Vorheriger Monat">‹</button>
+                        <div class="calendar-title" id="calendarTitle">Juni 2025</div>
+                        <button class="calendar-nav" id="nextMonth" aria-label="Nächster Monat">›</button>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Events Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Vergangene Treffen</h2>
+                <p class="section-subtitle">Schaue dir Aufzeichnungen und Materialien vergangener Treffen an</p>
+
+                <div class="events-grid" id="pastEventsContainer">
+                    <!-- Past events will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Kommende Treffen</h2>
+                <p class="section-subtitle">Bereits geplante Termine für die nächsten Monate</p>
+
+                <div class="events-grid" id="upcomingEventsContainer">
+                    <!-- Upcoming events will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; PowerShell Usergroup Hannover 2025 — <a href="https://creativecommons.org/licenses/by/3.0/de/"
+                    target="_blank" rel="noopener">Einige Rechte vorbehalten (CC BY 3.0)</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Calendar functionality
+        class EventCalendar {
+            constructor() {
+                this.currentDate = new Date();
+                this.events = [];
+                this.monthNames = [
+                    'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+                    'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+                ];
+                this.dayNames = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+
+                this.init();
+            }
+
+            async init() {
+                await this.loadEvents();
+                this.render();
+                this.bindEvents();
+            }
+
+            async loadEvents() {
+                try {
+                    const response = await fetch('./meeting-data.json');
+                    const data = await response.json();
+
+                    // Process all events
+                    this.events = [];
+
+                    // Add next meeting
+                    if (data.nextMeeting) {
+                        // Extract date from "Freitag, den 20.06.2025, ab 18:30h"
+                        const dateMatch = data.nextMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                        if (dateMatch) {
+                            const [, day, month, year] = dateMatch;
+                            this.events.push({
+                                date: new Date(year, month - 1, day),
+                                title: 'Nächstes Treffen',
+                                type: 'next'
+                            });
+                        }
+                    }
+
+                    // Add past events
+                    if (data.pastEvents) {
+                        data.pastEvents.forEach(event => {
+                            this.events.push({
+                                date: new Date(event.date),
+                                title: event.title,
+                                type: 'past'
+                            });
+                        });
+                    }
+
+                    // Add upcoming events
+                    if (data.upcomingEvents) {
+                        data.upcomingEvents.forEach(event => {
+                            this.events.push({
+                                date: new Date(event.date),
+                                title: event.title,
+                                type: 'upcoming'
+                            });
+                        });
+                    }
+
+                } catch (error) {
+                    console.error('Error loading events:', error);
+                }
+            }
+
+            bindEvents() {
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                    this.render();
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                    this.render();
+                });
+            }
+
+            render() {
+                this.renderHeader();
+                this.renderGrid();
+            }
+
+            renderHeader() {
+                const title = document.getElementById('calendarTitle');
+                title.textContent = `${this.monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
+            }
+
+            renderGrid() {
+                const grid = document.getElementById('calendarGrid');
+                grid.innerHTML = '';
+
+                // Add day headers
+                this.dayNames.forEach(day => {
+                    const dayHeader = document.createElement('div');
+                    dayHeader.className = 'calendar-day-header';
+                    dayHeader.textContent = day;
+                    grid.appendChild(dayHeader);
+                });
+
+                // Get first day of month and number of days
+                const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
+                const lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
+                const startDate = new Date(firstDay);
+                startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+                // Render 6 weeks
+                for (let week = 0; week < 6; week++) {
+                    for (let day = 0; day < 7; day++) {
+                        const cellDate = new Date(startDate);
+                        cellDate.setDate(startDate.getDate() + (week * 7) + day);
+
+                        const dayElement = document.createElement('div');
+                        dayElement.className = 'calendar-day';
+                        dayElement.textContent = cellDate.getDate();
+
+                        // Check if day is in current month
+                        if (cellDate.getMonth() !== this.currentDate.getMonth()) {
+                            dayElement.classList.add('other-month');
+                        }
+
+                        // Check if day has events
+                        const hasEvent = this.events.some(event =>
+                            event.date.toDateString() === cellDate.toDateString()
+                        );
+
+                        if (hasEvent) {
+                            dayElement.classList.add('has-event');
+                            const eventForDay = this.events.find(event =>
+                                event.date.toDateString() === cellDate.toDateString()
+                            );
+                            dayElement.title = eventForDay.title;
+                        }
+
+                        grid.appendChild(dayElement);
+                    }
+                }
+            }
+        }
+
+        // Event data loading and rendering
+        async function loadAndRenderEvents() {
+            try {
+                const response = await fetch('./meeting-data.json');
+                const data = await response.json();
+
+                // Render past events
+                renderPastEvents(data.pastEvents || []);
+
+                // Render upcoming events
+                renderUpcomingEvents(data.upcomingEvents || []);
+
+            } catch (error) {
+                console.error('Error loading events:', error);
+            }
+        }
+
+        function renderPastEvents(events) {
+            const container = document.getElementById('pastEventsContainer');
+            container.innerHTML = '';
+
+            events.forEach(event => {
+                const eventCard = createEventCard(event, 'past');
+                container.appendChild(eventCard);
+            });
+        }
+
+        function renderUpcomingEvents(events) {
+            const container = document.getElementById('upcomingEventsContainer');
+            container.innerHTML = '';
+
+            events.forEach(event => {
+                const eventCard = createEventCard(event, 'upcoming');
+                container.appendChild(eventCard);
+            });
+        }
+
+        function createEventCard(event, type) {
+            const card = document.createElement('div');
+            card.className = 'event-card';
+
+            const dateElement = document.createElement('div');
+            dateElement.className = 'event-date';
+            dateElement.textContent = event.dateDisplay || event.date;
+
+            const titleElement = document.createElement('h3');
+            titleElement.className = 'event-title';
+            titleElement.textContent = event.title;
+
+            card.appendChild(dateElement);
+            card.appendChild(titleElement);
+
+            if (event.topics && type === 'past') {
+                const topicsContainer = document.createElement('div');
+                topicsContainer.className = 'event-topics';
+
+                event.topics.forEach(topic => {
+                    const topicElement = document.createElement('div');
+                    topicElement.className = 'topic-item';
+
+                    const topicTitle = document.createElement('div');
+                    topicTitle.className = 'topic-title';
+                    topicTitle.textContent = topic.title;
+
+                    if (topic.speaker) {
+                        const topicSpeaker = document.createElement('div');
+                        topicSpeaker.className = 'topic-speaker';
+                        topicSpeaker.textContent = `Referent: ${topic.speaker}`;
+                        topicElement.appendChild(topicSpeaker);
+                    }
+
+                    const topicDescription = document.createElement('div');
+                    topicDescription.className = 'topic-description';
+                    topicDescription.textContent = topic.description;
+
+                    topicElement.appendChild(topicTitle);
+                    topicElement.appendChild(topicDescription);
+                    topicsContainer.appendChild(topicElement);
+                });
+
+                card.appendChild(topicsContainer);
+            }
+
+            // Add links for past events
+            if (type === 'past' && (event.recording || event.materials)) {
+                const linksContainer = document.createElement('div');
+                linksContainer.className = 'event-links';
+
+                if (event.recording) {
+                    const recordingLink = document.createElement('a');
+                    recordingLink.href = event.recording;
+                    recordingLink.className = 'event-link';
+                    recordingLink.textContent = '🎥 Aufzeichnung ansehen';
+                    recordingLink.target = '_blank';
+                    recordingLink.rel = 'noopener';
+                    recordingLink.addEventListener('click', () => {
+                        trackEvent('video_access', {
+                            event_label: event.title,
+                            event_category: 'Past Events'
+                        });
+                    });
+                    linksContainer.appendChild(recordingLink);
+                }
+
+                if (event.materials) {
+                    const materialsLink = document.createElement('a');
+                    materialsLink.href = event.materials;
+                    materialsLink.className = 'event-link secondary';
+                    materialsLink.textContent = '📁 Materialien & Code';
+                    materialsLink.target = '_blank';
+                    materialsLink.rel = 'noopener';
+                    materialsLink.addEventListener('click', () => {
+                        trackEvent('materials_access', {
+                            event_label: event.title,
+                            event_category: 'Past Events'
+                        });
+                    });
+                    linksContainer.appendChild(materialsLink);
+                }
+
+                card.appendChild(linksContainer);
+            }
+
+            return card;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new EventCalendar();
+            loadAndRenderEvents();
+        });
+    </script>
+</body>
+
+</html>
