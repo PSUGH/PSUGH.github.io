@@ -8,11 +8,20 @@
     <meta name="keywords" content="PowerShell, Hannover, Azure, Systemadministrator, Community, Usergroup">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
-    <title>PowerShell Usergroup Hannover - PSUGH</title>
-
-    <!-- Favicon -->
+    <meta name="author" content="PowerShell Usergroup Hannover">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="geo.region" content="DE-NI">
+    <meta name="geo.placename" content="Hannover">
+    <meta name="geo.position" content="52.3759;9.7320">
+    <meta name="ICBM" content="52.3759, 9.7320">
+    <link rel="canonical" href="https://www.psugh.org/">
+    <title>PowerShell Usergroup Hannover - PSUGH</title> <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="img/psugh-logo.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./css/styles-new.css" as="style">
@@ -27,6 +36,16 @@
     <meta property="og:description"
         content="Die PowerShell Usergroup Hannover - Treffen, Lernen und Austausch rund um PowerShell und Azure">
     <meta property="og:image" content="https://www.psugh.org/img/psugh-logo.png">
+    <meta property="og:site_name" content="PSUGH">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@psughannover">
+    <meta name="twitter:title" content="PowerShell Usergroup Hannover">
+    <meta name="twitter:description"
+        content="Die PowerShell Usergroup Hannover - Treffen, Lernen und Austausch rund um PowerShell und Azure">
+    <meta name="twitter:image" content="https://www.psugh.org/img/psugh-logo.png">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -34,14 +53,87 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "PowerShell Usergroup Hannover",
+        "alternateName": "PSUGH",
+        "description": "Die PowerShell Usergroup Hannover - Treffen, Lernen und Austausch rund um PowerShell und Azure",
         "url": "https://www.psugh.org",
-        "logo": "https://www.psugh.org/img/psugh-logo.png",        "sameAs": [
+        "logo": "https://www.psugh.org/img/psugh-logo.png",
+        "foundingDate": "2019",
+        "email": "info@psugh.de",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Freundallee 13A",
+            "addressLocality": "Hannover",
+            "postalCode": "30173",
+            "addressCountry": "DE"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Hannover"
+        },
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "IT professionals, system administrators, PowerShell users"
+        },
+        "memberOf": {
+            "@type": "Organization",
+            "name": "PowerShell Community"
+        },
+        "sameAs": [
             "https://twitter.com/psughannover",
             "https://norden.social/@psugh",
             "https://github.com/PSUGH/PowerShell",
             "https://www.linkedin.com/company/psugh/",
             "https://discord.com/invite/eZCfJtBHqk"
         ]
+    }
+    </script>
+
+    <!-- Event Structured Data for Meetings -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "PowerShell Usergroup Hannover Treffen",
+        "description": "Monatliches Treffen der PowerShell Usergroup Hannover zum Lernen und Austausch über PowerShell und Azure",
+        "eventSchedule": {
+            "@type": "Schedule",
+            "repeatFrequency": "P1M",
+            "byDay": "Friday",
+            "byMonthWeek": 3
+        },
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "location": [
+            {
+                "@type": "Place",
+                "name": "Netz-Weise",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Freundallee 13A",
+                    "addressLocality": "Hannover",
+                    "postalCode": "30173",
+                    "addressCountry": "DE"
+                }
+            },
+            {
+                "@type": "VirtualLocation",
+                "url": "https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join"
+            }
+        ],
+        "organizer": {
+            "@type": "Organization",
+            "name": "PowerShell Usergroup Hannover",
+            "url": "https://www.psugh.org"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        },
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "IT professionals, system administrators, PowerShell users"
+        }
     }
     </script>
 </head>

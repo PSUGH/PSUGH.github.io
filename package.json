@@ -11,6 +11,7 @@
     "lint-css": "stylelint css/*.css",
     "lint-html": "htmlhint *.html",
     "validate": "npm run lint-css && npm run lint-html",
+    "validate-seo": "node scripts/validate-seo.js",
     "serve": "live-server --port=3000",
     "preview": "npm run build && npm run serve"
   },
