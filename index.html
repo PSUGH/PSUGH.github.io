@@ -327,22 +327,22 @@
                             <span class="terminal-button green"></span>
                         </div>
                         <span class="terminal-title">PowerShell</span>
-                    </div>
-                    <div class="terminal-content"> <code class="terminal-command">
-                            <span class="command-line">PS C:\&gt; iwr https://www.psugh.org/meeting-data.json |</span>
-                            <span class="command-line">ConvertFrom-Json |</span>
+                    </div>                    <div class="terminal-content"> <code class="terminal-command">
+                            <span class="command-line">PS C:\&gt; Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json | `</span>
                             <span class="command-line">Select-Object -ExpandProperty nextMeeting</span>
                         </code>
                     </div>
-                </div>
-                <div class="command-explanations">
+                </div>                <div class="command-explanations">
                     <div class="explanation">
-                        <strong>iwr</strong> — ist die Kurzform (Alias) des Cmdlets <em>Invoke-Webrequest</em>, um Daten
-                        aus dem Internet zu laden.
+                        <strong>Invoke-WebRequest</strong> — lädt Daten aus dem Internet. Das Cmdlet kann auch als
+                        <em>iwr</em> abgekürzt werden.
                     </div>
                     <div class="explanation">
                         <strong>|</strong> — ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das
                         nächste weiterzuleiten.
+                    </div>
+                    <div class="explanation">
+                        <strong>`</strong> — das Backtick-Zeichen ermöglicht es, lange Befehle über mehrere Zeilen zu schreiben.
                     </div>
                     <div class="explanation">
                         <strong>ConvertFrom-Json</strong> — wandelt JSON-Daten in PowerShell-Objekte um, die einfach zu
