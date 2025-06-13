@@ -17,7 +17,51 @@
     <meta name="geo.position" content="52.3759;9.7320">
     <meta name="ICBM" content="52.3759, 9.7320">
     <link rel="canonical" href="https://www.psugh.org/">
-    <title>PowerShell Usergroup Hannover - PSUGH</title> <!-- Favicon -->
+    <title>PowerShell Usergroup Hannover - PSUGH</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TWCEG7YCEQ', {
+            // Enhanced measurement for better insights
+            page_title: document.title,
+            page_location: window.location.href,
+            // Privacy-focused settings for GDPR compliance
+            anonymize_ip: true,
+            allow_ad_personalization_signals: false,
+            // Custom dimensions for community tracking
+            custom_map: {
+                'custom_dimension_1': 'user_type',
+                'custom_dimension_2': 'meeting_interest'
+            }
+        });
+        
+        // Custom event tracking for community engagement
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, {
+                event_category: 'Community Engagement',
+                event_label: parameters.label || '',
+                value: parameters.value || 1,
+                ...parameters
+            });
+        }
+        
+        // Track meeting-related interactions
+        function trackMeetingInteraction(action) {
+            trackEvent('meeting_interaction', {
+                event_label: action,
+                custom_dimension_2: 'interested'
+            });
+        }
+    </script>
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/psugh-logo.png">
@@ -494,6 +538,106 @@
 
         // Load meeting data when page loads
         document.addEventListener('DOMContentLoaded', loadMeetingData);
+        
+        // Analytics Event Tracking for Community Engagement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track social media link clicks
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const platform = this.classList.contains('twitter') ? 'Twitter' :
+                                   this.classList.contains('linkedin') ? 'LinkedIn' :
+                                   this.classList.contains('github') ? 'GitHub' :
+                                   this.classList.contains('discord') ? 'Discord' :
+                                   this.classList.contains('mastodon') ? 'Mastodon' : 'Unknown';
+                    
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('social_link_click', {
+                            event_label: platform,
+                            event_category: 'Social Media'
+                        });
+                    }
+                });
+            });
+
+            // Track meeting-related button clicks
+            const meetingButtons = document.querySelectorAll('.btn[href*="treffen"], .btn[href*="meeting"], .btn[href*="onlineclass"], .btn[href*="meetup"]');
+            meetingButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.textContent.trim();
+                    if (typeof trackMeetingInteraction === 'function') {
+                        trackMeetingInteraction(action);
+                    }
+                });
+            });
+
+            // Track external resource clicks
+            const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="psugh.org"])');
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.href;
+                    const linkText = this.textContent.trim();
+                    
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('external_link_click', {
+                            event_label: linkText,
+                            event_category: 'External Resources',
+                            link_url: url
+                        });
+                    }
+                });
+            });
+
+            // Track PowerShell resources access
+            const psResources = document.querySelectorAll('a[href*="pdf"], a[href*="youtube"], a[href*="github"]');
+            psResources.forEach(link => {
+                link.addEventListener('click', function() {
+                    const resourceType = this.href.includes('pdf') ? 'PDF' :
+                                       this.href.includes('youtube') ? 'Video' :
+                                       this.href.includes('github') ? 'Code' : 'Resource';
+                    
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('resource_access', {
+                            event_label: resourceType,
+                            event_category: 'Learning Resources'
+                        });
+                    }
+                });
+            });
+
+            // Track section views (using Intersection Observer)
+            const sections = document.querySelectorAll('section[id]');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                        const sectionName = entry.target.id || entry.target.className;
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('section_view', {
+                                event_label: sectionName,
+                                event_category: 'Page Engagement'
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Track time spent on page
+            let pageViewStart = Date.now();
+            window.addEventListener('beforeunload', function() {
+                const timeSpent = Math.round((Date.now() - pageViewStart) / 1000);
+                if (typeof trackEvent === 'function' && timeSpent > 10) {
+                    trackEvent('page_engagement', {
+                        event_label: 'time_spent',
+                        value: timeSpent,
+                        event_category: 'User Engagement'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 

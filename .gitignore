@@ -29,3 +29,4 @@ cleanup-backup-*
 
 # Package lock files (keep package.json, ignore lock files)
 package-lock.json
+ANALYTICS-ACTIVATION-COMPLETE.md
