@@ -675,6 +675,62 @@ a:focus {
   text-decoration: none;
 }
 
+/* Impressum Section */
+.impressum-section {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--bg-secondary);
+}
+
+.impressum-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.impressum-section h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.legal-box {
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--bg-tertiary);
+}
+
+.legal-box h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-xl);
+}
+
+.legal-box address {
+  font-style: normal;
+  line-height: var(--line-height-relaxed);
+  margin: var(--spacing-md) 0;
+}
+
+.legal-box p {
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.legal-box p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-box a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.legal-box a:hover {
+  color: var(--primary-dark);
+}
+
 /* Contact Section */
 .contact-section {
   padding: var(--spacing-3xl) 0;
