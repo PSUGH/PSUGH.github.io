@@ -443,6 +443,8 @@ a:focus {
   gap: var(--spacing-lg);
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 
 /* Next Meeting Section */
@@ -512,6 +514,9 @@ a:focus {
   gap: var(--spacing-md);
   margin: var(--spacing-lg) 0;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .room-code {
@@ -943,15 +948,27 @@ a:focus {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: var(--spacing-md);
   }
 
   .btn {
     width: 100%;
     max-width: 300px;
+    text-align: center;
   }
 
   .meeting-links {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: var(--spacing-md);
+  }
+
+  .meeting-links .btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 
   .social-links {
@@ -987,6 +1004,26 @@ a:focus {
 
   .social-links {
     grid-template-columns: 1fr;
+  }
+
+  /* Ensure buttons are fully centered */
+  .hero-actions,
+  .meeting-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions .btn,
+  .meeting-links .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    margin: 0 auto;
   }
 
   /* Smaller logo on very small screens */
