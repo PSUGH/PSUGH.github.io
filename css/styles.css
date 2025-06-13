@@ -444,6 +444,15 @@ a:focus {
   gap: var(--spacing-xl);
 }
 
+.meeting-date,
+.meeting-location {
+  background: var(--bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--bg-tertiary);
+}
+
 .meeting-date h3,
 .meeting-location h3 {
   color: var(--text-primary);
