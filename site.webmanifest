@@ -1,0 +1,22 @@
+<!-- filepath: c:\tools\git\PSUGH.github.io\site.webmanifest -->
+{
+    "name": "PowerShell Usergroup Hannover",
+    "short_name": "PSUGH",
+    "description": "PowerShell Usergroup Hannover - Community für PowerShell und Azure",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "img/psugh-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0073AE",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}

@@ -1,154 +1,410 @@
 <!DOCTYPE html>
 <html lang="de-DE">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Homepage der PowerShell Usergroup Hannover">
-    <meta name="keywords" content="PowerShell, Hannover, Azure, Systemadministrator">
+    <meta name="description"
+        content="Die PowerShell Usergroup Hannover - Treffen, Lernen und Austausch rund um PowerShell und Azure">
+    <meta name="keywords" content="PowerShell, Hannover, Azure, Systemadministrator, Community, Usergroup">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerShell Usergroup Hannover</title>
+    <meta name="theme-color" content="#0073AE">
+    <title>PowerShell Usergroup Hannover - PSUGH</title>
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/styles-new.css" as="style">
+    <link rel="preload" href="./img/psugh-logo.png" as="image"> <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="data.css">
+
+    <!-- Open Graph / Social Media Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.psugh.org/">
+    <meta property="og:title" content="PowerShell Usergroup Hannover">
+    <meta property="og:description"
+        content="Die PowerShell Usergroup Hannover - Treffen, Lernen und Austausch rund um PowerShell und Azure">
+    <meta property="og:image" content="https://www.psugh.org/img/psugh-logo.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PowerShell Usergroup Hannover",
+        "url": "https://www.psugh.org",
+        "logo": "https://www.psugh.org/img/psugh-logo.png",        "sameAs": [
+            "https://twitter.com/psughannover",
+            "https://norden.social/@psugh",
+            "https://github.com/PSUGH/PowerShell",
+            "https://www.linkedin.com/company/psugh/",
+            "https://discord.com/invite/eZCfJtBHqk"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-<div id="container">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-<header class="header">
-<div id="header">
-<!-- Navigation -->
-  <nav id="site-nav">
-    <a href="https://www.psugh.org/" class="logo-link">
-        <img src="./img/psugh-logo.png" alt="Logo der PowerShell Usergroup Hannover">
-    </a>
-      <ul>
-      <li class="current-menu-item"><a href="index.html">Start</a></li>
-	  <li><a href="http://pssat.de/" target="_blank">PowerShell Saturday</a></li>
-	  <li><a href="impressum.html">Impressum</a></li>
-      </ul>
-  </nav>
+    <!-- Header with Hero Section -->
+    <header class="hero-header" role="banner">
+        <!-- Navigation -->
+        <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="https://www.psugh.org/" class="logo-link"
+                    aria-label="PowerShell Usergroup Hannover Startseite">
+                    <img src="./img/psugh-logo.png" alt="PSUGH Logo" width="180" height="60">
+                </a>
 
-<!-- Mobile Navigation --> 
+                <!-- Desktop Navigation -->
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="index.html" class="nav-link active" role="menuitem"
+                            aria-current="page">Start</a></li>
+                    <li role="none"><a href="http://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li role="none"><a href="impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
+                </ul>
 
-  <nav id="mobile-nav">
-    <a href="https://www.psugh.org/" class="logo-link">
-      <img src="./img/psugh-logo.png" alt="Logo der PowerShell Usergroup Hannover">
-    </a>
-    <div class="clearfix" id="mobile-nav-dropdown" onclick="void(0)">
-	  <div id="mobile-nav-button"><span>&equiv;</span></div>
-		  <div class="clearfix" id="mobile-nav-content">
-			   <ul>
-				  <li class="current-menu-item"><a href="index.html">Start</a></li>
-				  <li><a href="http://pssat.de/" target="_blank">PSSAT</a></li>
-				  <li><a href="impressum.html">Impressum</a></li>
-			  </ul>
-		  </div> <!-- Clearfix -->
-    </div> <!-- Clearfix -->
-  </nav>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Menü öffnen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
 
-<!-- Störer 
-  <div id="aktuell_box">
-		<p id="post_title">Der Titel</p>
-		<p id="post_content">Hier der Text.</p>
-  </div>
--->
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link active" role="menuitem">Start</a></li>
+                    <li><a href="http://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li><a href="impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
 
-</div> <!-- Ende Header Div -->
-</header>
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">PowerShell Usergroup Hannover</h1>
+                <p class="hero-subtitle">Willkommen bei der PowerShell Usergroup Hannover! Wir sind eine für alle offene
+                    Gruppe. Unser Ziel ist es, Wissen mit anderen zu teilen und selbst dazuzulernen.</p>
+                <div class="hero-actions">
+                    <a href="#naechstes-treffen" class="btn btn-primary">Nächstes Treffen</a>
+                    <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
+                        rel="noopener" class="btn btn-secondary">Online teilnehmen</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<div id="container">
-<div class='flex-container'>
-  <div class="willkommen">
-	<article>
-			<h1>PowerShell Usergroup Hannover</h1>
-			<p>Willkommen bei der PowerShell Usergroup Hannover! Wir sind eine für alle offene Gruppe. Unser Ziel ist es, Wissen mit anderen zu teilen und selbst dazuzulernen.</p>
-	</article>
-  </div> <!-- willkommen -->
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Next Meeting Section -->
+        <section id="naechstes-treffen" class="next-meeting" aria-labelledby="meeting-heading">
+            <div class="container">
+                <div class="meeting-grid">
+                    <div class="meeting-info">
+                        <h2 id="meeting-heading">Nächstes Treffen</h2>
+                        <div class="meeting-details">
+                            <div class="meeting-date">
+                                <h3>Wann?</h3>
+                                <p><strong>Jeden 3. Freitag im Monat</strong><br><span id="next-meeting-date">Wird
+                                        geladen...</span></p>
+                            </div>
+                            <div class="meeting-location">
+                                <h3>Wo?</h3>
+                                <address>
+                                    <strong><a href="https://www.netz-weise-it.training/" target="_blank"
+                                            rel="noopener">Netz-Weise</a></strong><br>
+                                    Freundallee 13A<br>
+                                    30173 Hannover
+                                </address> <!-- Map -->
+                                <div class="location-map">
+                                    <iframe
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=9.7720%2C52.3655%2C9.7745%2C52.3680&layer=mapnik&marker=52.366611%2C9.773229"
+                                        width="100%" height="200" frameborder="0" style="border: 0; border-radius: 8px;"
+                                        allowfullscreen="" loading="lazy"
+                                        title="Karte: Netz-Weise, Freundallee 13A, 30173 Hannover">
+                                    </iframe>
+                                </div>
 
-  <div class="sidebar" id="content-sidebar">
-	<div class="row">
-	  <div class="col">        
-        <h3>Treffen:</h3>
-		<p><strong>Jeden 3. Freitag</strong> im Monat bei:</p>
-		<address>
-			<a href="https://www.netz-weise-it.training/" class="logo-link" target="_blank">Netz-Weise</a><br />
-			Freundallee 13A<br />
-			30173 Hannover<br />
-		</address>
-		<p class="naechsterTermin"><strong>N&auml;chstes Treffen:</strong> </p>
-      </div>		
-	  <div class="col">
-		<h3>Themen:</h3>
-		<br />
-		<div class="Thema1"></div><br />
-		<div class="Detail1"></div><br />
-		<div class="Thema2"></div><br />
-		<div class="Detail2"></div><br />
-		<p><a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank">Online teilnehmen</a> oder <strong>Aufzeichnungen</strong> anschauen mit Raumzugangscode <strong>ha4fzp</strong></p>
-		<p>Natürlich könnt ihr euch auch bei <a href="https://www.meetup.com/psugh-hannover/events/296335865/" target="_blank>">Meetup</a>  zur Veranstaltung anmelden</p>
-	</div>
-	  <div class="col" id="leer"></div>			
-      <div class="col">	
-		<h3>Kontakt:</h3>
-		<p>Trete mit uns in Kontakt und erfahre mehr &uuml;ber uns auf X oder Mastodon, schau dir Skripte von uns auf Github an oder diskutiere mit uns bei Discord:</p>
-		<div id="kontakt-icons">
-			<a href="https://twitter.com/psughannover"><div id="twitter-icon" aria-label="PowerShell Usergroup Hannover auf Twitter" class="kontakt-icon"></div></a>
-			<a rel="me" href="https://norden.social/@psugh"><div id="mastodon-icon" aria-label="PowerShell Usergroup Hannover auf Mastodon" class="kontakt-icon"></div></a>
-			<a href="https://github.com/PSUGH/PowerShell"><div id="github-icon" aria-label="PowerShell Usergroup Hannover auf GitHub" class="kontakt-icon"></div></a>
-			<a href="https://discord.com/invite/eZCfJtBHqk"><div id="discord-icon" aria-label="PowerShell Usergroup Hannover auf Discord" class="kontakt-icon"></div></a>
-		</div> <!-- Kontakt -->
-      </div>
+                                <div class="partner-links"> <a
+                                        href="https://www.google.com/maps/dir/?api=1&destination=Freundallee+13A%2C+30173+Hannover%2C+Deutschland"
+                                        target="_blank" rel="noopener" class="partner-link directions"
+                                        aria-label="Route zu Netz-Weise">
+                                        <svg class="partner-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                        </svg>
+                                        Route planen
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/netz-weise/" target="_blank"
+                                        rel="noopener" class="partner-link linkedin"
+                                        aria-label="Netz-Weise auf LinkedIn">
+                                        <svg class="partner-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                        </svg>
+                                        LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meeting-topics">
+                        <h3>Themen</h3>
+                        <div id="topics-container">
+                            <!-- Topics will be loaded dynamically -->
+                        </div>
+                        <div class="meeting-links">
+                            <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
+                                rel="noopener" class="btn btn-outline">Online teilnehmen</a> <a
+                                href="https://www.meetup.com/psugh-hannover/events/296335865/" target="_blank"
+                                rel="noopener" class="btn btn-outline">Bei Meetup anmelden</a>
+                        </div>
+                        <p class="room-code"><strong>Online teilnehmen oder Aufzeichnungen anschauen</strong> mit
+                            Raumzugangscode: <code>ha4fzp</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-   </div> <!-- row -->
-  </div> <!-- sidebar -->
-  
-  <div class="content">
-	<article id="terminal">
-		<h2>Terminal</h2>
-		<p>Lass dir unseren n&auml;chsten Termin in der PowerShell anzeigen:</p>
-		<p id="pscode">
-			<code>iwr https://www.psugh.org/data.css | </code><br />
-			<code>sls ':?".*"' -a | </code><br />
-			<code>foreach {$_.Matches.Value} </code><br />
-		</p>
-		<p><strong>iwr</strong> &mdash; ist die Kurzform (Alias) des Cmdlets <i>Invoke-Webrequest</i>, um Daten aus dem Internet zu laden.</p>
-		<p><strong>|</strong> &mdash; ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das nächste weiterzuleiten. 
-		<p><strong>sls</strong> &mdash; ist der Alias des Cmdlets <i>Select-String</i>, mit dem man Text nach Mustern (Regul&auml;rer Ausdr&uuml;cke oder Regex, s.u. <strong>PowerShell lernen</strong>) durchsuchen kann. Der Parameter '-a' zeigt alle Treffer an.</p>
-		<p><strong>foreach</strong> &mdash; ist der Alias für das Cmdlet <i>ForEach-Object</i>, das nur die Treffer ausgibt, die unter 'value' stehen.</p>						
-	    <p>Noch mehr PowerShell-Skripte von uns findest du auf <a href="https://github.com/PSUGH/PowerShell" target="_blank">Github</a>.</p>
-	</article>
-	<br /><br />
-	<article id="das-sind-wir">
-		<h2>Das sind wir</h2>
-		<p>Unser Ziel ist es, Kommunikation zu fördern, von anderen zu lernen und sich mit anderen auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis gedacht</strong>.</p>
-		<p>Wir sind ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. Bei regelmässigen Treffen werden verschiedene Themen vorgestellt und wir freuen uns über alle, die mitmachen wollen und sich mit Vorträgen beteiligen. Pflicht ist das jedoch ausdrücklich nicht!</p>	
-	</article>
-	<br /><br />
-	<article id="powershell-lernen">
-		<h2>PowerShell lernen</h2>
-		<p>In den Videos <a href="https://www.youtube.com/watch?v=jvKU7JoFl0c" target="_blank">PowerShell Basics für Admins - Teil 1-3</a> von Holger werden dir <strong>erste Kenntnisse ohne komplizierte Konstrukte</strong> vermittelt. Wie finde ich nützliche Cmdlets und welche Konzepte erleichtern mir das Leben als Admin und helfen mir, die <strong>PowerShell besser zu verstehen</strong>?</p>
-		<p>Auf der <a href="https://www.netz-weise-it.training/" target="_blank">Homepage seiner Firma Netz-Weise</a> gibt es noch mehr für den <strong>Einstieg in PowerShell</strong>:
-		<ul>
-			<li>Powershell Cheat-Sheet - Regex und wichtige Powershell-Features auf einen Blick <a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Cheat%20Sheet%201.0.pdf" target="_blank">[Download PDF]</a></li>
-			<li>Einf&uuml;hrung in Windows Powershell und AD-Verwaltung mit Powershell <a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Grundlagen%20und%20AD.pdf" target="_blank">[Download E-Book]</a></li>
-		</ul></p>
-	</article>
-	<!--
-	<article id="psugh-lego">
-		<p><img src="./img/psugh-lego.jpg" alt="Logo PowerShell Usergroup Hannover"></p>
-	</article>
-	-->
-	<article id="footer">
-		<p>&copy; PowerShell Usergroup Hannover 2023 &mdash; <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">Einige Rechte vorbehalten (CC BY 3.0)</a></p>
-	</article>
-  </div> <!-- Content -->
-			<!--
-			<div class="sidebar" id="footer-sidebar">
-			<footer id="footer">
-			</footer>
-			-->
-  </div> <!-- Flex-Container -->
-</div> <!-- Container -->
+        <!-- PowerShell Terminal Section -->
+        <section class="terminal-section" aria-labelledby="terminal-heading">
+            <div class="container">
+                <h2 id="terminal-heading">PowerShell Terminal</h2>
+                <p>Lass dir unseren nächsten Termin in der PowerShell anzeigen:</p>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button red"></span>
+                            <span class="terminal-button yellow"></span>
+                            <span class="terminal-button green"></span>
+                        </div>
+                        <span class="terminal-title">PowerShell</span>
+                    </div>
+                    <div class="terminal-content">
+                        <code class="terminal-command">
+                            <span class="command-line">PS C:\&gt; iwr https://www.psugh.org/data.css |</span>
+                            <span class="command-line">sls ':?".*"' -a |</span>
+                            <span class="command-line">foreach {$_.Matches.Value}</span>
+                        </code>
+                    </div>
+                </div>
+
+                <div class="command-explanations">
+                    <div class="explanation">
+                        <strong>iwr</strong> — ist die Kurzform (Alias) des Cmdlets <em>Invoke-Webrequest</em>, um Daten
+                        aus dem Internet zu laden.
+                    </div>
+                    <div class="explanation">
+                        <strong>|</strong> — ist das Symbol für die Pipeline, um die Ausgabe eines Cmdlets an das
+                        nächste weiterzuleiten.
+                    </div>
+                    <div class="explanation">
+                        <strong>sls</strong> — ist der Alias des Cmdlets <em>Select-String</em>, mit dem man Text nach
+                        Mustern durchsuchen kann.
+                    </div>
+                    <div class="explanation">
+                        <strong>foreach</strong> — ist der Alias für das Cmdlet <em>ForEach-Object</em>, das nur die
+                        Treffer ausgibt.
+                    </div>
+                </div>
+
+                <p class="github-link">Noch mehr PowerShell-Skripte von uns findest du auf <a
+                        href="https://github.com/PSUGH/PowerShell" target="_blank" rel="noopener">GitHub</a>.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 id="about-heading">Das sind wir</h2>
+                        <p>Unser Ziel ist es, Kommunikation zu fördern, von anderen zu lernen und sich mit anderen
+                            auszutauschen. Dabei ist die Usergroup ausdrücklich <strong>nicht nur für Profis
+                                gedacht</strong>.</p>
+                        <p>Wir sind ein Community-Projekt <strong>ohne Verpflichtungen und ohne Kosten</strong>. Bei
+                            regelmäßigen Treffen werden verschiedene Themen vorgestellt und wir freuen uns über alle,
+                            die mitmachen wollen und sich mit Vorträgen beteiligen. Pflicht ist das jedoch ausdrücklich
+                            nicht!</p>
+
+                        <h3>PowerShell lernen</h3>
+                        <p>In den Videos <a href="https://www.youtube.com/watch?v=jvKU7JoFl0c" target="_blank"
+                                rel="noopener">PowerShell Basics für Admins - Teil 1-3</a> von Holger werden dir
+                            <strong>erste Kenntnisse ohne komplizierte Konstrukte</strong> vermittelt.
+                        </p>
+
+                        <div class="resources">
+                            <h4>Nützliche Ressourcen:</h4>
+                            <ul>
+                                <li><a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Cheat%20Sheet%201.0.pdf"
+                                        target="_blank" rel="noopener">PowerShell Cheat-Sheet (PDF)</a></li>
+                                <li><a href="https://www.netz-weise-it.training/images/dokus/Powershell%20Grundlagen%20und%20AD.pdf"
+                                        target="_blank" rel="noopener">PowerShell Grundlagen E-Book (PDF)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Kontakt & Community</h2>
+                <p>Trete mit uns in Kontakt und erfahre mehr über uns:</p>
+
+                <div class="social-links">
+                    <a href="https://twitter.com/psughannover" target="_blank" rel="noopener"
+                        class="social-link twitter" aria-label="PSUGH auf Twitter">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg>
+                        <span>Twitter</span>
+                    </a>
+
+                    <a rel="me" href="https://norden.social/@psugh" target="_blank" class="social-link mastodon"
+                        aria-label="PSUGH auf Mastodon">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M21.58 12.58c-.18 1.74-.24 3.48-.3 5.22-.12 3.54-2.34 4.08-4.92 4.08-2.58 0-4.8-.54-4.92-4.08-.06-1.74-.12-3.48-.3-5.22-.18-1.74.84-3.36 2.58-3.36s2.76 1.62 2.58 3.36" />
+                        </svg>
+                        <span>Mastodon</span>
+                    </a> <a href="https://github.com/PSUGH/PowerShell" target="_blank" rel="noopener"
+                        class="social-link github" aria-label="PSUGH auf GitHub">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/psugh/" target="_blank" rel="noopener"
+                        class="social-link linkedin" aria-label="PSUGH auf LinkedIn">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://discord.com/invite/eZCfJtBHqk" target="_blank" rel="noopener"
+                        class="social-link discord" aria-label="PSUGH auf Discord">
+                        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z" />
+                        </svg>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; PowerShell Usergroup Hannover 2025 — <a href="https://creativecommons.org/licenses/by/3.0/de/"
+                    target="_blank" rel="noopener">Einige Rechte vorbehalten (CC BY 3.0)</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Load meeting data from JSON
+        async function loadMeetingData() {
+            try {
+                const response = await fetch('./meeting-data.json');
+                const data = await response.json();
+                const meeting = data.nextMeeting;
+
+                // Update meeting date
+                const dateElement = document.getElementById('next-meeting-date');
+                if (dateElement) {
+                    dateElement.textContent = meeting.date;
+                }
+
+                // Update topics
+                const topicsContainer = document.getElementById('topics-container');
+                if (topicsContainer && meeting.topics) {
+                    topicsContainer.innerHTML = '';
+
+                    meeting.topics.forEach(topic => {
+                        const topicCard = document.createElement('div');
+                        topicCard.className = 'topic-card';
+
+                        const title = document.createElement('h4');
+                        title.textContent = topic.title;
+
+                        const description = document.createElement('p');
+                        // Handle line breaks in description
+                        description.innerHTML = topic.description.replace(/\n/g, '<br>');
+
+                        topicCard.appendChild(title);
+                        topicCard.appendChild(description);
+                        topicsContainer.appendChild(topicCard);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading meeting data:', error);
+                // Fallback content
+                const dateElement = document.getElementById('next-meeting-date');
+                if (dateElement) {
+                    dateElement.textContent = 'Termin wird bekannt gegeben';
+                }
+            }
+        }
+
+        // Load meeting data when page loads
+        document.addEventListener('DOMContentLoaded', loadMeetingData);
+    </script>
 </body>
+
 </html>

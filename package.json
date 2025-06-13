@@ -1,19 +1,49 @@
 {
   "name": "psugh-website",
-  "version": "1.0.0",
-  "description": "Die PowerShell Usergroup Hannover (PSUGH) brauchte dringend eine Website. Die Idee war, sie mit _Github Pages_ zu erstellen.",
-  "main": "index.js",
+  "version": "3.0.0",
+  "description": "Modern website for PowerShell Usergroup Hannover (PSUGH) - built with modern web technologies and deployed on GitHub Pages",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server --port=3000 --open=index-new.html",
+    "build": "npm run minify-css && npm run optimize-images",
+    "minify-css": "cleancss -o css/styles-new.min.css css/styles-new.css",
+    "optimize-images": "imagemin img/*.{jpg,png} --out-dir=img/optimized",
+    "lint-css": "stylelint css/*.css",
+    "lint-html": "htmlhint *.html",
+    "validate": "npm run lint-css && npm run lint-html",
+    "serve": "live-server --port=3000",
+    "preview": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PSUGH/PSUGH.github.io.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "powershell",
+    "usergroup",
+    "hannover",
+    "community",
+    "azure",
+    "github-pages",
+    "static-site"
+  ],
+  "author": "PowerShell Usergroup Hannover",
+  "license": "CC-BY-3.0",
   "bugs": {
     "url": "https://github.com/PSUGH/PSUGH.github.io/issues"
   },
-  "homepage": "https://github.com/PSUGH/PSUGH.github.io#readme"
+  "homepage": "https://www.psugh.org",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "htmlhint": "^1.1.4",
+    "imagemin-cli": "^7.0.0",
+    "live-server": "^1.2.2",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
