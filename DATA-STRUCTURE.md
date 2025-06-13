@@ -7,6 +7,7 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 ## File Structure
 
 ### 📁 `current-meeting.json`
+
 **Purpose**: Contains information about the current/next meeting  
 **Usage**: Loaded by the homepage to display upcoming meeting details  
 **Update Frequency**: Before each meeting (monthly)
@@ -27,6 +28,7 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 ```
 
 ### 📁 `past-events.json`
+
 **Purpose**: Archive of all historical events with materials and speakers  
 **Usage**: Loaded by the events page to display past meetings  
 **Update Frequency**: After each meeting
@@ -52,6 +54,7 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 ```
 
 ### 📁 `upcoming-events.json`
+
 **Purpose**: Planned future events beyond the next meeting  
 **Usage**: Loaded by the events page to show planned meetings  
 **Update Frequency**: As events are planned (quarterly)
@@ -81,11 +84,13 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 ## File Loading
 
 ### Homepage (`index.html`)
+
 - Loads only `current-meeting.json`
 - Displays next meeting information
 - Fast loading for main page
 
 ### Events Page (`events.html`)
+
 - Loads all three files in parallel using `Promise.all()`
 - Combines data for calendar and event displays
 - Efficient parallel loading
@@ -100,7 +105,7 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 ## Workflow
 
 1. **Before a meeting**: Update `current-meeting.json` with new date/topics
-2. **After a meeting**: 
+2. **After a meeting**:
    - Move completed meeting from `current-meeting.json` to `past-events.json`
    - Add materials/recordings links
    - Update `current-meeting.json` with next meeting
@@ -113,6 +118,7 @@ Each file is loaded independently with proper error handling. If one file fails 
 ## Validation
 
 All JSON files should be validated before deployment:
+
 - Syntax validation
 - Schema validation (if implemented)
 - Cross-reference validation (dates, links)
