@@ -12,11 +12,14 @@ Visit us at: **[https://www.psugh.org](https://www.psugh.org)**
 ## ✨ Features
 
 - **Modern Design**: Clean, professional design with CSS Grid and Flexbox
-- **Fully Responsive**: Optimized for all devices and screen sizes
+- **Fully Responsive**: Optimized for all devices and screen sizes with enhanced mobile navigation
+- **Mobile Optimized**: Touch-friendly interface with glassmorphism hamburger menu and centered buttons
 - **Accessible**: WCAG 2.1 compliant with proper semantic HTML and ARIA labels
 - **Performance Optimized**: Fast loading with optimized images and CSS
 - **SEO Ready**: Meta tags, structured data, and Open Graph support
-- **Dynamic Content**: Meeting and topic information managed via CSS
+- **Dynamic Content**: Meeting and event information managed via JSON files
+- **Organized Data Structure**: Separated data files for better maintainability
+- **Interactive Events Page**: Calendar view with upcoming and past events (future events prioritized)
 - **Social Integration**: Links to Twitter, Mastodon, GitHub, and Discord
 
 ## 🛠️ Technology Stack
@@ -31,18 +34,21 @@ Visit us at: **[https://www.psugh.org](https://www.psugh.org)**
 
 ```text
 PSUGH.github.io/
-├── .github/workflows/    # GitHub Actions workflows
-├── css/                  # Stylesheets
-│   ├── normalize.css     # CSS reset
-│   ├── styles.css        # Legacy styles
-│   └── styles-new.css    # Modern styles
-├── fonts/                # Local font files
-├── img/                  # Images and assets
-├── meeting-data.json     # Dynamic content (meeting info)
-├── index.html           # Modern homepage
-├── index-new.html       # Modern homepage
-├── impressum.html       # Legal notice
-└── package.json         # Node.js configuration
+├── .github/workflows/       # GitHub Actions workflows
+├── css/                     # Stylesheets
+│   ├── normalize.css        # CSS reset
+│   └── styles.css           # Main styles (mobile-optimized)
+├── fonts/                   # Local font files
+├── img/                     # Images and assets
+├── current-meeting.json     # Current/next meeting info
+├── past-events.json         # Historical events with materials
+├── upcoming-events.json     # Planned future events
+├── index.html              # Homepage
+├── events.html             # Events page with calendar
+├── impressum.html          # Legal notice
+├── DATA-STRUCTURE.md       # Technical documentation
+├── MEETING-CONTENT.md      # Content management guide
+└── package.json            # Node.js configuration
 ```
 
 ## 🚀 Development
@@ -73,7 +79,7 @@ PSUGH.github.io/
    npm run dev
    ```
 
-   This will start a live server at `http://localhost:3000` with the new design.
+   This will start a live server at `http://localhost:3000`.
 
 ### Available Scripts
 
@@ -114,13 +120,24 @@ For detailed instructions, see `MEETING-CONTENT.md`.
 
 ### Adding New Content
 
-The website uses semantic HTML structure. Main sections include:
+The website uses semantic HTML structure with the following pages:
 
-- Hero header with navigation
-- Next meeting information
+#### Homepage (`index.html`)
+
+- Hero header with responsive navigation
+- Next meeting information (loaded from `current-meeting.json`)
 - PowerShell terminal example
 - About section
 - Contact and social links
+
+#### Events Page (`events.html`)
+
+- Interactive calendar view showing all meetings
+- **Upcoming events section** (prioritized - shown first)
+- **Past events section** with recordings and materials
+- Mobile-optimized event cards with touch-friendly buttons
+
+The events page prioritizes future events by displaying "Kommende Treffen" before "Vergangene Treffen" for better user experience.
 
 ## 🎨 Design System
 
@@ -140,11 +157,15 @@ The website uses a modern design system with:
 
 ## 📱 Mobile First
 
-The website is built with a mobile-first approach:
+The website is built with a mobile-first approach featuring:
 
-- Responsive navigation with hamburger menu
-- Touch-friendly button sizes
-- Optimized content layout for small screens
+- **Enhanced Mobile Navigation**: Glassmorphism hamburger menu with smooth animations
+- **Centered Logo**: Properly centered logo on all mobile screen sizes
+- **Touch-Friendly Interface**: Optimized button sizes and spacing for mobile devices
+- **Responsive Button Layout**: All action buttons center correctly on mobile
+- **Smooth Transitions**: Opacity/visibility-based animations for better performance
+- **Improved Accessibility**: Enhanced focus states and keyboard navigation
+- **Responsive Breakpoints**: Optimized layouts for different screen sizes (320px, 480px, 768px+)
 
 ## ♿ Accessibility
 
@@ -164,6 +185,30 @@ The site is automatically deployed to GitHub Pages via GitHub Actions when chang
 1. Build the site: `npm run build`
 2. Commit and push changes
 3. GitHub Actions will handle the deployment
+
+## 🆕 Recent Improvements
+
+### Mobile Enhancements
+
+- **Fixed navigation**: Logo centering and improved hamburger menu visibility
+- **Enhanced button layout**: All call-to-action buttons now center properly on mobile
+- **Glassmorphism effects**: Modern visual styling for navigation elements
+- **Smooth animations**: Performance-optimized transitions using opacity/visibility
+
+### Data Structure Modernization
+
+- **Separated data files**: Split single `meeting-data.json` into three focused files:
+  - `current-meeting.json` - Next meeting information
+  - `past-events.json` - Historical events with materials/recordings
+  - `upcoming-events.json` - Planned future events
+- **Improved maintainability**: Easier content management and better performance
+- **Enhanced error handling**: Independent loading prevents single-point failures
+
+### User Experience Improvements
+
+- **Prioritized upcoming events**: Events page now shows future meetings before past ones
+- **Interactive calendar**: Visual calendar view with event indicators
+- **Better content organization**: Clear separation between different types of content
 
 ## 📊 Analytics & Performance
 
@@ -187,6 +232,14 @@ The site is automatically deployed to GitHub Pages via GitHub Actions when chang
 - Follow CSS custom property naming conventions
 - Ensure accessibility compliance
 - Test on multiple devices and browsers
+- Validate JSON files for syntax correctness
+
+### Data Structure Guidelines
+
+- **Current meeting data**: Update `current-meeting.json` before each meeting
+- **Past events**: Move completed meetings to `past-events.json` with materials/recordings
+- **Future planning**: Add planned events to `upcoming-events.json`
+- **Documentation**: Update `MEETING-CONTENT.md` for content changes, `DATA-STRUCTURE.md` for technical changes
 
 ## 📄 License
 
