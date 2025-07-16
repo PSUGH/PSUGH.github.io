@@ -1,19 +1,6 @@
 {
     "pastEvents": [
         {
-            "date": "2025-06-20",
-            "dateDisplay": "Freitag, den 20.06.2025",
-            "title": "AI Agents with GitHub Copilot",
-            "topics": [
-                {
-                    "title": "Real Work with GitHub Copilot Agents in VS Code",
-                    "speaker": "Community Expert",
-                    "description": "Practical application of AI Agents beyond Hello World examples"
-                }
-            ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2025-06-20%20AI-Agents"
-        },
-        {
             "date": "Freitag, den 20.06.2025, ab 18:30h",
             "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
             "topics": [
