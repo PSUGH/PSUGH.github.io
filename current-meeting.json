@@ -1,15 +1,11 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 20.06.2025, ab 18:30h",
+        "date": "Freitag, den 18.07.2025, ab 18:30h",
         "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
         "topics": [
             {
-                "title": "🚀 AI Agents: Real Work with GitHub Copilot Agents in VS Code 🚀",
-                "description": "Wir tauchen tief ein in die praktische Anwendung von AI Agents und zeigen dir, wie sie den Unterschied machen können – weit über \"Hello World\" hinaus!"
-            },
-            {
-                "title": "Bereit, deine Arbeitsweise mit KI auf das nächste Level zu heben?",
-                "description": "✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.\n🧠 Das \"Context, Model, Prompt\" Framework praxisnah erleben.\n🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).\n💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze."
+                "title": "KI - Hintergrund und der Stand der Technik",
+                "description": " An diesem Freitag bereitet Euch Holger Voges die Hintergründe zum Thema Deep Learning und Neuronale Netze auf und klärt, was es mit Begriffen wie RAG, Vektordatenbanken, Deep Thinking und dem MCP-Protokoll auf sich hat. Außerdem werden wir uns einige Tools zur Erstellung von Bildern, Videos und Software genauer anschauen und darüber diskutieren, wie weit wir tatsächlich noch von AGI entfernt sind."
             }
         ]
     }
