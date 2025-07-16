@@ -1,12 +1,6 @@
 {
     "upcomingEvents": [
         {
-            "date": "2025-07-18",
-            "dateDisplay": "Freitag, den 18.07.2025",
-            "title": "PowerShell 8.0 Preview & Community Projects",
-            "status": "planned"
-        },
-        {
             "date": "2025-08-15",
             "dateDisplay": "Freitag, den 15.08.2025",
             "title": "Azure DevOps & PowerShell Automation",

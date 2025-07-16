@@ -4,8 +4,8 @@
         "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
         "topics": [
             {
-                "title": "🚀 AI Agents: Real Work with GitHub Copilot Agents in VS Code 🚀",
-                "description": "am 18.07. ist PGUGH-Freitag, dieses Mal mit einem fachfremden Thema, weil es mir schon eine Weile auf der Seele liegt und weil wir Sommerferien haben.\nEs soll dieses Mal nicht um Powershell gehen, sondern um den Stand der KI.\nDafür werde ich versuchen, das Thema KI einmal vollständig aufzurollen und zu erklären, wie neuronale Netze funktionieren, die generative KI wie LLMs funktionieren und was in den letzten 2 Jahren an neuen Techniken entwickelt wurde, um LLMs besser nutzbar zu machen, wie RAG und MCP. Es ist geplant, dabei viel und ausgiebig zu diskutieren, und auch mehr philosophische Themen anzusprechen, wie ob LLMs ein Bewusstsein haben oder überhaupt haben können und was in Zukunft noch alles auf uns zu kommt."
+                "title": "KI - Hintergrund und der Stand der Technik",
+                "description": " An diesem Freitag bereitet Euch Holger Voges die Hintergründe zum Thema Deep Learning und Neuronale Netze auf und klärt, was es mit Begriffen wie RAG, Vektordatenbanken, Deep Thinking und dem MCP-Protokoll auf sich hat. Außerdem werden wir uns einige Tools zur Erstellung von Bildern, Videos und Software genauer anschauen und darüber diskutieren, wie weit wir tatsächlich noch von AGI entfernt sind."
             }
         ]
     }
