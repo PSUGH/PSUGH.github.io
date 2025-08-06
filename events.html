@@ -601,6 +601,9 @@
         }
 
         function renderPastEvents(events) {
+            // Sort events descending by date (newest first)
+            events.sort((a, b) => new Date(b.date) - new Date(a.date));
+
             const container = document.getElementById('pastEventsContainer');
             container.innerHTML = '';
 
@@ -634,6 +637,14 @@
 
             card.appendChild(dateElement);
             card.appendChild(titleElement);
+
+            // Add description for upcoming events
+            if (type === 'upcoming' && event.description) {
+                const descElement = document.createElement('div');
+                descElement.className = 'event-description';
+                descElement.textContent = event.description;
+                card.appendChild(descElement);
+            }
 
             if (event.topics && type === 'past') {
                 const topicsContainer = document.createElement('div');
