@@ -1,6 +1,18 @@
 {
     "pastEvents": [
         {
+            "date": "2025-07-18",
+            "dateDisplay": "Freitag, den 18.07.2025, ab 18:30h",
+            "description": "KI - Hintergrund und der Stand der Technik",
+            "topics": [
+                {
+                    "title": "KI - Hintergrund und der Stand der Technik",
+                    "speaker": "Holger Voges",
+                    "description": " An diesem Freitag bereitet Euch Holger Voges die Hintergründe zum Thema Deep Learning und Neuronale Netze auf und klärt, was es mit Begriffen wie RAG, Vektordatenbanken, Deep Thinking und dem MCP-Protokoll auf sich hat. Außerdem werden wir uns einige Tools zur Erstellung von Bildern, Videos und Software genauer anschauen und darüber diskutieren, wie weit wir tatsächlich noch von AGI entfernt sind."
+                }
+            ]
+        },
+        {
             "date": "2025-06-20",
             "dateDisplay": "Freitag, den 20.06.2025",
             "title": "Real Work with GitHub Copilot Agents in VS Code",
