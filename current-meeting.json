@@ -4,8 +4,9 @@
         "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
         "topics": [
             {
-                "title": "KI - Hintergrund und der Stand der Technik",
-                "description": " An diesem Freitag bereitet Euch Holger Voges die Hintergründe zum Thema Deep Learning und Neuronale Netze auf und klärt, was es mit Begriffen wie RAG, Vektordatenbanken, Deep Thinking und dem MCP-Protokoll auf sich hat. Außerdem werden wir uns einige Tools zur Erstellung von Bildern, Videos und Software genauer anschauen und darüber diskutieren, wie weit wir tatsächlich noch von AGI entfernt sind."
+                "title": "Das PowerShell App Deployment Toolkit (PSADT) in der Praxis",
+                "speaker": "Andreas Nick",
+                "description": "Das PowerShell App Deployment Toolkit (PSADT) hat sich als leistungsstarkes Framework zur standardisierten Softwareverteilung im Windows-Umfeld etabliert. In diesem Vortrag gibt Andreas einen praxisorientierten Einblick in die Möglichkeiten des PSADT und zeigt, wie sich komplexe Installationsszenarien mit klarer Struktur, Benutzerinteraktion und robustem Logging umsetzen lassen – vollständig in PowerShell.\n\nWeiterhin zeigt Andreas die Möglichkeit auf, eine solche Installation mit PowerShell in ein ausführbares Archiv zu verpacken. Die Integration in gängige Deployment-Systeme wie Microsoft Endpoint Configuration Manager und Intune wird angesprochen aber diesmal nicht vertieft. Es gibt inzwischen Tools, die PSADT-Installationen für Intune nutzbar machen – auch wenn der Dozent der Meinung ist, dass MSIX hierfür die bessere Wahl darstellt 😉"
             }
         ]
     }

@@ -509,6 +509,13 @@ a:focus {
   color: var(--primary-color);
 }
 
+.topic-speaker {
+  font-size: 1em;
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
 .meeting-links {
   display: flex;
   gap: var(--spacing-md);

@@ -510,21 +510,29 @@
                 if (topicsContainer && meeting.topics) {
                     topicsContainer.innerHTML = '';
 
-                    meeting.topics.forEach(topic => {
-                        const topicCard = document.createElement('div');
-                        topicCard.className = 'topic-card';
+                meeting.topics.forEach(topic => {
+                    const topicCard = document.createElement('div');
+                    topicCard.className = 'topic-card';
 
-                        const title = document.createElement('h4');
-                        title.textContent = topic.title;
+                    const title = document.createElement('h4');
+                    title.textContent = topic.title;
+                    topicCard.appendChild(title);
 
-                        const description = document.createElement('p');
-                        // Handle line breaks in description
-                        description.innerHTML = topic.description.replace(/\n/g, '<br>');
+                    // Speaker element
+                    if (topic.speaker) {
+                        const speaker = document.createElement('div');
+                        speaker.className = 'topic-speaker';
+                        speaker.textContent = `Referent: ${topic.speaker}`;
+                        topicCard.appendChild(speaker);
+                    }
 
-                        topicCard.appendChild(title);
-                        topicCard.appendChild(description);
-                        topicsContainer.appendChild(topicCard);
-                    });
+                    const description = document.createElement('p');
+                    // Handle line breaks in description
+                    description.innerHTML = topic.description.replace(/\n/g, '<br>');
+                    topicCard.appendChild(description);
+
+                    topicsContainer.appendChild(topicCard);
+                });
                 }
             } catch (error) {
                 console.error('Error loading meeting data:', error);
