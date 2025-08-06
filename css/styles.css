@@ -509,7 +509,7 @@ a:focus {
   color: var(--primary-color);
 }
 
-.topic-card h3 {
+.topic-card h5 {
   color: var(--primary-color);
   margin-bottom: var(--spacing-lg);
 }
