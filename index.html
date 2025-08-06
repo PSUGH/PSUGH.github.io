@@ -520,8 +520,7 @@
 
                     // Speaker element
                     if (topic.speaker) {
-                        const speaker = document.createElement('div');
-                        speaker.className = 'topic-speaker';
+                        const speaker = document.createElement('h3');
                         speaker.textContent = `Referent: ${topic.speaker}`;
                         topicCard.appendChild(speaker);
                     }

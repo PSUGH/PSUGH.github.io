@@ -509,11 +509,9 @@ a:focus {
   color: var(--primary-color);
 }
 
-.topic-speaker {
-  font-size: 1em;
+.topic-card h3 {
   color: var(--primary-color);
-  margin-bottom: 0.5em;
-  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
 }
 
 .meeting-links {
