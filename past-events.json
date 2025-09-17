@@ -1,6 +1,23 @@
 {
     "pastEvents": [
         {
+            "date": "2025-08-15",
+            "dateDisplay": "Freitag, den 15.08.2025",
+            "description": "App Deployment Toolkit (PSADT) & SecurityInfo",
+            "topics": [
+                {
+                    "title": "Das PowerShell App Deployment Toolkit (PSADT) in der Praxis",
+                    "speaker": "Andreas Nick",
+                    "description": "Das PowerShell App Deployment Toolkit (PSADT) hat sich als leistungsstarkes Framework zur standardisierten Softwareverteilung im Windows-Umfeld etabliert. In diesem Vortrag gibt Andreas einen praxisorientierten Einblick in die Möglichkeiten des PSADT und zeigt, wie sich komplexe Installationsszenarien mit klarer Struktur, Benutzerinteraktion und robustem Logging umsetzen lassen – vollständig in PowerShell.\n\nWeiterhin zeigt Andreas die Möglichkeit auf, eine solche Installation mit PowerShell in ein ausführbares Archiv zu verpacken. Die Integration in gängige Deployment-Systeme wie Microsoft Endpoint Configuration Manager und Intune wird angesprochen aber diesmal nicht vertieft. Es gibt inzwischen Tools, die PSADT-Installationen für Intune nutzbar machen – auch wenn der Dozent der Meinung ist, dass MSIX hierfür die bessere Wahl darstellt 😉"
+                },
+                {
+                    "title": "SecurityInfo - PowerShell Modul für Security Intelligence",
+                    "speaker": "Marco Kleinert",
+                    "description": "Ich möchte euch mein SecurityInfo PowerShell-Modul vorstellen - ein praktisches Tool, das ich für die Automatisierung von Vulnerability Management entwickelt habe.👋\n\nWas macht SecurityInfo?\nDas Modul sammelt Schwachstelleninformationen aus verschiedenen öffentlichen Quellen und macht sie in PowerShell verfügbar"
+                }
+            ]
+        },
+        {
             "date": "2025-07-18",
             "dateDisplay": "Freitag, den 18.07.2025",
             "description": "KI - Hintergrund und der Stand der Technik",
