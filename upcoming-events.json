@@ -1,8 +1,8 @@
 {
     "upcomingEvents": [
         {
-            "date": "2025-09-19",
-            "dateDisplay": "Freitag, den 19.09.2025",
+            "date": "2025-10-17",
+            "dateDisplay": "Freitag, den 17.10.2025",
             "speaker": "Marco Kleinert",
             "title": "KI zum Anfassen: Dein eigener lokaler ChatGPT!",
             "description": "Schluss mit der Theorie, jetzt wird's praktisch!\nNach unserem letzten Deep Dive mit Holger in die Welt der Neuronalen Netze bauen wir dieses Mal einen eigenen, lokalen KI-Assistenten.\nIch zeige euch, wie ihr mit Ollama, LangChain und einer Vektordatenbank ein mächtiges RAG-System auf eurem eigenen Laptop aufsetzt. Seid dabei und erlebt, wie ihr KI die Arbeit mit euren eigenen Dokumenten beibringen könnt.\nKeine Cloud, volle Kontrolle. Nicht verpassen!",
