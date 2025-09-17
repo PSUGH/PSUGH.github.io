@@ -239,12 +239,37 @@ a:focus {
   background-color: transparent;
   color: var(--text-inverse);
   border-color: var(--text-inverse);
+
+  /* allow multi-line content and center second line */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  white-space: normal; /* allow line breaks */
+  text-align: center;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
 }
 
 .btn-secondary:hover {
   background-color: var(--text-inverse);
   color: var(--primary-color);
   text-decoration: none;
+}
+.btn-secondary small {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    color: inherit;
+    opacity: 0.9;
+}
+
+.btn-secondary code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-family: monospace;
 }
 
 .btn-outline {

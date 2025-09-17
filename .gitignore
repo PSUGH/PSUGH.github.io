@@ -26,3 +26,4 @@ Thumbs.db
 *.temp
 backup*/
 cleanup-backup-*
+package-lock.json
