@@ -68,10 +68,15 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="./css/styles-new.css" as="style">
+    <link rel="preload" href="./css/styles.css" as="style">
     <link rel="preload" href="./img/psugh-logo.png" as="image"> <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- ...existing meta tags... -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Social Media Meta -->
     <meta property="og:type" content="website">
@@ -230,10 +235,9 @@
                 <p class="hero-subtitle">Willkommen bei der PowerShell Usergroup Hannover! Wir sind eine für alle offene
                     Gruppe. Unser Ziel ist es, Wissen mit anderen zu teilen und selbst dazuzulernen.</p>
             <div class="hero-actions">
-                <a href="#naechstes-treffen" class="btn btn-primary">Nächstes Treffen</a>
-                <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
-                    rel="noopener" class="btn btn-secondary">Online teilnehmen<br>
-                        <small>Zugangscode: <code>ha4fzp</code></small>
+                <a href="#naechstes-treffen" class="btn btn-primary" data-track="meeting">Nächstes Treffen</a>
+                <a href="https://onlineclass.netz-weise.de/rooms/..." target="_blank" rel="noopener" class="btn btn-secondary" data-track="external-meeting">Online teilnehmen
+                <small>Zugangscode: <code>ha4fzp</code></small>
                 </a>
             </div>
             </div>
@@ -570,7 +574,7 @@
             });
 
             // Track meeting-related button clicks
-            const meetingButtons = document.querySelectorAll('.btn[href*="treffen"], .btn[href*="meeting"], .btn[href*="onlineclass"], .btn[href*="meetup"]');
+            const meetingButtons = document.querySelectorAll('.btn[data-track="meeting"], .btn[data-track="external-meeting"]');
             meetingButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     const action = this.textContent.trim();

@@ -4,14 +4,37 @@ Description: Modern, accessible CSS for PowerShell Usergroup Hannover
 Version: 3.0 - Complete Redesign
 */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* Local font fallback */
 @font-face {
-  font-family: Roboto;
+  font-family: 'Roboto';
   src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
+}
+
+/* Accessibility helper: screen-reader only */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Prefer focus-visible for keyboard users (keyboard-only focus outlines) */
+:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
 }
 
 /* CSS Custom Properties */
@@ -70,7 +93,7 @@ Version: 3.0 - Complete Redesign
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
   /* Typography */
-  --font-family-sans: Inter, Roboto, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
+  --font-family-sans: Inter, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-family-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
 
   --font-size-xs: 0.75rem;
@@ -239,17 +262,6 @@ a:focus {
   background-color: transparent;
   color: var(--text-inverse);
   border-color: var(--text-inverse);
-
-  /* allow multi-line content and center second line */
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  white-space: normal; /* allow line breaks */
-  text-align: center;
-  padding-top: var(--spacing-sm);
-  padding-bottom: var(--spacing-sm);
 }
 
 .btn-secondary:hover {
@@ -258,18 +270,18 @@ a:focus {
   text-decoration: none;
 }
 .btn-secondary small {
-    display: block;
-    font-size: 0.8em;
-    margin-top: 0.2em;
-    color: inherit;
-    opacity: 0.9;
+  display: block;
+  font-size: 0.85em;
+  color: inherit;
+  opacity: 0.95;
+  margin-top: 0.15rem;
 }
 
 .btn-secondary code {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
-    font-family: monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+  font-family: var(--font-family-mono);
 }
 
 .btn-outline {
@@ -471,6 +483,34 @@ a:focus {
   align-items: center;
   width: 100%;
 }
+
+.hero-actions .btn-secondary {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;          /* slightly larger gap for breathing room */
+  white-space: normal;   /* override .btn { white-space: nowrap } */
+  text-align: center;
+  padding-top: calc(var(--spacing-sm) + 0.1rem);
+  padding-bottom: calc(var(--spacing-sm) + 0.1rem);
+}
+
+/* make small/code a separate line and style the code */
+ .btn-secondary small {
+   display: block;
+   font-size: 0.85em;
+   color: inherit;
+   opacity: 0.95;
+   margin-top: 0.15rem;
+ }
+
+ .btn-secondary code {
+   background: rgba(255, 255, 255, 0.1);
+   padding: 0.12em 0.35em;
+   border-radius: 3px;
+   font-family: var(--font-family-mono);
+ }
 
 /* Next Meeting Section */
 .next-meeting {
