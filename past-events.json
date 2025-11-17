@@ -1,6 +1,18 @@
 {
     "pastEvents": [
         {
+            "date": "2025-09-19",
+            "dateDisplay": "Freitag, den 19.09.2025",
+            "description": "PKI zähmen mit dem Powershel-Module Tame my Certs",
+            "topics": [
+                {
+                    "title": "PKI zähmen mit dem Powershel-Module Tame my Certs",
+                    "speaker": "Holger Voges",
+                    "description": "Mit seinem Modul \"Tame my Cert\" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuert, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.\nIn dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉"
+                }
+            ]
+        },
+        {
             "date": "2025-08-15",
             "dateDisplay": "Freitag, den 15.08.2025",
             "description": "App Deployment Toolkit (PSADT) & SecurityInfo",
