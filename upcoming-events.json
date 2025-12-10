@@ -1,12 +1,13 @@
 {
-    "upcomingEvents": [
-        {
-            "date": "2025-10-17",
-            "dateDisplay": "Freitag, den 17.10.2025",
-            "speaker": "Marco Kleinert",
-            "title": "KI zum Anfassen: Dein eigener lokaler ChatGPT!",
-            "description": "Schluss mit der Theorie, jetzt wird's praktisch!\nNach unserem letzten Deep Dive mit Holger in die Welt der Neuronalen Netze bauen wir dieses Mal einen eigenen, lokalen KI-Assistenten.\nIch zeige euch, wie ihr mit Ollama, LangChain und einer Vektordatenbank ein mächtiges RAG-System auf eurem eigenen Laptop aufsetzt. Seid dabei und erlebt, wie ihr KI die Arbeit mit euren eigenen Dokumenten beibringen könnt.\nKeine Cloud, volle Kontrolle. Nicht verpassen!",
-            "status": "planned"
-        }
-    ]
+    "nextMeeting": {
+        "date": "Freitag, den 17.01.2026, ab 18:30h",
+        "description": "PowerShell-Zauberei: Wie man Skripte in Kaffee verwandelt",
+        "topics": [
+            {
+                "title": "PowerShell-Zauberei: Wie man Skripte in Kaffee verwandelt",
+                "speaker": "Dr. Scriptorius Magikus",
+                "description": "Vergesst alles, was ihr über PowerShell wisst! In dieser magischen Session zeigt euch Dr. Scriptorius Magikus, wie ihr mit einem Zauberstab (oder einem Keyboard) eure Skripte in endlosen Kaffee-Nachschub verwandelt. Lernt, wie man mit Get-Coffee und Invoke-Magic Fehler behebt, die selbst Dumbledore zum Weinen bringen würden. Bringt eure Zaubertränke (aka Energy Drinks) mit – und lasst uns lachen, während wir coden!"
+            }
+        ]
+    }
 }

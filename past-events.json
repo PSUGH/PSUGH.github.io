@@ -1,6 +1,18 @@
 {
     "pastEvents": [
         {
+            "date": "2025-11-28",
+            "dateDisplay": "Freitag, den 28.11.2025",
+            "description": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",
+            "topics": [
+                {
+                    "title": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",
+                    "speaker": "Evgenij Smirnov",
+                    "description": "Dieses Mal am 4. Freitag im Monat, weil wir einen besonderen Gast haben - Evgenij Smirnov, langjähriger MVP und Organisiator der Powershell Usergroup Berlin, hat uns einen Deep Dive zum Thema P/Invoke und AD mitgebracht. P/Invoke erlaubt es, direkt auf die Win32-API zuzugreifen - im wahrsten Sinne das Innenleben von Windows.\nWer Kerberos-Authentifizierung troubleshooten muss, braucht gute Nerven – und das richtige Toolset. Klist ist super, aber PowerShell bietet mehr Möglichkeiten, mit Daten zu hantieren – Filtern, sortieren usw. Wir bauen das altbewährte Tool in PowerShell nach."
+                }
+            ]
+        },
+        {
             "date": "2025-09-19",
             "dateDisplay": "Freitag, den 19.09.2025",
             "description": "PKI zähmen mit dem Powershel-Module Tame my Certs",

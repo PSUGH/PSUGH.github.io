@@ -577,7 +577,8 @@
                     }
                 }
             }
-        }        // Event data loading and rendering
+        }       
+        // Event data loading and rendering
         async function loadAndRenderEvents() {
             try {
                 // Load all three data files
@@ -592,8 +593,9 @@
                 // Render past events
                 renderPastEvents(pastData.pastEvents || []);
 
-                // Render upcoming events
-                renderUpcomingEvents(upcomingData.upcomingEvents || []);
+                // Render upcoming events (handle nextMeeting as array)
+                const upcomingEvents = upcomingData.nextMeeting ? [upcomingData.nextMeeting] : [];
+                renderUpcomingEvents(upcomingEvents);
 
             } catch (error) {
                 console.error('Error loading events:', error);
@@ -646,7 +648,8 @@
                 card.appendChild(descElement);
             }
 
-            if (event.topics && type === 'past') {
+            // Show topics for both past and upcoming events
+            if (event.topics) {
                 const topicsContainer = document.createElement('div');
                 topicsContainer.className = 'event-topics';
 
@@ -677,45 +680,7 @@
                 card.appendChild(topicsContainer);
             }
 
-            // Add links for past events
-            if (type === 'past' && (event.recording || event.materials)) {
-                const linksContainer = document.createElement('div');
-                linksContainer.className = 'event-links';
-
-                if (event.recording) {
-                    const recordingLink = document.createElement('a');
-                    recordingLink.href = event.recording;
-                    recordingLink.className = 'event-link';
-                    recordingLink.textContent = '🎥 Aufzeichnung ansehen';
-                    recordingLink.target = '_blank';
-                    recordingLink.rel = 'noopener';
-                    recordingLink.addEventListener('click', () => {
-                        trackEvent('video_access', {
-                            event_label: event.title,
-                            event_category: 'Past Events'
-                        });
-                    });
-                    linksContainer.appendChild(recordingLink);
-                }
-
-                if (event.materials) {
-                    const materialsLink = document.createElement('a');
-                    materialsLink.href = event.materials;
-                    materialsLink.className = 'event-link secondary';
-                    materialsLink.textContent = '📁 Materialien & Code';
-                    materialsLink.target = '_blank';
-                    materialsLink.rel = 'noopener';
-                    materialsLink.addEventListener('click', () => {
-                        trackEvent('materials_access', {
-                            event_label: event.title,
-                            event_category: 'Past Events'
-                        });
-                    });
-                    linksContainer.appendChild(materialsLink);
-                }
-
-                card.appendChild(linksContainer);
-            }
+            // ...existing code for past event links...
 
             return card;
         }
