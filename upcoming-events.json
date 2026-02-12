@@ -1,12 +1,12 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 17.01.2026, ab 18:30h",
-        "description": "PowerShell-Zauberei: Wie man Skripte in Kaffee verwandelt",
+        "date": "Freitag, den 20.02.2026, ab 18:30h",
+        "description": "PSScriptAnalyzer mit Christian Ritter",
         "topics": [
             {
-                "title": "PowerShell-Zauberei: Wie man Skripte in Kaffee verwandelt",
-                "speaker": "Dr. Scriptorius Magikus",
-                "description": "Vergesst alles, was ihr über PowerShell wisst! In dieser magischen Session zeigt euch Dr. Scriptorius Magikus, wie ihr mit einem Zauberstab (oder einem Keyboard) eure Skripte in endlosen Kaffee-Nachschub verwandelt. Lernt, wie man mit Get-Coffee und Invoke-Magic Fehler behebt, die selbst Dumbledore zum Weinen bringen würden. Bringt eure Zaubertränke (aka Energy Drinks) mit – und lasst uns lachen, während wir coden!"
+                "title": "PSScriptAnalyzer mit Christian Ritter",
+                "speaker": "Christian Ritter",
+                "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
             }
         ]
     }

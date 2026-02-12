@@ -1,12 +1,12 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 19.12.2025, ab 18:30h",
-        "description": "PSScriptAnalyzer mit Christian Ritter",
+        "date": "Freitag, den 20.02.2026, ab 18:30h",
+        "description": "OPSI für Windows-Admins mit Christian Imhorst",
         "topics": [
             {
-                "title": "PSScriptAnalyzer mit Christian Ritter",
-                "speaker": "Christian Ritter",
-                "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
+                "title": "Open Source trifft Windows-Administration",
+                "speaker": "Christian Imhorst",
+                "description": "Softwareverteilung, Inventarisierung und Patch-Management lassen sich mit OPSI effizient automatisieren und zentral steuern.\nIn dieser Session zeigt euch Christian Imhorst, wie ihr OPSI in wenigen Minuten mit Docker installiert, welche Vorteile das System bietet und wie ihr es nahtlos in eure Windows-Umgebung integriert.\n\nFreut euch auf eine praxisnahe Einführung von einem OPSI Anwender mit Adminrechten ohne tiefergehendes Expertenwissen inkl. Live-Demo, wirren Anwendungsbeispielen und einem Blick darauf, wie ihr mit PowerShell OPSI-Skripte tunen könnt."
             }
         ]
     }
