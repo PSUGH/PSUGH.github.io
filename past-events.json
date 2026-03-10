@@ -126,7 +126,7 @@
             "topics": [
                 {
                     "title": "Device Code Flow Abuse – Angriffe erkennen & abwehren",
-                    "speaker": "Marco Kleiner und Martin Willing",
+                    "speaker": "Marco Kleinert und Martin Willing",
                     "description": "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und Token-Diebstahl."
                 }
             ]
@@ -138,7 +138,7 @@
             "topics": [
                 {
                     "title": "Umgehen von Intune Compliant Device Conditional Access",
-                    "speaker": "Marco Kleiner",
+                    "speaker": "Marco Kleinert",
                     "description": "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. Sie steuert den Zugriff auf sensible Unternehmensdaten. Nur Geräte mit den erforderlichen Sicherheitsstandards sind zugelassen. Das bietet eine zusätzliche Schutzebene gegen Angriffe und Datenverluste.\nEine jetzt bekannt gewordene Lücke ermöglicht es jedoch, diese Sicherheitsrichtlinien unter bestimmten Umständen zu umgehen. Geräte, die eigentlich als nicht konform eingestuft werden sollten, können so unberechtigt Zugriff auf geschützte Ressourcen erlangen."
                 },
                 {
