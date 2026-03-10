@@ -1181,3 +1181,60 @@ button:focus,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Copy button styling */
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transition: background-color var(--transition-fast);
+  color: var(--text-secondary);
+}
+
+.copy-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--primary-color);
+}
+
+.copy-btn:active {
+  background-color: var(--bg-tertiary);
+  transform: scale(0.95);
+}
+
+.copy-icon {
+  fill: currentColor;
+}
+
+.copy-btn.success {
+  color: var(--success-color);
+}
+
+/* Ensure copy button is visible inside buttons/hero */
+.btn-secondary small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.btn-secondary .copy-btn {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+}
+
+.btn-secondary .copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn-secondary .copy-btn.success {
+  color: #2ecc71;
+}

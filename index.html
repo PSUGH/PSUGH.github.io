@@ -76,7 +76,9 @@
     <!-- ...existing meta tags... -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Open Graph / Social Media Meta -->
     <meta property="og:type" content="website">
@@ -234,12 +236,22 @@
                 <h1 class="hero-title">PowerShell Usergroup Hannover</h1>
                 <p class="hero-subtitle">Willkommen bei der PowerShell Usergroup Hannover! Wir sind eine für alle offene
                     Gruppe. Unser Ziel ist es, Wissen mit anderen zu teilen und selbst dazuzulernen.</p>
-            <div class="hero-actions">
-                <a href="#naechstes-treffen" class="btn btn-primary" data-track="meeting">Nächstes Treffen</a>
-                <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank" rel="noopener" class="btn btn-secondary" data-track="external-meeting">Online teilnehmen
-                <small>Zugangscode: <code>ha4fzp</code></small>
-                </a>
-            </div>
+                <div class="hero-actions">
+                    <a href="#naechstes-treffen" class="btn btn-primary" data-track="meeting">Nächstes Treffen</a>
+                    <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
+                        rel="noopener" class="btn btn-secondary" data-track="external-meeting">
+                        <span>Online teilnehmen</span>
+                        <small>Zugangscode: <code id="hero-room-code">ha4fzp</code>
+                            <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('hero-room-code')"
+                                aria-label="Code kopieren">
+                                <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14">
+                                    <path
+                                        d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                                </svg>
+                            </button>
+                        </small>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -306,12 +318,19 @@
                         <div class="meeting-links">
                             <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
                                 rel="noopener" class="btn btn-outline">Online teilnehmen</a> <a
-                                href="https://www.meetup.com/psugh-hannover/events/" target="_blank"
-                                rel="noopener" class="btn btn-outline">Bei Meetup anmelden</a>
+                                href="https://www.meetup.com/psugh-hannover/events/" target="_blank" rel="noopener"
+                                class="btn btn-outline">Bei Meetup anmelden</a>
                             <a href="events.html" class="btn btn-outline">📅 Alle Events &amp; Kalender</a>
                         </div>
                         <p class="room-code"><strong>Online teilnehmen oder Aufzeichnungen anschauen</strong> mit
-                            Raumzugangscode: <code>ha4fzp</code>
+                            Raumzugangscode: <code id="room-code-value">ha4fzp</code>
+                            <button class="copy-btn" onclick="copyToClipboard('room-code-value')"
+                                aria-label="Code kopieren">
+                                <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8C6.9 5 6 5.9 6 7v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                                </svg>
+                            </button>
                         </p>
                     </div>
                 </div>
@@ -486,7 +505,30 @@
                 mobileMenuToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
             }
-        });        // Smooth scrolling for anchor links
+        });
+
+        // Copy to clipboard functionality
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            const button = element.nextElementSibling;
+            const originalIcon = button.innerHTML;
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Success feedback
+                button.classList.add('success');
+                button.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
+
+                setTimeout(() => {
+                    button.classList.remove('success');
+                    button.innerHTML = originalIcon;
+                }, 2000);
+            }).catch(err => {
+                console.error('Copy failed: ', err);
+            });
+        }
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -516,28 +558,28 @@
                 if (topicsContainer && meeting.topics) {
                     topicsContainer.innerHTML = '';
 
-                meeting.topics.forEach(topic => {
-                    const topicCard = document.createElement('div');
-                    topicCard.className = 'topic-card';
+                    meeting.topics.forEach(topic => {
+                        const topicCard = document.createElement('div');
+                        topicCard.className = 'topic-card';
 
-                    const title = document.createElement('h4');
-                    title.textContent = topic.title;
-                    topicCard.appendChild(title);
+                        const title = document.createElement('h4');
+                        title.textContent = topic.title;
+                        topicCard.appendChild(title);
 
-                    // Speaker element
-                    if (topic.speaker) {
-                        const speaker = document.createElement('h5');
-                        speaker.textContent = `Referent: ${topic.speaker}`;
-                        topicCard.appendChild(speaker);
-                    }
+                        // Speaker element
+                        if (topic.speaker) {
+                            const speaker = document.createElement('h5');
+                            speaker.textContent = `Referent: ${topic.speaker}`;
+                            topicCard.appendChild(speaker);
+                        }
 
-                    const description = document.createElement('p');
-                    // Handle line breaks in description
-                    description.innerHTML = topic.description.replace(/\n/g, '<br>');
-                    topicCard.appendChild(description);
+                        const description = document.createElement('p');
+                        // Handle line breaks in description
+                        description.innerHTML = topic.description.replace(/\n/g, '<br>');
+                        topicCard.appendChild(description);
 
-                    topicsContainer.appendChild(topicCard);
-                });
+                        topicsContainer.appendChild(topicCard);
+                    });
                 }
             } catch (error) {
                 console.error('Error loading meeting data:', error);
