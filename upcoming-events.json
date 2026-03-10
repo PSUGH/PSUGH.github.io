@@ -1,13 +1,26 @@
 {
-    "nextMeeting": {
-        "date": "Freitag, den 20.02.2026, ab 18:30h",
-        "description": "PSScriptAnalyzer mit Christian Ritter",
-        "topics": [
-            {
-                "title": "PSScriptAnalyzer mit Christian Ritter",
-                "speaker": "Christian Ritter",
-                "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
-            }
-        ]
-    }
+    "upcomingEvents": [
+        {
+            "date": "Freitag, den 15.05.2026, ab 18:30h",
+            "description": "PSScriptAnalyzer mit Christian Ritter",
+            "topics": [
+                {
+                    "title": "PSScriptAnalyzer mit Christian Ritter",
+                    "speaker": "Christian Ritter",
+                    "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
+                }
+            ]
+        },
+        {
+            "date": "Freitag, den 17.04.2026, ab 18:30h",
+            "description": "Gabriel Köhl präsentiert sein Modul: psTerminalPerfCounter",
+            "topics": [
+                {
+                    "title": "Gabriel Köhl präsentiert sein Modul: psTerminalPerfCounter",
+                    "speaker": "Gabriel Köhl",
+                    "description": "psTerminalPerfCounter ist ein PowerShell-Modul, das vordefinierte, sprachenunabhängige Performance-Counter-Konfigurationen für das Echtzeit-Monitoring im Terminal bereitstellt. Es ermöglicht Admins die schnelle Bereitstellung maßgeschneiderter System-Performance-Presets mit grafischer Visualisierung, anstatt den Windows Performance Monitor manuell konfigurieren zu müssen."
+                }
+            ]
+        }
+    ]
 }

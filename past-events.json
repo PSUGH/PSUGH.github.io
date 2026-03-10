@@ -1,6 +1,18 @@
 {
     "pastEvents": [
         {
+            "date": "2026-02-20",
+            "dateDisplay": "Freitag, den 20.02.2026",
+            "description": "OPSI für Windows-Admins mit Christian Imhorst",
+            "topics": [
+                {
+                    "title": "Open Source trifft Windows-Administration",
+                    "speaker": "Christian Imhorst",
+                    "description": "Softwareverteilung, Inventarisierung und Patch-Management lassen sich mit OPSI effizient automatisieren und zentral steuern.\nIn dieser Session zeigt euch Christian Imhorst, wie ihr OPSI in wenigen Minuten mit Docker installiert, welche Vorteile das System bietet und wie ihr es nahtlos in eure Windows-Umgebung integriert.\n\nFreut euch auf eine praxisnahe Einführung von einem OPSI Anwender mit Adminrechten ohne tiefergehendes Expertenwissen inkl. Live-Demo, wirren Anwendungsbeispielen und einem Blick darauf, wie ihr mit PowerShell OPSI-Skripte tunen könnt."
+                }
+            ]
+        },
+        {
             "date": "2025-11-28",
             "dateDisplay": "Freitag, den 28.11.2025",
             "description": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",

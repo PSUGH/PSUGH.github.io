@@ -492,11 +492,16 @@
                     // Add upcoming events
                     if (upcomingData.upcomingEvents) {
                         upcomingData.upcomingEvents.forEach(event => {
-                            this.events.push({
-                                date: new Date(event.date),
-                                title: event.title,
-                                type: 'upcoming'
-                            });
+                            // Extract date from "Freitag, den 17.04.2026, ab 18:30h"
+                            const dateMatch = event.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                            if (dateMatch) {
+                                const [, day, month, year] = dateMatch;
+                                this.events.push({
+                                    date: new Date(year, month - 1, day),
+                                    title: event.description || 'Kommendes Treffen',
+                                    type: 'upcoming'
+                                });
+                            }
                         });
                     }
 
@@ -577,7 +582,7 @@
                     }
                 }
             }
-        }       
+        }
         // Event data loading and rendering
         async function loadAndRenderEvents() {
             try {
@@ -593,8 +598,8 @@
                 // Render past events
                 renderPastEvents(pastData.pastEvents || []);
 
-                // Render upcoming events (handle nextMeeting as array)
-                const upcomingEvents = upcomingData.nextMeeting ? [upcomingData.nextMeeting] : [];
+                // Render upcoming events
+                const upcomingEvents = upcomingData.upcomingEvents || [];
                 renderUpcomingEvents(upcomingEvents);
 
             } catch (error) {
@@ -616,6 +621,17 @@
         }
 
         function renderUpcomingEvents(events) {
+            // Sort events ascending by date (soonest first)
+            events.sort((a, b) => {
+                const dateA = a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/) ?
+                    new Date(a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[3], a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[2] - 1, a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[1]) :
+                    new Date(a.date);
+                const dateB = b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/) ?
+                    new Date(b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[3], b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[2] - 1, b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[1]) :
+                    new Date(b.date);
+                return dateA - dateB;
+            });
+
             const container = document.getElementById('upcomingEventsContainer');
             container.innerHTML = '';
 

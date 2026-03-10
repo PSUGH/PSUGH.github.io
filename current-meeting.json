@@ -1,12 +1,12 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 20.02.2026, ab 18:30h",
-        "description": "OPSI für Windows-Admins mit Christian Imhorst",
+        "date": "Freitag, den 13.03.2026, ab 18:30h",
+        "description": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
         "topics": [
             {
-                "title": "Open Source trifft Windows-Administration",
-                "speaker": "Christian Imhorst",
-                "description": "Softwareverteilung, Inventarisierung und Patch-Management lassen sich mit OPSI effizient automatisieren und zentral steuern.\nIn dieser Session zeigt euch Christian Imhorst, wie ihr OPSI in wenigen Minuten mit Docker installiert, welche Vorteile das System bietet und wie ihr es nahtlos in eure Windows-Umgebung integriert.\n\nFreut euch auf eine praxisnahe Einführung von einem OPSI Anwender mit Adminrechten ohne tiefergehendes Expertenwissen inkl. Live-Demo, wirren Anwendungsbeispielen und einem Blick darauf, wie ihr mit PowerShell OPSI-Skripte tunen könnt."
+                "title": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
+                "speaker": "Holger Voges",
+                "description": "Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.\nDa Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?\nNa klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.\n\nIn dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen."
             }
         ]
     }
