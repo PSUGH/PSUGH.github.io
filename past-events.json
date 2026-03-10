@@ -13,6 +13,18 @@
             ]
         },
         {
+            "date": "2025-12-19",
+            "dateDisplay": "Freitag, den 19.12.2025",
+            "description": "Versionsverwaltung mit Git - in VSCode und an der Kommandozeile",
+            "topics": [
+                {
+                    "title": "Versionsverwaltung mit Git - in VSCode und an der Kommandozeile",
+                    "speaker": "Holger Voges",
+                    "description": "Git ist Versionsverwaltungssystem von Linus Thorvalds, das sich in der Programmierung zum De-Facto-Standard entwickelt hat. Aber wie funktioniert Git eigentlich, und wie setzt man es ein, um Powershell-Projekte am Besten zu verwalten? In dieser Session zeigt Euch Holger Voges, was man über Git wissen muss, und wie er es einsetzt.\nÜber neue Ideen und Best-Practices kann dann im Anschluss bei einem Bier diskutiert werden."
+                }
+            ]
+        },
+        {
             "date": "2025-11-28",
             "dateDisplay": "Freitag, den 28.11.2025",
             "description": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",
@@ -32,7 +44,7 @@
                 {
                     "title": "PKI zähmen mit dem Powershel-Module Tame my Certs",
                     "speaker": "Holger Voges",
-                    "description": "Mit seinem Modul \"Tame my Cert\" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuert, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.\nIn dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉"
+                    "description": "Mit seinem Modul \"Tame my Cert\" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuer, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.\nIn dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉"
                 }
             ]
         },
@@ -68,6 +80,7 @@
         {
             "date": "2025-06-20",
             "dateDisplay": "Freitag, den 20.06.2025",
+            "description": "VS Code Agent Mode + MCP (Model Context Protocol)",
             "title": "Real Work with GitHub Copilot Agents in VS Code",
             "topics": [
                 {
@@ -79,6 +92,95 @@
                     "title": "Bereit, deine Arbeitsweise mit KI auf das nächste Level zu heben?",
                     "speaker": "Marco Kleinert",
                     "description": "✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.\n🧠 Das \"Context, Model, Prompt\" Framework praxisnah erleben.\n🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).\n💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze."
+                }
+            ]
+        },
+        {
+            "date": "2025-05-16",
+            "dateDisplay": "Freitag, den 16.05.2025",
+            "description": "Powershell-Skripte per Webservice aufrufen mit Pode",
+            "topics": [
+                {
+                    "title": "Powershell-Skripte per Webservice aufrufen mit Pode",
+                    "speaker": "Holger Voges",
+                    "description": "Pode ist ein Open-Source Webserver, der in Powershell implentiert ist und direkt Powershell-Code ausführen kann. In dieser Session zeigt Holger Voges, wie man mit Hilfe von Pode Powershell-Skripte über eine Web-API implementieren und aufrufen kann."
+                }
+            ]
+        },
+        {
+            "date": "2025-03-21",
+            "dateDisplay": "Freitag, den 21.03.2025",
+            "description": "Powershell-Script Live Refactoring mit Frank",
+            "topics": [
+                {
+                    "title": "Powershell-Script Live Refactoring mit Frank",
+                    "speaker": "Frank Lindenblatt",
+                    "description": "Frank Lindenblatt, Programmierer mit Jahrzehntelanger Erfahrung, wird ein oder zwei unbekannte Powershell-Skripte einem Refactoring zu unterziehen. Ziel wird sein, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere Advanced Feature einbauen."
+                }
+            ]
+        },
+        {
+            "date": "2025-02-21",
+            "dateDisplay": "Freitag, den 21.02.2025",
+            "description": "Device Code Flow Abuse – Angriffe erkennen & abwehren",
+            "topics": [
+                {
+                    "title": "Device Code Flow Abuse – Angriffe erkennen & abwehren",
+                    "speaker": "Marco Kleiner und Martin Willing",
+                    "description": "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und Token-Diebstahl."
+                }
+            ]
+        },
+        {
+            "date": "2025-01-17",
+            "dateDisplay": "Freitag, den 17.01.2025",
+            "description": "Umgehen von Intune Compliant Device Conditional Access + Module in PS",
+            "topics": [
+                {
+                    "title": "Umgehen von Intune Compliant Device Conditional Access",
+                    "speaker": "Marco Kleiner",
+                    "description": "Conditional Access ist die wichtigste Sicherheitsmaßnahme in Microsoft-Umgebungen. Sie steuert den Zugriff auf sensible Unternehmensdaten. Nur Geräte mit den erforderlichen Sicherheitsstandards sind zugelassen. Das bietet eine zusätzliche Schutzebene gegen Angriffe und Datenverluste.\nEine jetzt bekannt gewordene Lücke ermöglicht es jedoch, diese Sicherheitsrichtlinien unter bestimmten Umständen zu umgehen. Geräte, die eigentlich als nicht konform eingestuft werden sollten, können so unberechtigt Zugriff auf geschützte Ressourcen erlangen."
+                },
+                {
+                    "title": "Module in PS",
+                    "speaker": "Holger Voges",
+                    "description": "In diesem Vortrag zeigt Holger Voges, wie man effektiv Module in Powershell erstellt."
+                }
+            ]
+        },
+        {
+            "date": "2024-12-20",
+            "dateDisplay": "Freitag, den 20.12.2024",
+            "title": "Powershell-Code generieren mit KI und Security Keys (aka Yubikeys) Nachlese",
+            "topics": [
+                {
+                    "title": "Powershell-Code generieren mit KI und Security Keys (aka Yubikeys) Nachlese",
+                    "speaker": "Holger Voges",
+                    "description": "Am letzten Freitag vor Weihnachten wird es bei der Powershell-Usergroup Hannover noch mal richtig spannend. Als Nachlese zum letzten Treffen werde ich noch einmal auf die Funktionsweise von Security-Keys eingehen und erklären, wie Fido-Keys und Security Keys mit erweiterten Funktionen wie TOTP oder HOTP funktionieren und welche Fallstricke es zu beachten gibt.\nDanach werde ich zeigen, wie weit die Codegenerierung mit KI inzwischen ist, und welche Tools heute State of the Art sind. Über eigene Beiträge und Erfahrungen von Euch bin ich sehr gespannt."
+                }
+            ]
+        },
+        {
+            "date": "2024-11-15",
+            "dateDisplay": "Freitag, den 15.11.2024",
+            "title": "SM365 Notfallzugriffskonten (Break Class Accounts) absichern mit Fido2",
+            "topics": [
+                {
+                    "title": "M365 Notfallzugriffskonten (Break Class Accounts) absichern mit Fido2",
+                    "speaker": "Peter Klaffehn",
+                    "description": "Es ist wieder Powershell-Freitag in Hannover. Dieses Mal holt Peter Klaffehn seinen Vortrag \"Break Glass Accounts (die Hintertür, wenn man nicht mehr auf seinen Tenant kommt) mit Fido2-Sticks absichern\" nach."
+                }
+            ]
+        },
+        {
+            "date": "2024-10-18",
+            "dateDisplay": "Freitag, den 18.10.2024",
+            "title": "Powershell Hashtable, Objekte und das .net Framework",
+            "topics": [
+                {
+                    "title": "Powershell Hashtable, Objekte und das .net Framework",
+                    "speaker": "Holger Voges",
+                    "description": "In diesem Vortrag wird Holger Voges die Grundlagen von PowerShell Hashtables, Objekten und deren Integration mit dem .NET Framework erläutern. Er wird praktische Beispiele und Anwendungsfälle vorstellen, um zu demonstrieren, wie diese Konzepte effektiv in der täglichen PowerShell-Arbeit eingesetzt werden können."
                 }
             ]
         },
