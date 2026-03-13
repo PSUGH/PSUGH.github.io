@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="PowerShell-Tutorial: ConvertFrom-Json nutzen, um JSON-Daten in PowerShell-Objekte zu verwandeln.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0073AE">
+    <meta name="author" content="PowerShell Usergroup Hannover">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <link rel="canonical" href="https://psugh.org/ressourcen/convertfrom-json.html">
+    <title>ConvertFrom-Json | PSUGH Ressourcen</title>
+
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../img/psugh-logo.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header class="hero-header" role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="../" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
+                    <img src="../img/psugh-logo.png" alt="PowerShell Usergroup Hannover" width="180" height="60">
+                </a>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Start</a></li>
+                    <li role="none"><a href="../events.html" class="nav-link" role="menuitem">Events</a></li>
+                    <li role="none"><a href="../ressourcen/" class="nav-link active" role="menuitem"
+                            aria-current="page">Ressourcen</a></li>
+                    <li role="none"><a href="http://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li role="none"><a href="../impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Menü öffnen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+                <ul class="mobile-nav-links">
+                    <li><a href="../index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
+                    <li><a href="../events.html" class="mobile-nav-link" role="menuitem">Events</a></li>
+                    <li><a href="../ressourcen/" class="mobile-nav-link active" role="menuitem"
+                            aria-current="page">Ressourcen</a></li>
+                    <li><a href="http://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li><a href="../impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">ConvertFrom-Json</h1>
+                <p class="hero-subtitle">JSON in PowerShell-Objekte verwandeln – perfekt für API-Daten und
+                    Konfigurationsdateien.</p>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">JSON in PowerShell-Objekte umwandeln</h2>
+                <p class="section-subtitle">JSON ist ein Standardformat für APIs und Konfigurationsdaten.
+                    <code>ConvertFrom-Json</code> macht
+                    daraus direkt ein nutzbares PowerShell-Objekt.
+                </p>
+
+                <h3 class="section-heading">Beispiel: Meeting-Daten auslesen</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button red"></span>
+                            <span class="terminal-button yellow"></span>
+                            <span class="terminal-button green"></span>
+                        </div>
+                        <span class="terminal-title">PowerShell</span>
+                    </div>
+                    <div class="terminal-content">
+                        <code class="terminal-command">$data = Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json
+$data.nextMeeting.date</code>
+                    </div>
+                </div>
+                <p class="section-subtitle">Das gibt den Termin als String zurück (z. B.
+                    <code>Freitag, den 13.03.2026, ab 18:30h</code>).
+                </p>
+
+                <h3 class="section-heading">Auf Objekt-Eigenschaften zugreifen</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button red"></span>
+                            <span class="terminal-button yellow"></span>
+                            <span class="terminal-button green"></span>
+                        </div>
+                        <span class="terminal-title">PowerShell</span>
+                    </div>
+                    <div class="terminal-content">
+                        <code class="terminal-command">$data.nextMeeting.topics | ForEach-Object { $_.title }</code>
+                    </div>
+                </div>
+
+                <h3 class="section-heading">JSON wieder erzeugen</h3>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="terminal-button red"></span>
+                            <span class="terminal-button yellow"></span>
+                            <span class="terminal-button green"></span>
+                        </div>
+                        <span class="terminal-title">PowerShell</span>
+                    </div>
+                    <div class="terminal-content">
+                        <code class="terminal-command">$data | ConvertTo-Json -Depth 5</code>
+                    </div>
+                </div>
+
+                <p class="section-subtitle">Wenn du die JSON-Struktur manipulieren willst, kannst du Eigenschaften
+                    hinzufügen oder ändern und
+                    dann mit <code>ConvertTo-Json</code> zurückschreiben.</p>
+
+                <p><a href="invoke-webrequest.html">Zurück: Invoke-WebRequest</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; PowerShell Usergroup Hannover
+                <script>document.write(new Date().getFullYear())</script> — <a
+                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
+                    vorbehalten (CC BY 3.0)</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
