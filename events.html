@@ -16,8 +16,8 @@
     <meta name="geo.placename" content="Hannover">
     <meta name="geo.position" content="52.3759;9.7320">
     <meta name="ICBM" content="52.3759, 9.7320">
-    <link rel="canonical" href="https://psugh.github.io/events.html">
-    <title>Events &amp; Kalender - PowerShell Usergroup Hannover</title>
+    <link rel="canonical" href="https://psugh.org/events.html">
+    <title>PowerShell Events Hannover | PSUGH Treffen &amp; Kalender</title>
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
@@ -28,7 +28,6 @@
         gtag('config', 'G-TWCEG7YCEQ', {
             page_title: document.title,
             page_location: window.location.href,
-            anonymize_ip: true,
             allow_ad_personalization_signals: false
         });
 
@@ -52,21 +51,22 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
 
-    <!-- Open Graph / Social Media Meta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://psugh.github.io/events.html">
-    <meta property="og:title" content="Events & Kalender - PowerShell Usergroup Hannover">
+    <meta property="og:url" content="https://psugh.org/events.html">
+    <meta property="og:title" content="PowerShell Events Hannover | PSUGH Treffen & Kalender">
     <meta property="og:description"
         content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
-    <meta property="og:image" content="https://psugh.github.io/img/psugh-logo.png">
+    <meta property="og:image" content="https://psugh.org/img/psugh-logo.png">
+    <meta property="og:site_name" content="PSUGH">
+    <meta property="og:locale" content="de_DE">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@psughannover">
-    <meta name="twitter:title" content="Events & Kalender - PowerShell Usergroup Hannover">
+    <meta name="twitter:title" content="PowerShell Events Hannover | PSUGH Treffen & Kalender">
     <meta name="twitter:description"
         content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
-    <meta name="twitter:image" content="https://psugh.github.io/img/psugh-logo.png">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.png">
 
     <style>
         /* Calendar Styles */
@@ -320,7 +320,7 @@
         <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
             <div class="nav-container">
                 <a href="index.html" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
-                    <img src="./img/psugh-logo.png" alt="PSUGH Logo" width="180" height="60">
+                    <img src="./img/psugh-logo.png" alt="PowerShell Usergroup Hannover" width="180" height="60">
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -328,7 +328,7 @@
                     <li role="none"><a href="index.html" class="nav-link" role="menuitem">Start</a></li>
                     <li role="none"><a href="events.html" class="nav-link active" role="menuitem"
                             aria-current="page">Events</a></li>
-                    <li role="none"><a href="http://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                    <li role="none"><a href="https://pssat.de/" class="nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
                     <li role="none"><a href="impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
                 </ul>
@@ -347,7 +347,7 @@
                 <ul class="mobile-nav-links">
                     <li><a href="index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
                     <li><a href="events.html" class="mobile-nav-link active" role="menuitem">Events</a></li>
-                    <li><a href="http://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                    <li><a href="https://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
                     <li><a href="impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
                 </ul>
@@ -375,7 +375,7 @@
                 <div class="calendar-container">
                     <div class="calendar-header">
                         <button class="calendar-nav" id="prevMonth" aria-label="Vorheriger Monat">‹</button>
-                        <div class="calendar-title" id="calendarTitle">Juni 2025</div>
+                        <div class="calendar-title" id="calendarTitle"></div>
                         <button class="calendar-nav" id="nextMonth" aria-label="Nächster Monat">›</button>
                     </div>
                     <div class="calendar-grid" id="calendarGrid">
@@ -411,8 +411,9 @@
     <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <p>&copy; PowerShell Usergroup Hannover 2025 — <a href="https://creativecommons.org/licenses/by/3.0/de/"
-                    target="_blank" rel="noopener">Einige Rechte vorbehalten (CC BY 3.0)</a></p>
+            <p>&copy; PowerShell Usergroup Hannover <span id="footer-year"></span> — <a
+                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
+                    vorbehalten (CC BY 3.0)</a></p>
         </div>
     </footer>
 
@@ -602,6 +603,9 @@
                 const upcomingEvents = upcomingData.upcomingEvents || [];
                 renderUpcomingEvents(upcomingEvents);
 
+                // Inject Schema.org Event markup for Rich Results
+                injectEventSchemas(pastData.pastEvents || [], upcomingEvents);
+
             } catch (error) {
                 console.error('Error loading events:', error);
             }
@@ -620,17 +624,14 @@
             });
         }
 
+        // Helper: parse German date format "DD.MM.YYYY" or ISO string
+        function parseGermanDate(str) {
+            const m = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+            return m ? new Date(m[3], m[2] - 1, m[1]) : new Date(str);
+        }
+
         function renderUpcomingEvents(events) {
-            // Sort events ascending by date (soonest first)
-            events.sort((a, b) => {
-                const dateA = a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/) ?
-                    new Date(a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[3], a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[2] - 1, a.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[1]) :
-                    new Date(a.date);
-                const dateB = b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/) ?
-                    new Date(b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[3], b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[2] - 1, b.date.match(/(\d{2})\.(\d{2})\.(\d{4})/)[1]) :
-                    new Date(b.date);
-                return dateA - dateB;
-            });
+            events.sort((a, b) => parseGermanDate(a.date) - parseGermanDate(b.date));
 
             const container = document.getElementById('upcomingEventsContainer');
             container.innerHTML = '';
@@ -696,15 +697,101 @@
                 card.appendChild(topicsContainer);
             }
 
-            // ...existing code for past event links...
+            // Add links for past events (recordings, slides)
+            if (type === 'past') {
+                const linksContainer = document.createElement('div');
+                linksContainer.className = 'event-links';
+
+                if (event.recordingUrl) {
+                    const recordingLink = document.createElement('a');
+                    recordingLink.href = event.recordingUrl;
+                    recordingLink.target = '_blank';
+                    recordingLink.rel = 'noopener';
+                    recordingLink.className = 'event-link';
+                    recordingLink.textContent = '▶ Aufzeichnung';
+                    linksContainer.appendChild(recordingLink);
+                }
+
+                if (event.slidesUrl) {
+                    const slidesLink = document.createElement('a');
+                    slidesLink.href = event.slidesUrl;
+                    slidesLink.target = '_blank';
+                    slidesLink.rel = 'noopener';
+                    slidesLink.className = 'event-link secondary';
+                    slidesLink.textContent = '📄 Folien';
+                    linksContainer.appendChild(slidesLink);
+                }
+
+                if (linksContainer.hasChildNodes()) {
+                    card.appendChild(linksContainer);
+                }
+            }
 
             return card;
+        }
+
+        // Inject Schema.org Event markup for all events (SEO Rich Results)
+        function injectEventSchemas(pastEvents, upcomingEvents) {
+            const allEvents = [
+                ...upcomingEvents.map(e => ({ ...e, status: 'https://schema.org/EventScheduled' })),
+                ...pastEvents.map(e => ({ ...e, status: 'https://schema.org/EventScheduled' }))
+            ];
+
+            const schemas = allEvents.map(event => {
+                const dateObj = parseGermanDate(event.date);
+                const isoDate = isNaN(dateObj) ? undefined : dateObj.toISOString().split('T')[0];
+                return {
+                    "@context": "https://schema.org",
+                    "@type": "Event",
+                    "name": event.title || "PowerShell Usergroup Hannover Treffen",
+                    "description": event.description || "Monatliches Treffen der PowerShell Usergroup Hannover",
+                    "startDate": isoDate,
+                    "eventStatus": event.status,
+                    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                    "location": [
+                        {
+                            "@type": "Place",
+                            "name": "Netz-Weise",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Freundallee 13A",
+                                "addressLocality": "Hannover",
+                                "postalCode": "30173",
+                                "addressCountry": "DE"
+                            }
+                        },
+                        {
+                            "@type": "VirtualLocation",
+                            "url": "https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join"
+                        }
+                    ],
+                    "organizer": {
+                        "@type": "Organization",
+                        "name": "PowerShell Usergroup Hannover",
+                        "url": "https://psugh.org"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock"
+                    }
+                };
+            }).filter(s => s.startDate); // only inject if date is valid
+
+            schemas.forEach(schema => {
+                const script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = JSON.stringify(schema);
+                document.head.appendChild(script);
+            });
         }
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new EventCalendar();
             loadAndRenderEvents();
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
         });
     </script>
 </body>

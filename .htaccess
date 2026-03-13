@@ -1,7 +1,21 @@
 # SEO and Performance Optimizations for PSUGH Website
-# Note: Some directives may not work on GitHub Pages but show best practices
 
-# Enable compression
+# -------------------------------------------------------
+# HTTPS + www Redirect (Reihenfolge ist kritisch!)
+# -------------------------------------------------------
+RewriteEngine On
+
+# 1. Erst HTTPS erzwingen (vor dem www-Redirect)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. www → non-www Redirect (nur wenn schon HTTPS)
+RewriteCond %{HTTP_HOST} ^www\.psugh\.org [NC]
+RewriteRule ^(.*)$ https://psugh.org/$1 [R=301,L]
+
+# -------------------------------------------------------
+# Compression (Gzip)
+# -------------------------------------------------------
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -12,41 +26,44 @@
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
 </IfModule>
 
-# Set cache headers
+# -------------------------------------------------------
+# Browser Caching
+# -------------------------------------------------------
 <IfModule mod_expires.c>
     ExpiresActive On
+    # HTML kurz cachen - Inhalt ändert sich regelmäßig
+    ExpiresByType text/html "access plus 1 hour"
+    # Statische Assets lang cachen
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/ico "access plus 1 year"
-    ExpiresByType image/icon "access plus 1 year"
-    ExpiresByType text/x-icon "access plus 1 year"
-    ExpiresByType application/x-icon "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType font/truetype "access plus 1 year"
     ExpiresByType font/opentype "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType application/x-font-woff "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    # JSON Meeting-Daten kurz cachen
+    ExpiresByType application/json "access plus 1 hour"
 </IfModule>
 
-# Security headers
+# -------------------------------------------------------
+# Security Headers
+# -------------------------------------------------------
 <IfModule mod_headers.c>
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
-
-# Redirect www to non-www (canonical URLs)
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.psugh\.org [NC]
-RewriteRule ^(.*)$ https://psugh.org/$1 [R=301,L]
-
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
