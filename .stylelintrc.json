@@ -1,7 +1,5 @@
 {
-    "extends": [
-        "stylelint-config-standard"
-    ],
+    "extends": ["stylelint-config-standard"],
     "rules": {
         "custom-property-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
         "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
@@ -16,8 +14,5 @@
         "value-keyword-case": null,
         "no-descending-specificity": null
     },
-    "ignoreFiles": [
-        "css/normalize.css",
-        "css/styles.css"
-    ]
+    "ignoreFiles": ["css/normalize.css", "css/fonts.css"]
 }
