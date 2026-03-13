@@ -7,7 +7,7 @@ Modern, accessible website for the PowerShell Usergroup Hannover (PSUGH) built w
 
 ## 🌐 Live Website
 
-Visit us at: **[https://www.psugh.org](https://www.psugh.org)**
+Visit us at: **[https://psugh.org](https://psugh.org)**
 
 ## ✨ Features
 
@@ -106,6 +106,7 @@ Edit the respective JSON files to update meeting information:
 {
   "nextMeeting": {
     "date": "Freitag, den 20.06.2025, ab 18:30h",
+    "isoDate": "2025-06-20T18:30:00+02:00",
     "topics": [
       {
         "title": "🚀 Your Next Topic Title 🚀",
@@ -144,7 +145,7 @@ The events page prioritizes future events by displaying "Kommende Treffen" befor
 The website uses a modern design system with:
 
 - **Colors**: Primary blue (`#0073AE`), accent orange (`#FF4500`)
-- **Typography**: Inter font family with Roboto fallback
+- **Typography**: Inter font family with JetBrains Mono for code blocks
 - **Spacing**: Consistent spacing scale using CSS custom properties
 - **Components**: Reusable button styles and card components
 
@@ -259,7 +260,7 @@ We meet every **3rd Friday** of the month at:
 Freundallee 13A  
 30173 Hannover
 
-Next meeting: **Friday, June 20, 2025, 6:30 PM**
+Next meeting: See **[psugh.org](https://psugh.org)** for current date
 
 ---
 
