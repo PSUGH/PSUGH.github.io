@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--
+════════════════════════════════════════════════════════════════
+  PSUGH Ressourcen – Artikel-Template
+  Kopiere diese Datei, suche nach PLACEHOLDER und ersetze:
+
+  PLACEHOLDER_SLUG          → Dateiname ohne .html     z.B. invoke-restmethod
+  PLACEHOLDER_TITLE_TAG     → <title>-Text             z.B. Invoke-RestMethod Tutorial | PSUGH Ressourcen
+  PLACEHOLDER_META_DESC     → 120–160 Zeichen          z.B. PowerShell-Tutorial: Invoke-RestMethod ...
+  PLACEHOLDER_OG_TITLE      → Kurzer OG-Titel          z.B. Invoke-RestMethod – Tutorial | PSUGH
+  PLACEHOLDER_OG_DESC       → 1-2 Sätze für Preview    z.B. Lerne Invoke-RestMethod: REST-APIs ...
+  PLACEHOLDER_H1            → Seitenüberschrift         z.B. Invoke-RestMethod
+  PLACEHOLDER_HERO_SUBTITLE → Unterzeile im Hero        z.B. REST-APIs direkt mit PowerShell abfragen.
+════════════════════════════════════════════════════════════════
+-->
+<html lang="de-DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="PLACEHOLDER_META_DESC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0073AE">
+    <meta name="author" content="PowerShell Usergroup Hannover">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <link rel="canonical" href="https://psugh.org/resources/PLACEHOLDER_SLUG.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PowerShell Usergroup Hannover">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="PLACEHOLDER_OG_TITLE">
+    <meta property="og:description" content="PLACEHOLDER_OG_DESC">
+    <meta property="og:url" content="https://psugh.org/resources/PLACEHOLDER_SLUG.html">
+    <meta property="og:image" content="https://psugh.org/img/psugh-logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PLACEHOLDER_OG_TITLE">
+    <meta name="twitter:description" content="PLACEHOLDER_OG_DESC">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.png">
+
+    <!-- Schema.org: TechArticle -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "PLACEHOLDER_OG_TITLE",
+        "description": "PLACEHOLDER_OG_DESC",
+        "url": "https://psugh.org/resources/PLACEHOLDER_SLUG.html",
+        "inLanguage": "de-DE",
+        "author": {
+            "@type": "Organization",
+            "name": "PowerShell Usergroup Hannover",
+            "url": "https://psugh.org/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PowerShell Usergroup Hannover",
+            "url": "https://psugh.org/"
+        }
+    }
+    </script>
+
+    <title>PLACEHOLDER_TITLE_TAG</title>
+
+    <!-- htmlhint head-script-disabled:false -->
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TWCEG7YCEQ', {
+            page_title: document.title,
+            page_location: window.location.href,
+            allow_ad_personalization_signals: false
+        });
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../img/psugh-logo.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header class="hero-header" role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+            <div class="nav-container">
+                <a href="../" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
+                    <img src="../img/psugh-logo.png" alt="PowerShell Usergroup Hannover" width="180" height="60">
+                </a>
+                <ul class="nav-links" role="menubar">
+                    <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Start</a></li>
+                    <li role="none"><a href="../events.html" class="nav-link" role="menuitem">Events</a></li>
+                    <li role="none"><a href="../resources/" class="nav-link active" role="menuitem"
+                            aria-current="page">Ressourcen</a></li>
+                    <li role="none"><a href="https://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li role="none"><a href="../impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Menü öffnen">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu" role="menu" aria-hidden="true">
+                <ul class="mobile-nav-links">
+                    <li><a href="../index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
+                    <li><a href="../events.html" class="mobile-nav-link" role="menuitem">Events</a></li>
+                    <li><a href="../resources/" class="mobile-nav-link active" role="menuitem"
+                            aria-current="page">Ressourcen</a></li>
+                    <li><a href="https://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                            rel="noopener">PowerShell Saturday</a></li>
+                    <li><a href="../impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">PLACEHOLDER_H1</h1>
+                <p class="hero-subtitle">PLACEHOLDER_HERO_SUBTITLE</p>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <a href="../">Startseite</a>
+                <span class="breadcrumb-sep" aria-hidden="true">›</span>
+                <a href="./">Ressourcen</a>
+                <span class="breadcrumb-sep" aria-hidden="true">›</span>
+                <span aria-current="page">PLACEHOLDER_H1</span>
+            </div>
+        </nav>
+
+        <section class="section">
+            <div class="container">
+                <article class="article-card">
+
+                    <!-- ═══════════════════════════════════════════════
+                         INHALT: h2 → h3 Hierarchie einhalten!
+                           h1  = Hero-Titel (oben, bereits gesetzt)
+                           h2  = Hauptabschnitt des Artikels
+                           h3  = Unterabschnitt / Beispiel-Block
+                         Kein h4 ohne vorhergehenden h3 im selben Abschnitt.
+                    ═══════════════════════════════════════════════ -->
+
+                    <h2 class="section-title">Überschrift des Hauptabschnitts</h2>
+                    <p class="section-subtitle">Einleitender Text zum Thema. Erkläre kurz was dieses Cmdlet macht
+                        und wofür man es typischerweise einsetzt.</p>
+
+                    <h3 class="section-heading">Erstes Beispiel</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">Verb-Noun -Parameter 'Wert'</code>
+                        </div>
+                    </div>
+                    <p class="section-subtitle">Erläuterung was dieser Befehl macht und was die Ausgabe bedeutet.</p>
+
+                    <h3 class="section-heading">Zweites Beispiel</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">$result = Verb-Noun -Parameter 'Wert'
+$result.Eigenschaft</code>
+                        </div>
+                    </div>
+                    <p class="section-subtitle">Weiterführender Kommentar oder Hinweis auf verwandte Cmdlets.</p>
+
+                    <!-- Artikel-Navigation: Prev/Next Links -->
+                    <nav class="article-nav" aria-label="Artikel-Navigation">
+                        <a href="index.html">← Zurück zur Übersicht</a>
+                        <!-- <a href="naechster-artikel.html">Nächstes Thema →</a> -->
+                    </nav>
+
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; PowerShell Usergroup Hannover
+                <span id="footer-year"></span> — <a
+                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
+                    vorbehalten (CC BY 3.0)</a>
+            </p>
+        </div>
+        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

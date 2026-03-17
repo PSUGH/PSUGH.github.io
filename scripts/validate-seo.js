@@ -152,189 +152,249 @@ const htmlFiles = [
         file: 'events.html',
         expectedCanonical: `${CANONICAL_BASE}/events.html`,
         noindex: false,
+        dynamicSchema: true,
     },
     {
         file: 'impressum.html',
         expectedCanonical: `${CANONICAL_BASE}/impressum.html`,
         noindex: true,
     },
+    {
+        file: 'resources/index.html',
+        expectedCanonical: `${CANONICAL_BASE}/resources/`,
+        noindex: false,
+    },
+    {
+        file: 'resources/invoke-webrequest.html',
+        expectedCanonical: `${CANONICAL_BASE}/resources/invoke-webrequest.html`,
+        noindex: false,
+    },
+    {
+        file: 'resources/convertfrom-json.html',
+        expectedCanonical: `${CANONICAL_BASE}/resources/convertfrom-json.html`,
+        noindex: false,
+    },
 ];
 
-htmlFiles.forEach(({ file, expectedCanonical, noindex }) => {
-    if (!fs.existsSync(file)) {
-        console.log(
-            `\n${c.bold}📄 ${file}${c.reset} ${c.dim}(not found — skipped)${c.reset}`,
+htmlFiles.forEach(
+    ({ file, expectedCanonical, noindex, dynamicSchema = false }) => {
+        if (!fs.existsSync(file)) {
+            console.log(
+                `\n${c.bold}📄 ${file}${c.reset} ${c.dim}(not found — skipped)${c.reset}`,
+            );
+            return;
+        }
+
+        const raw = fs.readFileSync(file, 'utf8');
+        // Collapse newlines so multiline tags are matchable
+        const content = raw.replace(/\r?\n/g, ' ');
+
+        console.log(`\n${c.bold}📄 ${file}${c.reset}`);
+
+        // ── Title ────────────────────────────────────────────────────────────────
+        const title = extract(content, /<title>(.*?)<\/title>/i);
+        if (!title) {
+            result('fail', 'Title tag');
+        } else {
+            const len = title.length;
+            if (len >= 30 && len <= 60)
+                result('pass', 'Title tag', `"${title}" (${len} chars)`);
+            else if (len < 30)
+                result(
+                    'warn',
+                    'Title too short',
+                    `${len} chars — aim for 30-60`,
+                );
+            else
+                result(
+                    'warn',
+                    'Title too long',
+                    `${len} chars — aim for 30-60`,
+                );
+        }
+
+        // ── Meta description ─────────────────────────────────────────────────────
+        const desc =
+            extract(content, /<meta\s+name="description"\s+content="(.*?)"/i) ||
+            extract(content, /<meta\s+content="(.*?)"\s+name="description"/i);
+        if (!desc) {
+            result('fail', 'Meta description');
+        } else {
+            const len = desc.length;
+            if (len >= 120 && len <= 160)
+                result('pass', 'Meta description', `${len} chars`);
+            else if (len < 120)
+                result(
+                    'warn',
+                    'Meta description short',
+                    `${len} chars — aim for 120-160`,
+                );
+            else
+                result(
+                    'warn',
+                    'Meta description long',
+                    `${len} chars — Google truncates at ~160`,
+                );
+        }
+
+        // ── Canonical ────────────────────────────────────────────────────────────
+        const canonical = extract(
+            content,
+            /<link\s+rel="canonical"\s+href="(.*?)"/i,
         );
-        return;
-    }
+        if (!canonical) {
+            result('fail', 'Canonical URL');
+        } else if (canonical === expectedCanonical) {
+            result('pass', 'Canonical URL', canonical);
+        } else {
+            result(
+                'fail',
+                'Canonical URL mismatch',
+                `expected: ${expectedCanonical} — got: ${canonical}`,
+            );
+        }
 
-    const raw = fs.readFileSync(file, 'utf8');
-    // Collapse newlines so multiline tags are matchable
-    const content = raw.replace(/\r?\n/g, ' ');
-
-    console.log(`\n${c.bold}📄 ${file}${c.reset}`);
-
-    // ── Title ────────────────────────────────────────────────────────────────
-    const title = extract(content, /<title>(.*?)<\/title>/i);
-    if (!title) {
-        result('fail', 'Title tag');
-    } else {
-        const len = title.length;
-        if (len >= 30 && len <= 60)
-            result('pass', 'Title tag', `"${title}" (${len} chars)`);
-        else if (len < 30)
-            result('warn', 'Title too short', `${len} chars — aim for 30-60`);
-        else result('warn', 'Title too long', `${len} chars — aim for 30-60`);
-    }
-
-    // ── Meta description ─────────────────────────────────────────────────────
-    const desc =
-        extract(content, /<meta\s+name="description"\s+content="(.*?)"/i) ||
-        extract(content, /<meta\s+content="(.*?)"\s+name="description"/i);
-    if (!desc) {
-        result('fail', 'Meta description');
-    } else {
-        const len = desc.length;
-        if (len >= 120 && len <= 160)
-            result('pass', 'Meta description', `${len} chars`);
-        else if (len < 120)
+        // ── lang attribute ───────────────────────────────────────────────────────
+        const lang = extract(content, /<html[^>]+lang="([^"]+)"/i);
+        if (lang === 'de-DE' || lang === 'de')
+            result('pass', 'html lang attribute', lang);
+        else if (lang)
             result(
                 'warn',
-                'Meta description short',
-                `${len} chars — aim for 120-160`,
+                'html lang attribute',
+                `"${lang}" — expected "de-DE"`,
+            );
+        else result('fail', 'html lang attribute missing');
+
+        // ── Viewport ─────────────────────────────────────────────────────────────
+        if (/<meta\s+name="viewport"/i.test(content))
+            result('pass', 'Viewport meta tag');
+        else result('fail', 'Viewport meta tag missing');
+
+        // ── Open Graph ───────────────────────────────────────────────────────────
+        const ogRequired = [
+            'og:type',
+            'og:title',
+            'og:description',
+            'og:url',
+            'og:image',
+            'og:site_name',
+            'og:locale',
+        ];
+        const missingOG = ogRequired.filter(
+            (p) => !content.includes(`property="${p}"`),
+        );
+        if (missingOG.length === 0)
+            result(
+                'pass',
+                'Open Graph tags',
+                `all ${ogRequired.length} present`,
             );
         else
-            result(
-                'warn',
-                'Meta description long',
-                `${len} chars — Google truncates at ~160`,
+            missingOG.forEach((p) =>
+                result('fail', `Open Graph missing: ${p}`),
             );
-    }
 
-    // ── Canonical ────────────────────────────────────────────────────────────
-    const canonical = extract(
-        content,
-        /<link\s+rel="canonical"\s+href="(.*?)"/i,
-    );
-    if (!canonical) {
-        result('fail', 'Canonical URL');
-    } else if (canonical === expectedCanonical) {
-        result('pass', 'Canonical URL', canonical);
-    } else {
-        result(
-            'fail',
-            'Canonical URL mismatch',
-            `expected: ${expectedCanonical} — got: ${canonical}`,
+        // ── OG URL matches canonical ──────────────────────────────────────────────
+        const ogUrl = extract(
+            content,
+            /<meta\s+property="og:url"\s+content="(.*?)"/i,
         );
-    }
+        if (ogUrl && ogUrl === expectedCanonical)
+            result('pass', 'og:url matches canonical');
+        else if (ogUrl)
+            result(
+                'fail',
+                'og:url mismatch with canonical',
+                `og:url="${ogUrl}"`,
+            );
 
-    // ── lang attribute ───────────────────────────────────────────────────────
-    const lang = extract(content, /<html[^>]+lang="([^"]+)"/i);
-    if (lang === 'de-DE' || lang === 'de')
-        result('pass', 'html lang attribute', lang);
-    else if (lang)
-        result('warn', 'html lang attribute', `"${lang}" — expected "de-DE"`);
-    else result('fail', 'html lang attribute missing');
+        // ── Twitter Card ─────────────────────────────────────────────────────────
+        if (/meta\s+name="twitter:card"/.test(content))
+            result('pass', 'Twitter Card');
+        else result('fail', 'Twitter Card missing');
 
-    // ── Viewport ─────────────────────────────────────────────────────────────
-    if (/<meta\s+name="viewport"/i.test(content))
-        result('pass', 'Viewport meta tag');
-    else result('fail', 'Viewport meta tag missing');
-
-    // ── Open Graph ───────────────────────────────────────────────────────────
-    const ogRequired = [
-        'og:type',
-        'og:title',
-        'og:description',
-        'og:url',
-        'og:image',
-        'og:site_name',
-        'og:locale',
-    ];
-    const missingOG = ogRequired.filter(
-        (p) => !content.includes(`property="${p}"`),
-    );
-    if (missingOG.length === 0)
-        result('pass', 'Open Graph tags', `all ${ogRequired.length} present`);
-    else missingOG.forEach((p) => result('fail', `Open Graph missing: ${p}`));
-
-    // ── OG URL matches canonical ──────────────────────────────────────────────
-    const ogUrl = extract(
-        content,
-        /<meta\s+property="og:url"\s+content="(.*?)"/i,
-    );
-    if (ogUrl && ogUrl === expectedCanonical)
-        result('pass', 'og:url matches canonical');
-    else if (ogUrl)
-        result('fail', 'og:url mismatch with canonical', `og:url="${ogUrl}"`);
-
-    // ── Twitter Card ─────────────────────────────────────────────────────────
-    if (/meta\s+name="twitter:card"/.test(content))
-        result('pass', 'Twitter Card');
-    else result('fail', 'Twitter Card missing');
-
-    // ── Structured data ──────────────────────────────────────────────────────
-    if (/<script\s+type="application\/ld\+json">/.test(content)) {
-        result('pass', 'Structured data (ld+json)');
-        // Try to validate JSON if inline
-        const jsonBlocks = [
-            ...raw.matchAll(
-                /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/g,
-            ),
-        ];
-        jsonBlocks.forEach((m, i) => {
-            try {
-                JSON.parse(m[1]);
-                result('pass', `ld+json block ${i + 1} valid JSON`);
-            } catch (e) {
+        // ── Structured data ──────────────────────────────────────────────────────
+        if (/<script\s+type="application\/ld\+json">/.test(content)) {
+            result('pass', 'Structured data (ld+json)');
+            // Try to validate JSON if inline
+            const jsonBlocks = [
+                ...raw.matchAll(
+                    /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+                ),
+            ];
+            jsonBlocks.forEach((m, i) => {
+                try {
+                    JSON.parse(m[1]);
+                    result('pass', `ld+json block ${i + 1} valid JSON`);
+                } catch (e) {
+                    result(
+                        'fail',
+                        `ld+json block ${i + 1} invalid JSON`,
+                        e.message,
+                    );
+                }
+            });
+        } else if (dynamicSchema) {
+            // Schema is injected at runtime via JS — verify the injection function exists in source
+            if (/injectEventSchemas/.test(raw))
+                result(
+                    'pass',
+                    'Structured data (ld+json)',
+                    'dynamic injection via injectEventSchemas()',
+                );
+            else
                 result(
                     'fail',
-                    `ld+json block ${i + 1} invalid JSON`,
-                    e.message,
+                    'Structured data (ld+json)',
+                    'dynamicSchema=true but injectEventSchemas() not found in source',
                 );
-            }
-        });
-    } else {
-        result(
-            noindex ? 'warn' : 'fail',
-            'Structured data (ld+json)',
-            noindex ? 'noindex page — ok to omit' : 'missing',
-        );
-    }
-
-    // ── Robots meta ──────────────────────────────────────────────────────────
-    const robotsContent = extract(
-        content,
-        /<meta\s+name="robots"\s+content="(.*?)"/i,
-    );
-    if (noindex) {
-        if (robotsContent && robotsContent.includes('noindex'))
-            result('pass', 'Robots meta: noindex', robotsContent);
-        else result('fail', 'Robots meta: noindex expected but not set');
-    } else {
-        if (!robotsContent || robotsContent.includes('noindex'))
+        } else {
             result(
-                robotsContent ? 'fail' : 'warn',
-                'Robots meta',
-                robotsContent
-                    ? `noindex found on indexable page!`
-                    : 'not set — defaults to index,follow (ok)',
+                noindex ? 'warn' : 'fail',
+                'Structured data (ld+json)',
+                noindex ? 'noindex page — ok to omit' : 'missing',
             );
-        else result('pass', 'Robots meta', robotsContent);
-    }
+        }
 
-    // ── GA4 ──────────────────────────────────────────────────────────────────
-    if (/gtag|googletagmanager/.test(content))
-        result('pass', 'Google Analytics (GA4)');
-    else result('warn', 'Google Analytics not detected');
+        // ── Robots meta ──────────────────────────────────────────────────────────
+        const robotsContent = extract(
+            content,
+            /<meta\s+name="robots"\s+content="(.*?)"/i,
+        );
+        if (noindex) {
+            if (robotsContent && robotsContent.includes('noindex'))
+                result('pass', 'Robots meta: noindex', robotsContent);
+            else result('fail', 'Robots meta: noindex expected but not set');
+        } else {
+            if (!robotsContent || robotsContent.includes('noindex'))
+                result(
+                    robotsContent ? 'fail' : 'warn',
+                    'Robots meta',
+                    robotsContent
+                        ? `noindex found on indexable page!`
+                        : 'not set — defaults to index,follow (ok)',
+                );
+            else result('pass', 'Robots meta', robotsContent);
+        }
 
-    // ── Google Search Console verification ───────────────────────────────────
-    if (STRICT) {
-        if (/<meta\s+name="google-site-verification"/.test(content))
-            result('pass', 'Google Search Console verification tag');
-        else result('warn', 'Google Search Console verification tag missing');
-    }
-});
+        // ── GA4 ──────────────────────────────────────────────────────────────────
+        if (/gtag|googletagmanager/.test(content))
+            result('pass', 'Google Analytics (GA4)');
+        else result('warn', 'Google Analytics not detected');
+
+        // ── Google Search Console verification ───────────────────────────────────
+        if (STRICT) {
+            if (/<meta\s+name="google-site-verification"/.test(content))
+                result('pass', 'Google Search Console verification tag');
+            else
+                result(
+                    'warn',
+                    'Google Search Console verification tag missing',
+                );
+        }
+    },
+);
 
 // ─── 5. site.webmanifest ─────────────────────────────────────────────────────
 console.log(`\n${c.bold}📱 site.webmanifest${c.reset}`);

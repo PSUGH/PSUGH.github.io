@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="PowerShell-Ressourcen der PSUGH: Tutorials, HowTos, Cmdlet-Erklärungen und Mitschnitte vergangener Vorträge.">
+        content="PowerShell-Ressourcen der PSUGH: Tutorials, HowTos, Cmdlet-Erklärungen und Mitschnitte vergangener Vorträge – für Einsteiger und Profis in Hannover.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
@@ -15,7 +15,40 @@
     <meta name="geo.placename" content="Hannover">
     <meta name="geo.position" content="52.3759;9.7320">
     <meta name="ICBM" content="52.3759, 9.7320">
-    <link rel="canonical" href="https://psugh.org/ressourcen/">
+    <link rel="canonical" href="https://psugh.org/resources/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PowerShell Usergroup Hannover">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="PowerShell Ressourcen – Tutorials & HowTos | PSUGH">
+    <meta property="og:description"
+        content="Praxisnahe PowerShell-Tutorials, Cmdlet-Erklärungen und Zusammenfassungen von PSUGH-Vorträgen – für Einsteiger und Profis.">
+    <meta property="og:url" content="https://psugh.org/resources/">
+    <meta property="og:image" content="https://psugh.org/img/psugh-logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PowerShell Ressourcen – Tutorials & HowTos | PSUGH">
+    <meta name="twitter:description"
+        content="Praxisnahe PowerShell-Tutorials, Cmdlet-Erklärungen und Zusammenfassungen von PSUGH-Vorträgen – für Einsteiger und Profis.">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "PowerShell Ressourcen – Tutorials & HowTos | PSUGH",
+        "description": "Praxisnahe PowerShell-Tutorials, Cmdlet-Erklärungen und Zusammenfassungen von PSUGH-Vorträgen – für Einsteiger und Profis.",
+        "url": "https://psugh.org/resources/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "PowerShell Usergroup Hannover",
+            "url": "https://psugh.org/"
+        }
+    }
+    </script>
     <title>PowerShell Ressourcen | PSUGH Hannover</title>
 
     <!-- Google Analytics 4 -->
@@ -49,6 +82,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/fonts.css">
 </head>
 
 <body>
@@ -63,9 +97,9 @@
                 <ul class="nav-links" role="menubar">
                     <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Start</a></li>
                     <li role="none"><a href="../events.html" class="nav-link" role="menuitem">Events</a></li>
-                    <li role="none"><a href="../ressourcen/" class="nav-link active" role="menuitem"
+                    <li role="none"><a href="../resources/" class="nav-link active" role="menuitem"
                             aria-current="page">Ressourcen</a></li>
-                    <li role="none"><a href="http://pssat.de/" class="nav-link" role="menuitem" target="_blank"
+                    <li role="none"><a href="https://pssat.de/" class="nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
                     <li role="none"><a href="../impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
                 </ul>
@@ -81,9 +115,9 @@
                 <ul class="mobile-nav-links">
                     <li><a href="../index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
                     <li><a href="../events.html" class="mobile-nav-link" role="menuitem">Events</a></li>
-                    <li><a href="../ressourcen/" class="mobile-nav-link active" role="menuitem"
+                    <li><a href="../resources/" class="mobile-nav-link active" role="menuitem"
                             aria-current="page">Ressourcen</a></li>
-                    <li><a href="http://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
+                    <li><a href="https://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
                     <li><a href="../impressum.html" class="mobile-nav-link" role="menuitem">Impressum</a></li>
                 </ul>
@@ -175,11 +209,12 @@ $data.nextMeeting.date</code>
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <p>&copy; PowerShell Usergroup Hannover
-                <script>document.write(new Date().getFullYear())</script> — <a
-                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
+                <span id="footer-year"></span> — <a href="https://creativecommons.org/licenses/by/3.0/de/"
+                    target="_blank" rel="noopener">Einige Rechte
                     vorbehalten (CC BY 3.0)</a>
             </p>
         </div>
+        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     </footer>
 
     <script>

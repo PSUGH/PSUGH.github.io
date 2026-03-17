@@ -1290,7 +1290,7 @@ button:focus,
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Resource Grid (used on /ressourcen/) */
+        /* Resource Grid (used on /resources/) */
         .resource-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1492,4 +1492,154 @@ button:focus,
 
 .btn-secondary .copy-btn.success {
   color: #2ecc71;
+}
+/* ═══════════════════════════════════════════════════════════════════
+   Ressourcen-Artikel-Layout
+   Artikel-Seiten (invoke-webrequest.html, convertfrom-json.html usw.)
+   rendern ihren Inhalt in einer Article-Card mit linksbuendigem Text.
+   Die .section-title / .section-heading / .section-subtitle Klassen
+   aus dem Event-Bereich sind fuer den zentrierten Startseiten-Stil
+   optimiert; hier ueberschreiben wir sie im Artikel-Kontext.
+═══════════════════════════════════════════════════════════════════ */
+
+/* Artikel-Wrapper: gibt dem gesamten Artikel-Inhalt Card-Rahmen   */
+.article-card {
+  background: var(--bg-primary);
+  border: var(--border-width) solid var(--bg-tertiary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-2xl) var(--spacing-2xl);
+  margin: var(--spacing-2xl) 0;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+}
+
+/* Innerhalb einer .article-card: alle Text-Elemente linksbuendig   */
+.article-card .section-title,
+.article-card .section-heading,
+.article-card .section-subtitle {
+  text-align: left;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.article-card .section-title {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--bg-tertiary);
+}
+
+.article-card .section-heading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Erster .section-heading direkt nach .section-title braucht       */
+/* kein extra top-margin                                             */
+.article-card .section-title + .section-heading,
+.article-card .section-title + p + .section-heading,
+.article-card .section-title + .section-subtitle + .section-heading {
+  margin-top: var(--spacing-xl);
+}
+
+.article-card .section-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Terminal-Window voll breit innerhalb der Card                    */
+.article-card .terminal-window {
+  max-width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Inlinelinks im Artikel                                           */
+.article-card p a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-card p a:hover {
+  color: var(--primary-dark);
+}
+
+/* Navigationsleiste am Ende des Artikels                          */
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: var(--border-width) solid var(--bg-tertiary);
+  flex-wrap: wrap;
+}
+
+.article-nav a {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width) solid var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+  background: var(--bg-secondary);
+}
+
+.article-nav a:hover {
+  border-color: var(--primary-color);
+  background: var(--bg-primary);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Resource-Card Fixups: CSS-Variablen statt hardcoded rgba()       */
+/* Ueberschreibt die raw-rgba Werte aus dem bestehenden Block       */
+.resource-card,
+.event-card {
+  box-shadow: var(--shadow-md);
+  border: var(--border-width) solid var(--bg-tertiary);
+}
+
+.resource-card:hover,
+.event-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Breadcrumb-Leiste auf Unterseiten                                */
+.breadcrumb {
+  padding: var(--spacing-md) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  margin: 0 var(--spacing-xs);
+  color: var(--bg-tertiary);
 }
