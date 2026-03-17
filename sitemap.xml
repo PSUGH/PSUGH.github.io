@@ -51,5 +51,12 @@
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/resources/convertfrom-json.html"/>
     </url>
+    <url>
+        <loc>https://psugh.org/resources/select-object.html</loc>
+        <lastmod>2026-03-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/resources/select-object.html"/>
+    </url>
 
 </urlset>

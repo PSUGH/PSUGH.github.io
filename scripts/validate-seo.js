@@ -174,6 +174,11 @@ const htmlFiles = [
         expectedCanonical: `${CANONICAL_BASE}/resources/convertfrom-json.html`,
         noindex: false,
     },
+    {
+        file: 'resources/select-object.html',
+        expectedCanonical: `${CANONICAL_BASE}/resources/select-object.html`,
+        noindex: false,
+    },
 ];
 
 htmlFiles.forEach(

@@ -4,40 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="PowerShell-Tutorial: Invoke-WebRequest (iwr) für HTTP-Anfragen, JSON-APIs und Datei-Downloads – mit Beispielen der PowerShell Usergroup Hannover.">
+        content="Select-Object in PowerShell: Welche Eigenschaften eines Objekts brauchst du, und wie filterst du Ergebnisse sauber und performant?">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <link rel="canonical" href="https://psugh.org/resources/invoke-webrequest.html">
+    <link rel="canonical" href="https://psugh.org/resources/select-object.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="Invoke-WebRequest in PowerShell – Tutorial | PSUGH">
+    <meta property="og:title" content="Select-Object: Eigenschaften auswählen | PSUGH Ressourcen">
     <meta property="og:description"
-        content="Lerne Invoke-WebRequest (iwr): Webseiten, APIs und JSON-Daten direkt mit PowerShell laden – mit praktischen Beispielen der PSUGH.">
-    <meta property="og:url" content="https://psugh.org/resources/invoke-webrequest.html">
+        content="Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.">
+    <meta property="og:url" content="https://psugh.org/resources/select-object.html">
     <meta property="og:image" content="https://psugh.org/img/psugh-logo.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Invoke-WebRequest in PowerShell – Tutorial | PSUGH">
+    <meta name="twitter:title" content="Select-Object: Eigenschaften auswählen | PSUGH Ressourcen">
     <meta name="twitter:description"
-        content="Lerne Invoke-WebRequest (iwr): Webseiten, APIs und JSON-Daten direkt mit PowerShell laden – mit praktischen Beispielen der PSUGH.">
+        content="Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.">
     <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.png">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Invoke-WebRequest in PowerShell – Tutorial | PSUGH",
-        "description": "Lerne Invoke-WebRequest (iwr): Webseiten, APIs und JSON-Daten direkt mit PowerShell laden – mit praktischen Beispielen der PSUGH.",
-        "url": "https://psugh.org/resources/invoke-webrequest.html",
+        "headline": "Select-Object: Eigenschaften auswählen | PSUGH Ressourcen",
+        "description": "Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.",
+        "url": "https://psugh.org/resources/select-object.html",
         "inLanguage": "de-DE",
         "author": {
             "@type": "Organization",
@@ -51,7 +52,8 @@
         }
     }
     </script>
-    <title>Invoke-WebRequest Tutorial | PSUGH Ressourcen</title>
+
+    <title>Select-Object | PSUGH Ressourcen</title>
 
     <!-- htmlhint head-script-disabled:false -->
     <!-- Google Analytics 4 -->
@@ -118,8 +120,9 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Invoke-WebRequest (iwr)</h1>
-                <p class="hero-subtitle">Webseiten, APIs und Dateien direkt mit PowerShell herunterladen.</p>
+                <h1 class="hero-title">Select-Object</h1>
+                <p class="hero-subtitle">Wähle genau die Eigenschaften, die du brauchst, und optimiere deine
+                    PowerShell-Pipelines.</p>
             </div>
         </div>
     </header>
@@ -132,17 +135,24 @@
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
                     <a href="./">Ressourcen</a>
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
-                    <span aria-current="page">Invoke-WebRequest</span>
+                    <span aria-current="page">Select-Object</span>
                 </nav>
+
                 <article class="article-card">
-                    <h2 class="section-title">Was macht Invoke-WebRequest?</h2>
-                    <p class="section-subtitle"><code>Invoke-WebRequest</code> lädt Inhalte aus dem Internet (HTML,
-                        JSON,
-                        Dateien) und gibt ein
-                        Objekt zurück, das z. B. <code>Content</code>, <code>StatusCode</code> oder <code>Headers</code>
-                        enthält.</p>
 
-                    <h3 class="section-heading">Grundlegendes Beispiel</h3>
+                    <!-- ═══════════════════════════════════════════════
+                         INHALT: h2 → h3 Hierarchie einhalten!
+                           h1  = Hero-Titel (oben, bereits gesetzt)
+                           h2  = Hauptabschnitt des Artikels
+                           h3  = Unterabschnitt / Beispiel-Block
+                         Kein h4 ohne vorhergehenden h3 im selben Abschnitt.
+                    ═══════════════════════════════════════════════ -->
+
+                    <h2 class="section-title">Select-Object (Select)</h2>
+                    <p class="section-subtitle">`Select-Object` wählt aus Objekten nur die Eigenschaften, die du später
+                        weiterverarbeiten möchtest.</p>
+
+                    <h3 class="section-heading">Einfacher Einsatz</h3>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -153,34 +163,14 @@
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code
-                                class="terminal-command">Invoke-WebRequest https://psugh.github.io/meeting-data.json</code>
+                            <code class="terminal-command">Get-Process | Select-Object Name, CPU, WorkingSet</code>
                         </div>
                     </div>
-                    <p class="section-subtitle">Das Ergebnis ist ein <code>HtmlWebResponseObject</code>, das du weiter
-                        verarbeiten kannst.</p>
 
-                    <h3 class="section-heading">JSON direkt als PowerShell-Objekt</h3>
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-button red"></span>
-                                <span class="terminal-button yellow"></span>
-                                <span class="terminal-button green"></span>
-                            </div>
-                            <span class="terminal-title">PowerShell</span>
-                        </div>
-                        <div class="terminal-content">
-                            <code
-                                class="terminal-command">Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json</code>
-                        </div>
-                    </div>
-                    <p class="section-subtitle">Damit kannst du bequem auf Eigenschaften wie
-                        <code>nextMeeting.date</code>
-                        zugreifen.
+                    <p>Verkürzt Ausgabe und macht sie leichter verarbeitbar (z. B. für CSV-Export oder JSON-Ausgabe).
                     </p>
 
-                    <h3 class="section-heading">Datei herunterladen</h3>
+                    <h3 class="section-heading">Mit Aliasen</h3>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -192,34 +182,29 @@
                         </div>
                         <div class="terminal-content">
                             <code
-                                class="terminal-command">Invoke-WebRequest "https://example.com/file.zip" -OutFile "C:\temp\file.zip"</code>
+                                class="terminal-command">Get-Service | Select-Object @{Name='Name';Expression={$_.DisplayName}}, Status</code>
                         </div>
                     </div>
 
-                    <h3 class="section-heading">Authentifizierung (Basic Auth)</h3>
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-button red"></span>
-                                <span class="terminal-button yellow"></span>
-                                <span class="terminal-button green"></span>
-                            </div>
-                            <span class="terminal-title">PowerShell</span>
-                        </div>
-                        <div class="terminal-content">
-                            <code class="terminal-command">$creds = Get-Credential
-Invoke-WebRequest "https://api.example.com/data" -Credential $creds</code>
-                        </div>
-                    </div>
+                    <p>Mit Hash-Tabellen kannst du Spalten umbenennen oder berechnete Werte erzeugen.</p>
 
-                    <p class="section-subtitle">Wenn du häufiger mit APIs arbeitest, ist <code>Invoke-RestMethod</code>
-                        oft
-                        noch bequemer, da es
-                        automatisch JSON parst.</p>
+                    <h3 class="section-heading">Nützliche Optionen</h3>
+                    <ul>
+                        <li><code>-First</code> / <code>-Last</code> – wähle nur die ersten/letzten n Objekte.</li>
+                        <li><code>-Unique</code> – entferne Duplikate.</li>
+                        <li><code>-ExpandProperty</code> – gebe den Inhalt einer Eigenschaft (z. B. Array) direkt aus.
+                        </li>
+                    </ul>
+
+                    <h3 class="section-heading">Pipeline-Performance</h3>
+                    <p>Setze <code>Select-Object</code> so spät wie möglich in der Pipeline ein, damit nur die
+                        benötigten
+                        Eigenschaften weitergereicht werden.</p>
+
                     <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <span></span>
-                        <a href="convertfrom-json.html">ConvertFrom-Json →</a>
+                        <a href="index.html">← Zurück zur Übersicht</a>
                     </nav>
+
                 </article>
             </div>
         </section>
@@ -227,36 +212,14 @@ Invoke-WebRequest "https://api.example.com/data" -Credential $creds</code>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <p>&copy; PowerShell Usergroup Hannover
-                <span id="footer-year"></span> — <a href="https://creativecommons.org/licenses/by/3.0/de/"
-                    target="_blank" rel="noopener">Einige Rechte
+            <p>&copy; PowerShell Usergroup Hannover <span id="footer-year"></span> — <a
+                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
                     vorbehalten (CC BY 3.0)</a>
             </p>
         </div>
         <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     </footer>
 
-    <script>
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 
 </html>

@@ -184,6 +184,24 @@ $data.nextMeeting.date</code>
                         </div>
                     </article>
 
+                    <article class="resource-card">
+                        <h3><a href="select-object.html">Select-Object: Eigenschaften auswählen</a></h3>
+                        <p>Wähle die richtigen Eigenschaften aus, damit deine Pipeline schlank bleibt und nur das ausgegeben wird, was du brauchst.</p>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-button red"></span>
+                                    <span class="terminal-button yellow"></span>
+                                    <span class="terminal-button green"></span>
+                                </div>
+                                <span class="terminal-title">PowerShell</span>
+                            </div>
+                            <div class="terminal-content">
+                                <code class="terminal-command">Get-Process | Select-Object Name, CPU, WorkingSet</code>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
