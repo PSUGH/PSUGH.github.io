@@ -53,6 +53,16 @@ button:focus-visible,
   --bg-dark: #2c3e50;
   --bg-overlay: rgb(44 62 80 / 90%);
 
+  /* Accent backgrounds */
+  --primary-faint: rgba(0, 115, 174, 0.12);
+
+  /* Social link brand colors */
+  --social-twitter: #1DA1F2;
+  --social-mastodon: #563ACC;
+  --social-github: #24292E;
+  --social-discord: #5865F2;
+  --social-linkedin: #0077B5;
+
   /* Spacing */
   --spacing-xs: 0.25rem;
 
@@ -594,7 +604,7 @@ a:focus {
 }
 
 .terminal-header {
-  background: #2A2A2A;
+  background: var(--bg-dark);
   padding: var(--spacing-md);
   display: flex;
   align-items: center;
@@ -613,19 +623,19 @@ a:focus {
 }
 
 .terminal-button.red {
-  background: #FF5F57;
+  background: var(--error-color);
 }
 
 .terminal-button.yellow {
-  background: #FFBD2E;
+  background: var(--warning-color);
 }
 
 .terminal-button.green {
-  background: #28CA42;
+  background: var(--success-color);
 }
 
 .terminal-title {
-  color: #ccc;
+  color: var(--text-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
 }
@@ -635,7 +645,7 @@ a:focus {
 }
 
 .terminal-command {
-  color: #0f0;
+  color: var(--success-color);
   font-family: var(--font-family-mono);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
@@ -848,23 +858,23 @@ a:focus {
 
 /* Social Link Colors */
 .social-link.twitter:hover {
-  color: #1DA1F2;
+  color: var(--social-twitter);
 }
 
 .social-link.mastodon:hover {
-  color: #563ACC;
+  color: var(--social-mastodon);
 }
 
 .social-link.github:hover {
-  color: #24292E;
+  color: var(--social-github);
 }
 
 .social-link.discord:hover {
-  color: #5865F2;
+  color: var(--social-discord);
 }
 
 .social-link.linkedin:hover {
-  color: #0077B5;
+  color: var(--social-linkedin);
 }
 
 /* Partner Links */
@@ -901,7 +911,7 @@ a:focus {
 }
 
 .partner-link.linkedin:hover {
-  color: #0077B5;
+  color: var(--social-linkedin);
   background: rgba(0, 119, 181, 0.1);
 }
 
@@ -1178,7 +1188,7 @@ button:focus,
         }
         /* Calendar Styles */
         .calendar-container {
-            background: white;
+            background: var(--bg-primary);
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
@@ -1203,27 +1213,27 @@ button:focus,
         }
 
         .calendar-nav:hover {
-            background-color: #f0f0f0;
+            background-color: var(--bg-secondary);
         }
 
         .calendar-title {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #0073AE;
+            color: var(--primary-color);
         }
 
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 1px;
-            background-color: #e0e0e0;
+            background-color: var(--bg-tertiary);
             border-radius: 8px;
             overflow: hidden;
         }
 
         .calendar-day-header {
-            background-color: #0073AE;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--text-inverse);
             padding: 0.75rem;
             text-align: center;
             font-weight: bold;
@@ -1231,7 +1241,7 @@ button:focus,
         }
 
         .calendar-day {
-            background-color: white;
+            background-color: var(--bg-primary);
             padding: 0.5rem;
             min-height: 40px;
             display: flex;
@@ -1243,17 +1253,17 @@ button:focus,
         }
 
         .calendar-day:hover {
-            background-color: #f8f9fa;
+            background-color: var(--bg-secondary);
         }
 
         .calendar-day.other-month {
-            background-color: #f5f5f5;
-            color: #999;
+            background-color: var(--bg-secondary);
+            color: var(--text-muted);
         }
 
         .calendar-day.has-event {
-            background-color: #e3f2fd;
-            color: #0073AE;
+            background-color: var(--primary-faint);
+            color: var(--primary-color);
             font-weight: bold;
         }
 
@@ -1265,7 +1275,7 @@ button:focus,
             transform: translateX(-50%);
             width: 6px;
             height: 6px;
-            background-color: #0073AE;
+            background-color: var(--primary-color);
             border-radius: 50%;
         }
 
@@ -1278,7 +1288,7 @@ button:focus,
         }
 
         .event-card {
-            background: white;
+            background: var(--bg-primary);
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
@@ -1305,7 +1315,7 @@ button:focus,
         }
 
         .resource-card {
-            background: white;
+            background: var(--bg-primary);
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
@@ -1327,8 +1337,8 @@ button:focus,
         }
 
         .event-date {
-            background: linear-gradient(135deg, #0073AE, #005a8b);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--text-inverse);
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-weight: bold;
@@ -1339,7 +1349,7 @@ button:focus,
         .event-title {
             font-size: 1.3rem;
             font-weight: bold;
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
@@ -1348,8 +1358,8 @@ button:focus,
         }
 
         .topic-item {
-            background-color: #f8f9fa;
-            border-left: 4px solid #0073AE;
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--primary-color);
             padding: 1rem;
             margin-bottom: 0.5rem;
             border-radius: 0 8px 8px 0;
@@ -1357,19 +1367,19 @@ button:focus,
 
         .topic-title {
             font-weight: bold;
-            color: #0073AE;
+            color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
         .topic-speaker {
             font-style: italic;
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
         .topic-description {
-            color: #555;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
 
@@ -1378,14 +1388,15 @@ button:focus,
             gap: 1rem;
             margin-top: 1rem;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .event-link {
             display: inline-flex;
             align-items: center;
             padding: 0.5rem 1rem;
-            background-color: #0073AE;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--text-inverse);
             text-decoration: none;
             border-radius: 6px;
             font-size: 0.9rem;
@@ -1393,16 +1404,18 @@ button:focus,
         }
 
         .event-link:hover {
-            background-color: #005a8b;
-            color: white;
+            background-color: var(--primary-dark);
+            color: var(--text-inverse);
         }
 
         .event-link.secondary {
-            background-color: #6c757d;
+            background-color: var(--secondary-color);
+            color: var(--text-inverse);
         }
 
         .event-link.secondary:hover {
-            background-color: #545b62;
+            background-color: var(--text-primary);
+            color: var(--text-inverse);
         }
 
         /* Section Styles */
@@ -1413,7 +1426,7 @@ button:focus,
         .section-title {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             text-align: center;
         }
@@ -1421,7 +1434,7 @@ button:focus,
         .section-heading {
             font-size: 2.0rem;
             font-weight: bold;
-            color: #333;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             margin-top: 2.5rem;
             text-align: center;
@@ -1429,7 +1442,7 @@ button:focus,
 
         .section-subtitle {
             font-size: 1.1rem;
-            color: #666;
+            color: var(--text-secondary);
             text-align: center;
             margin-bottom: 2rem;
             max-width: 600px;
@@ -1491,7 +1504,7 @@ button:focus,
 }
 
 .btn-secondary .copy-btn.success {
-  color: #2ecc71;
+  color: var(--success-color);
 }
 /* ═══════════════════════════════════════════════════════════════════
    Ressourcen-Artikel-Layout

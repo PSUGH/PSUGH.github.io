@@ -482,6 +482,16 @@
                     linksContainer.appendChild(slidesLink);
                 }
 
+                if (event.materials) {
+                    const materialsLink = document.createElement('a');
+                    materialsLink.href = event.materials;
+                    materialsLink.target = '_blank';
+                    materialsLink.rel = 'noopener';
+                    materialsLink.className = 'event-link secondary';
+                    materialsLink.textContent = '📦 Materialien';
+                    linksContainer.appendChild(materialsLink);
+                }
+
                 if (linksContainer.hasChildNodes()) {
                     card.appendChild(linksContainer);
                 }
