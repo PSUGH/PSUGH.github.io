@@ -1522,7 +1522,7 @@ button:focus,
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--spacing-2xl) var(--spacing-2xl);
-  margin: var(--spacing-2xl) 0;
+  margin: 0 0 var(--spacing-2xl) 0;
 }
 
 @media (max-width: 768px) {
@@ -1638,6 +1638,7 @@ button:focus,
 /* Breadcrumb-Leiste auf Unterseiten                                */
 .breadcrumb {
   padding: var(--spacing-md) 0 0;
+  margin-bottom: var(--spacing-md);
   font-size: var(--font-size-sm);
   color: var(--text-muted);
 }

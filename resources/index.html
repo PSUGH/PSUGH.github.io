@@ -51,6 +51,12 @@
     </script>
     <title>PowerShell Ressourcen | PSUGH Hannover</title>
 
+    <!-- Performance: preconnect to analytics endpoints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
     <script>
@@ -186,7 +192,8 @@ $data.nextMeeting.date</code>
 
                     <article class="resource-card">
                         <h3><a href="select-object.html">Select-Object: Eigenschaften auswählen</a></h3>
-                        <p>Wähle die richtigen Eigenschaften aus, damit deine Pipeline schlank bleibt und nur das ausgegeben wird, was du brauchst.</p>
+                        <p>Wähle die richtigen Eigenschaften aus, damit deine Pipeline schlank bleibt und nur das
+                            ausgegeben wird, was du brauchst.</p>
                         <div class="terminal-window">
                             <div class="terminal-header">
                                 <div class="terminal-buttons">
@@ -253,6 +260,26 @@ $data.nextMeeting.date</code>
                 mobileMenu.setAttribute('aria-hidden', 'true');
                 mobileMenuToggle.classList.remove('active');
                 mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Close the mobile menu with Escape key and restore focus
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuToggle.focus();
+            }
+        });
+
+        // Focus first menu item when opening
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            if (!isOpen) {
+                const firstLink = mobileMenu.querySelector('a');
+                firstLink?.focus();
             }
         });
     </script>

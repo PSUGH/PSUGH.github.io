@@ -19,6 +19,12 @@
     <link rel="canonical" href="https://psugh.org/events.html">
     <title>PowerShell Events Hannover | PSUGH Treffen &amp; Kalender</title>
 
+    <!-- Performance: preconnect to analytics endpoints -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
     <script>
@@ -50,6 +56,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/fonts.css">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://psugh.org/events.html">
@@ -438,6 +445,12 @@
                     topicTitle.className = 'topic-title';
                     topicTitle.textContent = topic.title;
 
+                    const topicDescription = document.createElement('div');
+                    topicDescription.className = 'topic-description';
+                    topicDescription.textContent = topic.description;
+
+                    topicElement.appendChild(topicTitle);
+
                     if (topic.speaker) {
                         const topicSpeaker = document.createElement('div');
                         topicSpeaker.className = 'topic-speaker';
@@ -445,11 +458,6 @@
                         topicElement.appendChild(topicSpeaker);
                     }
 
-                    const topicDescription = document.createElement('div');
-                    topicDescription.className = 'topic-description';
-                    topicDescription.textContent = topic.description;
-
-                    topicElement.appendChild(topicTitle);
                     topicElement.appendChild(topicDescription);
                     topicsContainer.appendChild(topicElement);
                 });
