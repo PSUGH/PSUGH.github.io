@@ -138,7 +138,8 @@
                     "description": "Der Device Code Flow ist ein mächtiges Tool für sichere Authentifizierung – doch Cyberkriminelle missbrauchen ihn zunehmend für Phishing-Angriffe und Token-Diebstahl."
                 }
             ],
-            "title": "Device Code Flow Abuse – Angriffe erkennen & abwehren"
+            "title": "Device Code Flow Abuse – Angriffe erkennen & abwehren",
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2025-02-21%20DeviceCodeFlow"
         },
         {
             "date": "2025-01-17",
