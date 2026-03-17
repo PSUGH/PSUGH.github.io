@@ -20,15 +20,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/events.html"/>
     </url>
 
-    <!-- Impressum/Legal Page -->
-    <url>
-        <loc>https://psugh.org/impressum.html</loc>
-        <lastmod>2026-03-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/impressum.html"/>
-    </url>
-
     <!-- Resources Pages -->
     <url>
         <loc>https://psugh.org/resources/</loc>
@@ -40,21 +31,21 @@
     <url>
         <loc>https://psugh.org/resources/invoke-webrequest.html</loc>
         <lastmod>2026-03-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/resources/invoke-webrequest.html"/>
     </url>
     <url>
         <loc>https://psugh.org/resources/convertfrom-json.html</loc>
         <lastmod>2026-03-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/resources/convertfrom-json.html"/>
     </url>
     <url>
         <loc>https://psugh.org/resources/select-object.html</loc>
         <lastmod>2026-03-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/resources/select-object.html"/>
     </url>
