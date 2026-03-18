@@ -15,7 +15,7 @@ Visit us at: **[https://psugh.org](https://psugh.org)**
 - **Fully Responsive**: Optimized for all devices and screen sizes with enhanced mobile navigation
 - **Mobile Optimized**: Touch-friendly interface with glassmorphism hamburger menu and centered buttons
 - **Accessible**: WCAG 2.1 compliant with proper semantic HTML and ARIA labels
-- **Performance Optimized**: Fast loading with optimized images and CSS
+- **Performance Optimized**: Fast loading with optimized CSS
 - **SEO Ready**: Meta tags, structured data, and Open Graph support
 - **Dynamic Content**: Meeting and event information managed via JSON files
 - **Organized Data Structure**: Separated data files for better maintainability
@@ -79,17 +79,25 @@ PSUGH.github.io/
    npm run dev
    ```
 
-   This will start a live server at `http://localhost:3000`.
+   This will start a local server at `http://localhost:3000` (using a lightweight static server).
 
 ### Available Scripts
 
-- `npm run dev` - Start development server with live reload
-- `npm run build` - Build optimized version for production
+- `npm run dev` - Start a local development server
+- `npm run build` - Build optimized version for production (minifies `css/styles.css` in-place)
 - `npm run lint-css` - Lint CSS files
 - `npm run lint-html` - Lint HTML files
 - `npm run validate` - Run all linting checks
-- `npm run serve` - Start production server
+- `npm run serve` - Start a production-style server
 - `npm run preview` - Build and serve production version
+
+### Security / Auditing
+
+This project uses a small set of developer tools to build and lint the site. `npm audit` may report vulnerabilities for transitive dev dependencies (e.g., build tools and linters) that do not affect the deployed site itself. If you want to inspect, run:
+
+```bash
+npm audit
+```
 
 ## 📝 Content Management
 
