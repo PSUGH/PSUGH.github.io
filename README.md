@@ -15,7 +15,7 @@ Visit us at: **[https://psugh.org](https://psugh.org)**
 - **Fully Responsive**: Optimized for all devices and screen sizes with enhanced mobile navigation
 - **Mobile Optimized**: Touch-friendly interface with glassmorphism hamburger menu and centered buttons
 - **Accessible**: WCAG 2.1 compliant with proper semantic HTML and ARIA labels
-- **Performance Optimized**: Fast loading with optimized images and CSS
+- **Performance Optimized**: Fast loading with optimized CSS
 - **SEO Ready**: Meta tags, structured data, and Open Graph support
 - **Dynamic Content**: Meeting and event information managed via JSON files
 - **Organized Data Structure**: Separated data files for better maintainability
@@ -93,7 +93,7 @@ PSUGH.github.io/
 
 ### Security / Auditing
 
-This project uses a small set of developer tools to build and lint the site. `npm audit` may report vulnerabilities for transitive dev dependencies (e.g., image optimization toolchains) that do not affect the deployed site itself. If you want to inspect, run:
+This project uses a small set of developer tools to build and lint the site. `npm audit` may report vulnerabilities for transitive dev dependencies (e.g., build tools and linters) that do not affect the deployed site itself. If you want to inspect, run:
 
 ```bash
 npm audit
