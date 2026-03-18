@@ -53,7 +53,7 @@ button:focus-visible,
     --bg-overlay: rgb(44 62 80 / 90%);
 
     /* Accent backgrounds */
-    --primary-faint: rgba(0, 115, 174, 0.12);
+    --primary-faint: rgb(0 115 174 / 12%);
 
     /* Social link brand colors */
     --social-twitter: #1da1f2;
@@ -270,6 +270,7 @@ a:focus {
     color: var(--primary-color);
     text-decoration: none;
 }
+
 .btn-outline {
     background-color: transparent;
     color: var(--primary-color);
@@ -390,8 +391,8 @@ a:focus {
     background-color: var(--bg-overlay);
     backdrop-filter: blur(10px);
     padding: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgb(255 255 255 / 10%);
+    box-shadow: 0 4px 20px rgb(0 0 0 / 30%);
     z-index: 100;
     opacity: 0;
     visibility: hidden;
@@ -429,9 +430,7 @@ a:focus {
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-inverse);
-    text-decoration: none;
+        background-color: rgb(255 255 255 / 10%);
     transform: translateX(4px);
 }
 
@@ -611,7 +610,7 @@ a:focus {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgb(255 255 255 / 7%);
 }
 
 .terminal-buttons {
@@ -963,7 +962,7 @@ a:focus {
 
 .partner-link.linkedin:hover {
     color: var(--social-linkedin);
-    background: rgba(0, 119, 181, 0.1);
+    background: rgb(0 119 181 / 10%);
 }
 
 /* Location Map iframe */
@@ -1012,40 +1011,37 @@ a:focus {
         display: none;
     }
 
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
     /* Mobile navigation centering */
     .nav-container {
         justify-content: center;
         position: relative;
     }
 
-    .mobile-menu-toggle {
+    .mobile-menu-toggle:not(:root) {
         position: absolute;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
         z-index: 101;
         /* Enhanced hamburger styling */
-        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        background: rgb(0 0 0 / 10%);
         border-radius: var(--border-radius);
         padding: var(--spacing-md);
         backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgb(255 255 255 / 20%);
     }
 
     .mobile-menu-toggle:hover {
-        background: rgba(0, 0, 0, 0.2);
-        border-color: rgba(255, 255, 255, 0.3);
+        background: rgb(0 0 0 / 20%);
+        border-color: rgb(255 255 255 / 30%);
     }
 
     .hamburger-line {
         width: 26px;
         height: 3px;
         border-radius: 2px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
     }
 
     .hero-actions {
@@ -1135,7 +1131,7 @@ a:focus {
     }
 
     /* Adjust mobile menu toggle for smaller screens */
-    .mobile-menu-toggle {
+    .mobile-menu-toggle:not(:root) {
         padding: var(--spacing-sm);
     }
 
@@ -1191,13 +1187,13 @@ button:focus,
 .mobile-menu-toggle:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(0 0 0 / 30%);
 }
 
 .mobile-nav-link:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgb(255 255 255 / 15%);
 }
 
 /* Reduced motion preferences */
@@ -1241,7 +1237,7 @@ button:focus,
 .calendar-container {
     background: var(--bg-primary);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     padding: 1.5rem;
     margin: 2rem 0;
 }
@@ -1341,7 +1337,7 @@ button:focus,
 .event-card {
     background: var(--bg-primary);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
     padding: 1.5rem;
     transition:
         transform 0.3s,
@@ -1350,10 +1346,9 @@ button:focus,
 
 .event-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px rgb(0 0 0 / 15%);
 }
 
-/* Resource Grid (used on /resources/) */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1370,19 +1365,16 @@ button:focus,
 .resource-card {
     background: var(--bg-primary);
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
-}
+        box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+        padding: 1.5rem;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+    }
 
-.resource-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.resource-card h3 a {
+    .resource-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 15px rgb(0 0 0 / 15%);
     color: var(--text-primary);
     text-decoration: none;
 }
@@ -1553,13 +1545,12 @@ button:focus,
 }
 
 .btn-secondary .copy-btn {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255 255 255 / 80%);
     padding: 2px;
 }
 
 .btn-secondary .copy-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+        background-color: rgb(255 255 255 / 10%);
 }
 
 .btn-secondary .copy-btn.success {
