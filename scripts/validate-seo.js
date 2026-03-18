@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
  * validate-seo.js — PSUGH Website SEO Validator
- * Usage: node validate-seo.js [--strict]
+ * Usage: node validate-seo.js [--strict] [--fail-on-warnings]
  *
  * Exit codes:
- *   0 = all checks passed
+ *   0 = all checks passed (or only warnings, unless --fail-on-warnings is provided)
  *   1 = one or more checks FAILED
- *   2 = one or more WARNINGS (no hard failures)
+ *   2 = one or more WARNINGS (only when --fail-on-warnings is enabled)
  */
 
 'use strict';
@@ -15,6 +15,7 @@ const fs = require('fs');
 const path = require('path');
 
 const STRICT = process.argv.includes('--strict');
+const FAIL_ON_WARNINGS = process.argv.includes('--fail-on-warnings');
 const CANONICAL_BASE = 'https://psugh.org';
 
 // ─── ANSI colors ────────────────────────────────────────────────────────────
@@ -465,7 +466,7 @@ if (totalFailed === 0 && totalWarnings === 0) {
     console.log(
         `\n${c.yellow}${c.bold}⚠️  No failures, but ${totalWarnings} warning(s) to review.${c.reset}\n`,
     );
-    process.exit(2);
+    process.exit(FAIL_ON_WARNINGS ? 2 : 0);
 } else {
     console.log(
         `\n${c.red}${c.bold}❌ ${totalFailed} check(s) failed — review required.${c.reset}\n`,
