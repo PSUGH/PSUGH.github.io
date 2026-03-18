@@ -584,7 +584,9 @@
         });        // Load meeting data from JSON
         async function loadMeetingData() {
             try {
-                const response = await fetch('./current-meeting.json');
+                const response = await fetch(`./current-meeting.json?v=${Date.now()}`, {
+                    cache: 'no-store'
+                });
                 const data = await response.json();
                 const meeting = data.nextMeeting;
 
@@ -618,6 +620,17 @@
                         // Handle line breaks in description
                         description.innerHTML = topic.description.replace(/\n/g, '<br>');
                         topicCard.appendChild(description);
+
+                        const picturePath = topic.picture || meeting.picture;
+                        if (picturePath) {
+                            const picture = document.createElement('img');
+                            picture.className = 'topic-picture';
+                            picture.src = picturePath;
+                            picture.alt = topic.title ? `Bild zu ${topic.title}` : 'Themenbild';
+                            picture.loading = 'lazy';
+                            picture.decoding = 'async';
+                            topicCard.appendChild(picture);
+                        }
 
                         topicsContainer.appendChild(topicCard);
                     });

@@ -18,16 +18,21 @@ The meeting content is now stored in three separate JSON files that are easy to 
 {
   "nextMeeting": {
     "date": "Freitag, den 20.06.2025, ab 18:30h",
+    "isoDate": "2025-06-20T18:30:00+02:00",
     "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
     "topics": [
       {
         "title": "Topic Title",
+        "speaker": "Speaker Name",
+        "picture": "img/topic-image.png",
         "description": "Topic description with details"
       }
     ]
   }
 }
 ```
+
+`picture` is optional. If set, the image is shown on the homepage directly below the topic description.
 
 **Past Events (`past-events.json`)**
 
@@ -73,6 +78,7 @@ The meeting content is now stored in three separate JSON files that are easy to 
 1. **Edit the Date**: Change the `date` field in `current-meeting.json`
 2. **Update Topics**: Modify the `topics` array with new topics
 3. **Add/Remove Topics**: Add or remove topic objects as needed
+4. **Optional Topic Image**: Add `picture` with a relative path (for example `img/topic-image.png`)
 
 **For Past Events:**
 

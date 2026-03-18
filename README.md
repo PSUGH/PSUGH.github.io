@@ -118,12 +118,16 @@ Edit the respective JSON files to update meeting information:
     "topics": [
       {
         "title": "🚀 Your Next Topic Title 🚀",
+        "speaker": "Speaker Name",
+        "picture": "img/topic-image.png",
         "description": "Topic description with details"
       }
     ]
   }
 }
 ```
+
+`picture` is optional. If present, the homepage renders the image below the topic description.
 
 For detailed instructions, see `MEETING-CONTENT.md`.
 
@@ -135,6 +139,7 @@ The website uses semantic HTML structure with the following pages:
 
 - Hero header with responsive navigation
 - Next meeting information (loaded from `current-meeting.json`)
+- Optional topic image rendering (`topics[].picture`) below the topic description
 - PowerShell terminal example
 - About section
 - Contact and social links

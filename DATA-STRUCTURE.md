@@ -16,16 +16,23 @@ The PSUGH website now uses a modular data structure with three separate JSON fil
 {
   "nextMeeting": {
     "date": "Freitag, den 20.06.2025, ab 18:30h",
+    "isoDate": "2025-06-20T18:30:00+02:00",
     "description": "Die PowerShell Usergroup Hannover (PSUGH) trifft sich am:",
     "topics": [
       {
         "title": "Topic Title",
+        "speaker": "Speaker Name",
+        "picture": "img/topic-image.png",
         "description": "Topic description with line breaks\nSecond line"
       }
     ]
   }
 }
 ```
+
+Optional topic field:
+
+- `picture`: Relative image path (for example `img/topic-image.png`). If present, it is rendered on the homepage below the topic description.
 
 ### 📁 `past-events.json`
 

@@ -1,19 +1,6 @@
 {
     "upcomingEvents": [
         {
-            "date": "Freitag, den 17.04.2026, ab 18:30h",
-            "isoDate": "2026-04-17T18:30:00+02:00",
-            "title": "Gabriel Köhl präsentiert sein Modul: psTerminalPerfCounter",
-            "description": "Gabriel Köhl präsentiert sein Modul: psTerminalPerfCounter",
-            "topics": [
-                {
-                    "title": "Gabriel Köhl präsentiert sein Modul: psTerminalPerfCounter",
-                    "speaker": "Gabriel Köhl",
-                    "description": "psTerminalPerfCounter ist ein PowerShell-Modul, das vordefinierte, sprachenunabhängige Performance-Counter-Konfigurationen für das Echtzeit-Monitoring im Terminal bereitstellt. Es ermöglicht Admins die schnelle Bereitstellung maßgeschneiderter System-Performance-Presets mit grafischer Visualisierung, anstatt den Windows Performance Monitor manuell konfigurieren zu müssen."
-                }
-            ]
-        },
-        {
             "date": "Freitag, den 15.05.2026, ab 18:30h",
             "isoDate": "2026-05-15T18:30:00+02:00",
             "title": "PSScriptAnalyzer mit Christian Ritter",

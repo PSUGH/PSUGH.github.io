@@ -1,13 +1,14 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 13.03.2026, ab 18:30h",
-        "isoDate": "2026-03-13T18:30:00+01:00",
-        "description": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
+        "date": "Freitag, den 17.07.2026, ab 18:30h",
+        "isoDate": "2026-07-17T18:30:00+01:00",
+        "description": "Real-Time Terminal Dashboards mit PowerShell",
         "topics": [
             {
-                "title": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
-                "speaker": "Holger Voges",
-                "description": "Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.\nDa Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?\nNa klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.\n\nIn dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen."
+                "title": "Real-Time Terminal Dashboards mit PowerShell",
+                "speaker": "Gabriel Köhl",
+                "picture": "img/1773826590806.png",
+                "description": "Wer schon mal versucht hat, Performance-Daten mit PowerShell zu sammeln, weiß, was Schmerzen sind.\nZum Glück ist Gabriel Köhl sehr schmerzresistent und hat uns deswegen mit dem psTerminalPerfCounter-Modul versorgt."
             }
         ]
     }
