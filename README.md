@@ -84,7 +84,7 @@ PSUGH.github.io/
 ### Available Scripts
 
 - `npm run dev` - Start a local development server
-- `npm run build` - Build optimized version for production
+- `npm run build` - Build optimized version for production (generates `css/styles.min.css`)
 - `npm run lint-css` - Lint CSS files
 - `npm run lint-html` - Lint HTML files
 - `npm run validate` - Run all linting checks
