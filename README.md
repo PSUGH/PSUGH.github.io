@@ -79,17 +79,25 @@ PSUGH.github.io/
    npm run dev
    ```
 
-   This will start a live server at `http://localhost:3000`.
+   This will start a local server at `http://localhost:3000` (using a lightweight static server).
 
 ### Available Scripts
 
-- `npm run dev` - Start development server with live reload
+- `npm run dev` - Start a local development server
 - `npm run build` - Build optimized version for production
 - `npm run lint-css` - Lint CSS files
 - `npm run lint-html` - Lint HTML files
 - `npm run validate` - Run all linting checks
-- `npm run serve` - Start production server
+- `npm run serve` - Start a production-style server
 - `npm run preview` - Build and serve production version
+
+### Security / Auditing
+
+This project uses a small set of developer tools to build and lint the site. `npm audit` may report vulnerabilities for transitive dev dependencies (e.g., image optimization toolchains) that do not affect the deployed site itself. If you want to inspect, run:
+
+```bash
+npm audit
+```
 
 ## 📝 Content Management
 
