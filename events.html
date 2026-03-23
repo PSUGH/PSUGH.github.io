@@ -412,6 +412,8 @@
         function createEventCard(event, type) {
             const card = document.createElement('div');
             card.className = 'event-card';
+            const eventTitle = (event.title || '').trim();
+            const eventDescription = (event.description || '').trim();
 
             const dateElement = document.createElement('div');
             dateElement.className = 'event-date';
@@ -425,10 +427,10 @@
             card.appendChild(titleElement);
 
             // Add description for upcoming events
-            if (type === 'upcoming' && event.description) {
+            if (type === 'upcoming' && eventDescription && eventDescription !== eventTitle) {
                 const descElement = document.createElement('div');
                 descElement.className = 'event-description';
-                descElement.textContent = event.description;
+                descElement.textContent = eventDescription;
                 card.appendChild(descElement);
             }
 
@@ -440,16 +442,19 @@
                 event.topics.forEach(topic => {
                     const topicElement = document.createElement('div');
                     topicElement.className = 'topic-item';
+                    const topicTitleText = (topic.title || '').trim();
 
                     const topicTitle = document.createElement('div');
                     topicTitle.className = 'topic-title';
-                    topicTitle.textContent = topic.title;
+                    topicTitle.textContent = topicTitleText;
 
                     const topicDescription = document.createElement('div');
                     topicDescription.className = 'topic-description';
                     topicDescription.textContent = topic.description;
 
-                    topicElement.appendChild(topicTitle);
+                    if (!(type === 'upcoming' && topicTitleText && topicTitleText === eventTitle)) {
+                        topicElement.appendChild(topicTitle);
+                    }
 
                     if (topic.speaker) {
                         const topicSpeaker = document.createElement('div');
