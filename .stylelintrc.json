@@ -14,5 +14,5 @@
         "value-keyword-case": null,
         "no-descending-specificity": null
     },
-    "ignoreFiles": ["css/normalize.css", "css/fonts.css"]
+    "ignoreFiles": ["css/fonts.css"]
 }

@@ -7,7 +7,7 @@
             {
                 "title": "Real-Time Terminal Dashboards mit PowerShell",
                 "speaker": "Gabriel Köhl",
-                "picture": "img/1773826590806.png",
+                "picture": "img/1773826590806.webp",
                 "description": "Wer schon mal versucht hat, Performance-Daten mit PowerShell zu sammeln, weiß, was Schmerzen sind.\nZum Glück ist Gabriel Köhl sehr schmerzresistent und hat uns deswegen mit dem psTerminalPerfCounter-Modul versorgt."
             }
         ]

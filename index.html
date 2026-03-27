@@ -71,10 +71,12 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="./css/styles.css" as="style">
     <link rel="preload" href="./img/psugh-logo.png" as="image"> <!-- Stylesheets -->
-    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preload" href="./current-meeting.json" as="fetch" type="application/json">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="preload" href="./css/fonts.css" as="style">
-    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="preload" href="./css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="./css/fonts.css">
+    </noscript>
 
     <!-- Open Graph / Social Media Meta -->
     <meta property="og:type" content="website">
@@ -584,8 +586,8 @@
         });        // Load meeting data from JSON
         async function loadMeetingData() {
             try {
-                const response = await fetch(`./current-meeting.json?v=${Date.now()}`, {
-                    cache: 'no-store'
+                const response = await fetch('./current-meeting.json', {
+                    cache: 'no-cache'
                 });
                 const data = await response.json();
                 const meeting = data.nextMeeting;
@@ -601,7 +603,7 @@
                 if (topicsContainer && meeting.topics) {
                     topicsContainer.innerHTML = '';
 
-                    meeting.topics.forEach(topic => {
+                    meeting.topics.forEach((topic, index) => {
                         const topicCard = document.createElement('div');
                         topicCard.className = 'topic-card';
 
@@ -627,7 +629,8 @@
                             picture.className = 'topic-picture';
                             picture.src = picturePath;
                             picture.alt = topic.title ? `Bild zu ${topic.title}` : 'Themenbild';
-                            picture.loading = 'lazy';
+                            picture.loading = index === 0 ? 'eager' : 'lazy';
+                            picture.fetchPriority = index === 0 ? 'high' : 'auto';
                             picture.decoding = 'async';
                             topicCard.appendChild(picture);
                         }
@@ -657,94 +660,77 @@
             }
         }
 
-        // Load meeting data when page loads
-        document.addEventListener('DOMContentLoaded', loadMeetingData);
+        // Load meeting data immediately; the DOM is already parsed at this point.
+        loadMeetingData();
 
         // Analytics Event Tracking for Community Engagement
-        document.addEventListener('DOMContentLoaded', function () {
-            // Track social media link clicks
-            const socialLinks = document.querySelectorAll('.social-link');
-            socialLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    const platform = this.classList.contains('twitter') ? 'Twitter' :
-                        this.classList.contains('linkedin') ? 'LinkedIn' :
-                            this.classList.contains('github') ? 'GitHub' :
-                                this.classList.contains('discord') ? 'Discord' :
-                                    this.classList.contains('mastodon') ? 'Mastodon' : 'Unknown';
+        // The script already runs after the DOM is parsed, so wire listeners immediately.
+        // Track social media link clicks
+        const socialLinks = document.querySelectorAll('.social-link');
+        socialLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const platform = this.classList.contains('twitter') ? 'Twitter' :
+                    this.classList.contains('linkedin') ? 'LinkedIn' :
+                        this.classList.contains('github') ? 'GitHub' :
+                            this.classList.contains('discord') ? 'Discord' :
+                                this.classList.contains('mastodon') ? 'Mastodon' : 'Unknown';
 
-                    if (typeof trackEvent === 'function') {
-                        trackEvent('social_link_click', {
-                            event_label: platform,
-                            event_category: 'Social Media'
-                        });
-                    }
-                });
+                if (typeof trackEvent === 'function') {
+                    trackEvent('social_link_click', {
+                        event_label: platform,
+                        event_category: 'Social Media'
+                    });
+                }
             });
-
-            // Track meeting-related button clicks
-            const meetingButtons = document.querySelectorAll('.btn[data-track="meeting"], .btn[data-track="external-meeting"]');
-            meetingButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const action = this.textContent.trim();
-                    if (typeof trackMeetingInteraction === 'function') {
-                        trackMeetingInteraction(action);
-                    }
-                });
-            });
-
-            // Track external resource clicks
-            const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="psugh.org"])');
-            externalLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    const url = this.href;
-                    const linkText = this.textContent.trim();
-
-                    if (typeof trackEvent === 'function') {
-                        trackEvent('external_link_click', {
-                            event_label: linkText,
-                            event_category: 'External Resources',
-                            link_url: url
-                        });
-                    }
-                });
-            });
-
-            // Track PowerShell resources access
-            const psResources = document.querySelectorAll('a[href*="pdf"], a[href*="youtube"], a[href*="github"]');
-            psResources.forEach(link => {
-                link.addEventListener('click', function () {
-                    const resourceType = this.href.includes('pdf') ? 'PDF' :
-                        this.href.includes('youtube') ? 'Video' :
-                            this.href.includes('github') ? 'Code' : 'Resource';
-
-                    if (typeof trackEvent === 'function') {
-                        trackEvent('resource_access', {
-                            event_label: resourceType,
-                            event_category: 'Learning Resources'
-                        });
-                    }
-                });
-            });
-
-            // Track section views (using Intersection Observer)
-            const sections = document.querySelectorAll('section[id]');
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                        const sectionName = entry.target.id || entry.target.className;
-                        if (typeof trackEvent === 'function') {
-                            trackEvent('section_view', {
-                                event_label: sectionName,
-                                event_category: 'Page Engagement'
-                            });
-                        }
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            // Dynamic footer year
-            document.getElementById('footer-year').textContent = new Date().getFullYear();
         });
+
+        // Track meeting-related button clicks
+        const meetingButtons = document.querySelectorAll('.btn[data-track="meeting"], .btn[data-track="external-meeting"]');
+        meetingButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const action = this.textContent.trim();
+                if (typeof trackMeetingInteraction === 'function') {
+                    trackMeetingInteraction(action);
+                }
+            });
+        });
+
+        // Track external resource clicks
+        const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="psugh.org"])');
+        externalLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const url = this.href;
+                const linkText = this.textContent.trim();
+
+                if (typeof trackEvent === 'function') {
+                    trackEvent('external_link_click', {
+                        event_label: linkText,
+                        event_category: 'External Resources',
+                        link_url: url
+                    });
+                }
+            });
+        });
+
+        // Track PowerShell resources access
+        const psResources = document.querySelectorAll('a[href*="pdf"], a[href*="youtube"], a[href*="github"]');
+        psResources.forEach(link => {
+            link.addEventListener('click', function () {
+                const resourceType = this.href.includes('pdf') ? 'PDF' :
+                    this.href.includes('youtube') ? 'Video' :
+                        this.href.includes('github') ? 'Code' : 'Resource';
+
+                if (typeof trackEvent === 'function') {
+                    trackEvent('resource_access', {
+                        event_label: resourceType,
+                        event_category: 'Learning Resources'
+                    });
+                }
+            });
+        });
+
+        // Dynamic footer year
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 </body>
 

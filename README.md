@@ -36,7 +36,6 @@ Visit us at: **[https://psugh.org](https://psugh.org)**
 PSUGH.github.io/
 ├── .github/workflows/       # GitHub Actions workflows
 ├── css/                     # Stylesheets
-│   ├── normalize.css        # CSS reset
 │   └── styles.css           # Main styles (mobile-optimized)
 ├── fonts/                   # Local font files
 ├── img/                     # Images and assets

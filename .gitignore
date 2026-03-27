@@ -27,3 +27,4 @@ Thumbs.db
 backup*/
 cleanup-backup-*
 package-lock.json
+scripts/Convert-ToWebP.ps1

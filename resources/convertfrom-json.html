@@ -78,9 +78,9 @@
     <link rel="apple-touch-icon" href="../img/psugh-logo.png">
     <link rel="manifest" href="../site.webmanifest">
 
-    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="preload" href="../css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/fonts.css"></noscript>
 </head>
 
 <body>
