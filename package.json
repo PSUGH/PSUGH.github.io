@@ -5,8 +5,8 @@
     "main": "index.html",
     "scripts": {
         "dev": "npx http-server -p 3000 -c-1",
-        "build": "npm run minify-css",
-        "minify-css": "cleancss -o css/styles.css css/styles.css",
+        "build": "npm run lint-css && npm run minify-css",
+        "minify-css": "cleancss -o css/styles.min.css css/styles.css",
         "lint-css": "stylelint css/*.css",
         "lint-html": "htmlhint *.html",
         "validate": "npm run lint-css && npm run lint-html",

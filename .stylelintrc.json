@@ -12,7 +12,12 @@
         "custom-property-empty-line-before": null,
         "comment-empty-line-before": null,
         "value-keyword-case": null,
-        "no-descending-specificity": null
+        "no-descending-specificity": null,
+        "number-max-precision": null,
+        "shorthand-property-no-redundant-values": null,
+        "declaration-empty-line-before": null,
+        "rule-empty-line-before": null,
+        "at-rule-empty-line-before": null
     },
-    "ignoreFiles": ["css/fonts.css"]
+    "ignoreFiles": ["css/normalize.css", "css/fonts.css", "css/styles.min.css"]
 }
