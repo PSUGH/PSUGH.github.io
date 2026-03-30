@@ -237,12 +237,23 @@
                                     30173 Hannover
                                 </address> <!-- Map -->
                                 <div class="location-map">
-                                    <iframe
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=9.7720%2C52.3655%2C9.7745%2C52.3680&layer=mapnik&marker=52.366611%2C9.773229"
-                                        width="100%" height="200" frameborder="0" style="border: 0; border-radius: 8px;"
-                                        allowfullscreen="" loading="lazy"
-                                        title="Karte: Netz-Weise, Freundallee 13A, 30173 Hannover">
-                                    </iframe>
+                                    <!-- Map facade: static preview loads instantly, iframe only on interaction -->
+                                    <div class="map-facade" role="button" tabindex="0"
+                                        aria-label="Karte laden: Netz-Weise, Freundallee 13A, 30173 Hannover"
+                                        data-src="https://www.openstreetmap.org/export/embed.html?bbox=9.7720%2C52.3655%2C9.7745%2C52.3680&layer=mapnik&marker=52.366611%2C9.773229"
+                                        style="position:relative;width:100%;height:200px;border-radius:8px;overflow:hidden;cursor:pointer;background:#e8f0f7;">
+                                        <img src="https://tile.openstreetmap.org/17/70370/42986.png"
+                                            alt="Kartenvorschau Freundallee 13A Hannover" width="256" height="200"
+                                            loading="lazy"
+                                            style="width:100%;height:200px;object-fit:cover;border-radius:8px;filter:brightness(0.95);">
+                                        <div
+                                            style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                                            <span
+                                                style="background:rgba(0,115,174,0.9);color:#fff;padding:0.4rem 0.9rem;border-radius:6px;font-size:0.85rem;font-family:var(--font-family-sans);">
+                                                🗺️ Karte anzeigen
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="partner-links"> <a
@@ -691,6 +702,26 @@
         // Dynamic footer year
         document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
+    <script>
+        // Map facade: replace static preview with live OSM iframe on click/Enter
+        document.querySelectorAll('.map-facade').forEach(facade => {
+            function loadMap() {
+                const src = facade.dataset.src;
+                const iframe = document.createElement('iframe');
+                iframe.src = src;
+                iframe.width = '100%';
+                iframe.height = '200';
+                iframe.frameBorder = '0';
+                iframe.style.cssText = 'border:0;border-radius:8px;display:block;';
+                iframe.allowFullscreen = true;
+                iframe.title = 'Karte: Netz-Weise, Freundallee 13A, 30173 Hannover';
+                facade.replaceWith(iframe);
+            }
+            facade.addEventListener('click', loadMap);
+            facade.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') loadMap(); });
+        });
+    </script>
+
     <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
     <!-- htmlhint head-script-disabled:false -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
