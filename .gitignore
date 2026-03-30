@@ -26,3 +26,4 @@ backup*/
 cleanup-backup-*
 package-lock.json
 scripts/Convert-ToWebP.ps1
+img/1*.png

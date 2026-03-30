@@ -8,6 +8,7 @@
                 {
                     "title": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
                     "speaker": "Holger Voges",
+                    "picture": "img/1773090176522.webp",
                     "description": "Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.\nDa Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?\nNa klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.\n\nIn dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen."
                 }
             ],
@@ -49,6 +50,7 @@
                 {
                     "title": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",
                     "speaker": "Evgenij Smirnov",
+                    "picture": "img/1763290301812.webp",
                     "description": "Dieses Mal am 4. Freitag im Monat, weil wir einen besonderen Gast haben - Evgenij Smirnov, langjähriger MVP und Organisiator der Powershell Usergroup Berlin, hat uns einen Deep Dive zum Thema P/Invoke und AD mitgebracht. P/Invoke erlaubt es, direkt auf die Win32-API zuzugreifen - im wahrsten Sinne das Innenleben von Windows.\nWer Kerberos-Authentifizierung troubleshooten muss, braucht gute Nerven – und das richtige Toolset. Klist ist super, aber PowerShell bietet mehr Möglichkeiten, mit Daten zu hantieren – Filtern, sortieren usw. Wir bauen das altbewährte Tool in PowerShell nach."
                 }
             ],
