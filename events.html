@@ -56,7 +56,9 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preload" href="./css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./css/fonts.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="./css/fonts.css">
+    </noscript>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://psugh.org/events.html">
@@ -516,20 +518,48 @@
         // Inject Schema.org Event markup for all events (SEO Rich Results)
         function injectEventSchemas(pastEvents, upcomingEvents) {
             const allEvents = [
-                ...upcomingEvents.map(e => ({ ...e, status: 'https://schema.org/EventScheduled' })),
-                ...pastEvents.map(e => ({ ...e, status: 'https://schema.org/EventScheduled' }))
+                ...upcomingEvents.map(e => ({ ...e, _isPast: false })),
+                ...pastEvents.map(e => ({ ...e, _isPast: true }))
             ];
 
             const schemas = allEvents.map(event => {
-                const dateObj = parseGermanDate(event.date);
-                const isoDate = isNaN(dateObj) ? undefined : dateObj.toISOString().split('T')[0];
-                return {
+                // Prefer isoDate field; fall back to parsing the German display date
+                let startISO = event.isoDate;
+                if (!startISO) {
+                    const dateObj = parseGermanDate(event.date);
+                    // date field in past-events.json is already ISO (YYYY-MM-DD)
+                    if (!isNaN(dateObj)) {
+                        startISO = dateObj.toISOString().split('T')[0] + 'T18:30:00+01:00';
+                    }
+                }
+                if (!startISO) return null;
+
+                // endDate: startDate + 2 hours (typical meeting duration)
+                const endISO = new Date(new Date(startISO).getTime() + 2 * 60 * 60 * 1000).toISOString();
+
+                // eventStatus: use explicit field from JSON, default to EventScheduled
+                const eventStatus = event.eventStatus || 'https://schema.org/EventScheduled';
+
+                // performer: collect unique speaker names from topics[]
+                const speakers = (event.topics || [])
+                    .map(t => t.speaker)
+                    .filter(Boolean)
+                    .filter((v, i, a) => a.indexOf(v) === i);
+
+                const performer = speakers.map(name => ({
+                    "@type": "Person",
+                    "name": name
+                }));
+
+                const schema = {
                     "@context": "https://schema.org",
                     "@type": "Event",
-                    "name": event.title || "PowerShell Usergroup Hannover Treffen",
-                    "description": event.description || "Monatliches Treffen der PowerShell Usergroup Hannover",
-                    "startDate": isoDate,
-                    "eventStatus": event.status,
+                    "name": event.title || event.description || "PowerShell Usergroup Hannover Treffen",
+                    "description": event.description || event.title || "Monatliches Treffen der PowerShell Usergroup Hannover",
+                    "startDate": startISO,
+                    "endDate": endISO,
+                    "eventStatus": eventStatus,
+                    "image": "https://psugh.org/img/psugh-logo.png",
                     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
                     "location": [
                         {
@@ -560,7 +590,10 @@
                         "availability": "https://schema.org/InStock"
                     }
                 };
-            }).filter(s => s.startDate); // only inject if date is valid
+
+                if (performer.length > 0) schema.performer = performer;
+                return schema;
+            }).filter(Boolean); // remove null entries (no valid date)
 
             schemas.forEach(schema => {
                 const script = document.createElement('script');

@@ -10,7 +10,8 @@
                     "speaker": "Holger Voges",
                     "description": "Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.\nDa Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?\nNa klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.\n\nIn dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen."
                 }
-            ]
+            ],
+            "isoDate": "2026-03-13T18:30:00+01:00"
         },
         {
             "date": "2026-02-20",
@@ -23,7 +24,8 @@
                     "description": "Softwareverteilung, Inventarisierung und Patch-Management lassen sich mit OPSI effizient automatisieren und zentral steuern.\nIn dieser Session zeigt euch Christian Imhorst, wie ihr OPSI in wenigen Minuten mit Docker installiert, welche Vorteile das System bietet und wie ihr es nahtlos in eure Windows-Umgebung integriert.\n\nFreut euch auf eine praxisnahe Einführung von einem OPSI Anwender mit Adminrechten ohne tiefergehendes Expertenwissen inkl. Live-Demo, wirren Anwendungsbeispielen und einem Blick darauf, wie ihr mit PowerShell OPSI-Skripte tunen könnt."
                 }
             ],
-            "title": "OPSI für Windows-Admins mit Christian Imhorst"
+            "title": "OPSI für Windows-Admins mit Christian Imhorst",
+            "isoDate": "2026-02-20T18:30:00+01:00"
         },
         {
             "date": "2025-12-19",
@@ -36,7 +38,8 @@
                     "description": "Git ist Versionsverwaltungssystem von Linus Thorvalds, das sich in der Programmierung zum De-Facto-Standard entwickelt hat. Aber wie funktioniert Git eigentlich, und wie setzt man es ein, um Powershell-Projekte am Besten zu verwalten? In dieser Session zeigt Euch Holger Voges, was man über Git wissen muss, und wie er es einsetzt.\nÜber neue Ideen und Best-Practices kann dann im Anschluss bei einem Bier diskutiert werden."
                 }
             ],
-            "title": "Versionsverwaltung mit Git - in VSCode und an der Kommandozeile"
+            "title": "Versionsverwaltung mit Git - in VSCode und an der Kommandozeile",
+            "isoDate": "2025-12-19T18:30:00+01:00"
         },
         {
             "date": "2025-11-28",
@@ -49,7 +52,8 @@
                     "description": "Dieses Mal am 4. Freitag im Monat, weil wir einen besonderen Gast haben - Evgenij Smirnov, langjähriger MVP und Organisiator der Powershell Usergroup Berlin, hat uns einen Deep Dive zum Thema P/Invoke und AD mitgebracht. P/Invoke erlaubt es, direkt auf die Win32-API zuzugreifen - im wahrsten Sinne das Innenleben von Windows.\nWer Kerberos-Authentifizierung troubleshooten muss, braucht gute Nerven – und das richtige Toolset. Klist ist super, aber PowerShell bietet mehr Möglichkeiten, mit Daten zu hantieren – Filtern, sortieren usw. Wir bauen das altbewährte Tool in PowerShell nach."
                 }
             ],
-            "title": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach"
+            "title": "P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach",
+            "isoDate": "2025-11-28T18:30:00+01:00"
         },
         {
             "date": "2025-09-19",
@@ -62,7 +66,8 @@
                     "description": "Mit seinem Modul \"Tame my Cert\" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuer, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.\nIn dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉"
                 }
             ],
-            "title": "PKI zähmen mit dem PowerShell-Modul Tame my Certs"
+            "title": "PKI zähmen mit dem PowerShell-Modul Tame my Certs",
+            "isoDate": "2025-09-19T18:30:00+02:00"
         },
         {
             "date": "2025-08-15",
@@ -80,7 +85,8 @@
                     "description": "Ich möchte euch mein SecurityInfo PowerShell-Modul vorstellen - ein praktisches Tool, das ich für die Automatisierung von Vulnerability Management entwickelt habe.👋\n\nWas macht SecurityInfo?\nDas Modul sammelt Schwachstelleninformationen aus verschiedenen öffentlichen Quellen und macht sie in PowerShell verfügbar"
                 }
             ],
-            "title": "App Deployment Toolkit (PSADT) & SecurityInfo"
+            "title": "App Deployment Toolkit (PSADT) & SecurityInfo",
+            "isoDate": "2025-08-15T18:30:00+02:00"
         },
         {
             "date": "2025-07-18",
@@ -93,7 +99,8 @@
                     "description": " An diesem Freitag bereitet Euch Holger Voges die Hintergründe zum Thema Deep Learning und Neuronale Netze auf und klärt, was es mit Begriffen wie RAG, Vektordatenbanken, Deep Thinking und dem MCP-Protokoll auf sich hat. Außerdem werden wir uns einige Tools zur Erstellung von Bildern, Videos und Software genauer anschauen und darüber diskutieren, wie weit wir tatsächlich noch von AGI entfernt sind."
                 }
             ],
-            "title": "KI - Hintergrund und der Stand der Technik"
+            "title": "KI - Hintergrund und der Stand der Technik",
+            "isoDate": "2025-07-18T18:30:00+02:00"
         },
         {
             "date": "2025-06-20",
@@ -111,7 +118,8 @@
                     "speaker": "Marco Kleinert",
                     "description": "✍️ Wie KI Code, FAQs, Blogposts und vieles mehr für dich schreibt.\n🧠 Das \"Context, Model, Prompt\" Framework praxisnah erleben.\n🛠️ Tiefgang in VS Code Agent Mode + MCP (Model Context Protocol).\n💡 Exklusive Einblicke, wie ich Agents täglich für die Codegenerierung nutze."
                 }
-            ]
+            ],
+            "isoDate": "2025-06-20T18:30:00+02:00"
         },
         {
             "date": "2025-05-16",
@@ -124,7 +132,8 @@
                     "description": "Pode ist ein Open-Source Webserver, der in Powershell implentiert ist und direkt Powershell-Code ausführen kann. In dieser Session zeigt Holger Voges, wie man mit Hilfe von Pode Powershell-Skripte über eine Web-API implementieren und aufrufen kann."
                 }
             ],
-            "title": "Powershell-Skripte per Webservice aufrufen mit Pode"
+            "title": "Powershell-Skripte per Webservice aufrufen mit Pode",
+            "isoDate": "2025-05-16T18:30:00+02:00"
         },
         {
             "date": "2025-03-21",
@@ -137,7 +146,8 @@
                     "description": "Frank Lindenblatt, Programmierer mit Jahrzehntelanger Erfahrung, wird ein oder zwei unbekannte Powershell-Skripte einem Refactoring zu unterziehen. Ziel wird sein, die Lesbarkeit und Wiederverwendbarkeit zu optimieren und evtl. das eine oder andere Advanced Feature einbauen."
                 }
             ],
-            "title": "Powershell-Script Live Refactoring mit Frank"
+            "title": "Powershell-Script Live Refactoring mit Frank",
+            "isoDate": "2025-03-21T18:30:00+01:00"
         },
         {
             "date": "2025-02-21",
@@ -151,7 +161,8 @@
                 }
             ],
             "title": "Device Code Flow Abuse – Angriffe erkennen & abwehren",
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2025-02-21%20DeviceCodeFlow"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2025-02-21%20DeviceCodeFlow",
+            "isoDate": "2025-02-21T18:30:00+01:00"
         },
         {
             "date": "2025-01-17",
@@ -169,7 +180,8 @@
                     "description": "In diesem Vortrag zeigt Holger Voges, wie man effektiv Module in Powershell erstellt."
                 }
             ],
-            "title": "Umgehen von Intune Compliant Device Conditional Access + Module in PS"
+            "title": "Umgehen von Intune Compliant Device Conditional Access + Module in PS",
+            "isoDate": "2025-01-17T18:30:00+01:00"
         },
         {
             "date": "2024-12-20",
@@ -181,7 +193,8 @@
                     "speaker": "Holger Voges",
                     "description": "Am letzten Freitag vor Weihnachten wird es bei der Powershell-Usergroup Hannover noch mal richtig spannend. Als Nachlese zum letzten Treffen werde ich noch einmal auf die Funktionsweise von Security-Keys eingehen und erklären, wie Fido-Keys und Security Keys mit erweiterten Funktionen wie TOTP oder HOTP funktionieren und welche Fallstricke es zu beachten gibt.\nDanach werde ich zeigen, wie weit die Codegenerierung mit KI inzwischen ist, und welche Tools heute State of the Art sind. Über eigene Beiträge und Erfahrungen von Euch bin ich sehr gespannt."
                 }
-            ]
+            ],
+            "isoDate": "2024-12-20T18:30:00+01:00"
         },
         {
             "date": "2024-11-15",
@@ -193,7 +206,8 @@
                     "speaker": "Peter Klaffehn",
                     "description": "Es ist wieder Powershell-Freitag in Hannover. Dieses Mal holt Peter Klaffehn seinen Vortrag \"Break Glass Accounts (die Hintertür, wenn man nicht mehr auf seinen Tenant kommt) mit Fido2-Sticks absichern\" nach."
                 }
-            ]
+            ],
+            "isoDate": "2024-11-15T18:30:00+01:00"
         },
         {
             "date": "2024-10-18",
@@ -205,7 +219,8 @@
                     "speaker": "Holger Voges",
                     "description": "In diesem Vortrag wird Holger Voges die Grundlagen von PowerShell Hashtables, Objekten und deren Integration mit dem .NET Framework erläutern. Er wird praktische Beispiele und Anwendungsfälle vorstellen, um zu demonstrieren, wie diese Konzepte effektiv in der täglichen PowerShell-Arbeit eingesetzt werden können."
                 }
-            ]
+            ],
+            "isoDate": "2024-10-18T18:30:00+02:00"
         },
         {
             "date": "2024-09-20",
@@ -218,7 +233,8 @@
                     "description": "Einführung in DuckDB und wie man es effektiv mit PowerShell für Datenanalyse nutzt. Praktische Beispiele und Performance-Vergleiche."
                 }
             ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2024-09-20%20DuckDB"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2024-09-20%20DuckDB",
+            "isoDate": "2024-09-20T18:30:00+02:00"
         },
         {
             "date": "2023-09-16",
@@ -251,7 +267,8 @@
                     "description": "Objektorientierte Programmierung in PowerShell mit Klassen und deren Vorteile"
                 }
             ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/PSSaturday%202023"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/PSSaturday%202023",
+            "isoDate": "2023-09-16T18:30:00+02:00"
         },
         {
             "date": "2021-09-17",
@@ -264,7 +281,8 @@
                     "description": "Praktische Anwendung von FSLogix AppMasking und Automatisierung mit PowerShell. Notebook-basierte Präsentation."
                 }
             ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-09-17%20FSLogix"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-09-17%20FSLogix",
+            "isoDate": "2021-09-17T18:30:00+02:00"
         },
         {
             "date": "2021-02-19",
@@ -277,7 +295,8 @@
                     "description": "Einführung in das PSFramework für professionelle PowerShell-Entwicklung. Konfiguration, Logging und Best Practices."
                 }
             ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-02-19%20PSFramework"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2021-02-19%20PSFramework",
+            "isoDate": "2021-02-19T18:30:00+01:00"
         },
         {
             "date": "2018-03-16",
@@ -290,7 +309,8 @@
                     "description": "PowerShell Core, Docker Container und plattformübergreifende PowerShell-Entwicklung. Breaking Changes und neue Möglichkeiten."
                 }
             ],
-            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2018-03-16%20Docker"
+            "materials": "https://github.com/PSUGH/PowerShell/tree/master/2018-03-16%20Docker",
+            "isoDate": "2018-03-16T18:30:00+01:00"
         }
     ]
 }
