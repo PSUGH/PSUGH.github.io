@@ -17,48 +17,7 @@
     <meta name="ICBM" content="52.3759, 9.7320">
     <link rel="canonical" href="https://psugh.org/">
     <title>PowerShell Usergroup Hannover | Community für Admins</title>
-    <!-- Performance: preconnect to analytics endpoints -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TWCEG7YCEQ', {
-            // Enhanced measurement for better insights
-            page_title: document.title,
-            page_location: window.location.href,
-            // Privacy-focused settings for GDPR compliance
-            allow_ad_personalization_signals: false,
-            // Custom dimensions for community tracking
-            custom_map: {
-                'custom_dimension_1': 'user_type',
-                'custom_dimension_2': 'meeting_interest'
-            }
-        });
 
-        // Custom event tracking for community engagement
-        function trackEvent(eventName, parameters = {}) {
-            gtag('event', eventName, {
-                event_category: 'Community Engagement',
-                event_label: parameters.label || '',
-                value: parameters.value || 1,
-                ...parameters
-            });
-        }
-
-        // Track meeting-related interactions
-        function trackMeetingInteraction(action) {
-            trackEvent('meeting_interaction', {
-                event_label: action,
-                custom_dimension_2: 'interested'
-            });
-        }
-    </script>
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="J-ax8UA1fQq-v5VLkHbtHjGq21AWYukgDoCMgohsU34" />
@@ -731,6 +690,39 @@
 
         // Dynamic footer year
         document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+    <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
+    <!-- htmlhint head-script-disabled:false -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TWCEG7YCEQ', {
+            page_title: document.title,
+            page_location: window.location.href,
+            allow_ad_personalization_signals: false,
+            custom_map: {
+                'custom_dimension_1': 'user_type',
+                'custom_dimension_2': 'meeting_interest'
+            }
+        });
+
+        function trackEvent(eventName, parameters = {}) {
+            gtag('event', eventName, {
+                event_category: 'Community Engagement',
+                event_label: parameters.label || '',
+                value: parameters.value || 1,
+                ...parameters
+            });
+        }
+
+        function trackMeetingInteraction(action) {
+            trackEvent('meeting_interaction', {
+                event_label: action,
+                custom_dimension_2: 'interested'
+            });
+        }
     </script>
 </body>
 
