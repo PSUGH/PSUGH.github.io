@@ -7,6 +7,7 @@
 - Optimized and converted `psugh-lego.jpg` to WebP.
 - Updated all references to `psugh-logo.png` in HTML and template files to `psugh-logo.webp`.
 - Removed obsolete `.png` and `.jpg` (except `hintergrund.jpg` for fallback) files to keep the repository clean.
+- Added a `validate-images` build script to ensure all images in `/img` are optimized (WebP/SVG/ICO) and integrated it into the `npm run validate` command.
 
 ## 2026-03-27
 
