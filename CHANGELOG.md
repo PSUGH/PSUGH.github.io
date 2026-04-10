@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-10
+
+- Generated missing `img/hintergrund.webp` from `img/hintergrund.jpg` to fix 404 error.
+- Converted all remaining PNG assets (`psugh-logo.png`, `kontakt-sprite.png`, `sqr.png`) to WebP for better performance.
+- Optimized and converted `psugh-lego.jpg` to WebP.
+- Updated all references to `psugh-logo.png` in HTML and template files to `psugh-logo.webp`.
+- Removed obsolete `.png` and `.jpg` (except `hintergrund.jpg` for fallback) files to keep the repository clean.
+
 ## 2026-03-27
 
 - Removed the unused `normalize.css` stylesheet from the site pages and shared template.
