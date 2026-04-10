@@ -103,13 +103,20 @@
         "@type": "Event",
         "name": "PowerShell Usergroup Hannover Treffen",
         "description": "Monatliches Treffen der PowerShell Usergroup Hannover zum Lernen und Austausch über PowerShell und Azure",
+        "image": "https://psugh.org/img/psugh-logo.png",
+        "eventStatus": "https://schema.org/EventScheduled",
         "eventSchedule": {
             "@type": "Schedule",
             "repeatFrequency": "P1M",
-            "byDay": "Friday",
+            "byDay": "http://schema.org/Friday",
             "byMonthWeek": 3
         },
         "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "performer": {
+            "@type": "Organization",
+            "name": "PowerShell Usergroup Hannover",
+            "url": "https://psugh.org"
+        },
         "location": [
             {
                 "@type": "Place",
@@ -136,7 +143,9 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.meetup.com/psugh-hannover/",
+            "validFrom": "2026-01-01T00:00:00+01:00"
         },
         "audience": {
             "@type": "Audience",
@@ -611,16 +620,35 @@
                     });
                 }
 
-                // Update Event schema startDate for rich results (Google requires a concrete startDate)
+                // Update Event schema with dynamic data from current-meeting.json
                 try {
                     const eventSchema = document.querySelector('script[type="application/ld+json"]:last-of-type');
-                    if (eventSchema && meeting.isoDate) {
+                    if (eventSchema) {
                         const schemaData = JSON.parse(eventSchema.textContent);
-                        schemaData.startDate = meeting.isoDate;
+                        // startDate + endDate from isoDate
+                        if (meeting.isoDate) {
+                            schemaData.startDate = meeting.isoDate;
+                            schemaData.endDate = new Date(
+                                new Date(meeting.isoDate).getTime() + 2 * 60 * 60 * 1000
+                            ).toISOString();
+                        }
+                        // performer: collect speakers from topics[]
+                        const speakers = (meeting.topics || [])
+                            .map(t => t.speaker).filter(Boolean)
+                            .filter((v, i, a) => a.indexOf(v) === i);
+                        if (speakers.length > 0) {
+                            schemaData.performer = speakers.map(name => ({
+                                '@type': 'Person', 'name': name
+                            }));
+                        }
+                        // description from meeting.description if available
+                        if (meeting.description) {
+                            schemaData.name = meeting.description;
+                        }
                         eventSchema.textContent = JSON.stringify(schemaData);
                     }
                 } catch (schemaError) {
-                    console.warn('Could not update Event schema startDate:', schemaError);
+                    console.warn('Could not update Event schema:', schemaError);
                 }
             } catch (error) {
                 console.error('Error loading meeting data:', error);
