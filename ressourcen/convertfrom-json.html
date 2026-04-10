@@ -4,41 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="Select-Object in PowerShell: Welche Eigenschaften eines Objekts brauchst du, und wie filterst du Ergebnisse sauber und performant?">
+        content="PowerShell-Tutorial: ConvertFrom-Json nutzen, um JSON-Daten aus APIs und Konfigurationsdateien in PowerShell-Objekte zu verwandeln – PSUGH Hannover.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <link rel="canonical" href="https://psugh.org/resources/select-object.html">
-
+    <link rel="canonical" href="https://psugh.org/ressourcen/convertfrom-json.html">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="Select-Object: Eigenschaften auswählen | PSUGH Ressourcen">
+    <meta property="og:title" content="ConvertFrom-Json: JSON in PowerShell-Objekte | PSUGH">
     <meta property="og:description"
-        content="Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.">
-    <meta property="og:url" content="https://psugh.org/resources/select-object.html">
+        content="Lerne ConvertFrom-Json: JSON-Daten aus APIs direkt in PowerShell-Objekte umwandeln und weiterverarbeiten – mit Beispielen der PSUGH.">
+    <meta property="og:url" content="https://psugh.org/ressourcen/convertfrom-json.html">
     <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Select-Object: Eigenschaften auswählen | PSUGH Ressourcen">
+    <meta name="twitter:title" content="ConvertFrom-Json: JSON in PowerShell-Objekte | PSUGH">
     <meta name="twitter:description"
-        content="Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.">
+        content="Lerne ConvertFrom-Json: JSON-Daten aus APIs direkt in PowerShell-Objekte umwandeln und weiterverarbeiten – mit Beispielen der PSUGH.">
     <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Select-Object: Eigenschaften auswählen | PSUGH Ressourcen",
-        "description": "Lerne Select-Object: Nur die Daten ausgeben, die du brauchst – inklusive Filter, Alias und Pipeline-Optimierung.",
-        "url": "https://psugh.org/resources/select-object.html",
+        "headline": "ConvertFrom-Json: JSON in PowerShell-Objekte | PSUGH",
+        "description": "Lerne ConvertFrom-Json: JSON-Daten aus APIs direkt in PowerShell-Objekte umwandeln und weiterverarbeiten – mit Beispielen der PSUGH.",
+        "url": "https://psugh.org/ressourcen/convertfrom-json.html",
         "inLanguage": "de-DE",
         "author": {
             "@type": "Organization",
@@ -52,8 +51,7 @@
         }
     }
     </script>
-
-    <title>Select-Object | PSUGH Ressourcen</title>
+    <title>ConvertFrom-Json | PSUGH Ressourcen</title>
 
     <!-- htmlhint head-script-disabled:false -->
     <!-- Performance: preconnect to analytics endpoints -->
@@ -99,7 +97,7 @@
                 <ul class="nav-links" role="menubar">
                     <li role="none"><a href="../index.html" class="nav-link" role="menuitem">Start</a></li>
                     <li role="none"><a href="../events.html" class="nav-link" role="menuitem">Events</a></li>
-                    <li role="none"><a href="../resources/index.html" class="nav-link active" role="menuitem"
+                    <li role="none"><a href="../ressourcen/index.html" class="nav-link active" role="menuitem"
                             aria-current="page">Ressourcen</a></li>
                     <li role="none"><a href="https://pssat.de/" class="nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
@@ -117,7 +115,7 @@
                 <ul class="mobile-nav-links">
                     <li><a href="../index.html" class="mobile-nav-link" role="menuitem">Start</a></li>
                     <li><a href="../events.html" class="mobile-nav-link" role="menuitem">Events</a></li>
-                    <li><a href="../resources/index.html" class="mobile-nav-link active" role="menuitem"
+                    <li><a href="../ressourcen/index.html" class="mobile-nav-link active" role="menuitem"
                             aria-current="page">Ressourcen</a></li>
                     <li><a href="https://pssat.de/" class="mobile-nav-link" role="menuitem" target="_blank"
                             rel="noopener">PowerShell Saturday</a></li>
@@ -128,9 +126,9 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Select-Object</h1>
-                <p class="hero-subtitle">Wähle genau die Eigenschaften, die du brauchst, und optimiere deine
-                    PowerShell-Pipelines.</p>
+                <h1 class="hero-title">ConvertFrom-Json</h1>
+                <p class="hero-subtitle">JSON in PowerShell-Objekte verwandeln – perfekt für API-Daten und
+                    Konfigurationsdateien.</p>
             </div>
         </div>
     </header>
@@ -143,42 +141,16 @@
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
                     <a href="./">Ressourcen</a>
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
-                    <span aria-current="page">Select-Object</span>
+                    <span aria-current="page">ConvertFrom-Json</span>
                 </nav>
-
                 <article class="article-card">
-
-                    <!-- ═══════════════════════════════════════════════
-                         INHALT: h2 → h3 Hierarchie einhalten!
-                           h1  = Hero-Titel (oben, bereits gesetzt)
-                           h2  = Hauptabschnitt des Artikels
-                           h3  = Unterabschnitt / Beispiel-Block
-                         Kein h4 ohne vorhergehenden h3 im selben Abschnitt.
-                    ═══════════════════════════════════════════════ -->
-
-                    <h2 class="section-title">Select-Object (Select)</h2>
-                    <p class="section-subtitle">`Select-Object` wählt aus Objekten nur die Eigenschaften, die du später
-                        weiterverarbeiten möchtest.</p>
-
-                    <h3 class="section-heading">Einfacher Einsatz</h3>
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-button red"></span>
-                                <span class="terminal-button yellow"></span>
-                                <span class="terminal-button green"></span>
-                            </div>
-                            <span class="terminal-title">PowerShell</span>
-                        </div>
-                        <div class="terminal-content">
-                            <code class="terminal-command">Get-Process | Select-Object Name, CPU, WorkingSet</code>
-                        </div>
-                    </div>
-
-                    <p>Verkürzt Ausgabe und macht sie leichter verarbeitbar (z. B. für CSV-Export oder JSON-Ausgabe).
+                    <h2 class="section-title">JSON in PowerShell-Objekte umwandeln</h2>
+                    <p class="section-subtitle">JSON ist ein Standardformat für APIs und Konfigurationsdaten.
+                        <code>ConvertFrom-Json</code> macht
+                        daraus direkt ein nutzbares PowerShell-Objekt.
                     </p>
 
-                    <h3 class="section-heading">Mit Aliasen</h3>
+                    <h3 class="section-heading">Beispiel: Meeting-Daten auslesen</h3>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -189,30 +161,51 @@
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code
-                                class="terminal-command">Get-Service | Select-Object @{Name='Name';Expression={$_.DisplayName}}, Status</code>
+                            <code class="terminal-command">$data = Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json
+$data.nextMeeting.date</code>
+                        </div>
+                    </div>
+                    <p class="section-subtitle">Das gibt den Termin als String zurück (z. B.
+                        <code>Freitag, den 13.03.2026, ab 18:30h</code>).
+                    </p>
+
+                    <h3 class="section-heading">Auf Objekt-Eigenschaften zugreifen</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">$data.nextMeeting.topics | ForEach-Object { $_.title }</code>
                         </div>
                     </div>
 
-                    <p>Mit Hash-Tabellen kannst du Spalten umbenennen oder berechnete Werte erzeugen.</p>
+                    <h3 class="section-heading">JSON wieder erzeugen</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">$data | ConvertTo-Json -Depth 5</code>
+                        </div>
+                    </div>
 
-                    <h3 class="section-heading">Nützliche Optionen</h3>
-                    <ul>
-                        <li><code>-First</code> / <code>-Last</code> – wähle nur die ersten/letzten n Objekte.</li>
-                        <li><code>-Unique</code> – entferne Duplikate.</li>
-                        <li><code>-ExpandProperty</code> – gebe den Inhalt einer Eigenschaft (z. B. Array) direkt aus.
-                        </li>
-                    </ul>
-
-                    <h3 class="section-heading">Pipeline-Performance</h3>
-                    <p>Setze <code>Select-Object</code> so spät wie möglich in der Pipeline ein, damit nur die
-                        benötigten
-                        Eigenschaften weitergereicht werden.</p>
-
+                    <p class="section-subtitle">Wenn du die JSON-Struktur manipulieren willst, kannst du Eigenschaften
+                        hinzufügen oder ändern und
+                        dann mit <code>ConvertTo-Json</code> zurückschreiben.</p>
                     <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <a href="index.html">← Zurück zur Übersicht</a>
-                    </nav>
+                        <a href="invoke-webrequest.html">← Invoke-WebRequest</a>
 
+                    </nav>
                 </article>
             </div>
         </section>
@@ -220,14 +213,36 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <p>&copy; PowerShell Usergroup Hannover <span id="footer-year"></span> — <a
-                    href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank" rel="noopener">Einige Rechte
+            <p>&copy; PowerShell Usergroup Hannover
+                <span id="footer-year"></span> — <a href="https://creativecommons.org/licenses/by/3.0/de/"
+                    target="_blank" rel="noopener">Einige Rechte
                     vorbehalten (CC BY 3.0)</a>
             </p>
         </div>
         <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     </footer>
 
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@
 - Added a `validate-images` build script to ensure all images in `/img` are optimized (WebP/SVG/ICO) and integrated it into the `npm run validate` command.
 - Fixed `current-meeting.json` preload error by adding `crossorigin="anonymous"` to the link tag in all HTML files.
 - Fixed `site.webmanifest` icon issues by explicitly setting `favicon.ico` sizes and updating obsolete `.png` references to `.webp`.
+- Renamed the `resources/` directory to `ressourcen/` to fix 404 navigation errors and aligned all internal references (links, canonical tags, and templates).
 
 ## 2026-03-27
 
