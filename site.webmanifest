@@ -11,13 +11,13 @@
                   },
                   {
                       "src":  "img/psugh-logo.webp",
-                      "sizes":  "192x192",
+                      "sizes":  "200x24",
                       "type":  "image/webp",
                       "purpose":  "any"
                   },
                   {
                       "src":  "img/psugh-logo.webp",
-                      "sizes":  "192x192",
+                      "sizes":  "200x24",
                       "type":  "image/webp",
                       "purpose":  "maskable"
                   }
@@ -42,7 +42,7 @@
                           "icons":  [
                                         {
                                             "src":  "img/psugh-logo.webp",
-                                            "sizes":  "192x192"
+                                            "sizes":  "200x24"
                                         }
                                     ]
                       },
@@ -54,7 +54,7 @@
                           "icons":  [
                                         {
                                             "src":  "img/psugh-logo.webp",
-                                            "sizes":  "192x192"
+                                            "sizes":  "200x24"
                                         }
                                     ]
                       }
