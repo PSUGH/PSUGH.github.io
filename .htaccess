@@ -13,6 +13,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.psugh\.org [NC]
 RewriteRule ^(.*)$ https://psugh.org/$1 [R=301,L]
 
+# 3. index.html → / (verhindert Duplicate Content in Google Search Console)
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ https://psugh.org/ [R=301,L]
+
+
 # -------------------------------------------------------
 # Compression (Gzip)
 # -------------------------------------------------------
