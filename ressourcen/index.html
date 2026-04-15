@@ -162,11 +162,12 @@
                                 <span class="terminal-title">PowerShell</span>
                             </div>
                             <div class="terminal-content">
-                                <code class="terminal-command">$ErrorActionPreference = 'Stop'
-try {
-    Get-Item "C:\GibtEsNicht.txt"
-} catch {
-    Write-Output "Fehler abgefangen: $($_.Exception.Message)"
+                                <code class="terminal-command">$ErrorActionPreference = 'Stop'<br>
+<br>
+try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get-Item "C:\GibtEsNicht.txt"<br>
+} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen: $($_.Exception.Message)"<br>
 }</code>
                             </div>
                         </div>
