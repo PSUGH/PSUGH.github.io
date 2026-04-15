@@ -189,6 +189,20 @@ Write-Output "Skript läuft trotzdem weiter..."</code>
                         </div>
                     </div>
                     <p class="section-subtitle"><strong>Wann nutzen:</strong> Bei Fehlern, die informativ sind oder nur einen Teilschritt betreffen (z.B. eine von 100 Dateien konnte nicht kopiert werden).</p>
+                    <p class="section-subtitle"><strong>Pro-Tipp:</strong> Nutze den Parameter <code>-Category</code>, um den Fehler für das Windows-Eventlog oder Monitoring-Systeme klassifizierbar zu machen:</p>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">Write-Error "Backup fehlgeschlagen" -Category ResourceUnavailable</code>
+                        </div>
+                    </div>
 
                     <h3 class="section-heading">3. Get-Error – Fehlerdetails auslesen</h3>
                     <p class="section-subtitle">Ab PowerShell 7 bietet <code>Get-Error</code> eine sehr detailreiche Ansicht der letzten Fehler (aus der <code>$Error</code> -Variable) mit vollständigen Metadaten und Stacktrace.</p>
