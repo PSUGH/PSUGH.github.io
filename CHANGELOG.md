@@ -4,6 +4,7 @@
 ### Added
 - Added new resource page for `$ErrorActionPreference` to improve SEO ranking.
 - Added new resource page for Terminating vs. Non-Terminating Errors.
+- Added `scripts/Update-ArticleNavigation.ps1` to dynamically generate "Previous/Next" navigation links across all resource articles based on `index.html`.
 
 ## 2026-04-10
 
