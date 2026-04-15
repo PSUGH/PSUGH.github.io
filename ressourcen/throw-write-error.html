@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="Lerne die PowerShell Try/Catch Grundlagen: Syntax, Error-Objekt ($_) und Finally-Block – fehlerfreie Skripte mit der PowerShell Usergroup Hannover.">
+        content="Lerne wie du in PowerShell Fehler richtig meldest und analysierst: throw, Write-Error und Get-Error im direkten Vergleich – Tutorials der PSUGH Hannover.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <link rel="canonical" href="https://psugh.org/ressourcen/try-catch.html">
+    <link rel="canonical" href="https://psugh.org/ressourcen/throw-write-error.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="Try/Catch in PowerShell – Tutorial | PSUGH">
+    <meta property="og:title" content="Fehler melden in PowerShell – Tutorial | PSUGH">
     <meta property="og:description"
-        content="Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.">
-    <meta property="og:url" content="https://psugh.org/ressourcen/try-catch.html">
+        content="Wirf eigene Fehler mit throw oder nutze Write-Error für Warnungen. Alles zur Fehleranalyse mit Get-Error.">
+    <meta property="og:url" content="https://psugh.org/ressourcen/throw-write-error.html">
     <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Try/Catch in PowerShell – Tutorial | PSUGH">
+    <meta name="twitter:title" content="Fehler melden in PowerShell – Tutorial | PSUGH">
     <meta name="twitter:description"
-        content="Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.">
+        content="Wirf eigene Fehler mit throw oder nutze Write-Error für Warnungen. Alles zur Fehleranalyse mit Get-Error.">
     <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
 
     <!-- Schema.org: TechArticle -->
@@ -37,9 +37,9 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Try/Catch in PowerShell – Tutorial | PSUGH",
-        "description": "Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.",
-        "url": "https://psugh.org/ressourcen/try-catch.html",
+        "headline": "Fehler melden in PowerShell: throw, Write-Error & Get-Error",
+        "description": "Lerne den richtigen Einsatz von throw, Write-Error und Get-Error in PowerShell-Skripten.",
+        "url": "https://psugh.org/ressourcen/throw-write-error.html",
         "inLanguage": "de-DE",
         "author": {
             "@type": "Organization",
@@ -54,7 +54,7 @@
     }
     </script>
 
-    <title>Try/Catch Grundlagen | PSUGH Ressourcen</title>
+    <title>throw, Write-Error & Get-Error | PSUGH Ressourcen</title>
 
     <!-- Performance: preconnect to analytics endpoints -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -128,8 +128,8 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Try/Catch</h1>
-                <p class="hero-subtitle">Fehler fangen, bevor sie dein Skript stoppen.</p>
+                <h1 class="hero-title">Fehler melden</h1>
+                <p class="hero-subtitle">throw, Write-Error und Get-Error – den richtigen Mechanismus wählen.</p>
             </div>
         </div>
     </header>
@@ -142,57 +142,15 @@
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
                     <a href="./">Ressourcen</a>
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
-                    <span aria-current="page">Try/Catch</span>
+                    <span aria-current="page">throw vs. Write-Error</span>
                 </nav>
 
                 <article class="article-card">
-                    <h2 class="section-title">Fehlerbehandlung mit Try/Catch</h2>
-                    <p class="section-subtitle">Das <code>Try/Catch/Finally</code>-Konstrukt ist der Goldstandard für kontrollierte Fehlerbehandlung in PowerShell. Anstatt dass ein Skript bei einem Fehler einfach stoppt, kannst du den Fehler gezielt abfangen und darauf reagieren.</p>
+                    <h2 class="section-title">Melden von Fehlern in eigenen Skripten</h2>
+                    <p class="section-subtitle">Warum hat PowerShell drei verschiedene Mechanismen für Fehler? Das Ziel ist eine saubere Trennung zwischen "etwas läuft schief, aber wir können weitermachen" und "Stopp, hier geht gar nichts mehr!".</p>
 
-                    <h3 class="section-heading">Die Grundstruktur</h3>
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-button red"></span>
-                                <span class="terminal-button yellow"></span>
-                                <span class="terminal-button green"></span>
-                            </div>
-                            <span class="terminal-title">PowerShell</span>
-                        </div>
-                        <div class="terminal-content">
-                            <code class="terminal-command">$ErrorActionPreference = 'Stop'<br>
-<br>
-try {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;# Code, der einen Fehler verursachen könnte<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Get-Content "C:\Datei.txt"<br>
-} catch {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Hoppla, da ging was schief!"<br>
-}</code>
-                        </div>
-                    </div>
-                    <p class="section-subtitle"><strong>Wichtig:</strong> Damit <code>Try/Catch</code> greift, muss der Fehler ein "Terminating Error" sein. Setze dazu im Zweifel am Anfang deines Skripts <code>$ErrorActionPreference = 'Stop'</code>.</p>
-
-                    <h3 class="section-heading">Details zum Fehler auslesen mit $_</h3>
-                    <p class="section-subtitle">Innerhalb des <code>catch</code>-Blocks zeigt die Variable <code>$_</code> standardmäßig auf das aktuelle Fehlerobjekt. Du kannst damit genauere Infos ausgeben oder den Fehler für die Fehlersuche (Debugging) nutzen.</p>
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="terminal-button red"></span>
-                                <span class="terminal-button yellow"></span>
-                                <span class="terminal-button green"></span>
-                            </div>
-                            <span class="terminal-title">PowerShell</span>
-                        </div>
-                        <div class="terminal-content">
-                            <code class="terminal-command">} catch {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler-Typ: $($_.Exception.GetType().FullName)"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Nachricht: $($_.Exception.Message)"<br>
-}</code>
-                        </div>
-                    </div>
-
-                    <h3 class="section-heading">Aufräumen mit Finally</h3>
-                    <p class="section-subtitle">Der <code>finally</code>-Block wird <strong>immer</strong> ausgeführt, egal ob ein Fehler aufgetreten ist oder nicht. Dies eignet sich hervorragend für Logging oder Ressourcenfreigaben, die unabhängig vom Erfolg oder Fehlerfall garantiert ausgeführt werden müssen.</p>
+                    <h3 class="section-heading">1. throw – Der Terminator</h3>
+                    <p class="section-subtitle"><code>throw</code> erzeugt einen <strong>Terminating Error</strong>. Das Skript bricht sofort ab, es sei denn, der Fehler wird von einem <code>try/catch</code> Block abgefangen.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -204,19 +162,102 @@ try {<br>
                         </div>
                         <div class="terminal-content">
                             <code class="terminal-command">try {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;$file = New-Item -Path "C:\temp\lock" -ItemType File<br>
-&nbsp;&nbsp;&nbsp;&nbsp;# ... Arbeitsschritte ...<br>
-} finally {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Remove-Item "C:\temp\lock" -ErrorAction SilentlyContinue<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Aufräumarbeiten abgeschlossen."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (-not (Test-Path "C:\important.txt")) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw "Kritische Datei fehlt – Skript abgebrochen!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Abgefangen: $($_.Exception.Message)"<br>
 }</code>
                         </div>
                     </div>
+                    <p class="section-subtitle"><strong>Wann nutzen:</strong> Bei Bedingungen, bei denen das Skript unmöglich fortgesetzt werden kann (z.B. fehlende Zugriffsrechte oder kritische Ressourcen).</p>
+
+                    <h3 class="section-heading">2. Write-Error – Der Warner</h3>
+                    <p class="section-subtitle"><code>Write-Error</code> gibt eine Fehlermeldung aus, erzeugt aber standardmäßig einen <strong>Non-Terminating Error</strong>. Das Skript läuft danach einfach weiter.</p>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">Write-Error "Warnung: Backup fehlgeschlagen, aber Fortfahren möglich"<br>
+Write-Output "Skript läuft trotzdem weiter..."</code>
+                        </div>
+                    </div>
+                    <p class="section-subtitle"><strong>Wann nutzen:</strong> Bei Fehlern, die informativ sind oder nur einen Teilschritt betreffen (z.B. eine von 100 Dateien konnte nicht kopiert werden).</p>
+
+                    <h3 class="section-heading">3. Get-Error – Fehlerdetails auslesen</h3>
+                    <p class="section-subtitle">Ab PowerShell 7 bietet <code>Get-Error</code> eine sehr detailreiche Ansicht der letzten Fehler (aus der <code>$Error</code> -Variable) mit vollständigen Metadaten und Stacktrace.</p>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">Get-ChildItem "C:\GibtEsNicht"<br>
+Get-Error | Select-Object -First 1 | Format-List *</code>
+                        </div>
+                    </div>
+                    <p class="section-subtitle"><strong>Wann nutzen:</strong> Für tiefgehendes Debugging oder Logging, wenn du genau wissen willst, in welcher Codezeile der Fehler entstanden ist.</p>
+
+                    <h3 class="section-heading">Direkter Vergleich</h3>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Funktion</th>
+                                    <th>Fehlerart</th>
+                                    <th>Skript-Stopp</th>
+                                    <th>try/catch-fähig</th>
+                                    <th>In $Error</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>throw</strong></td>
+                                    <td>Terminating</td>
+                                    <td>✅ Ja</td>
+                                    <td>✅ Ja</td>
+                                    <td>✅ Ja</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Write-Error</strong></td>
+                                    <td>Non-Terminating</td>
+                                    <td>❌ Nein</td>
+                                    <td>❌ Nein</td>
+                                    <td>✅ Ja</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Get-Error</strong></td>
+                                    <td>Cmdlet</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>Auslesen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="section-heading">Best Practices</h3>
+                    <ul>
+                        <li>Nutze <code>throw</code> nur für echte Abbruchbedingungen.</li>
+                        <li>Verwende <code>Write-Error</code> mit dem Parameter <code>-Category</code> für eine bessere Klassifizierung.</li>
+                        <li>Kombiniere <code>$ErrorActionPreference = 'Stop'</code> mit Cmdlets, um deren Fehler fangbar zu machen.</li>
+                        <li>Nutze <code>Get-Error</code> zur Fehleranalyse in der Entwicklungsumgebung oder für detaillierte Logs.</li>
+                    </ul>
 
                     <!-- Artikel-Navigation: Prev/Next Links -->
-                                                            <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <a href="erroractionpreference.html">&larr; $ErrorActionPreference: Fehlerbehandlung</a>
-                        <a href="terminating-errors.html">Fehlerarten: Terminating vs. Non-Terminating &rarr;</a>
+                                        <nav class="article-nav" aria-label="Artikel-Navigation">
+                        <a href="terminating-errors.html">&larr; Fehlerarten: Terminating vs. Non-Terminating</a>
+                        <a href="invoke-webrequest.html">Invoke-WebRequest: Webseiten auslesen &rarr;</a>
                     </nav>
 
                 </article>

@@ -210,6 +210,24 @@ try {<br>
                             <div class="terminal-content">
                                 <code class="terminal-command">Get-Item "C:\GibtEsNicht.txt"
 Write-Output "Läuft bei Non-Terminating Errors trotzdem weiter!"</code>
+                    </article>
+
+                    <article class="resource-card">
+                        <h3><a href="throw-write-error.html">Fehler melden: throw & Write-Error</a></h3>
+                        <p>Wirf eigene Fehler mit <code>throw</code> oder nutze <code>Write-Error</code> für Warnungen. Alles zur Fehleranalyse mit <code>Get-Error</code>.</p>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-button red"></span>
+                                    <span class="terminal-button yellow"></span>
+                                    <span class="terminal-button green"></span>
+                                </div>
+                                <span class="terminal-title">PowerShell</span>
+                            </div>
+                            <div class="terminal-content">
+                                <code class="terminal-command">if ($fail) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;throw "Kritischer Fehler!"<br>
+}</code>
                             </div>
                         </div>
                     </article>

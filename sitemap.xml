@@ -70,5 +70,12 @@
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/ressourcen/try-catch.html"/>
     </url>
+    <url>
+        <loc>https://psugh.org/ressourcen/throw-write-error.html</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/ressourcen/throw-write-error.html"/>
+    </url>
 
 </urlset>
