@@ -162,12 +162,32 @@
                                 <span class="terminal-title">PowerShell</span>
                             </div>
                             <div class="terminal-content">
-                                <code class="terminal-command">$ErrorActionPreference = 'Stop'
-try {
-    Get-Item "C:\GibtEsNicht.txt"
-} catch {
-    Write-Error $_.Exception.Message
+                                <code class="terminal-command">$ErrorActionPreference = 'Stop'<br>
+<br>
+try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get-Item "C:\GibtEsNicht.txt"<br>
+} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen: $($_.Exception.Message)"<br>
 }</code>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <h3><a href="terminating-errors.html">Fehlerarten: Terminating vs. Non-Terminating</a></h3>
+                        <p>Lerne den Unterschied zwischen schwerwiegenden und normalen Fehlern und wie Try/Catch sich bei beiden verhält.</p>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-button red"></span>
+                                    <span class="terminal-button yellow"></span>
+                                    <span class="terminal-button green"></span>
+                                </div>
+                                <span class="terminal-title">PowerShell</span>
+                            </div>
+                            <div class="terminal-content">
+                                <code class="terminal-command">Get-Item "C:\GibtEsNicht.txt"
+Write-Output "Läuft bei Non-Terminating Errors trotzdem weiter!"</code>
                             </div>
                         </div>
                     </article>

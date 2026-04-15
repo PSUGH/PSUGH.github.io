@@ -4,40 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="PowerShell-Tutorial: $ErrorActionPreference erklärt. Erfahre, wie du Fehlerbehandlung (Try/Catch) mit Stop, Continue und SilentlyContinue richtig steuerst.">
+        content="PowerShell-Tutorial: Lerne den Unterschied zwischen Terminating und Non-Terminating Errors, wie du sie erkennst und mit Try/Catch richtig abfängst.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <link rel="canonical" href="https://psugh.org/ressourcen/erroractionpreference.html">
+    <link rel="canonical" href="https://psugh.org/ressourcen/terminating-errors.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="$ErrorActionPreference in PowerShell – Tutorial | PSUGH">
+    <meta property="og:title" content="Terminating vs. Non-Terminating Errors | PSUGH">
     <meta property="og:description"
-        content="Lerne $ErrorActionPreference: PowerShell-Fehler richtig steuern. Von silentlyContinue bis Stop für Try/Catch – mit praktischen Beispielen der PSUGH.">
-    <meta property="og:url" content="https://psugh.org/ressourcen/erroractionpreference.html">
+        content="Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.">
+    <meta property="og:url" content="https://psugh.org/ressourcen/terminating-errors.html">
     <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="$ErrorActionPreference in PowerShell – Tutorial | PSUGH">
+    <meta name="twitter:title" content="Terminating vs. Non-Terminating Errors | PSUGH">
     <meta name="twitter:description"
-        content="Lerne $ErrorActionPreference: PowerShell-Fehler richtig steuern. Von silentlyContinue bis Stop für Try/Catch – mit praktischen Beispielen der PSUGH.">
+        content="Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.">
     <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
 
+    <!-- Schema.org: TechArticle -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "$ErrorActionPreference in PowerShell – Tutorial | PSUGH",
-        "description": "Lerne $ErrorActionPreference: PowerShell-Fehler richtig steuern. Von silentlyContinue bis Stop für Try/Catch – mit praktischen Beispielen der PSUGH.",
-        "url": "https://psugh.org/ressourcen/erroractionpreference.html",
+        "headline": "Terminating vs. Non-Terminating Errors | PSUGH",
+        "description": "Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.",
+        "url": "https://psugh.org/ressourcen/terminating-errors.html",
         "inLanguage": "de-DE",
         "author": {
             "@type": "Organization",
@@ -51,15 +53,16 @@
         }
     }
     </script>
-    <title>$ErrorActionPreference Tutorial | PSUGH Ressourcen</title>
 
-    <!-- htmlhint head-script-disabled:false -->
+    <title>Terminating vs. Non-Terminating Errors | PSUGH Ressourcen</title>
+
     <!-- Performance: preconnect to analytics endpoints -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
 
+    <!-- htmlhint head-script-disabled:false -->
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
     <script>
@@ -73,11 +76,13 @@
         });
     </script>
 
+    <!-- Favicon -->
     <link rel="shortcut icon" href="../favicon.ico" />
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../img/psugh-logo.webp">
     <link rel="manifest" href="../site.webmanifest">
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.min.css">
     <link rel="preload" href="../css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -103,7 +108,6 @@
                             rel="noopener">PowerShell Saturday</a></li>
                     <li role="none"><a href="../impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
                 </ul>
-
                 <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
                     aria-label="Menü öffnen">
                     <span class="hamburger-line"></span>
@@ -126,8 +130,8 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">$ErrorActionPreference</h1>
-                <p class="hero-subtitle">Effektive Fehlerbehandlung in PowerShell steuern.</p>
+                <h1 class="hero-title">Fehlerarten in PowerShell</h1>
+                <p class="hero-subtitle">Terminating vs. Non-Terminating Errors verstehen.</p>
             </div>
         </div>
     </header>
@@ -140,15 +144,23 @@
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
                     <a href="./">Ressourcen</a>
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
-                    <span aria-current="page">$ErrorActionPreference</span>
+                    <span aria-current="page">Fehlerarten in PowerShell</span>
                 </nav>
+
                 <article class="article-card">
-                    <h2 class="section-title">Was macht $ErrorActionPreference?</h2>
-                    <p class="section-subtitle"><code>$ErrorActionPreference</code> ist eine globale PowerShell-Variable, die steuert, wie mit nicht-terminierenden Fehlern umgegangen wird.</p>
-                    <p class="section-subtitle">Viele Cmdlets (wie <code>Get-Item</code>, <code>Get-Content</code>, etc.) werfen standardmäßig nicht-terminierende Fehler, wodurch das Skript weiterläuft. Das ist entscheidend, wenn du Skripte robust schreiben willst, die auf Fehler gezielt reagieren statt blind weiterzulaufen.</p>
 
-                    <h3 class="section-heading">Try/Catch erfordert "Stop"</h3>
-                    <p class="section-subtitle">Setzt man <code>$ErrorActionPreference = 'Stop'</code>, werden diese Fehler in terminierende Fehler umgewandelt, wodurch sie in einem <code>Try/Catch</code>-Block abgefangen werden können.</p>
+                    <h2 class="section-title">Zwei Arten von Fehlern</h2>
+                    <p class="section-subtitle">PowerShell unterscheidet grundsätzlich zwischen zwei Fehlerarten:
+                        <strong>Terminating Errors</strong> und <strong>Non-Terminating Errors</strong>. Der Unterschied
+                        bestimmt, ob dein Skript am Fehlerort abbricht oder weiter ausgeführt wird.
+                    </p>
+
+                    <h3 class="section-heading">Non-Terminating Errors</h3>
+                    <p class="section-subtitle">Diese Fehler sind die am häufigsten auftretenden Fehler. Wenn ein Cmdlet
+                        (wie <code>Get-Item</code> oder <code>Remove-Item</code>) eine Datei nicht findet, erzeugt es
+                        einen solchen Fehler. Der Fehler wird rot auf dem Bildschirm ausgegeben, aber <strong>das Skript
+                            läuft danach normal weiter</strong>. Ein Standard-<code>try/catch</code>-Block fängt diese
+                        Fehler <em>nicht</em> ab.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -159,33 +171,17 @@
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code class="terminal-command">$ErrorActionPreference = 'Stop'<br>
-<br>
-try {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Get-Item "C:\GibtEsNicht.txt"<br>
-} catch {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen: $($_.Exception.Message)"<br>
-}</code>
+                            <code class="terminal-command">Get-Item "C:\GibtEsNicht.txt"<br><br>
+Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                         </div>
                     </div>
 
-                    <h3 class="section-heading">Wichtige Werte für die Preference</h3>
-                    <ul class="resource-list">
-                        <li><code>Continue</code> (Standard): Fehler anzeigen und mit dem Skript fortfahren.</li>
-                        <li><code>Stop</code>: Fehler anzeigen und das Skript am Fehlerort sofort abbrechen (wird vom
-                            Try/Catch gefangen).</li>
-                        <li><code>SilentlyContinue</code>: Nichts anzeigen und den Fehler ignorieren (Fehler landet aber
-                            in <code>$Error</code>).</li>
-                        <li><code>Ignore</code>: Wie SilentlyContinue, aber der Fehler wird auch nicht im
-                            <code>$Error</code>-Array gespeichert.
-                        </li>
-                        <li><code>Inquire</code>: Bei jedem Fehler nachfragen, ob fortgesetzt werden soll.</li>
-                    </ul>
-
-                    <h3 class="section-heading">Lokale Abweichung mit "-ErrorAction"</h3>
-                    <p class="section-subtitle">Anstatt die globale Variable zu ändern, kannst du das Verhalten bei fast
-                        allen Cmdlets für diesen einzelnen Aufruf mit dem Parameter <code>-ErrorAction</code>
-                        überschreiben.</p>
+                    <h3 class="section-heading">Terminating Errors</h3>
+                    <p class="section-subtitle">Dies sind schwerwiegende Fehler (z.B. Syntax-Fehler oder fehlende
+                        Rechte), die PowerShell daran hindern, den aktuellen Befehl oder gar das Skript weiter
+                        auszuführen. Ein solcher Fehler bricht die Ausführung sofort ab, kann aber mit
+                        <code>try/catch</code> abgefangen werden.
+                    </p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -196,18 +192,27 @@ try {<br>
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code
-                                class="terminal-command">Remove-Item "C:\temp\alte_log.txt" -ErrorAction SilentlyContinue</code>
+                            <code class="terminal-command">try {  # Ein absichtlich geworfener terminating Error<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;throw "Schwerer Systemfehler"<br>
+                            }<br> catch {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen und das Skript darf dank catch weiterleben."<br>
+                            }</code>
                         </div>
                     </div>
 
-                    <p class="section-subtitle">Dies ist ein Best-Practice-Muster, um z.B. aufräumende Cmdlets
-                        auszuführen, ohne dass rote Fehlermeldungen Nutzer irritieren, wenn die Datei gar nicht
-                        existiert.</p>
+                    <h3 class="section-heading">Das Verhalten anpassen</h3>
+                    <p class="section-subtitle">Damit ein Skript vorhersehbar auf <em>jeden</em> Fehler reagieren kann,
+                        erzwingt man oft mittels <code>-ErrorAction Stop</code> bei Cmdlets (oder pauschal über
+                        <code>$ErrorActionPreference = 'Stop'</code>), dass gewöhnliche Non-Terminating Errors zu
+                        Terminating Errors eskalieren.
+                    </p>
+
+                    <!-- Artikel-Navigation: Prev/Next Links -->
                                         <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <span></span>
-                        <a href="terminating-errors.html">Fehlerarten: Terminating vs. Non-Terminating &rarr;</a>
+                        <a href="erroractionpreference.html">&larr; $ErrorActionPreference: Fehlerbehandlung</a>
+                        <a href="invoke-webrequest.html">Invoke-WebRequest: Webseiten auslesen &rarr;</a>
                     </nav>
+
                 </article>
             </div>
         </section>
