@@ -152,7 +152,8 @@
                     <h2 class="section-title">Zwei Arten von Fehlern</h2>
                     <p class="section-subtitle">PowerShell unterscheidet grundsätzlich zwischen zwei Fehlerarten:
                         <strong>Terminating Errors</strong> und <strong>Non-Terminating Errors</strong>. Der Unterschied
-                        bestimmt, ob dein Skript am Fehlerort abbricht oder weiter ausgeführt wird.</p>
+                        bestimmt, ob dein Skript am Fehlerort abbricht oder weiter ausgeführt wird.
+                    </p>
 
                     <h3 class="section-heading">Non-Terminating Errors</h3>
                     <p class="section-subtitle">Diese Fehler sind die am häufigsten auftretenden Fehler. Wenn ein Cmdlet
@@ -179,7 +180,8 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                     <p class="section-subtitle">Dies sind schwerwiegende Fehler (z.B. Syntax-Fehler oder fehlende
                         Rechte), die PowerShell daran hindern, den aktuellen Befehl oder gar das Skript weiter
                         auszuführen. Ein solcher Fehler bricht die Ausführung sofort ab, kann aber mit
-                        <code>try/catch</code> abgefangen werden.</p>
+                        <code>try/catch</code> abgefangen werden.
+                    </p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -190,12 +192,11 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code class="terminal-command">try {
-    # Ein absichtlich geworfener terminating Error
-    throw "Schwerer Systemfehler"
-} catch {
-    Write-Output "Fehler abgefangen und das Skript darf dank catch weiterleben."
-}</code>
+                            <code class="terminal-command">try {  # Ein absichtlich geworfener terminating Error<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;throw "Schwerer Systemfehler"<br>
+                            }<br> catch {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen und das Skript darf dank catch weiterleben."<br>
+                            }</code>
                         </div>
                     </div>
 
@@ -203,12 +204,13 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                     <p class="section-subtitle">Damit ein Skript vorhersehbar auf <em>jeden</em> Fehler reagieren kann,
                         erzwingt man oft mittels <code>-ErrorAction Stop</code> bei Cmdlets (oder pauschal über
                         <code>$ErrorActionPreference = 'Stop'</code>), dass gewöhnliche Non-Terminating Errors zu
-                        Terminating Errors eskalieren.</p>
+                        Terminating Errors eskalieren.
+                    </p>
 
                     <!-- Artikel-Navigation: Prev/Next Links -->
                     <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <span></span>
-                        <a href="erroractionpreference.html">$ErrorActionPreference-Tutorial →</a>
+                        <a href="erroractionpreference.html">← $ErrorActionPreference-Tutorial</a>
+                        <a href="invoke-webrequest.html">Invoke-WebRequest →</a>
                     </nav>
 
                 </article>
