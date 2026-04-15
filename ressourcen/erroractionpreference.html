@@ -163,11 +163,12 @@
                         </div>
                         <div class="terminal-content">
                             <code class="terminal-command">$ErrorActionPreference = 'Stop'
-                            try {
-                            Get-Item "C:\GibtEsNicht.txt"
-                            } catch {
-                            Write-Output "Fehler abgefangen: $($_.Exception.Message)"
-                            }</code>
+
+try {
+    Get-Item "C:\GibtEsNicht.txt"
+} catch {
+    Write-Output "Fehler abgefangen: $($_.Exception.Message)"
+}</code>
                         </div>
                     </div>
 
