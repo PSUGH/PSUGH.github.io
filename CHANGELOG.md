@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+### Added
+- Added new resource page for `$ErrorActionPreference` to improve SEO ranking.
+
 ## 2026-04-10
 
 - Generated missing `img/hintergrund.webp` from `img/hintergrund.jpg` to fix 404 error.

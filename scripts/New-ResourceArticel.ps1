@@ -47,7 +47,7 @@ if (-not $Slug)
     } until ($Slug -match '^[a-z0-9][a-z0-9-]+$')
 }
 
-$resourceDir = Join-Path $ScriptDir 'resources'
+$resourceDir = Join-Path $ScriptDir 'ressourcen'
 $OutputPath = Join-Path $resourceDir "$Slug.html"
 
 if (Test-Path $OutputPath)
@@ -156,8 +156,8 @@ Write-Host "✅ Erstellt: $OutputPath" -ForegroundColor Green
 Write-Host ''
 Write-Host '── Nächste Schritte ────────────────────────────────────────────' -ForegroundColor Cyan
 Write-Host "  1. Füge folgenden Eintrag in validate-seo.js → htmlFiles[] hinzu:"
-Write-Host "     { file: 'resources/$Slug.html', expectedCanonical: \`https://psugh.org/resources/$Slug.html\`, noindex: false }," -ForegroundColor DarkYellow
-Write-Host "  2. Füge einen Link in resources/index.html → resource-grid hinzu."
+Write-Host "     { file: 'ressourcen/$Slug.html', expectedCanonical: \`https://psugh.org/ressourcen/$Slug.html\`, noindex: false }," -ForegroundColor DarkYellow
+Write-Host "  2. Füge einen Link in ressourcen/index.html → resource-grid hinzu."
 Write-Host "  3. Füge $Slug.html zur sitemap.xml hinzu."
 Write-Host ''
 
