@@ -144,10 +144,14 @@
                 </nav>
                 <article class="article-card">
                     <h2 class="section-title">Was macht $ErrorActionPreference?</h2>
-                    <p class="section-subtitle">Die Variable <code>$ErrorActionPreference</code> bestimmt, wie PowerShell reagiert, wenn ein nicht-terminierender Fehler (Non-Terminating Error) auftritt. Sie ist essenziell, um Skripte robuster zu machen und Fehler gezielt abzufangen.</p>
+                    <p class="section-subtitle">Die Variable <code>$ErrorActionPreference</code> bestimmt, wie
+                        PowerShell reagiert, wenn ein nicht-terminierender Fehler (Non-Terminating Error) auftritt. Sie
+                        ist essenziell, um Skripte robuster zu machen und Fehler gezielt abzufangen.</p>
 
                     <h3 class="section-heading">Try/Catch erfordert "Stop"</h3>
-                    <p class="section-subtitle">Ein <code>Try/Catch</code>-Block fängt standardmäßig nur terminierende Fehler (Terminating Errors) ab. Damit auch normale Cmdlet-Fehler gefangen werden, muss die Aktion auf <code>Stop</code> gesetzt werden.</p>
+                    <p class="section-subtitle">Ein <code>Try/Catch</code>-Block fängt standardmäßig nur terminierende
+                        Fehler (Terminating Errors) ab. Damit auch normale Cmdlet-Fehler gefangen werden, muss die
+                        Aktion auf <code>Stop</code> gesetzt werden.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -159,25 +163,31 @@
                         </div>
                         <div class="terminal-content">
                             <code class="terminal-command">$ErrorActionPreference = 'Stop'
-try {
-    Get-Item "C:\GibtEsNicht.txt"
-} catch {
-    Write-Error "Fehler abgefangen: $($_.Exception.Message)"
-}</code>
+                            try {
+                            Get-Item "C:\GibtEsNicht.txt"
+                            } catch {
+                            Write-Output "Fehler abgefangen: $($_.Exception.Message)"
+                            }</code>
                         </div>
                     </div>
 
                     <h3 class="section-heading">Wichtige Werte für die Preference</h3>
                     <ul class="resource-list">
                         <li><code>Continue</code> (Standard): Fehler anzeigen und mit dem Skript fortfahren.</li>
-                        <li><code>Stop</code>: Fehler anzeigen und das Skript am Fehlerort sofort abbrechen (wird vom Try/Catch gefangen).</li>
-                        <li><code>SilentlyContinue</code>: Nichts anzeigen und den Fehler ignorieren (Fehler landet aber in <code>$Error</code>).</li>
-                        <li><code>Ignore</code>: Wie SilentlyContinue, aber der Fehler wird auch nicht im <code>$Error</code>-Array gespeichert.</li>
+                        <li><code>Stop</code>: Fehler anzeigen und das Skript am Fehlerort sofort abbrechen (wird vom
+                            Try/Catch gefangen).</li>
+                        <li><code>SilentlyContinue</code>: Nichts anzeigen und den Fehler ignorieren (Fehler landet aber
+                            in <code>$Error</code>).</li>
+                        <li><code>Ignore</code>: Wie SilentlyContinue, aber der Fehler wird auch nicht im
+                            <code>$Error</code>-Array gespeichert.
+                        </li>
                         <li><code>Inquire</code>: Bei jedem Fehler nachfragen, ob fortgesetzt werden soll.</li>
                     </ul>
 
                     <h3 class="section-heading">Lokale Abweichung mit "-ErrorAction"</h3>
-                    <p class="section-subtitle">Anstatt die globale Variable zu ändern, kannst du das Verhalten bei fast allen Cmdlets für diesen einzelnen Aufruf mit dem Parameter <code>-ErrorAction</code> überschreiben.</p>
+                    <p class="section-subtitle">Anstatt die globale Variable zu ändern, kannst du das Verhalten bei fast
+                        allen Cmdlets für diesen einzelnen Aufruf mit dem Parameter <code>-ErrorAction</code>
+                        überschreiben.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -188,11 +198,14 @@ try {
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code class="terminal-command">Remove-Item "C:\temp\alte_log.txt" -ErrorAction SilentlyContinue</code>
+                            <code
+                                class="terminal-command">Remove-Item "C:\temp\alte_log.txt" -ErrorAction SilentlyContinue</code>
                         </div>
                     </div>
 
-                    <p class="section-subtitle">Dies ist ein Best-Practice-Muster, um z.B. aufräumende Cmdlets auszuführen, ohne dass rote Fehlermeldungen Nutzer irritieren, wenn die Datei gar nicht existiert.</p>
+                    <p class="section-subtitle">Dies ist ein Best-Practice-Muster, um z.B. aufräumende Cmdlets
+                        auszuführen, ohne dass rote Fehlermeldungen Nutzer irritieren, wenn die Datei gar nicht
+                        existiert.</p>
                     <nav class="article-nav" aria-label="Artikel-Navigation">
                         <span></span>
                         <a href="invoke-webrequest.html">Invoke-WebRequest →</a>
