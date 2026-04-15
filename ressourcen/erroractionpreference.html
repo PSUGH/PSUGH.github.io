@@ -144,14 +144,11 @@
                 </nav>
                 <article class="article-card">
                     <h2 class="section-title">Was macht $ErrorActionPreference?</h2>
-                    <p class="section-subtitle">Die Variable <code>$ErrorActionPreference</code> bestimmt, wie
-                        PowerShell reagiert, wenn ein nicht-terminierender Fehler (Non-Terminating Error) auftritt. Sie
-                        ist essenziell, um Skripte robuster zu machen und Fehler gezielt abzufangen.</p>
+                    <p class="section-subtitle"><code>$ErrorActionPreference</code> ist eine globale PowerShell-Variable, die steuert, wie mit nicht-terminierenden Fehlern umgegangen wird.</p>
+                    <p class="section-subtitle">Viele Cmdlets (wie <code>Get-Item</code>, <code>Get-Content</code>, etc.) werfen standardmäßig nicht-terminierende Fehler, wodurch das Skript weiterläuft. Das ist entscheidend, wenn du Skripte robust schreiben willst, die auf Fehler gezielt reagieren statt blind weiterzulaufen.</p>
 
                     <h3 class="section-heading">Try/Catch erfordert "Stop"</h3>
-                    <p class="section-subtitle">Ein <code>Try/Catch</code>-Block fängt standardmäßig nur terminierende
-                        Fehler (Terminating Errors) ab. Damit auch normale Cmdlet-Fehler gefangen werden, muss die
-                        Aktion auf <code>Stop</code> gesetzt werden.</p>
+                    <p class="section-subtitle">Setzt man <code>$ErrorActionPreference = 'Stop'</code>, werden diese Fehler in terminierende Fehler umgewandelt, wodurch sie in einem <code>Try/Catch</code>-Block abgefangen werden können.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
