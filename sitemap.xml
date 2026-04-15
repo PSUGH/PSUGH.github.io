@@ -63,5 +63,12 @@
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/ressourcen/terminating-errors.html"/>
     </url>
+    <url>
+        <loc>https://psugh.org/ressourcen/try-catch.html</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="de" href="https://psugh.org/ressourcen/try-catch.html"/>
+    </url>
 
 </urlset>

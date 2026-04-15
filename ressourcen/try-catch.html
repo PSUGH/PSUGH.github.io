@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="PowerShell-Tutorial: Lerne den Unterschied zwischen Terminating und Non-Terminating Errors, wie du sie erkennst und mit Try/Catch richtig abfängst.">
+        content="Lerne die PowerShell Try/Catch Grundlagen: Syntax, Error-Objekt ($_) und Finally-Block – fehlerfreie Skripte mit der PowerShell Usergroup Hannover.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0073AE">
     <meta name="author" content="PowerShell Usergroup Hannover">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
-    <link rel="canonical" href="https://psugh.org/ressourcen/terminating-errors.html">
+    <link rel="canonical" href="https://psugh.org/ressourcen/try-catch.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:title" content="Terminating vs. Non-Terminating Errors | PSUGH">
+    <meta property="og:title" content="Try/Catch in PowerShell – Tutorial | PSUGH">
     <meta property="og:description"
-        content="Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.">
-    <meta property="og:url" content="https://psugh.org/ressourcen/terminating-errors.html">
+        content="Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.">
+    <meta property="og:url" content="https://psugh.org/ressourcen/try-catch.html">
     <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Terminating vs. Non-Terminating Errors | PSUGH">
+    <meta name="twitter:title" content="Try/Catch in PowerShell – Tutorial | PSUGH">
     <meta name="twitter:description"
-        content="Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.">
+        content="Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.">
     <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
 
     <!-- Schema.org: TechArticle -->
@@ -37,9 +37,9 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Terminating vs. Non-Terminating Errors | PSUGH",
-        "description": "Erfahre den Unterschied zwischen schwerwiegenden und normalen Fehlern in PowerShell und wie du sie meisterst.",
-        "url": "https://psugh.org/ressourcen/terminating-errors.html",
+        "headline": "Try/Catch in PowerShell – Tutorial | PSUGH",
+        "description": "Fehler in PowerShell-Skripten professionell abfangen mit Try/Catch – ein Tutorial der PSUGH Hannover.",
+        "url": "https://psugh.org/ressourcen/try-catch.html",
         "inLanguage": "de-DE",
         "author": {
             "@type": "Organization",
@@ -54,7 +54,7 @@
     }
     </script>
 
-    <title>Terminating vs. Non-Terminating Errors | PSUGH Ressourcen</title>
+    <title>Try/Catch Grundlagen | PSUGH Ressourcen</title>
 
     <!-- Performance: preconnect to analytics endpoints -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -85,9 +85,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.min.css">
     <link rel="preload" href="../css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="../css/fonts.css">
-    </noscript>
+    <noscript><link rel="stylesheet" href="../css/fonts.css"></noscript>
 </head>
 
 <body>
@@ -130,8 +128,8 @@
 
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Fehlerarten in PowerShell</h1>
-                <p class="hero-subtitle">Terminating vs. Non-Terminating Errors verstehen.</p>
+                <h1 class="hero-title">Try/Catch</h1>
+                <p class="hero-subtitle">Fehler fangen, bevor sie dein Skript stoppen.</p>
             </div>
         </div>
     </header>
@@ -144,23 +142,14 @@
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
                     <a href="./">Ressourcen</a>
                     <span class="breadcrumb-sep" aria-hidden="true">›</span>
-                    <span aria-current="page">Fehlerarten in PowerShell</span>
+                    <span aria-current="page">Try/Catch</span>
                 </nav>
 
                 <article class="article-card">
+                    <h2 class="section-title">Fehlerbehandlung mit Try/Catch</h2>
+                    <p class="section-subtitle">Das <code>Try/Catch/Finally</code>-Konstrukt ist der Goldstandard, um auf Fehler in PowerShell kontrolliert zu reagieren. Anstatt dass ein Skript bei einem Fehler einfach abbricht, kannst du den Fehler "fangen" und darauf reagieren.</p>
 
-                    <h2 class="section-title">Zwei Arten von Fehlern</h2>
-                    <p class="section-subtitle">PowerShell unterscheidet grundsätzlich zwischen zwei Fehlerarten:
-                        <strong>Terminating Errors</strong> und <strong>Non-Terminating Errors</strong>. Der Unterschied
-                        bestimmt, ob dein Skript am Fehlerort abbricht oder weiter ausgeführt wird.
-                    </p>
-
-                    <h3 class="section-heading">Non-Terminating Errors</h3>
-                    <p class="section-subtitle">Diese Fehler sind die am häufigsten auftretenden Fehler. Wenn ein Cmdlet
-                        (wie <code>Get-Item</code> oder <code>Remove-Item</code>) eine Datei nicht findet, erzeugt es
-                        einen solchen Fehler. Der Fehler wird rot auf dem Bildschirm ausgegeben, aber <strong>das Skript
-                            läuft danach normal weiter</strong>. Ein Standard-<code>try/catch</code>-Block fängt diese
-                        Fehler <em>nicht</em> ab.</p>
+                    <h3 class="section-heading">Die Grundstruktur</h3>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -171,17 +160,20 @@
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code class="terminal-command">Get-Item "C:\GibtEsNicht.txt"<br><br>
-Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
+                            <code class="terminal-command">$ErrorActionPreference = 'Stop'<br>
+<br>
+try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;# Code, der einen Fehler verursachen könnte<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get-Content "C:\Datei.txt"<br>
+} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Hoppla, da ging was schief!"<br>
+}</code>
                         </div>
                     </div>
+                    <p class="section-subtitle"><strong>Wichtig:</strong> Damit <code>Try/Catch</code> greift, muss der Fehler ein "Terminating Error" sein. Setze dazu im Zweifel am Anfang deines Skripts <code>$ErrorActionPreference = 'Stop'</code>.</p>
 
-                    <h3 class="section-heading">Terminating Errors</h3>
-                    <p class="section-subtitle">Dies sind schwerwiegende Fehler (z.B. Syntax-Fehler oder fehlende
-                        Rechte), die PowerShell daran hindern, den aktuellen Befehl oder gar das Skript weiter
-                        auszuführen. Ein solcher Fehler bricht die Ausführung sofort ab, kann aber mit
-                        <code>try/catch</code> abgefangen werden.
-                    </p>
+                    <h3 class="section-heading">Details zum Fehler auslesen mit $_</h3>
+                    <p class="section-subtitle">Innerhalb des <code>catch</code>-Blocks enthält die Variable <code>$_</code> das aktuelle Fehlerobjekt. Du kannst damit genauere Infos ausgeben.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -192,25 +184,39 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                             <span class="terminal-title">PowerShell</span>
                         </div>
                         <div class="terminal-content">
-                            <code class="terminal-command">try {  # Ein absichtlich geworfener terminating Error<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;throw "Schwerer Systemfehler"<br>
-                            }<br> catch {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler abgefangen und das Skript darf dank catch weiterleben."<br>
-                            }</code>
+                            <code class="terminal-content">} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler-Typ: $($_.Exception.GetType().FullName)"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Nachricht: $($_.Exception.Message)"<br>
+}</code>
                         </div>
                     </div>
 
-                    <h3 class="section-heading">Das Verhalten anpassen</h3>
-                    <p class="section-subtitle">Damit ein Skript vorhersehbar auf <em>jeden</em> Fehler reagieren kann,
-                        erzwingt man oft mittels <code>-ErrorAction Stop</code> bei Cmdlets (oder pauschal über
-                        <code>$ErrorActionPreference = 'Stop'</code>), dass gewöhnliche Non-Terminating Errors zu
-                        Terminating Errors eskalieren.
-                    </p>
+                    <h3 class="section-heading">Aufräumen mit Finally</h3>
+                    <p class="section-subtitle">Der <code>finally</code>-Block wird <strong>immer</strong> ausgeführt, egal ob ein Fehler aufgetreten ist oder nicht. Das ist ideal zum Schließen von Datenbankverbindungen oder zum Löschen temporärer Dateien.</p>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <div class="terminal-content">
+                            <code class="terminal-command">try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$file = New-Item -Path "C:\temp\lock" -ItemType File<br>
+&nbsp;&nbsp;&nbsp;&nbsp;# ... Arbeitsschritte ...<br>
+} finally {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Remove-Item "C:\temp\lock" -ErrorAction SilentlyContinue<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Aufräumarbeiten abgeschlossen."<br>
+}</code>
+                        </div>
+                    </div>
 
                     <!-- Artikel-Navigation: Prev/Next Links -->
-                                                            <nav class="article-nav" aria-label="Artikel-Navigation">
-                        <a href="try-catch.html">&larr; Try/Catch: Fehler professionell abfangen</a>
-                        <a href="invoke-webrequest.html">Invoke-WebRequest: Webseiten auslesen &rarr;</a>
+                                        <nav class="article-nav" aria-label="Artikel-Navigation">
+                        <a href="erroractionpreference.html">&larr; $ErrorActionPreference: Fehlerbehandlung</a>
+                        <a href="terminating-errors.html">Fehlerarten: Terminating vs. Non-Terminating &rarr;</a>
                     </nav>
 
                 </article>
@@ -236,7 +242,7 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
         mobileMenuToggle.addEventListener('click', () => {
             const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
             mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
+            mobileMenu.setAttribute('aria-hidden', !isOpen ? 'false' : 'true');
             mobileMenuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
