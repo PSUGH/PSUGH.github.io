@@ -161,23 +161,28 @@ const htmlFiles = [
         noindex: true,
     },
     {
-        file: 'resources/index.html',
-        expectedCanonical: `${CANONICAL_BASE}/resources/`,
+        file: 'ressourcen/index.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/`,
         noindex: false,
     },
     {
-        file: 'resources/invoke-webrequest.html',
-        expectedCanonical: `${CANONICAL_BASE}/resources/invoke-webrequest.html`,
+        file: 'ressourcen/invoke-webrequest.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/invoke-webrequest.html`,
         noindex: false,
     },
     {
-        file: 'resources/convertfrom-json.html',
-        expectedCanonical: `${CANONICAL_BASE}/resources/convertfrom-json.html`,
+        file: 'ressourcen/convertfrom-json.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/convertfrom-json.html`,
         noindex: false,
     },
     {
-        file: 'resources/select-object.html',
-        expectedCanonical: `${CANONICAL_BASE}/resources/select-object.html`,
+        file: 'ressourcen/select-object.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/select-object.html`,
+        noindex: false,
+    },
+    {
+        file: 'ressourcen/terminating-errors.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/terminating-errors.html`,
         noindex: false,
     },
 ];

@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - Added new resource page for `$ErrorActionPreference` to improve SEO ranking.
+- Added new resource page for Terminating vs. Non-Terminating Errors.
 
 ## 2026-04-10
 
