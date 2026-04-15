@@ -11,6 +11,7 @@
 - Fixed `current-meeting.json` preload error by adding `crossorigin="anonymous"` to the link tag in all HTML files.
 - Fixed `site.webmanifest` icon issues by explicitly setting `favicon.ico` sizes and updating obsolete `.png` references to `.webp`.
 - Renamed the `resources/` directory to `ressourcen/` to fix 404 navigation errors and aligned all internal references (links, canonical tags, and templates).
+- Updated `stylelint` to the latest version to resolve deprecated `rimraf` dependencies and modernized `.sr-only` CSS rules.
 
 ## 2026-03-27
 
