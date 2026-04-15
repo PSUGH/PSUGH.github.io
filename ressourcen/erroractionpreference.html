@@ -162,7 +162,7 @@
 try {
     Get-Item "C:\GibtEsNicht.txt"
 } catch {
-    Write-Host "Fehler abgefangen: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Error "Fehler abgefangen: $($_.Exception.Message)"
 }</code>
                         </div>
                     </div>

@@ -166,7 +166,7 @@
 try {
     Get-Item "C:\GibtEsNicht.txt"
 } catch {
-    Write-Host $_.Exception.Message
+    Write-Error $_.Exception.Message
 }</code>
                             </div>
                         </div>
