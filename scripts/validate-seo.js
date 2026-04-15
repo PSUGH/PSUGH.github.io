@@ -185,6 +185,16 @@ const htmlFiles = [
         expectedCanonical: `${CANONICAL_BASE}/ressourcen/terminating-errors.html`,
         noindex: false,
     },
+    {
+        file: 'ressourcen/try-catch.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/try-catch.html`,
+        noindex: false,
+    },
+    {
+        file: 'ressourcen/throw-write-error.html',
+        expectedCanonical: `${CANONICAL_BASE}/ressourcen/throw-write-error.html`,
+        noindex: false,
+    },
 ];
 
 htmlFiles.forEach(

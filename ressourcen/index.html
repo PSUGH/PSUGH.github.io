@@ -174,6 +174,28 @@ try {<br>
                     </article>
 
                     <article class="resource-card">
+                        <h3><a href="try-catch.html">Try/Catch: Fehler professionell abfangen</a></h3>
+                        <p>Lerne die Grundlagen der Fehlerbehandlung: Try-Blöcke, Catch-Logik mit Error-Details und Aufräumen mit Finally.</p>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-button red"></span>
+                                    <span class="terminal-button yellow"></span>
+                                    <span class="terminal-button green"></span>
+                                </div>
+                                <span class="terminal-title">PowerShell</span>
+                            </div>
+                            <div class="terminal-content">
+                                <code class="terminal-command">try {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Ich versuche was..."<br>
+} catch {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write-Output "Fehler: $_"<br>
+}</code>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
                         <h3><a href="terminating-errors.html">Fehlerarten: Terminating vs. Non-Terminating</a></h3>
                         <p>Lerne den Unterschied zwischen schwerwiegenden und normalen Fehlern und wie Try/Catch sich bei beiden verhält.</p>
                         <div class="terminal-window">
@@ -188,6 +210,26 @@ try {<br>
                             <div class="terminal-content">
                                 <code class="terminal-command">Get-Item "C:\GibtEsNicht.txt"
 Write-Output "Läuft bei Non-Terminating Errors trotzdem weiter!"</code>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="resource-card">
+                        <h3><a href="throw-write-error.html">Fehler melden: throw &amp; Write-Error</a></h3>
+                        <p>Wirf eigene Fehler mit <code>throw</code> oder nutze <code>Write-Error</code> für Warnungen. Alles zur Fehleranalyse mit <code>Get-Error</code>.</p>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-button red"></span>
+                                    <span class="terminal-button yellow"></span>
+                                    <span class="terminal-button green"></span>
+                                </div>
+                                <span class="terminal-title">PowerShell</span>
+                            </div>
+                            <div class="terminal-content">
+                                <code class="terminal-command">if ($fail) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;throw "Kritischer Fehler!"<br>
+}</code>
                             </div>
                         </div>
                     </article>
@@ -257,23 +299,7 @@ $data.nextMeeting.date</code>
                 </div>
             </div>
         </section>
-        <section class="about-section">
-            <div class="container">
-                <div class="about-grid">
-                    <h2 id="about-heading">Weitere Themen</h2>
-                    <ul class="resource-list">
-                        <li><strong>PowerShell-Profile</strong> – eigene Startskripte anlegen</li>
-                        <li><strong>Module verwalten</strong> – Install-Module, Update-Module, Find-Module</li>
-                        <li><strong>Fehlerbehandlung</strong> – Try/Catch/Finally &amp; $ErrorActionPreference</li>
-                    </ul>
 
-                    <p>Hast du ein Thema, das dich interessiert? Schreib uns gerne auf <a
-                            href="https://discord.com/invite/eZCfJtBHqk" target="_blank" rel="noopener">Discord</a> oder
-                        im <a href="https://www.meetup.com/psugh-hannover/" target="_blank"
-                            rel="noopener">Meetup-Chat</a>.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">

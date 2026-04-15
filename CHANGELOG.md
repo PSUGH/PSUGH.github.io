@@ -3,6 +3,8 @@
 ## [Unreleased]
 ### Added
 - Added new resource page for `$ErrorActionPreference` to improve SEO ranking.
+- Added new resource page for Try/Catch basics.
+- Added new resource page for `throw`, `Write-Error`, and `Get-Error`.
 - Added new resource page for Terminating vs. Non-Terminating Errors.
 - Added `scripts/Update-ArticleNavigation.ps1` to dynamically generate "Previous/Next" navigation links across all resource articles based on `index.html`.
 
