@@ -147,7 +147,7 @@
 
                 <article class="article-card">
                     <h2 class="section-title">Fehlerbehandlung mit Try/Catch</h2>
-                    <p class="section-subtitle">Das <code>Try/Catch/Finally</code>-Konstrukt ist der Goldstandard, um auf Fehler in PowerShell kontrolliert zu reagieren. Anstatt dass ein Skript bei einem Fehler einfach abbricht, kannst du den Fehler "fangen" und darauf reagieren.</p>
+                    <p class="section-subtitle">Das <code>Try/Catch/Finally</code>-Konstrukt ist der Goldstandard für kontrollierte Fehlerbehandlung in PowerShell. Anstatt dass ein Skript bei einem Fehler einfach stoppt, kannst du den Fehler gezielt abfangen und darauf reagieren.</p>
 
                     <h3 class="section-heading">Die Grundstruktur</h3>
                     <div class="terminal-window">
@@ -173,7 +173,7 @@ try {<br>
                     <p class="section-subtitle"><strong>Wichtig:</strong> Damit <code>Try/Catch</code> greift, muss der Fehler ein "Terminating Error" sein. Setze dazu im Zweifel am Anfang deines Skripts <code>$ErrorActionPreference = 'Stop'</code>.</p>
 
                     <h3 class="section-heading">Details zum Fehler auslesen mit $_</h3>
-                    <p class="section-subtitle">Innerhalb des <code>catch</code>-Blocks enthält die Variable <code>$_</code> das aktuelle Fehlerobjekt. Du kannst damit genauere Infos ausgeben.</p>
+                    <p class="section-subtitle">Innerhalb des <code>catch</code>-Blocks zeigt die Variable <code>$_</code> standardmäßig auf das aktuelle Fehlerobjekt. Du kannst damit genauere Infos ausgeben oder den Fehler für die Fehlersuche (Debugging) nutzen.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -192,7 +192,7 @@ try {<br>
                     </div>
 
                     <h3 class="section-heading">Aufräumen mit Finally</h3>
-                    <p class="section-subtitle">Der <code>finally</code>-Block wird <strong>immer</strong> ausgeführt, egal ob ein Fehler aufgetreten ist oder nicht. Das ist ideal zum Schließen von Datenbankverbindungen oder zum Löschen temporärer Dateien.</p>
+                    <p class="section-subtitle">Der <code>finally</code>-Block wird <strong>immer</strong> ausgeführt, egal ob ein Fehler aufgetreten ist oder nicht. Dies eignet sich hervorragend für Logging oder Ressourcenfreigaben, die unabhängig vom Erfolg oder Fehlerfall garantiert ausgeführt werden müssen.</p>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
