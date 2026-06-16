@@ -1,14 +1,14 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 17.04.2026, ab 18:30h",
-        "isoDate": "2026-04-17T18:30:00+01:00",
-        "description": "Real-Time Terminal Dashboards mit PowerShell",
+        "date": "Freitag, den 19.06.2026, ab 18:30h",
+        "isoDate": "2026-06-19T18:30:00+02:00",
+        "description": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
         "topics": [
             {
-                "title": "Real-Time Terminal Dashboards mit PowerShell",
-                "speaker": "Gabriel Köhl",
-                "picture": "img/1773826590806.webp",
-                "description": "Wer schon mal versucht hat, Performance-Daten mit PowerShell zu sammeln, weiß, was Schmerzen sind.\nZum Glück ist Gabriel Köhl sehr schmerzresistent und hat uns deswegen mit dem psTerminalPerfCounter-Modul versorgt."
+                "title": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
+                "speaker": "Marco Kleinert",
+                "picture": "img/runbook_rotation.png",
+                "description": "Sicherheit und Automation gehen Hand in Hand. In dieser Session zeigt euch Marco Kleinert, wie ihr die automatische Rotation von Entra ID App-Registration Secrets über Azure Automation Runbooks implementiert.\n\nWir vergleichen das legacy PowerShell 5.1 (direkte REST API-Aufrufe ohne Modulabhängigkeiten) mit dem modernisierten PowerShell 7.2 (parallele Abarbeitung und Microsoft Graph SDK cmdlets). Zudem beleuchten wir die sichere Integration via Key Vault, die Zuweisung von Graph-Berechtigungen an Managed Identities und die Koppelung mit Service Principals."
             }
         ]
     }

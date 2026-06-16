@@ -1,6 +1,35 @@
 {
     "pastEvents": [
         {
+            "date": "2026-05-15",
+            "dateDisplay": "Freitag, den 15.05.2026",
+            "description": "PSScriptAnalyzer mit Christian Ritter",
+            "topics": [
+                {
+                    "title": "PSScriptAnalyzer mit Christian Ritter",
+                    "speaker": "Christian Ritter",
+                    "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
+                }
+            ],
+            "title": "PSScriptAnalyzer mit Christian Ritter",
+            "isoDate": "2026-05-15T18:30:00+02:00"
+        },
+        {
+            "date": "2026-04-17",
+            "dateDisplay": "Freitag, den 17.04.2026",
+            "description": "Real-Time Terminal Dashboards mit PowerShell",
+            "topics": [
+                {
+                    "title": "Real-Time Terminal Dashboards mit PowerShell",
+                    "speaker": "Gabriel Köhl",
+                    "picture": "img/1773826590806.webp",
+                    "description": "Wer schon mal versucht hat, Performance-Daten mit PowerShell zu sammeln, weiß, was Schmerzen sind.\nZum Glück ist Gabriel Köhl sehr schmerzresistent und hat uns deswegen mit dem psTerminalPerfCounter-Modul versorgt."
+                }
+            ],
+            "title": "Real-Time Terminal Dashboards mit PowerShell",
+            "isoDate": "2026-04-17T18:30:00+01:00"
+        },
+        {
             "date": "2026-03-13",
             "dateDisplay": "Freitag, den 13.03.2026",
             "description": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
