@@ -2,13 +2,13 @@
     "nextMeeting": {
         "date": "Freitag, den 19.06.2026, ab 18:30h",
         "isoDate": "2026-06-19T18:30:00+02:00",
-        "description": "🚀 Entra ID App Secrets vollautomatisch rotieren? Aber sicher! 🔐",
+        "description": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
         "topics": [
             {
-                "title": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
-                "speaker": "Marco Kleinert",
-                "picture": "img/runbook_rotation.webp",
-                "description": "Sicherheit & Governance fangen bei der Credential-Rotation an! In diesem pragmatischen Live-Demo-Vortrag zeigt euch Marco Kleinert, wie ihr die automatische Erneuerung von App-Registration-Secrets über Azure Automation Runbooks löst.\n\n💡 Das erwartet euch:\n• ⚔️ PowerShell Battle: Legacy 5.1 (REST-basiert, ohne Modul-Overhead) vs. Modernes 7.2 (parallel mit dem Microsoft Graph SDK).\n• 🛡️ Best Practices für Managed Identities (System- vs. User-Assigned) & RBAC.\n• 📦 Live-Update im Azure Key Vault — ohne manuelle Handgriffe.\n\nKommt vorbei und hebt eure Automation auf das nächste Level! 🚀"
+                "title": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
+                "speaker": "Community",
+                "picture": "img/psugh_social.webp",
+                "description": "Keine Folien, keine starren Themen — dafür eiskaltes Bier, heiß umkämpfte Kicker-Duelle und jede Menge lockere Gespräche rund um PowerShell. Bringt eure verrücktesten Skript-Ideen und besten IT-Anekdoten mit! 🍻⚽"
             }
         ]
     }
