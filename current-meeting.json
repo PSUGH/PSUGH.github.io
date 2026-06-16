@@ -8,7 +8,7 @@
                 "title": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
                 "speaker": "Marco Kleinert",
                 "picture": "img/runbook_rotation.png",
-                "description": "Sicherheit und Automation gehen Hand in Hand. In dieser Session zeigt euch Marco Kleinert, wie ihr die automatische Rotation von Entra ID App-Registration Secrets über Azure Automation Runbooks implementiert.\n\nWir vergleichen das legacy PowerShell 5.1 (direkte REST API-Aufrufe ohne Modulabhängigkeiten) mit dem modernisierten PowerShell 7.2 (parallele Abarbeitung und Microsoft Graph SDK cmdlets). Zudem beleuchten wir die sichere Integration via Key Vault, die Zuweisung von Graph-Berechtigungen an Managed Identities und die Koppelung mit Service Principals."
+                "description": "Automatisierte Rotation von Entra ID App Secrets mit Azure Automation Runbooks. Im direkten Vergleich: Legacy PowerShell 5.1 (REST-basiert, ohne Modulabhängigkeiten) vs. Modernes PowerShell 7.2 (parallel mit Microsoft Graph SDK)."
             }
         ]
     }
