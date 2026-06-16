@@ -1,12 +1,21 @@
 # Changelog
 
 ## [Unreleased]
+
+## [3.1.0] - 2026-06-16
 ### Added
+- Added June 19th social event ("Bier, Kicker & PowerShell-Talks") with a custom WebP Lego foosball graphic (`img/psugh_social.webp`).
+- Kept a copy of the classic Lego foosball graphic as `img/psugh_social_classic.webp`.
 - Added new resource page for `$ErrorActionPreference` to improve SEO ranking.
 - Added new resource page for Try/Catch basics.
 - Added new resource page for `throw`, `Write-Error`, and `Get-Error`.
 - Added new resource page for Terminating vs. Non-Terminating Errors.
 - Added `scripts/Update-ArticleNavigation.ps1` to dynamically generate "Previous/Next" navigation links across all resource articles based on `index.html`.
+
+### Changed
+- Rescheduled the Azure Automation Runbook Secret Rotation session to July 17, 2026.
+- Archived Gabriel Köhl's Real-Time Terminal Dashboards session (April 2026) to the past events list.
+- Postponed Christian Ritter's PSScriptAnalyzer session to Autumn 2026 in the upcoming events queue.
 
 ## 2026-04-10
 

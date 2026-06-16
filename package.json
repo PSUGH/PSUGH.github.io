@@ -1,6 +1,6 @@
 {
     "name": "psugh-website",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "Modern website for PowerShell Usergroup Hannover (PSUGH) - built with modern web technologies and deployed on GitHub Pages",
     "main": "index.html",
     "scripts": {
