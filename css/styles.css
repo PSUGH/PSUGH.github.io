@@ -155,6 +155,10 @@ a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+p a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
 .skip-link {
     position: absolute;
     top: -40px;
