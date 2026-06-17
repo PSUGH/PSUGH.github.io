@@ -493,7 +493,7 @@ a:focus {
     font-size: var(--font-size-lg);
 }
 .terminal-window {
-    background: var(--bg-dark);
+    background: #0f172a;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
@@ -503,7 +503,7 @@ a:focus {
     margin-right: auto;
 }
 .terminal-header {
-    background: #1a1f2e;
+    background: #1e293b;
     padding: var(--spacing-md);
     display: flex;
     align-items: center;
@@ -529,7 +529,7 @@ a:focus {
     background: var(--success-color);
 }
 .terminal-title {
-    color: var(--text-secondary);
+    color: #cbd5e1;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
 }
@@ -537,7 +537,7 @@ a:focus {
     padding: var(--spacing-xl);
 }
 .terminal-command {
-    color: var(--success-color);
+    color: #4ade80;
     font-family: var(--font-family-mono);
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
@@ -548,7 +548,7 @@ a:focus {
 }
 .command-line::before {
     content: 'PS C: \\> ';
-    color: #09f;
+    color: #38bdf8;
 }
 .command-line:not(:first-child)::before {
     content: '>> ';
