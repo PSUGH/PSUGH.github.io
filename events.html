@@ -24,7 +24,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="img/psugh-logo.webp">
+    <link rel="apple-touch-icon" href="img/psugh-icon.webp">
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Stylesheets -->
@@ -176,9 +176,9 @@
 
         // Calendar functionality
         class EventCalendar {
-            constructor() {
+            constructor(preloadedEvents) {
                 this.currentDate = new Date();
-                this.events = [];
+                this.events = preloadedEvents || [];
                 this.monthNames = [
                     'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
                     'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
@@ -188,70 +188,9 @@
                 this.init();
             }
 
-            async init() {
-                await this.loadEvents();
+            init() {
                 this.render();
                 this.bindEvents();
-            } async loadEvents() {
-                try {
-                    // Load all three data files
-                    const [currentResponse, pastResponse, upcomingResponse] = await Promise.all([
-                        fetch('./current-meeting.json'),
-                        fetch('./past-events.json'),
-                        fetch('./upcoming-events.json')
-                    ]);
-
-                    const currentData = await currentResponse.json();
-                    const pastData = await pastResponse.json();
-                    const upcomingData = await upcomingResponse.json();
-
-                    // Process all events
-                    this.events = [];
-
-                    // Add next meeting
-                    if (currentData.nextMeeting) {
-                        // Extract date from "Freitag, den 20.06.2025, ab 18:30h"
-                        const dateMatch = currentData.nextMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                        if (dateMatch) {
-                            const [, day, month, year] = dateMatch;
-                            this.events.push({
-                                date: new Date(year, month - 1, day),
-                                title: 'Nächstes Treffen',
-                                type: 'next'
-                            });
-                        }
-                    }
-
-                    // Add past events
-                    if (pastData.pastEvents) {
-                        pastData.pastEvents.forEach(event => {
-                            this.events.push({
-                                date: new Date(event.date),
-                                title: event.title,
-                                type: 'past'
-                            });
-                        });
-                    }
-
-                    // Add upcoming events
-                    if (upcomingData.upcomingEvents) {
-                        upcomingData.upcomingEvents.forEach(event => {
-                            // Extract date from "Freitag, den 17.04.2026, ab 18:30h"
-                            const dateMatch = event.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                            if (dateMatch) {
-                                const [, day, month, year] = dateMatch;
-                                this.events.push({
-                                    date: new Date(year, month - 1, day),
-                                    title: event.description || 'Kommendes Treffen',
-                                    type: 'upcoming'
-                                });
-                            }
-                        });
-                    }
-
-                } catch (error) {
-                    console.error('Error loading events:', error);
-                }
             }
 
             bindEvents() {
@@ -327,27 +266,85 @@
                 }
             }
         }
-        // Event data loading and rendering
-        async function loadAndRenderEvents() {
+        // Consolidated event data loading and initialization
+        async function initPage() {
             try {
-                // Load all three data files
-                const [pastResponse, upcomingResponse] = await Promise.all([
+                // Fetch all three data files in parallel
+                const [currentResponse, pastResponse, upcomingResponse] = await Promise.all([
+                    fetch('./current-meeting.json'),
                     fetch('./past-events.json'),
                     fetch('./upcoming-events.json')
                 ]);
 
+                const currentData = await currentResponse.json();
                 const pastData = await pastResponse.json();
                 const upcomingData = await upcomingResponse.json();
 
-                // Render past events
-                renderPastEvents(pastData.pastEvents || []);
+                const currentMeeting = currentData.nextMeeting;
+                const pastEvents = pastData.pastEvents || [];
+                const upcomingEvents = upcomingData.upcomingEvents || [];
+
+                // 1. Compile events for the calendar view
+                const calendarEvents = [];
+
+                if (currentMeeting) {
+                    const dateMatch = currentMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                    if (dateMatch) {
+                        const [, day, month, year] = dateMatch;
+                        calendarEvents.push({
+                            date: new Date(year, month - 1, day),
+                            title: 'Nächstes Treffen',
+                            type: 'next'
+                        });
+                    }
+                }
+
+                pastEvents.forEach(event => {
+                    calendarEvents.push({
+                        date: new Date(event.date),
+                        title: event.title,
+                        type: 'past'
+                    });
+                });
+
+                upcomingEvents.forEach(event => {
+                    const dateMatch = event.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                    if (dateMatch) {
+                        const [, day, month, year] = dateMatch;
+                        calendarEvents.push({
+                            date: new Date(year, month - 1, day),
+                            title: event.description || 'Kommendes Treffen',
+                            type: 'upcoming'
+                        });
+                    }
+                });
+
+                // Initialize calendar with pre-loaded events
+                new EventCalendar(calendarEvents);
+
+                // 2. Compile upcoming events for card rendering (Next Meeting + Upcoming Events)
+                const allUpcomingEvents = [];
+                if (currentMeeting) {
+                    allUpcomingEvents.push({
+                        date: currentMeeting.date,
+                        dateDisplay: currentMeeting.date,
+                        title: currentMeeting.description || 'Nächstes Treffen',
+                        description: currentMeeting.description,
+                        topics: currentMeeting.topics
+                    });
+                }
+                upcomingEvents.forEach(event => {
+                    allUpcomingEvents.push(event);
+                });
 
                 // Render upcoming events
-                const upcomingEvents = upcomingData.upcomingEvents || [];
-                renderUpcomingEvents(upcomingEvents);
+                renderUpcomingEvents(allUpcomingEvents);
 
-                // Inject Schema.org Event markup for Rich Results
-                injectEventSchemas(pastData.pastEvents || [], upcomingEvents);
+                // Render past events
+                renderPastEvents(pastEvents);
+
+                // Inject Schema.org Event markup for SEO
+                injectEventSchemas(pastEvents, allUpcomingEvents);
 
             } catch (error) {
                 console.error('Error loading events:', error);
@@ -580,8 +577,7 @@
         }
 
         // Initialize immediately; the script is already at the end of the body.
-        new EventCalendar();
-        loadAndRenderEvents();
+        initPage();
         document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 

@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Added
+- Added square modern PWA and apple-touch-icon (`img/psugh-icon.webp`) in WebP format to resolve PWA verification warnings and fix icon squashing on iOS.
+
+### Changed
+- Refactored `events.html` JavaScript to consolidate network fetches, loading all three JSON data files in parallel only once at the page level.
+- Combined next meeting details with upcoming events on `events.html` to display the next meeting within the "Kommende Treffen" list.
+
 ## [3.1.0] - 2026-06-16
 ### Added
 - Added June 19th social event ("Bier, Kicker & PowerShell-Talks") with a custom WebP Lego foosball graphic (`img/psugh_social.webp`).

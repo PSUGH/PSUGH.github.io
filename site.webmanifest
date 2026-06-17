@@ -10,14 +10,26 @@
                       "type":  "image/x-icon"
                   },
                   {
-                      "src":  "img/psugh-logo.webp",
-                      "sizes":  "200x24",
+                      "src":  "img/psugh-icon.webp",
+                      "sizes":  "192x192",
                       "type":  "image/webp",
                       "purpose":  "any"
                   },
                   {
-                      "src":  "img/psugh-logo.webp",
-                      "sizes":  "200x24",
+                      "src":  "img/psugh-icon.webp",
+                      "sizes":  "512x512",
+                      "type":  "image/webp",
+                      "purpose":  "any"
+                  },
+                  {
+                      "src":  "img/psugh-icon.webp",
+                      "sizes":  "192x192",
+                      "type":  "image/webp",
+                      "purpose":  "maskable"
+                  },
+                  {
+                      "src":  "img/psugh-icon.webp",
+                      "sizes":  "512x512",
                       "type":  "image/webp",
                       "purpose":  "maskable"
                   }
@@ -41,8 +53,9 @@
                           "url":  "/#naechstes-treffen",
                           "icons":  [
                                         {
-                                            "src":  "img/psugh-logo.webp",
-                                            "sizes":  "200x24"
+                                            "src":  "img/psugh-icon.webp",
+                                            "sizes":  "192x192",
+                                            "type":  "image/webp"
                                         }
                                     ]
                       },
@@ -53,8 +66,9 @@
                           "url":  "/events.html",
                           "icons":  [
                                         {
-                                            "src":  "img/psugh-logo.webp",
-                                            "sizes":  "200x24"
+                                            "src":  "img/psugh-icon.webp",
+                                            "sizes":  "192x192",
+                                            "type":  "image/webp"
                                         }
                                     ]
                       }
