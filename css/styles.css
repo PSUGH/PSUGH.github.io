@@ -25,6 +25,20 @@ button:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 3px;
 }
+/* High contrast focus outline for elements on dark backgrounds */
+.hero-header :focus-visible,
+.mobile-menu :focus-visible,
+.terminal-window :focus-visible,
+.site-footer :focus-visible,
+.hero-room-code-container .copy-btn:focus-visible {
+    outline: 3px solid rgb(255 255 255);
+    outline-offset: 3px;
+}
+/* Focus visible outline for calendar cells with events */
+.calendar-day.has-event:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: -3px;
+}
 :root {
     --primary-color: #0073ae;
     --primary-light: #4a9bc9;
@@ -877,6 +891,14 @@ p a {
         max-width: 300px;
         text-align: center;
     }
+    .online-join-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    .online-join-group .btn {
+        width: 100%;
+        max-width: 100%;
+    }
     .meeting-links {
         flex-direction: column;
         align-items: center;
@@ -1041,6 +1063,11 @@ button:focus {
     padding: 0.5rem;
     border-radius: 50%;
     transition: background-color 0.3s;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 .calendar-nav:hover {
     background-color: var(--bg-secondary);
@@ -1118,6 +1145,23 @@ button:focus {
 .event-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgb(0 0 0 / 15%);
+}
+.event-card.highlight-flash {
+    animation: flash-animation 2s ease;
+}
+@keyframes flash-animation {
+    0% {
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 6px rgb(0 0 0 / 1%);
+    }
+    15% {
+        background-color: rgb(0 115 174 / 15%);
+        box-shadow: 0 0 15px rgb(0 115 174 / 40%);
+    }
+    100% {
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 6px rgb(0 0 0 / 1%);
+    }
 }
 .resource-grid {
     display: grid;

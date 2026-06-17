@@ -92,6 +92,7 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../img/psugh-icon.webp">
     <link rel="manifest" href="../site.webmanifest">
+    <script src="../scripts/main.js" defer></script>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.min.css">
@@ -222,30 +223,7 @@ $result.Eigenschaft</code>
                     vorbehalten (CC BY 3.0)</a>
             </p>
         </div>
-        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     </footer>
-
-    <script>
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 
 </html>

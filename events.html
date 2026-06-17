@@ -26,6 +26,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/psugh-icon.webp">
     <link rel="manifest" href="site.webmanifest">
+    <script src="./scripts/main.js" defer></script>
 
     <!-- Preload critical resources -->
     <link rel="preload" href="./css/styles.min.css" as="style">
@@ -124,7 +125,7 @@
                 <div class="calendar-container">
                     <div class="calendar-header">
                         <button class="calendar-nav" id="prevMonth" aria-label="Vorheriger Monat">‹</button>
-                        <div class="calendar-title" id="calendarTitle"></div>
+                        <div class="calendar-title" id="calendarTitle" aria-live="polite"></div>
                         <button class="calendar-nav" id="nextMonth" aria-label="Nächster Monat">›</button>
                     </div>
                     <div class="calendar-grid" id="calendarGrid">
@@ -168,18 +169,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
         // Calendar functionality
         class EventCalendar {
             constructor(preloadedEvents) {
@@ -265,6 +254,57 @@
                                 event.date.toDateString() === cellDate.toDateString()
                             );
                             dayElement.title = eventForDay.title;
+
+                            // Accessibility & Keyboard navigation
+                            dayElement.tabIndex = 0;
+                            dayElement.setAttribute('role', 'button');
+                            
+                            const options = { day: 'numeric', month: 'long' };
+                            const formattedDate = cellDate.toLocaleDateString('de-DE', options);
+                            dayElement.setAttribute('aria-label', `${formattedDate}: ${eventForDay.title}`);
+
+                            function activateEvent() {
+                                const cards = document.querySelectorAll('.event-card');
+                                let targetCard = null;
+                                cards.forEach(card => {
+                                    const cardTitle = card.querySelector('.event-title')?.textContent || '';
+                                    if (cardTitle.includes(eventForDay.title) || eventForDay.title.includes(cardTitle)) {
+                                        targetCard = card;
+                                    }
+                                });
+
+                                if (targetCard) {
+                                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    
+                                    // Highlight flash effect
+                                    targetCard.classList.add('highlight-flash');
+                                    setTimeout(() => {
+                                        targetCard.classList.remove('highlight-flash');
+                                    }, 2000);
+
+                                    // Set focus to the card title or the card itself
+                                    const title = targetCard.querySelector('.event-title');
+                                    if (title) {
+                                        if (!title.hasAttribute('tabindex')) {
+                                            title.setAttribute('tabindex', '-1');
+                                        }
+                                        title.focus({ preventScroll: true });
+                                    } else {
+                                        if (!targetCard.hasAttribute('tabindex')) {
+                                            targetCard.setAttribute('tabindex', '-1');
+                                        }
+                                        targetCard.focus({ preventScroll: true });
+                                    }
+                                }
+                            }
+
+                            dayElement.addEventListener('click', activateEvent);
+                            dayElement.addEventListener('keydown', e => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    activateEvent();
+                                }
+                            });
                         }
 
                         grid.appendChild(dayElement);
@@ -584,7 +624,6 @@
 
         // Initialize immediately; the script is already at the end of the body.
         initPage();
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 
     <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
