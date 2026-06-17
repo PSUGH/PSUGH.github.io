@@ -25,6 +25,20 @@ button:focus-visible {
     outline: 3px solid var(--primary-color);
     outline-offset: 3px;
 }
+/* High contrast focus outline for elements on dark backgrounds */
+.hero-header :focus-visible,
+.mobile-menu :focus-visible,
+.terminal-window :focus-visible,
+.site-footer :focus-visible,
+.hero-room-code-container .copy-btn:focus-visible {
+    outline: 3px solid rgb(255 255 255);
+    outline-offset: 3px;
+}
+/* Focus visible outline for calendar cells with events */
+.calendar-day.has-event:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: -3px;
+}
 :root {
     --primary-color: #0073ae;
     --primary-light: #4a9bc9;
@@ -154,6 +168,10 @@ a:hover {
 a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+}
+p a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 .skip-link {
     position: absolute;
@@ -493,7 +511,7 @@ a:focus {
     font-size: var(--font-size-lg);
 }
 .terminal-window {
-    background: var(--bg-dark);
+    background: #0f172a;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
@@ -503,7 +521,7 @@ a:focus {
     margin-right: auto;
 }
 .terminal-header {
-    background: #1a1f2e;
+    background: #1e293b;
     padding: var(--spacing-md);
     display: flex;
     align-items: center;
@@ -529,7 +547,7 @@ a:focus {
     background: var(--success-color);
 }
 .terminal-title {
-    color: var(--text-secondary);
+    color: #cbd5e1;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
 }
@@ -537,7 +555,7 @@ a:focus {
     padding: var(--spacing-xl);
 }
 .terminal-command {
-    color: var(--success-color);
+    color: #4ade80;
     font-family: var(--font-family-mono);
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
@@ -548,7 +566,7 @@ a:focus {
 }
 .command-line::before {
     content: 'PS C: \\> ';
-    color: #09f;
+    color: #38bdf8;
 }
 .command-line:not(:first-child)::before {
     content: '>> ';
@@ -798,7 +816,7 @@ a:focus {
     color: var(--social-linkedin);
     background: rgb(0 119 181 / 1%);
 }
-.location-map iframe {
+.meeting-location iframe {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -872,6 +890,14 @@ a:focus {
         width: 100%;
         max-width: 300px;
         text-align: center;
+    }
+    .online-join-group {
+        width: 100%;
+        max-width: 300px;
+    }
+    .online-join-group .btn {
+        width: 100%;
+        max-width: 100%;
     }
     .meeting-links {
         flex-direction: column;
@@ -1037,6 +1063,11 @@ button:focus {
     padding: 0.5rem;
     border-radius: 50%;
     transition: background-color 0.3s;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 .calendar-nav:hover {
     background-color: var(--bg-secondary);
@@ -1114,6 +1145,23 @@ button:focus {
 .event-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgb(0 0 0 / 15%);
+}
+.event-card.highlight-flash {
+    animation: flash-animation 2s ease;
+}
+@keyframes flash-animation {
+    0% {
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 6px rgb(0 0 0 / 1%);
+    }
+    15% {
+        background-color: rgb(0 115 174 / 15%);
+        box-shadow: 0 0 15px rgb(0 115 174 / 40%);
+    }
+    100% {
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 6px rgb(0 0 0 / 1%);
+    }
 }
 .resource-grid {
     display: grid;
@@ -1252,15 +1300,17 @@ button:focus {
     background: 0 0;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
     margin-left: 4px;
-    border-radius: 4px;
+    border-radius: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
     transition: background-color var(--transition-fast);
     color: var(--text-secondary);
+    min-width: 44px;
+    min-height: 44px;
 }
 .copy-btn:hover {
     background-color: var(--bg-tertiary);
@@ -1276,22 +1326,43 @@ button:focus {
 .copy-btn.success {
     color: var(--success-color);
 }
-.btn-secondary small {
+.online-join-group {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin-top: 4px;
+    gap: var(--spacing-sm);
 }
-.btn-secondary .copy-btn {
-    color: rgb(255 255 255 / 8%);
-    padding: 2px;
+.hero-room-code-container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: rgb(255 255 255 / 90%);
+    background: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 2px 2px 2px 12px;
+    border-radius: 22px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    height: 44px;
 }
-.btn-secondary .copy-btn:hover {
-    background-color: rgb(255 255 255 / 1%);
+.hero-room-code-container code {
+    font-family: var(--font-family-mono);
     color: #fff;
+    font-weight: var(--font-weight-semibold);
+    background: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
 }
-.btn-secondary .copy-btn.success {
+.hero-room-code-container .copy-btn {
+    color: rgb(255 255 255 / 70%);
+    margin-left: 0;
+}
+.hero-room-code-container .copy-btn:hover {
+    color: #fff;
+    background-color: rgb(255 255 255 / 10%);
+}
+.hero-room-code-container .copy-btn.success {
     color: var(--success-color);
 }
 .article-card {

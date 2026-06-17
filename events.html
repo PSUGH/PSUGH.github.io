@@ -24,10 +24,19 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="img/psugh-logo.webp">
+    <link rel="apple-touch-icon" href="img/psugh-icon.webp">
     <link rel="manifest" href="site.webmanifest">
+    <script src="./scripts/main.js" defer></script>
 
-    <!-- Stylesheets -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/styles.min.css" as="style">
+    <link rel="preload" href="./img/psugh-logo.webp" as="image">
+    <link rel="preload" href="./img/hintergrund.webp" as="image">
+    <link rel="preload" href="./fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Inter-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./current-meeting.json" as="fetch" type="application/json" crossorigin="anonymous">
+    <link rel="preload" href="./past-events.json" as="fetch" type="application/json" crossorigin="anonymous">
+    <link rel="preload" href="./upcoming-events.json" as="fetch" type="application/json" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.min.css">
     <link rel="preload" href="./css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -118,7 +127,7 @@
                 <div class="calendar-container">
                     <div class="calendar-header">
                         <button class="calendar-nav" id="prevMonth" aria-label="Vorheriger Monat">‹</button>
-                        <div class="calendar-title" id="calendarTitle"></div>
+                        <div class="calendar-title" id="calendarTitle" aria-live="polite"></div>
                         <button class="calendar-nav" id="nextMonth" aria-label="Nächster Monat">›</button>
                     </div>
                     <div class="calendar-grid" id="calendarGrid">
@@ -162,23 +171,11 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
         // Calendar functionality
         class EventCalendar {
-            constructor() {
+            constructor(preloadedEvents) {
                 this.currentDate = new Date();
-                this.events = [];
+                this.events = preloadedEvents || [];
                 this.monthNames = [
                     'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
                     'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
@@ -188,70 +185,9 @@
                 this.init();
             }
 
-            async init() {
-                await this.loadEvents();
+            init() {
                 this.render();
                 this.bindEvents();
-            } async loadEvents() {
-                try {
-                    // Load all three data files
-                    const [currentResponse, pastResponse, upcomingResponse] = await Promise.all([
-                        fetch('./current-meeting.json'),
-                        fetch('./past-events.json'),
-                        fetch('./upcoming-events.json')
-                    ]);
-
-                    const currentData = await currentResponse.json();
-                    const pastData = await pastResponse.json();
-                    const upcomingData = await upcomingResponse.json();
-
-                    // Process all events
-                    this.events = [];
-
-                    // Add next meeting
-                    if (currentData.nextMeeting) {
-                        // Extract date from "Freitag, den 20.06.2025, ab 18:30h"
-                        const dateMatch = currentData.nextMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                        if (dateMatch) {
-                            const [, day, month, year] = dateMatch;
-                            this.events.push({
-                                date: new Date(year, month - 1, day),
-                                title: 'Nächstes Treffen',
-                                type: 'next'
-                            });
-                        }
-                    }
-
-                    // Add past events
-                    if (pastData.pastEvents) {
-                        pastData.pastEvents.forEach(event => {
-                            this.events.push({
-                                date: new Date(event.date),
-                                title: event.title,
-                                type: 'past'
-                            });
-                        });
-                    }
-
-                    // Add upcoming events
-                    if (upcomingData.upcomingEvents) {
-                        upcomingData.upcomingEvents.forEach(event => {
-                            // Extract date from "Freitag, den 17.04.2026, ab 18:30h"
-                            const dateMatch = event.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                            if (dateMatch) {
-                                const [, day, month, year] = dateMatch;
-                                this.events.push({
-                                    date: new Date(year, month - 1, day),
-                                    title: event.description || 'Kommendes Treffen',
-                                    type: 'upcoming'
-                                });
-                            }
-                        });
-                    }
-
-                } catch (error) {
-                    console.error('Error loading events:', error);
-                }
             }
 
             bindEvents() {
@@ -320,6 +256,57 @@
                                 event.date.toDateString() === cellDate.toDateString()
                             );
                             dayElement.title = eventForDay.title;
+
+                            // Accessibility & Keyboard navigation
+                            dayElement.tabIndex = 0;
+                            dayElement.setAttribute('role', 'button');
+                            
+                            const options = { day: 'numeric', month: 'long' };
+                            const formattedDate = cellDate.toLocaleDateString('de-DE', options);
+                            dayElement.setAttribute('aria-label', `${formattedDate}: ${eventForDay.title}`);
+
+                            function activateEvent() {
+                                const cards = document.querySelectorAll('.event-card');
+                                let targetCard = null;
+                                cards.forEach(card => {
+                                    const cardTitle = card.querySelector('.event-title')?.textContent || '';
+                                    if (cardTitle.includes(eventForDay.title) || eventForDay.title.includes(cardTitle)) {
+                                        targetCard = card;
+                                    }
+                                });
+
+                                if (targetCard) {
+                                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    
+                                    // Highlight flash effect
+                                    targetCard.classList.add('highlight-flash');
+                                    setTimeout(() => {
+                                        targetCard.classList.remove('highlight-flash');
+                                    }, 2000);
+
+                                    // Set focus to the card title or the card itself
+                                    const title = targetCard.querySelector('.event-title');
+                                    if (title) {
+                                        if (!title.hasAttribute('tabindex')) {
+                                            title.setAttribute('tabindex', '-1');
+                                        }
+                                        title.focus({ preventScroll: true });
+                                    } else {
+                                        if (!targetCard.hasAttribute('tabindex')) {
+                                            targetCard.setAttribute('tabindex', '-1');
+                                        }
+                                        targetCard.focus({ preventScroll: true });
+                                    }
+                                }
+                            }
+
+                            dayElement.addEventListener('click', activateEvent);
+                            dayElement.addEventListener('keydown', e => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    activateEvent();
+                                }
+                            });
                         }
 
                         grid.appendChild(dayElement);
@@ -327,36 +314,103 @@
                 }
             }
         }
-        // Event data loading and rendering
-        async function loadAndRenderEvents() {
+        // Consolidated event data loading and initialization
+        async function initPage() {
             try {
-                // Load all three data files
-                const [pastResponse, upcomingResponse] = await Promise.all([
+                // Fetch all three data files in parallel
+                const [currentResponse, pastResponse, upcomingResponse] = await Promise.all([
+                    fetch('./current-meeting.json'),
                     fetch('./past-events.json'),
                     fetch('./upcoming-events.json')
                 ]);
 
+                const currentData = await currentResponse.json();
                 const pastData = await pastResponse.json();
                 const upcomingData = await upcomingResponse.json();
 
-                // Render past events
-                renderPastEvents(pastData.pastEvents || []);
+                const currentMeeting = currentData.nextMeeting;
+                const pastEvents = pastData.pastEvents || [];
+                const upcomingEvents = upcomingData.upcomingEvents || [];
+
+                // 1. Compile events for the calendar view
+                const calendarEvents = [];
+
+                if (currentMeeting) {
+                    calendarEvents.push({
+                        date: parseLocalEventDate(currentMeeting.date),
+                        title: 'Nächstes Treffen',
+                        type: 'next'
+                    });
+                }
+
+                pastEvents.forEach(event => {
+                    calendarEvents.push({
+                        date: parseLocalEventDate(event.date),
+                        title: event.title,
+                        type: 'past'
+                    });
+                });
+
+                upcomingEvents.forEach(event => {
+                    calendarEvents.push({
+                        date: parseLocalEventDate(event.date),
+                        title: event.title || event.description || 'Kommendes Treffen',
+                        type: 'upcoming'
+                    });
+                });
+
+                // Initialize calendar with pre-loaded events
+                new EventCalendar(calendarEvents);
+
+                // 2. Compile upcoming events for card rendering (Next Meeting + Upcoming Events)
+                const allUpcomingEvents = [];
+                if (currentMeeting) {
+                    allUpcomingEvents.push({
+                        date: currentMeeting.date,
+                        dateDisplay: currentMeeting.date,
+                        title: currentMeeting.description || 'Nächstes Treffen',
+                        description: currentMeeting.description,
+                        topics: currentMeeting.topics,
+                        isoDate: currentMeeting.isoDate
+                    });
+                }
+                upcomingEvents.forEach(event => {
+                    allUpcomingEvents.push(event);
+                });
 
                 // Render upcoming events
-                const upcomingEvents = upcomingData.upcomingEvents || [];
-                renderUpcomingEvents(upcomingEvents);
+                renderUpcomingEvents(allUpcomingEvents);
 
-                // Inject Schema.org Event markup for Rich Results
-                injectEventSchemas(pastData.pastEvents || [], upcomingEvents);
+                // Render past events
+                renderPastEvents(pastEvents);
+
+                // Inject Schema.org Event markup for SEO
+                injectEventSchemas(pastEvents, allUpcomingEvents);
 
             } catch (error) {
                 console.error('Error loading events:', error);
             }
         }
 
+        // Parse date strings in YYYY-MM-DD or DD.MM.YYYY formats as local Date
+        function parseLocalEventDate(str) {
+            if (!str) return new Date(NaN);
+            // Match DD.MM.YYYY
+            const germanMatch = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+            if (germanMatch) {
+                return new Date(germanMatch[3], germanMatch[2] - 1, germanMatch[1]);
+            }
+            // Match YYYY-MM-DD
+            const isoMatch = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+            if (isoMatch) {
+                return new Date(isoMatch[1], isoMatch[2] - 1, isoMatch[3]);
+            }
+            return new Date(str);
+        }
+
         function renderPastEvents(events) {
             // Sort events descending by date (newest first)
-            events.sort((a, b) => new Date(b.date) - new Date(a.date));
+            events.sort((a, b) => parseLocalEventDate(b.date) - parseLocalEventDate(a.date));
 
             const container = document.getElementById('pastEventsContainer');
             container.innerHTML = '';
@@ -367,14 +421,8 @@
             });
         }
 
-        // Helper: parse German date format "DD.MM.YYYY" or ISO string
-        function parseGermanDate(str) {
-            const m = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-            return m ? new Date(m[3], m[2] - 1, m[1]) : new Date(str);
-        }
-
         function renderUpcomingEvents(events) {
-            events.sort((a, b) => parseGermanDate(a.date) - parseGermanDate(b.date));
+            events.sort((a, b) => parseLocalEventDate(a.date) - parseLocalEventDate(b.date));
 
             const container = document.getElementById('upcomingEventsContainer');
             container.innerHTML = '';
@@ -500,7 +548,7 @@
                 // Prefer isoDate field; fall back to parsing the German display date
                 let startISO = event.isoDate;
                 if (!startISO) {
-                    const dateObj = parseGermanDate(event.date);
+                    const dateObj = parseLocalEventDate(event.date);
                     // date field in past-events.json is already ISO (YYYY-MM-DD)
                     if (!isNaN(dateObj)) {
                         startISO = dateObj.toISOString().split('T')[0] + 'T18:30:00+01:00';
@@ -580,23 +628,10 @@
         }
 
         // Initialize immediately; the script is already at the end of the body.
-        new EventCalendar();
-        loadAndRenderEvents();
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
+        initPage();
     </script>
 
-    <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TWCEG7YCEQ', {
-            page_title: document.title,
-            page_location: window.location.href,
-            allow_ad_personalization_signals: false
-        });
-    </script>
+    <!-- Google Analytics: gtag / googletagmanager loaded in main.js -->
 </body>
 
 </html>

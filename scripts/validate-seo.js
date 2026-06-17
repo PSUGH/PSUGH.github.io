@@ -143,7 +143,7 @@ if (fs.existsSync('sitemap.xml')) {
 }
 
 // ─── 4. HTML files ───────────────────────────────────────────────────────────
-const htmlFiles = [
+const baseHtmlFiles = [
     {
         file: 'index.html',
         expectedCanonical: `${CANONICAL_BASE}/`,
@@ -165,37 +165,23 @@ const htmlFiles = [
         expectedCanonical: `${CANONICAL_BASE}/ressourcen/`,
         noindex: false,
     },
-    {
-        file: 'ressourcen/invoke-webrequest.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/invoke-webrequest.html`,
-        noindex: false,
-    },
-    {
-        file: 'ressourcen/convertfrom-json.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/convertfrom-json.html`,
-        noindex: false,
-    },
-    {
-        file: 'ressourcen/select-object.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/select-object.html`,
-        noindex: false,
-    },
-    {
-        file: 'ressourcen/terminating-errors.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/terminating-errors.html`,
-        noindex: false,
-    },
-    {
-        file: 'ressourcen/try-catch.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/try-catch.html`,
-        noindex: false,
-    },
-    {
-        file: 'ressourcen/throw-write-error.html',
-        expectedCanonical: `${CANONICAL_BASE}/ressourcen/throw-write-error.html`,
-        noindex: false,
-    },
 ];
+
+// Dynamically scan the ressourcen/ directory for resource article files
+const ressourcenDir = path.join(__dirname, '..', 'ressourcen');
+let resourceFiles = [];
+if (fs.existsSync(ressourcenDir)) {
+    resourceFiles = fs.readdirSync(ressourcenDir)
+        .filter(f => f.endsWith('.html') && f !== 'index.html')
+        .sort()
+        .map(f => ({
+            file: `ressourcen/${f}`,
+            expectedCanonical: `${CANONICAL_BASE}/ressourcen/${f}`,
+            noindex: false,
+        }));
+}
+
+const htmlFiles = [...baseHtmlFiles, ...resourceFiles];
 
 htmlFiles.forEach(
     ({ file, expectedCanonical, noindex, dynamicSchema = false }) => {
@@ -372,7 +358,7 @@ htmlFiles.forEach(
                 );
         } else {
             result(
-                noindex ? 'warn' : 'fail',
+                noindex ? 'pass' : 'fail',
                 'Structured data (ld+json)',
                 noindex ? 'noindex page — ok to omit' : 'missing',
             );

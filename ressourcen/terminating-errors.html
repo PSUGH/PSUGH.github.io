@@ -56,30 +56,12 @@
 
     <title>Terminating vs. Non-Terminating Errors | PSUGH Ressourcen</title>
 
-    <!-- Performance: preconnect to analytics endpoints -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-
-    <!-- htmlhint head-script-disabled:false -->
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TWCEG7YCEQ', {
-            page_title: document.title,
-            page_location: window.location.href,
-            allow_ad_personalization_signals: false
-        });
-    </script>
+    <!-- Google Analytics: gtag / googletagmanager loaded in main.js -->
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../favicon.ico" />
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="apple-touch-icon" href="../img/psugh-logo.webp">
+    <link rel="apple-touch-icon" href="../img/psugh-icon.webp">
     <link rel="manifest" href="../site.webmanifest">
 
     <!-- Stylesheets -->
@@ -88,6 +70,7 @@
     <noscript>
         <link rel="stylesheet" href="../css/fonts.css">
     </noscript>
+    <script src="../scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -226,30 +209,10 @@ Write-Output "Das Skript läuft trotzdem hier weiter!"</code>
                     vorbehalten (CC BY 3.0)</a>
             </p>
         </div>
-        <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+        
     </footer>
 
-    <script>
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
-            mobileMenu.setAttribute('aria-hidden', isOpen);
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-    </script>
+    
 </body>
 
 </html>

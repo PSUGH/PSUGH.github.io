@@ -155,10 +155,8 @@ Write-Host "✅ Erstellt: $OutputPath" -ForegroundColor Green
 # ─── validate-seo.js Hinweis ──────────────────────────────────────────────────
 Write-Host ''
 Write-Host '── Nächste Schritte ────────────────────────────────────────────' -ForegroundColor Cyan
-Write-Host "  1. Füge folgenden Eintrag in validate-seo.js → htmlFiles[] hinzu:"
-Write-Host "     { file: 'ressourcen/$Slug.html', expectedCanonical: \`https://psugh.org/ressourcen/$Slug.html\`, noindex: false }," -ForegroundColor DarkYellow
-Write-Host "  2. Füge einen Link in ressourcen/index.html → resource-grid hinzu."
-Write-Host "  3. Führe danach .\scripts\Update-ArticleNavigation.ps1 aus, um alle Artikel automatisch miteinander zu verlinken."
+Write-Host "  1. Füge einen Link in ressourcen/index.html → resource-grid hinzu."
+Write-Host "  2. Führe danach .\scripts\Update-ArticleNavigation.ps1 aus, um alle Artikel automatisch miteinander zu verlinken."
 Write-Host "  3. Füge $Slug.html zur sitemap.xml hinzu."
 Write-Host ''
 

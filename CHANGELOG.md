@@ -2,6 +2,22 @@
 
 ## [Unreleased]
 
+### Added
+- Added square modern PWA and apple-touch-icon (`img/psugh-icon.webp`) in WebP format to resolve PWA verification warnings and fix icon squashing on iOS.
+- Added preloading for hero background image `img/hintergrund.webp` and minified styles on `index.html`, `events.html`, and `impressum.html` to improve Largest Contentful Paint (LCP) performance.
+- Added preloading for JSON data files on `events.html` to load event data as early as possible.
+
+### Changed
+- Refactored `events.html` JavaScript to consolidate network fetches, loading all three JSON data files in parallel only once at the page level.
+- Combined next meeting details with upcoming events on `events.html` to display the next meeting within the "Kommende Treffen" list.
+- Improved color contrast of the terminal window (body background, header background, title text, command text, and prompt prefix) to fully comply with WCAG 2.1 AAA accessibility contrast requirements.
+- Added default underlines to all links nested inside paragraph text (`p a`) to satisfy WCAG 2.1 link recognition accessibility guidelines.
+- Separated the access code and copy button from the 'Online teilnehmen' anchor link in the hero section to fix illegal nesting of interactive content and resolve overlapping touch target issues.
+- Increased the size of all copy buttons (`.copy-btn`) to `44x44px` to fulfill WCAG mobile touch target size requirements.
+- Fixed structured data warning false-positives for `noindex` pages (such as `impressum.html`) in the SEO validator.
+- Refactored `validate-seo.js` to dynamically scan the `ressourcen/` directory for article pages, ensuring `erroractionpreference.html` and any future resources are automatically validated without manual list updates.
+- Updated article generator `New-ResourceArticel.ps1` to remove instructions for manual updates to the SEO validator.
+
 ## [3.1.0] - 2026-06-16
 ### Added
 - Added June 19th social event ("Bier, Kicker & PowerShell-Talks") with a custom WebP Lego foosball graphic (`img/psugh_social.webp`).
