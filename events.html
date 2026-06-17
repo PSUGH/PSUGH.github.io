@@ -32,6 +32,8 @@
     <link rel="preload" href="./css/styles.min.css" as="style">
     <link rel="preload" href="./img/psugh-logo.webp" as="image">
     <link rel="preload" href="./img/hintergrund.webp" as="image">
+    <link rel="preload" href="./fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Inter-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./current-meeting.json" as="fetch" type="application/json" crossorigin="anonymous">
     <link rel="preload" href="./past-events.json" as="fetch" type="application/json" crossorigin="anonymous">
     <link rel="preload" href="./upcoming-events.json" as="fetch" type="application/json" crossorigin="anonymous">
@@ -626,18 +628,7 @@
         initPage();
     </script>
 
-    <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TWCEG7YCEQ', {
-            page_title: document.title,
-            page_location: window.location.href,
-            allow_ad_personalization_signals: false
-        });
-    </script>
+    <!-- Google Analytics: gtag / googletagmanager loaded in main.js -->
 </body>
 
 </html>

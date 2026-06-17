@@ -125,3 +125,63 @@ window.copyToClipboard = function(elementId) {
         console.error('Kopieren fehlgeschlagen:', err);
     });
 };
+
+// 6. Global Google Analytics (GA4) Tracker (safe wrapper before script is fully loaded)
+window.trackEvent = function(eventName, parameters = {}) {
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, {
+            event_category: 'Community Engagement',
+            event_label: parameters.label || '',
+            value: parameters.value || 1,
+            ...parameters
+        });
+    } else {
+        console.log('Buffered Analytics Event:', eventName, parameters);
+    }
+};
+
+// 7. Dynamic and Deferred Google Tag Manager Loader (delayed 1.5s after page load to optimize LCP)
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        // Dynamic Preconnect to GA endpoints
+        const preconnectTags = [
+            { href: 'https://www.googletagmanager.com', rel: 'preconnect' },
+            { href: 'https://www.google-analytics.com', rel: 'preconnect' }
+        ];
+        preconnectTags.forEach(tagData => {
+            const link = document.createElement('link');
+            link.rel = tagData.rel;
+            link.href = tagData.href;
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+        });
+
+        // Inject script
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ';
+        script.async = true;
+        document.head.appendChild(script);
+
+        // Initialize GA dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+
+        // Base Configuration
+        const gaConfig = {
+            page_title: document.title,
+            page_location: window.location.href,
+            allow_ad_personalization_signals: false
+        };
+
+        // Add home page custom dimension mappings
+        if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname.split('/').pop() === '') {
+            gaConfig.custom_map = {
+                'custom_dimension_1': 'user_type',
+                'custom_dimension_2': 'meeting_interest'
+            };
+        }
+
+        window.gtag('config', 'G-TWCEG7YCEQ', gaConfig);
+    }, 1500);
+});

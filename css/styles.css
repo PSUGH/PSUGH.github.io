@@ -816,7 +816,7 @@ p a {
     color: var(--social-linkedin);
     background: rgb(0 119 181 / 1%);
 }
-.location-map iframe {
+.meeting-location iframe {
     display: block;
     width: 100%;
     max-width: 100%;

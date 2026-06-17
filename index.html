@@ -32,6 +32,8 @@
     <link rel="preload" href="./css/styles.min.css" as="style">
     <link rel="preload" href="./img/psugh-logo.webp" as="image">
     <link rel="preload" href="./img/hintergrund.webp" as="image">
+    <link rel="preload" href="./fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/Inter-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./current-meeting.json" as="fetch" type="application/json" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.min.css">
     <link rel="preload" href="./css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -248,26 +250,20 @@
                                     Freundallee 13A<br>
                                     30173 Hannover
                                 </address> <!-- Map -->
-                                <div class="location-map">
-                                    <!-- Map facade: static preview loads instantly, iframe only on interaction -->
-                                    <div class="map-facade" role="button" tabindex="0"
-                                        aria-label="Karte laden: Netz-Weise, Freundallee 13A, 30173 Hannover"
-                                        data-src="https://www.openstreetmap.org/export/embed.html?bbox=9.7720%2C52.3655%2C9.7745%2C52.3680&layer=mapnik&marker=52.366611%2C9.773229"
-                                        style="position:relative;width:100%;height:200px;border-radius:8px;overflow:hidden;cursor:pointer;background:#e8f0f7;">
-                                        <img src="https://tile.openstreetmap.org/17/70370/42986.png"
-                                            alt="Kartenvorschau Freundallee 13A Hannover" width="256" height="200"
-                                            loading="lazy"
-                                            style="width:100%;height:200px;object-fit:cover;border-radius:8px;filter:brightness(0.95);">
-                                        <div
-                                            style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                                            <span
-                                                style="background:rgba(0,115,174,0.9);color:#fff;padding:0.4rem 0.9rem;border-radius:6px;font-size:0.85rem;font-family:var(--font-family-sans);">
-                                                🗺️ Karte anzeigen
-                                            </span>
-                                        </div>
-                                    </div>
+                                <!-- Map facade: static preview loads instantly, iframe only on interaction -->
+                                <div class="map-facade" role="button" tabindex="0"
+                                    aria-label="Karte laden: Netz-Weise, Freundallee 13A, 30173 Hannover"
+                                    data-src="https://www.openstreetmap.org/export/embed.html?bbox=9.7720%2C52.3655%2C9.7745%2C52.3680&layer=mapnik&marker=52.366611%2C9.773229"
+                                    style="position:relative;width:100%;height:200px;border-radius:8px;overflow:hidden;cursor:pointer;background:#e8f0f7;display:flex;align-items:center;justify-content:center;">
+                                    <img src="https://tile.openstreetmap.org/17/70370/42986.png"
+                                        alt="Kartenvorschau Freundallee 13A Hannover" width="256" height="200"
+                                        loading="lazy"
+                                        style="position:absolute;inset:0;width:100%;height:200px;object-fit:cover;border-radius:8px;filter:brightness(0.95);z-index:1;">
+                                    <span
+                                        style="position:relative;z-index:2;background:rgba(0,115,174,0.9);color:#fff;padding:0.4rem 0.9rem;border-radius:6px;font-size:0.85rem;font-family:var(--font-family-sans);">
+                                        🗺️ Karte anzeigen
+                                    </span>
                                 </div>
-
                                 <div class="partner-links"> <a
                                         href="https://www.google.com/maps/dir/?api=1&destination=Freundallee+13A%2C+30173+Hannover%2C+Deutschland"
                                         target="_blank" rel="noopener" class="partner-link directions"
@@ -656,32 +652,8 @@
         });
     </script>
 
-    <!-- Google Analytics 4 — deferred to avoid TBT on main thread -->
-    <!-- htmlhint head-script-disabled:false -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TWCEG7YCEQ"></script>
+    <!-- Google Analytics: gtag / googletagmanager loaded in main.js -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TWCEG7YCEQ', {
-            page_title: document.title,
-            page_location: window.location.href,
-            allow_ad_personalization_signals: false,
-            custom_map: {
-                'custom_dimension_1': 'user_type',
-                'custom_dimension_2': 'meeting_interest'
-            }
-        });
-
-        function trackEvent(eventName, parameters = {}) {
-            gtag('event', eventName, {
-                event_category: 'Community Engagement',
-                event_label: parameters.label || '',
-                value: parameters.value || 1,
-                ...parameters
-            });
-        }
-
         function trackMeetingInteraction(action) {
             trackEvent('meeting_interaction', {
                 event_label: action,
