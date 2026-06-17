@@ -336,35 +336,27 @@
                 const calendarEvents = [];
 
                 if (currentMeeting) {
-                    const dateMatch = currentMeeting.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                    if (dateMatch) {
-                        const [, day, month, year] = dateMatch;
-                        calendarEvents.push({
-                            date: new Date(year, month - 1, day),
-                            title: 'Nächstes Treffen',
-                            type: 'next'
-                        });
-                    }
+                    calendarEvents.push({
+                        date: parseLocalEventDate(currentMeeting.date),
+                        title: 'Nächstes Treffen',
+                        type: 'next'
+                    });
                 }
 
                 pastEvents.forEach(event => {
                     calendarEvents.push({
-                        date: new Date(event.date),
+                        date: parseLocalEventDate(event.date),
                         title: event.title,
                         type: 'past'
                     });
                 });
 
                 upcomingEvents.forEach(event => {
-                    const dateMatch = event.date.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-                    if (dateMatch) {
-                        const [, day, month, year] = dateMatch;
-                        calendarEvents.push({
-                            date: new Date(year, month - 1, day),
-                            title: event.description || 'Kommendes Treffen',
-                            type: 'upcoming'
-                        });
-                    }
+                    calendarEvents.push({
+                        date: parseLocalEventDate(event.date),
+                        title: event.title || event.description || 'Kommendes Treffen',
+                        type: 'upcoming'
+                    });
                 });
 
                 // Initialize calendar with pre-loaded events
@@ -378,7 +370,8 @@
                         dateDisplay: currentMeeting.date,
                         title: currentMeeting.description || 'Nächstes Treffen',
                         description: currentMeeting.description,
-                        topics: currentMeeting.topics
+                        topics: currentMeeting.topics,
+                        isoDate: currentMeeting.isoDate
                     });
                 }
                 upcomingEvents.forEach(event => {
@@ -399,9 +392,25 @@
             }
         }
 
+        // Parse date strings in YYYY-MM-DD or DD.MM.YYYY formats as local Date
+        function parseLocalEventDate(str) {
+            if (!str) return new Date(NaN);
+            // Match DD.MM.YYYY
+            const germanMatch = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+            if (germanMatch) {
+                return new Date(germanMatch[3], germanMatch[2] - 1, germanMatch[1]);
+            }
+            // Match YYYY-MM-DD
+            const isoMatch = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+            if (isoMatch) {
+                return new Date(isoMatch[1], isoMatch[2] - 1, isoMatch[3]);
+            }
+            return new Date(str);
+        }
+
         function renderPastEvents(events) {
             // Sort events descending by date (newest first)
-            events.sort((a, b) => new Date(b.date) - new Date(a.date));
+            events.sort((a, b) => parseLocalEventDate(b.date) - parseLocalEventDate(a.date));
 
             const container = document.getElementById('pastEventsContainer');
             container.innerHTML = '';
@@ -412,14 +421,8 @@
             });
         }
 
-        // Helper: parse German date format "DD.MM.YYYY" or ISO string
-        function parseGermanDate(str) {
-            const m = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
-            return m ? new Date(m[3], m[2] - 1, m[1]) : new Date(str);
-        }
-
         function renderUpcomingEvents(events) {
-            events.sort((a, b) => parseGermanDate(a.date) - parseGermanDate(b.date));
+            events.sort((a, b) => parseLocalEventDate(a.date) - parseLocalEventDate(b.date));
 
             const container = document.getElementById('upcomingEventsContainer');
             container.innerHTML = '';
@@ -545,7 +548,7 @@
                 // Prefer isoDate field; fall back to parsing the German display date
                 let startISO = event.isoDate;
                 if (!startISO) {
-                    const dateObj = parseGermanDate(event.date);
+                    const dateObj = parseLocalEventDate(event.date);
                     // date field in past-events.json is already ISO (YYYY-MM-DD)
                     if (!isNaN(dateObj)) {
                         startISO = dateObj.toISOString().split('T')[0] + 'T18:30:00+01:00';
