@@ -4,6 +4,8 @@
 
 ### Added
 - Added square modern PWA and apple-touch-icon (`img/psugh-icon.webp`) in WebP format to resolve PWA verification warnings and fix icon squashing on iOS.
+- Added preloading for hero background image `img/hintergrund.webp` and minified styles on `index.html`, `events.html`, and `impressum.html` to improve Largest Contentful Paint (LCP) performance.
+- Added preloading for JSON data files on `events.html` to load event data as early as possible.
 
 ### Changed
 - Refactored `events.html` JavaScript to consolidate network fetches, loading all three JSON data files in parallel only once at the page level.
