@@ -159,7 +159,7 @@ Wir bieten Tutorials und Skripte in der Ressourcen-Sektion an. Der Workflow für
 1. Führe `./scripts/New-ResourceArticel.ps1` aus. Das Skript fragt Titel, Slug und Meta-Description ab und erstellt eine fertige Vorlage in `/ressourcen`.
 2. Trage den neuen Artikel auf der Übersichtsseite in `ressourcen/index.html` ein. Diese Datei dient als die zentrale *Single Source of Truth* für die Artikelreihenfolge.
 3. Führe `./scripts/Update-ArticleNavigation.ps1` aus. Dies durchsucht die `index.html` und generiert völlig automatisiert dynamische **"Zurück/Weiter"** Hyperlinks in jedem Artikel.
-4. Trage den Artikel im SEO-Prüfer (`scripts/validate-seo.js`) und in der Sitemap (`sitemap.xml`) ein.
+4. Trage den Artikel in der Sitemap (`sitemap.xml`) ein (der SEO-Prüfer `scripts/validate-seo.js` scannt neue Artikel automatisch).
 
 ## 🎨 Design System
 

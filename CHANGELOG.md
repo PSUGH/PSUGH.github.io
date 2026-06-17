@@ -14,6 +14,9 @@
 - Added default underlines to all links nested inside paragraph text (`p a`) to satisfy WCAG 2.1 link recognition accessibility guidelines.
 - Separated the access code and copy button from the 'Online teilnehmen' anchor link in the hero section to fix illegal nesting of interactive content and resolve overlapping touch target issues.
 - Increased the size of all copy buttons (`.copy-btn`) to `44x44px` to fulfill WCAG mobile touch target size requirements.
+- Fixed structured data warning false-positives for `noindex` pages (such as `impressum.html`) in the SEO validator.
+- Refactored `validate-seo.js` to dynamically scan the `ressourcen/` directory for article pages, ensuring `erroractionpreference.html` and any future resources are automatically validated without manual list updates.
+- Updated article generator `New-ResourceArticel.ps1` to remove instructions for manual updates to the SEO validator.
 
 ## [3.1.0] - 2026-06-16
 ### Added
