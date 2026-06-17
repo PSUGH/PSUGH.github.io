@@ -1256,15 +1256,17 @@ button:focus {
     background: 0 0;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
     margin-left: 4px;
-    border-radius: 4px;
+    border-radius: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
     transition: background-color var(--transition-fast);
     color: var(--text-secondary);
+    min-width: 44px;
+    min-height: 44px;
 }
 .copy-btn:hover {
     background-color: var(--bg-tertiary);
@@ -1280,22 +1282,43 @@ button:focus {
 .copy-btn.success {
     color: var(--success-color);
 }
-.btn-secondary small {
+.online-join-group {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
-    margin-top: 4px;
+    gap: var(--spacing-sm);
 }
-.btn-secondary .copy-btn {
-    color: rgb(255 255 255 / 8%);
-    padding: 2px;
+.hero-room-code-container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: rgb(255 255 255 / 90%);
+    background: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 2px 2px 2px 12px;
+    border-radius: 22px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    height: 44px;
 }
-.btn-secondary .copy-btn:hover {
-    background-color: rgb(255 255 255 / 1%);
+.hero-room-code-container code {
+    font-family: var(--font-family-mono);
     color: #fff;
+    font-weight: var(--font-weight-semibold);
+    background: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
 }
-.btn-secondary .copy-btn.success {
+.hero-room-code-container .copy-btn {
+    color: rgb(255 255 255 / 70%);
+    margin-left: 0;
+}
+.hero-room-code-container .copy-btn:hover {
+    color: #fff;
+    background-color: rgb(255 255 255 / 10%);
+}
+.hero-room-code-container .copy-btn.success {
     color: var(--success-color);
 }
 .article-card {

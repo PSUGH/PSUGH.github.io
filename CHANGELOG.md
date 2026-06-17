@@ -12,6 +12,8 @@
 - Combined next meeting details with upcoming events on `events.html` to display the next meeting within the "Kommende Treffen" list.
 - Improved color contrast of the terminal window (body background, header background, title text, command text, and prompt prefix) to fully comply with WCAG 2.1 AAA accessibility contrast requirements.
 - Added default underlines to all links nested inside paragraph text (`p a`) to satisfy WCAG 2.1 link recognition accessibility guidelines.
+- Separated the access code and copy button from the 'Online teilnehmen' anchor link in the hero section to fix illegal nesting of interactive content and resolve overlapping touch target issues.
+- Increased the size of all copy buttons (`.copy-btn`) to `44x44px` to fulfill WCAG mobile touch target size requirements.
 
 ## [3.1.0] - 2026-06-16
 ### Added
