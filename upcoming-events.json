@@ -1,15 +1,14 @@
 {
     "upcomingEvents": [
         {
-            "date": "Freitag, den 17.07.2026, ab 18:30h",
-            "isoDate": "2026-07-17T18:30:00+02:00",
+            "date": "Späterer Termin, ab 18:30h",
             "title": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
-            "description": "Automatisierte Rotation von Entra ID App Secrets mit Azure Automation Runbooks. Im direkten Vergleich: Legacy PowerShell 5.1 (REST-basiert, ohne Modulabhängigkeiten) vs. Modernes PowerShell 7.2 (parallel mit Microsoft Graph SDK). (Verschoben vom Juni)",
+            "description": "Automatisierte Rotation von Entra ID App Secrets mit Azure Automation Runbooks. Im direkten Vergleich: Legacy PowerShell 5.1 (REST-basiert, ohne Modulabhängigkeiten) vs. Modernes PowerShell 7.2 (parallel mit Microsoft Graph SDK). (Verschoben)",
             "topics": [
                 {
                     "title": "Automatisierte Secret-Rotation mit Azure Runbooks und PowerShell",
                     "speaker": "Marco Kleinert",
-                    "description": "Sicherheit & Governance fangen bei der Credential-Rotation an! In dieser Session zeigt euch Marco Kleinert, wie ihr die automatische Rotation von Entra ID App-Registration Secrets über Azure Automation Runbooks implementiert. (Verschoben vom Juni)"
+                    "description": "Sicherheit & Governance fangen bei der Credential-Rotation an! In dieser Session zeigt euch Marco Kleinert, wie ihr die automatische Rotation von Entra ID App-Registration Secrets über Azure Automation Runbooks implementiert. (Verschoben)"
                 }
             ]
         },

@@ -1,6 +1,21 @@
 {
     "pastEvents": [
         {
+            "date": "2026-06-19",
+            "dateDisplay": "Freitag, den 19.06.2026",
+            "description": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
+            "topics": [
+                {
+                    "title": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
+                    "speaker": "Community",
+                    "picture": "img/psugh_social.webp",
+                    "description": "Keine Agenda. Kein Vortrag. Dafür Bier, WM-Feeling und PowerShell-Talk.\nBringt eure verrücktesten Skript-Ideen mit! 🍻⚽🏆"
+                }
+            ],
+            "title": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
+            "isoDate": "2026-06-19T18:30:00+02:00"
+        },
+        {
             "date": "2026-04-17",
             "dateDisplay": "Freitag, den 17.04.2026",
             "description": "Real-Time Terminal Dashboards mit PowerShell",

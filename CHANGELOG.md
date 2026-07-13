@@ -8,6 +8,9 @@
 - Added preloading for JSON data files on `events.html` to load event data as early as possible.
 
 ### Changed
+- Archived the June 19th social event ("Bier, Kicker & PowerShell-Talks") to past events list.
+- Rescheduled Peter Klaffehn's Maester session to July 17, 2026.
+- Postponed the Azure Automation Runbook Secret Rotation session to a later date.
 - Refactored `events.html` JavaScript to consolidate network fetches, loading all three JSON data files in parallel only once at the page level.
 - Combined next meeting details with upcoming events on `events.html` to display the next meeting within the "Kommende Treffen" list.
 - Improved color contrast of the terminal window (body background, header background, title text, command text, and prompt prefix) to fully comply with WCAG 2.1 AAA accessibility contrast requirements.
