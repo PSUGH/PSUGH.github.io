@@ -7,7 +7,7 @@
             {
                 "title": "M365 Security automatisieren mit Maester",
                 "speaker": "Peter Klaffehn",
-                "description": "Die Absicherung von Microsoft 365 Tenants und die kontinuierliche Überwachung von Sicherheitskonfigurationen ist eine Mammutaufgabe. Hier kommt Maester ins Spiel – ein mächtiges Open-Source-Test-Framework, das auf PowerShell und Pester basiert.\n\nIn dieser Session zeigt uns Peter Klaffehn, wie wir mit Maester die Sicherheitsrichtlinien unserer Cloud-Infrastruktur automatisiert und reproduzierbar überprüfen können.\n\nDie Agenda:\n• Was ist Maester?\n• Wie funktioniert Maester?\n• Installation von Maester\n• Ausführen von Tests gegen einen Demo-Tenant\n• Korrekturen im Demo-Tenant und erneutes Testen\n• Konfigurieren eines benutzerdefinierten Tests\n• Automatisierung der Tests\n\nMehr über Peter: https://www.linkedin.com/in/peter-klaffehn-0a5b381b9/"
+                "description": "Die Absicherung von Microsoft 365 Tenants und die kontinuierliche Überwachung von Sicherheitskonfigurationen ist eine Mammutaufgabe. Hier kommt Maester ins Spiel – ein mächtiges Open-Source-Test-Framework, das auf PowerShell und Pester basiert.\n\nIn dieser Session zeigt uns <a href=\"https://www.linkedin.com/in/peter-klaffehn-0a5b381b9/\" target=\"_blank\" rel=\"noopener\">Peter Klaffehn</a>, wie wir mit Maester die Sicherheitsrichtlinien unserer Cloud-Infrastruktur automatisiert und reproduzierbar überprüfen können."
             }
         ]
     }
