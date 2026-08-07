@@ -112,12 +112,12 @@ Edit the respective JSON files to update meeting information:
 // current-meeting.json
 {
   "nextMeeting": {
-    "date": "Freitag, den 20.06.2025, ab 18:30h",
-    "isoDate": "2025-06-20T18:30:00+02:00",
+    "date": "Freitag, den 14.08.2026, ab 18:30h",
+    "isoDate": "2026-08-14T18:30:00+02:00",
     "topics": [
       {
-        "title": "🚀 Your Next Topic Title 🚀",
-        "speaker": "Speaker Name",
+        "title": "Besser Skripten mit dem PSScriptAnalyzer",
+        "speaker": "Christian Ritter",
         "picture": "img/topic-image.png",
         "description": "Topic description with details"
       }
