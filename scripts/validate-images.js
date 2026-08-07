@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const imgDir = path.join(__dirname, '../img');
-const allowedExtensions = ['.webp', '.svg', '.ico'];
+const allowedExtensions = ['.webp', '.svg', '.ico', '.webm', '.mp4'];
 // Allowed as fallback for older browsers
 const exceptionFiles = ['hintergrund.jpg', 'psugh-logo.png']; 
 // Note: We already converted psugh-logo.png, 

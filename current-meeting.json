@@ -7,7 +7,11 @@
             {
                 "title": "Besser Skripten mit dem PSScriptAnalyzer",
                 "speaker": "Christian Ritter",
-                "video": "img/irrer_wissenschaftler.mp4",
+                "video": {
+                    "webm": "img/irrer_wissenschaftler.webm",
+                    "mp4": "img/irrer_wissenschaftler.mp4",
+                    "poster": "img/irrer_wissenschaftler_poster.webp"
+                },
                 "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
             }
         ]
