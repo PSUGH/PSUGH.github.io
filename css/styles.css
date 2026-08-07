@@ -1518,3 +1518,11 @@ button:focus {
 .comparison-table tr:hover {
     background: var(--bg-secondary);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .topic-picture video,
+    video.topic-picture {
+        display: none;
+    }
+}
+

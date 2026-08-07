@@ -525,23 +525,44 @@
                         description.innerHTML = topic.description.replace(/\n/g, '<br>');
                         topicCard.appendChild(description);
 
-                        const videoPath = topic.video || meeting.video || (topic.picture && topic.picture.match(/\.(mp4|webm)$/i) ? topic.picture : null);
+                        const videoObj = (typeof topic.video === 'object') ? topic.video : (typeof meeting.video === 'object' ? meeting.video : null);
+                        const videoPath = videoObj ? null : (topic.video || meeting.video || (topic.picture && topic.picture.match(/\.(mp4|webm)$/i) ? topic.picture : null));
                         const picturePath = topic.picture || meeting.picture;
 
-                        if (videoPath) {
+                        if (videoObj || videoPath) {
                             const video = document.createElement('video');
                             video.className = 'topic-picture';
                             video.autoplay = true;
                             video.loop = true;
                             video.muted = true;
                             video.playsInline = true;
-                            if (picturePath && !picturePath.match(/\.(mp4|webm)$/i)) {
-                                video.poster = picturePath;
+                            video.setAttribute('preload', 'metadata');
+                            video.setAttribute('aria-label', topic.title ? `Video-Teaser: ${topic.title}` : 'Themenvideo');
+
+                            const posterUrl = (videoObj && videoObj.poster) || (picturePath && !picturePath.match(/\.(mp4|webm)$/i) ? picturePath : null);
+                            if (posterUrl) {
+                                video.poster = posterUrl;
                             }
-                            const source = document.createElement('source');
-                            source.src = videoPath;
-                            source.type = videoPath.endsWith('.webm') ? 'video/webm' : 'video/mp4';
-                            video.appendChild(source);
+
+                            if (videoObj) {
+                                if (videoObj.webm) {
+                                    const sourceWebm = document.createElement('source');
+                                    sourceWebm.src = videoObj.webm;
+                                    sourceWebm.type = 'video/webm';
+                                    video.appendChild(sourceWebm);
+                                }
+                                if (videoObj.mp4) {
+                                    const sourceMp4 = document.createElement('source');
+                                    sourceMp4.src = videoObj.mp4;
+                                    sourceMp4.type = 'video/mp4';
+                                    video.appendChild(sourceMp4);
+                                }
+                            } else {
+                                const source = document.createElement('source');
+                                source.src = videoPath;
+                                source.type = videoPath.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+                                video.appendChild(source);
+                            }
                             topicCard.appendChild(video);
                         } else if (picturePath) {
                             const picture = document.createElement('img');

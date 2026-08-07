@@ -3,6 +3,10 @@
 ## [Unreleased]
 
 ### Added
+- Converted event video teaser to VP9 WebM format (`img/irrer_wissenschaftler.webm`) with a static WebP poster frame (`img/irrer_wissenschaftler_poster.webp`) for instant buffering and ~70% bandwidth savings.
+- Enhanced event video player rendering on `index.html` and `events.html` with accessible `aria-label` attributes and `preload="metadata"`.
+- Added `@media (prefers-reduced-motion: reduce)` CSS rules to disable auto-playing video teasers for users who prefer reduced motion.
+- Added `scripts/Convert-ToWebM.ps1` PowerShell automation script for converting MP4 videos to WebM and generating poster frames.
 - Added square modern PWA and apple-touch-icon (`img/psugh-icon.webp`) in WebP format to resolve PWA verification warnings and fix icon squashing on iOS.
 - Added preloading for hero background image `img/hintergrund.webp` and minified styles on `index.html`, `events.html`, and `impressum.html` to improve Largest Contentful Paint (LCP) performance.
 - Added preloading for JSON data files on `events.html` to load event data as early as possible.
