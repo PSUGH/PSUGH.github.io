@@ -36,9 +36,12 @@
     "homepage": "https://www.psugh.org",
     "devDependencies": {
         "clean-css-cli": "^5.6.2",
-        "htmlhint": "1.1.4",
+        "htmlhint": "^1.9.2",
         "stylelint": "^17.6.0",
         "stylelint-config-standard": "^40.0.0"
+    },
+    "overrides": {
+        "glob": "^13.0.6"
     },
     "browserslist": [
         "> 1%",
