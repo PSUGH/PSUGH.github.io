@@ -525,8 +525,25 @@
                         description.innerHTML = topic.description.replace(/\n/g, '<br>');
                         topicCard.appendChild(description);
 
+                        const videoPath = topic.video || meeting.video || (topic.picture && topic.picture.match(/\.(mp4|webm)$/i) ? topic.picture : null);
                         const picturePath = topic.picture || meeting.picture;
-                        if (picturePath) {
+
+                        if (videoPath) {
+                            const video = document.createElement('video');
+                            video.className = 'topic-picture';
+                            video.autoplay = true;
+                            video.loop = true;
+                            video.muted = true;
+                            video.playsInline = true;
+                            if (picturePath && !picturePath.match(/\.(mp4|webm)$/i)) {
+                                video.poster = picturePath;
+                            }
+                            const source = document.createElement('source');
+                            source.src = videoPath;
+                            source.type = videoPath.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+                            video.appendChild(source);
+                            topicCard.appendChild(video);
+                        } else if (picturePath) {
                             const picture = document.createElement('img');
                             picture.className = 'topic-picture';
                             picture.src = picturePath;

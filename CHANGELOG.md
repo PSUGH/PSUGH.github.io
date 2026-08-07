@@ -8,6 +8,8 @@
 - Added preloading for JSON data files on `events.html` to load event data as early as possible.
 
 ### Changed
+- Archived Peter Klaffehn's M365 Security/Maester session (July 17, 2026) to past events.
+- Scheduled Christian Ritter's PSScriptAnalyzer session ("Besser Skripten mit dem PSScriptAnalyzer") as current meeting for August 14, 2026.
 - Archived the June 19th social event ("Bier, Kicker & PowerShell-Talks") to past events list.
 - Rescheduled Peter Klaffehn's Maester session to July 17, 2026.
 - Postponed the Azure Automation Runbook Secret Rotation session to a later date.
