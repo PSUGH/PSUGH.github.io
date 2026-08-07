@@ -1,6 +1,21 @@
 {
     "pastEvents": [
         {
+            "date": "2026-07-17",
+            "dateDisplay": "Freitag, den 17.07.2026",
+            "description": "M365 Security automatisieren mit Maester",
+            "topics": [
+                {
+                    "title": "M365 Security automatisieren mit Maester",
+                    "speaker": "Peter Klaffehn",
+                    "picture": "img/maester_security.webp",
+                    "description": "Die Absicherung von Microsoft 365 Tenants und die kontinuierliche Überwachung von Sicherheitskonfigurationen ist eine Mammutaufgabe. Hier kommt Maester ins Spiel – ein mächtiges Open-Source-Test-Framework, das auf PowerShell und Pester basiert.\n\nIn dieser Session zeigt uns <a href=\"https://www.linkedin.com/in/peter-klaffehn-0a5b381b9/\" target=\"_blank\" rel=\"noopener\">Peter Klaffehn</a>, wie wir mit Maester die Sicherheitsrichtlinien unserer Cloud-Infrastruktur automatisiert und reproduzierbar überprüfen können."
+                }
+            ],
+            "title": "M365 Security automatisieren mit Maester",
+            "isoDate": "2026-07-17T18:30:00+02:00"
+        },
+        {
             "date": "2026-06-19",
             "dateDisplay": "Freitag, den 19.06.2026",
             "description": "PSUGH Social: Bier, Kicker & PowerShell-Talks",
