@@ -1,18 +1,18 @@
 {
     "nextMeeting": {
-        "date": "Freitag, den 14.08.2026, ab 18:30h",
-        "isoDate": "2026-08-14T18:30:00+02:00",
+        "date": "Freitag, den 18.09.2026, ab 18:30h",
+        "isoDate": "2026-09-18T18:30:00+02:00",
         "description": "Besser Skripten mit dem PSScriptAnalyzer",
         "topics": [
             {
-                "title": "Besser Skripten mit dem PSScriptAnalyzer",
-                "speaker": "Christian Ritter",
+                "title": "MSIX-Publishing mit Zero Portal",
+                "speaker": "Andreas Nick",
                 "video": {
                     "webm": "img/irrer_wissenschaftler.webm",
                     "mp4": "img/irrer_wissenschaftler.mp4",
                     "poster": "img/irrer_wissenschaftler_poster.webp"
                 },
-                "description": "Regeln, überall nur Regeln!\n\nOb im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.\n\nIn dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding."
+                "description": "ZeroPortal: Software-Deployment, wie es sein sollte!\nSeit April ist der App-V Publishing Server Geschichte. Die Pakete laufen weiter, der Client auch, nur der Server fehlt. Gleichzeitig soll MSIX endlich kommen, App Attach gleich mit, und die Store-Apps auf Terminalservern ohne Store hätte auch gern jeder.\nIch stand genau da, mit vielen Kunden, die App-V nutzen. Also haben wir gebaut, wie wir uns Deployment für unsere Kunden idealerweise vorstellen. Vor ein paar Tagen haben wir ZeroPortal 1.0 mit allen unseren Wunschfeatures veröffentlicht. Das zeige ich euch am Freitag bei der PSUGH live!\nApp-V wie früher. ZeroPortal ersetzt den Microsoft Publishing Server kompatibel. Neue URL per GPO, sonst ändert sich für eure Clients nichts.\nMSIX und App Attach in Echtzeit. Ein kleiner Agent, kein Skriptzoo. Paket freigeben, Sekunden später ist es auf dem FatClient, dem Terminalserver oder in der VDI. Die App-Attach-Images baut das Portal selbst. Natürlich auch für eure eigenen MSIX- und App-V-Pakete.\nStore-Apps klauen. Legal, versprochen. Einmal mit winget holen, Lizenz kommt mit, ab dann landet die App auf Geräten, die den Store nie sehen. Mein Lieblingsmoment in der Demo 😊\nHochverfügbar ohne Load Balancer!\nPowerShell. 88 Cmdlets, die sich anfühlen wie die vom App-V-Server. Store-App importieren, berechtigen, veröffentlichen: drei Zeilen.\nWenn euch was fehlt, sagt es mir. Die Roadmap entsteht aus genau solchen Abenden.\nAgenda für die Live-Demo\nInstallation. MSI, Konfigurationsassistent, fünf Schritte, 30 Minuten bis zum laufenden Portal.\nErsteinrichtung mit einem Knoten. Paketfreigabe, Voll-Administratoren, die vier Schalter in der ADMX, Agent auf einen Client.\nApp-V-Publishing wie mit dem Microsoft-Server. Pakete einlesen, Verbindungsgruppe, AD-Gruppe, Client synchronisiert, kostenfrei.\nStore-App klauen, importieren, bereitstellen. winget, Import mit Lizenz und Frameworks, berechtigen, veröffentlichen, im Tray zusehen.\nApp Attach. Image per Klick erzeugen, Richtlinie entscheidet das Format, Client hängt ein.\nAutomation. Die drei Befehle von oben, dann dasselbe für Pakete in einer Schleife."
             }
         ]
     }
