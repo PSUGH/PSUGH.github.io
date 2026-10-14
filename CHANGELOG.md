@@ -12,7 +12,7 @@
 - Added preloading for JSON data files on `events.html` to load event data as early as possible.
 
 ### Changed
-- Scheduled Marco Kleinert's GraphTools session ("GraphTools v0.20: Zero-Dependency Microsoft Graph REST Engine") as current meeting for October 16, 2026.
+- Scheduled Marco Kleinert's GraphTools session ("GraphTools: Zero-Dependency Microsoft Graph REST Engine") as current meeting for October 16, 2026.
 - Archived Andreas Nick's ZeroPortal session ("MSIX-Publishing mit Zero Portal", September 18, 2026) and Christian Ritter's PSScriptAnalyzer session ("Besser Skripten mit dem PSScriptAnalyzer", August 14, 2026) to past events.
 - Archived Peter Klaffehn's M365 Security/Maester session (July 17, 2026) to past events.
 - Scheduled Christian Ritter's PSScriptAnalyzer session ("Besser Skripten mit dem PSScriptAnalyzer") as current meeting for August 14, 2026.

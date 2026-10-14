@@ -2,10 +2,10 @@
     "nextMeeting": {
         "date": "Freitag, den 16.10.2026, ab 18:30h",
         "isoDate": "2026-10-16T18:30:00+02:00",
-        "description": "Microsoft Graph ohne SDK-Ballast: GraphTools v0.20",
+        "description": "Microsoft Graph ohne SDK-Ballast: GraphTools",
         "topics": [
             {
-                "title": "GraphTools v0.20: Zero-Dependency Microsoft Graph REST Engine",
+                "title": "GraphTools: Zero-Dependency Microsoft Graph REST Engine",
                 "speaker": "Marco Kleinert",
                 "picture": "img/GraphTools.webp",
                 "description": "Schwere SDK-Module und lange Kaltstartzeiten adé!\n\nMit Version 0.20.0 erhält GraphTools eine native Zero-Dependency REST-Engine, die Laufzeitabhängigkeiten von den schwergewichtigen Microsoft.Graph.*-SDK-Modulen komplett eliminiert. Dank nativer .NET-Kryptografie, OAuth 2.0 Token-Caching und resilienter HTTP-Batch-Verarbeitung sinken Kaltstarts von ~1,8s auf ca. 120ms – bei voller Enterprise-Zuverlässigkeit.\n\nIn dieser Session zeigt euch Marco Kleinert die Architektur hinter der neuen REST-Engine, demonstriert zertifikatsbasierte Authentifizierung (RFC 7523) ohne Key-Export und gibt praxisnahe Einblicke in Incident-Response- und Governance-Szenarien für Microsoft Entra ID."
