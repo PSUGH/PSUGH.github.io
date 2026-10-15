@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [3.2.0] - 2026-10-15
+
 ### Added
 - Implemented complete design system consolidation and architecture improvements:
   - Added `--bg-surface`, `--border-color`, and `--card-border` tokens across `:root` and `[data-theme="dark"]`, resolving transparent theme toggle styling.
