@@ -12,7 +12,8 @@
                 }
             ],
             "title": "MSIX-Publishing mit Zero Portal",
-            "isoDate": "2026-09-18T18:30:00+02:00"
+            "isoDate": "2026-09-18T18:30:00+02:00",
+            "linkedinUrl": "https://www.linkedin.com/events/7506251319771430913/"
         },
         {
             "date": "2026-08-14",
@@ -31,7 +32,8 @@
                 }
             ],
             "title": "Besser Skripten mit dem PSScriptAnalyzer",
-            "isoDate": "2026-08-14T18:30:00+02:00"
+            "isoDate": "2026-08-14T18:30:00+02:00",
+            "linkedinUrl": "https://www.linkedin.com/events/7491400070722904064/"
         },
         {
             "date": "2026-07-17",
@@ -76,7 +78,8 @@
                 }
             ],
             "title": "Real-Time Terminal Dashboards mit PowerShell",
-            "isoDate": "2026-04-17T18:30:00+01:00"
+            "isoDate": "2026-04-17T18:30:00+01:00",
+            "linkedinUrl": "https://www.linkedin.com/events/real-timeterminaldashboardsmitp7439967969461391360/"
         },
         {
             "date": "2026-03-13",
@@ -90,7 +93,9 @@
                     "description": "Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.\nDa Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?\nNa klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.\n\nIn dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen."
                 }
             ],
-            "isoDate": "2026-03-13T18:30:00+01:00"
+            "title": "Proxmox 💜 Powershell - es muss nicht immer Bash sein",
+            "isoDate": "2026-03-13T18:30:00+01:00",
+            "linkedinUrl": "https://www.linkedin.com/events/proxmox-powershell-esmussnichti7436879223631519744/"
         },
         {
             "date": "2026-02-20",
