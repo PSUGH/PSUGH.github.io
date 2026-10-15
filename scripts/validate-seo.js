@@ -66,6 +66,7 @@ console.log('');
 const requiredFiles = [
     { file: 'robots.txt', critical: true },
     { file: 'sitemap.xml', critical: true },
+    { file: 'feed.xml', critical: true },
     { file: 'site.webmanifest', critical: true },
     { file: '.htaccess', critical: false },
     { file: 'css/styles.css', critical: true },
@@ -142,7 +143,39 @@ if (fs.existsSync('sitemap.xml')) {
     result('fail', 'sitemap.xml not readable');
 }
 
-// ─── 4. HTML files ───────────────────────────────────────────────────────────
+// ─── 4. feed.xml content ─────────────────────────────────────────────────────
+console.log(`\n${c.bold}📡 feed.xml Content${c.reset}`);
+if (fs.existsSync('feed.xml')) {
+    const feed = fs.readFileSync('feed.xml', 'utf8');
+    if (/<rss\s+version="2\.0"/i.test(feed)) {
+        result('pass', 'RSS 2.0 version attribute');
+    } else {
+        result('fail', 'RSS 2.0 declaration missing');
+    }
+
+    if (/xmlns:atom="http:\/\/www\.w3\.org\/2005\/Atom"/i.test(feed)) {
+        result('pass', 'Atom namespace declared');
+    } else {
+        result('warn', 'Atom namespace missing');
+    }
+
+    if (new RegExp(`<atom:link[^>]+href="${CANONICAL_BASE}/feed\\.xml"`, 'i').test(feed)) {
+        result('pass', 'Self-referencing atom:link present');
+    } else {
+        result('warn', 'Self-referencing atom:link missing or non-canonical');
+    }
+
+    const feedItems = feed.match(/<item>/g) || [];
+    if (feedItems.length > 0) {
+        result('pass', `${feedItems.length} items found in feed`);
+    } else {
+        result('fail', 'Feed contains 0 items');
+    }
+} else {
+    result('fail', 'feed.xml not readable');
+}
+
+// ─── 5. HTML files ───────────────────────────────────────────────────────────
 const baseHtmlFiles = [
     {
         file: 'index.html',
@@ -315,6 +348,23 @@ htmlFiles.forEach(
                 'og:url mismatch with canonical',
                 `og:url="${ogUrl}"`,
             );
+
+        // ── RSS / Atom Feed Discovery ──────────────────────────────────────────
+        const rssLink = extract(
+            content,
+            /<link[^>]+rel="alternate"[^>]+type="application\/rss\+xml"[^>]+href="([^"]+)"/i,
+        ) || extract(
+            content,
+            /<link[^>]+type="application\/rss\+xml"[^>]+rel="alternate"[^>]+href="([^"]+)"/i,
+        ) || extract(
+            content,
+            /<link[^>]+href="([^"]+)"[^>]+type="application\/rss\+xml"/i,
+        );
+        if (rssLink) {
+            result('pass', 'RSS Autodiscovery link', rssLink);
+        } else {
+            result('warn', 'RSS Autodiscovery link missing from head');
+        }
 
         // ── Twitter Card ─────────────────────────────────────────────────────────
         if (/meta\s+name="twitter:card"/.test(content))

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerShell Usergroup Hannover (PSUGH)</title>
+    <link>https://psugh.org/</link>
+    <description>Monatstreffen, praxisnahe PowerShell-, Azure- &amp; DevOps-Vorträge sowie praxisnahe Ressourcen-Artikel der PowerShell Usergroup Hannover.</description>
+    <language>de-DE</language>
+    <lastBuildDate>Thu, 15 Oct 2026 17:07:36 GMT</lastBuildDate>
+    <atom:link href="https://psugh.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <generator>PSUGH Feed Generator</generator>
+    <image>
+      <url>https://psugh.org/img/psugh-logo.webp</url>
+      <title>PowerShell Usergroup Hannover (PSUGH)</title>
+      <link>https://psugh.org/</link>
+    </image>
+    <item>
+      <title>[Treffen] Microsoft Graph ohne SDK-Ballast: GraphTools (Referent: Marco Kleinert)</title>
+      <link>https://psugh.org/events.html</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-10-16</guid>
+      <pubDate>Fri, 16 Oct 2026 16:30:00 GMT</pubDate>
+      <category>Monatstreffen</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 16.10.2026, ab 18:30h</p><p><strong>Thema:</strong> GraphTools: Zero-Dependency Microsoft Graph REST Engine</p><p><strong>Referent:</strong> Marco Kleinert</p><p>Schwere SDK-Module und lange Kaltstartzeiten adé!<br><br>Mit Version 0.20.0 erhält GraphTools eine native Zero-Dependency REST-Engine, die Laufzeitabhängigkeiten von den schwergewichtigen Microsoft.Graph.*-SDK-Modulen komplett eliminiert. Dank nativer .NET-Kryptografie, OAuth 2.0 Token-Caching und resilienter HTTP-Batch-Verarbeitung sinken Kaltstarts von ~1,8s auf ca. 120ms – bei voller Enterprise-Zuverlässigkeit.<br><br>In dieser Session zeigt euch Marco Kleinert die Architektur hinter der neuen REST-Engine, demonstriert zertifikatsbasierte Authentifizierung (RFC 7523) ohne Key-Export und gibt praxisnahe Einblicke in Incident-Response- und Governance-Szenarien für Microsoft Entra ID.</p><p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/">Event auf LinkedIn öffnen</a></p><p><a href="https://psugh.org/events.html">Details &amp; Kalendereintrag auf psugh.org</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] MSIX-Publishing mit Zero Portal (Andreas Nick)</title>
+      <link>https://psugh.org/events.html#2026-09-18</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-09-18</guid>
+      <pubDate>Fri, 18 Sep 2026 16:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 18.09.2026</p><p><strong>Referent:</strong> Andreas Nick</p><p>ZeroPortal: Software-Deployment, wie es sein sollte!<br>Seit April ist der App-V Publishing Server Geschichte. Die Pakete laufen weiter, der Client auch, nur der Server fehlt. Gleichzeitig soll MSIX endlich kommen, App Attach gleich mit, und die Store-Apps auf Terminalservern ohne Store hätte auch gern jeder.<br>Ich stand genau da, mit vielen Kunden, die App-V nutzen. Also haben wir gebaut, wie wir uns Deployment für unsere Kunden idealerweise vorstellen. Vor ein paar Tagen haben wir ZeroPortal 1.0 mit allen unseren Wunschfeatures veröffentlicht. Das zeige ich euch am Freitag bei der PSUGH live!<br>App-V wie früher. ZeroPortal ersetzt den Microsoft Publishing Server kompatibel. Neue URL per GPO, sonst ändert sich für eure Clients nichts.<br>MSIX und App Attach in Echtzeit. Ein kleiner Agent, kein Skriptzoo. Paket freigeben, Sekunden später ist es auf dem FatClient, dem Terminalserver oder in der VDI. Die App-Attach-Images baut das Portal selbst. Natürlich auch für eure eigenen MSIX- und App-V-Pakete.<br>Store-Apps klauen. Legal, versprochen. Einmal mit winget holen, Lizenz kommt mit, ab dann landet die App auf Geräten, die den Store nie sehen. Mein Lieblingsmoment in der Demo 😊<br>Hochverfügbar ohne Load Balancer!<br>PowerShell. 88 Cmdlets, die sich anfühlen wie die vom App-V-Server. Store-App importieren, berechtigen, veröffentlichen: drei Zeilen.<br>Wenn euch was fehlt, sagt es mir. Die Roadmap entsteht aus genau solchen Abenden.<br>Agenda für die Live-Demo<br>Installation. MSI, Konfigurationsassistent, fünf Schritte, 30 Minuten bis zum laufenden Portal.<br>Ersteinrichtung mit einem Knoten. Paketfreigabe, Voll-Administratoren, die vier Schalter in der ADMX, Agent auf einen Client.<br>App-V-Publishing wie mit dem Microsoft-Server. Pakete einlesen, Verbindungsgruppe, AD-Gruppe, Client synchronisiert, kostenfrei.<br>Store-App klauen, importieren, bereitstellen. winget, Import mit Lizenz und Frameworks, berechtigen, veröffentlichen, im Tray zusehen.<br>App Attach. Image per Klick erzeugen, Richtlinie entscheidet das Format, Client hängt ein.<br>Automation. Die drei Befehle von oben, dann dasselbe für Pakete in einer Schleife.</p><p><a href="https://www.linkedin.com/events/7506251319771430913/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] Besser Skripten mit dem PSScriptAnalyzer (Christian Ritter)</title>
+      <link>https://psugh.org/events.html#2026-08-14</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-08-14</guid>
+      <pubDate>Fri, 14 Aug 2026 16:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 14.08.2026</p><p><strong>Referent:</strong> Christian Ritter</p><p>Regeln, überall nur Regeln!<br><br>Ob im Alltag oder beim Entwickeln – Regeln geben uns Orientierung und helfen, Qualität zu sichern. In PowerShell begegnen sie uns als PSScriptAnalyzer Rules, die unseren Code konsistent, sauber und wartbar halten.<br><br>In dieser Session zeigt euch Christian Ritter, wie PSScriptAnalyzer-Regeln funktionieren, wie ihr eigene Regeln erstellt und wie ihr diese mithilfe von CI/CD-Pipelines automatisiert durchsetzen könnt. Freut euch auf praxisnahe Einblicke, Beispiele aus dem Entwickleralltag und wertvolle Tipps für euer tägliches PowerShell-Coding.</p><p><a href="https://www.linkedin.com/events/7491400070722904064/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] M365 Security automatisieren mit Maester (Peter Klaffehn)</title>
+      <link>https://psugh.org/events.html#2026-07-17</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-07-17</guid>
+      <pubDate>Fri, 17 Jul 2026 16:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 17.07.2026</p><p><strong>Referent:</strong> Peter Klaffehn</p><p>Die Absicherung von Microsoft 365 Tenants und die kontinuierliche Überwachung von Sicherheitskonfigurationen ist eine Mammutaufgabe. Hier kommt Maester ins Spiel – ein mächtiges Open-Source-Test-Framework, das auf PowerShell und Pester basiert.<br><br>In dieser Session zeigt uns <a href="https://www.linkedin.com/in/peter-klaffehn-0a5b381b9/" target="_blank" rel="noopener">Peter Klaffehn</a>, wie wir mit Maester die Sicherheitsrichtlinien unserer Cloud-Infrastruktur automatisiert und reproduzierbar überprüfen können.</p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] PSUGH Social: Bier, Kicker &amp; PowerShell-Talks (Community)</title>
+      <link>https://psugh.org/events.html#2026-06-19</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-06-19</guid>
+      <pubDate>Fri, 19 Jun 2026 16:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 19.06.2026</p><p><strong>Referent:</strong> Community</p><p>Keine Agenda. Kein Vortrag. Dafür Bier, WM-Feeling und PowerShell-Talk.<br>Bringt eure verrücktesten Skript-Ideen mit! 🍻⚽🏆</p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] Real-Time Terminal Dashboards mit PowerShell (Gabriel Köhl)</title>
+      <link>https://psugh.org/events.html#2026-04-17</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-04-17</guid>
+      <pubDate>Fri, 17 Apr 2026 17:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 17.04.2026</p><p><strong>Referent:</strong> Gabriel Köhl</p><p>Wer schon mal versucht hat, Performance-Daten mit PowerShell zu sammeln, weiß, was Schmerzen sind.<br>Zum Glück ist Gabriel Köhl sehr schmerzresistent und hat uns deswegen mit dem psTerminalPerfCounter-Modul versorgt.</p><p><a href="https://www.linkedin.com/events/real-timeterminaldashboardsmitp7439967969461391360/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] $ErrorActionPreference Tutorial</title>
+      <link>https://psugh.org/ressourcen/erroractionpreference.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/erroractionpreference.html</guid>
+      <pubDate>Wed, 15 Apr 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>PowerShell-Tutorial: $ErrorActionPreference erklärt. Erfahre, wie du Fehlerbehandlung (Try/Catch) mit Stop, Continue und SilentlyContinue richtig steuerst.</p><p><a href="https://psugh.org/ressourcen/erroractionpreference.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] Terminating vs. Non-Terminating Errors</title>
+      <link>https://psugh.org/ressourcen/terminating-errors.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/terminating-errors.html</guid>
+      <pubDate>Wed, 15 Apr 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>PowerShell-Tutorial: Lerne den Unterschied zwischen Terminating und Non-Terminating Errors, wie du sie erkennst und mit Try/Catch richtig abfängst.</p><p><a href="https://psugh.org/ressourcen/terminating-errors.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] throw, Write-Error &amp;amp; Get-Error</title>
+      <link>https://psugh.org/ressourcen/throw-write-error.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/throw-write-error.html</guid>
+      <pubDate>Wed, 15 Apr 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>Lerne wie du in PowerShell Fehler richtig meldest und analysierst: throw, Write-Error und Get-Error im direkten Vergleich – Tutorials der PSUGH Hannover.</p><p><a href="https://psugh.org/ressourcen/throw-write-error.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] Try/Catch Grundlagen</title>
+      <link>https://psugh.org/ressourcen/try-catch.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/try-catch.html</guid>
+      <pubDate>Wed, 15 Apr 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>Lerne die PowerShell Try/Catch Grundlagen: Syntax, Error-Objekt ($_) und Finally-Block – fehlerfreie Skripte mit der PowerShell Usergroup Hannover.</p><p><a href="https://psugh.org/ressourcen/try-catch.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] ConvertFrom-Json</title>
+      <link>https://psugh.org/ressourcen/convertfrom-json.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/convertfrom-json.html</guid>
+      <pubDate>Tue, 17 Mar 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>PowerShell-Tutorial: ConvertFrom-Json nutzen, um JSON-Daten aus APIs und Konfigurationsdateien in PowerShell-Objekte zu verwandeln – PSUGH Hannover.</p><p><a href="https://psugh.org/ressourcen/convertfrom-json.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] Invoke-WebRequest Tutorial</title>
+      <link>https://psugh.org/ressourcen/invoke-webrequest.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/invoke-webrequest.html</guid>
+      <pubDate>Tue, 17 Mar 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>PowerShell-Tutorial: Invoke-WebRequest (iwr) für HTTP-Anfragen, JSON-APIs und Datei-Downloads – mit Beispielen der PowerShell Usergroup Hannover.</p><p><a href="https://psugh.org/ressourcen/invoke-webrequest.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Ressource] Select-Object</title>
+      <link>https://psugh.org/ressourcen/select-object.html</link>
+      <guid isPermaLink="true">https://psugh.org/ressourcen/select-object.html</guid>
+      <pubDate>Tue, 17 Mar 2026 07:00:00 GMT</pubDate>
+      <category>PowerShell Ressourcen</category>
+      <description><![CDATA[<p>Select-Object in PowerShell: Welche Eigenschaften eines Objekts brauchst du, und wie filterst du Ergebnisse sauber und performant?</p><p><a href="https://psugh.org/ressourcen/select-object.html">Vollständigen Artikel lesen →</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] Proxmox 💜 Powershell - es muss nicht immer Bash sein (Holger Voges)</title>
+      <link>https://psugh.org/events.html#2026-03-13</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-03-13</guid>
+      <pubDate>Fri, 13 Mar 2026 17:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 13.03.2026</p><p><strong>Referent:</strong> Holger Voges</p><p>Proxmox ist der VM-Ware Killer aus Wien - Europäisch und Open Source. Proxmox begeistert nicht nur durch seine inneren Werte, sondern auch durch seine Webbasierte grafische Oberfläche, die im Gegensatz zu Konkurrenzprodukten wie Hyper-V intuitiv bedienbar ist. Aber manchmal reicht die GUI leider nicht, und dann muss die Shell ran.<br>Da Proxmox unter Debian-Linux läuft, ist das dann eigentlich eine Linux-Shell. Aber gibt es da nicht auch was von Powershell?<br>Na klar, das cv4pve-api-powershell Modul. Wie am Namen schon ersichtlich, nutzt das Modul die Web-API, die Proxmox zur Verfügung stellt, um verschiedene Funktionen per CommandLet zur Verfügung zu stellen.<br><br>In dieser Session zeigt Euch Holger Voges zuerst Proxmox, um dann auf die Funktionen des Powershell-Moduls einzugehen.</p><p><a href="https://www.linkedin.com/events/proxmox-powershell-esmussnichti7436879223631519744/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] OPSI für Windows-Admins mit Christian Imhorst (Christian Imhorst)</title>
+      <link>https://psugh.org/events.html#2026-02-20</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-02-20</guid>
+      <pubDate>Fri, 20 Feb 2026 17:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 20.02.2026</p><p><strong>Referent:</strong> Christian Imhorst</p><p>Softwareverteilung, Inventarisierung und Patch-Management lassen sich mit OPSI effizient automatisieren und zentral steuern.<br>In dieser Session zeigt euch Christian Imhorst, wie ihr OPSI in wenigen Minuten mit Docker installiert, welche Vorteile das System bietet und wie ihr es nahtlos in eure Windows-Umgebung integriert.<br><br>Freut euch auf eine praxisnahe Einführung von einem OPSI Anwender mit Adminrechten ohne tiefergehendes Expertenwissen inkl. Live-Demo, wirren Anwendungsbeispielen und einem Blick darauf, wie ihr mit PowerShell OPSI-Skripte tunen könnt.</p><p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7427700034080583681/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] Versionsverwaltung mit Git - in VSCode und an der Kommandozeile (Holger Voges)</title>
+      <link>https://psugh.org/events.html#2025-12-19</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2025-12-19</guid>
+      <pubDate>Fri, 19 Dec 2025 17:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 19.12.2025</p><p><strong>Referent:</strong> Holger Voges</p><p>Git ist Versionsverwaltungssystem von Linus Thorvalds, das sich in der Programmierung zum De-Facto-Standard entwickelt hat. Aber wie funktioniert Git eigentlich, und wie setzt man es ein, um Powershell-Projekte am Besten zu verwalten? In dieser Session zeigt Euch Holger Voges, was man über Git wissen muss, und wie er es einsetzt.<br>Über neue Ideen und Best-Practices kann dann im Anschluss bei einem Bier diskutiert werden.</p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] P/Invoke Extrem – Evgenij Smirnov baut Kerberos Klist nach (Evgenij Smirnov)</title>
+      <link>https://psugh.org/events.html#2025-11-28</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2025-11-28</guid>
+      <pubDate>Fri, 28 Nov 2025 17:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 28.11.2025</p><p><strong>Referent:</strong> Evgenij Smirnov</p><p>Dieses Mal am 4. Freitag im Monat, weil wir einen besonderen Gast haben - Evgenij Smirnov, langjähriger MVP und Organisiator der Powershell Usergroup Berlin, hat uns einen Deep Dive zum Thema P/Invoke und AD mitgebracht. P/Invoke erlaubt es, direkt auf die Win32-API zuzugreifen - im wahrsten Sinne das Innenleben von Windows.<br>Wer Kerberos-Authentifizierung troubleshooten muss, braucht gute Nerven – und das richtige Toolset. Klist ist super, aber PowerShell bietet mehr Möglichkeiten, mit Daten zu hantieren – Filtern, sortieren usw. Wir bauen das altbewährte Tool in PowerShell nach.</p><p><a href="https://www.linkedin.com/events/p-invokeextrem-evgenijsmirnovba7395775570803998720/">Diskussion auf LinkedIn</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] PKI zähmen mit dem PowerShell-Modul Tame my Certs (Holger Voges)</title>
+      <link>https://psugh.org/events.html#2025-09-19</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2025-09-19</guid>
+      <pubDate>Fri, 19 Sep 2025 16:30:00 GMT</pubDate>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 19.09.2025</p><p><strong>Referent:</strong> Holger Voges</p><p>Mit seinem Modul "Tame my Cert" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuer, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.<br>In dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉</p>]]></description>
+    </item>
+  </channel>
+</rss>
