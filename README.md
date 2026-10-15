@@ -84,10 +84,12 @@ PSUGH.github.io/
 ### Available Scripts
 
 - `npm run dev` - Start a local development server
-- `npm run build` - Build optimized version for production (minifies `css/styles.css` in-place)
+- `npm run build` - Build optimized version for production (generates `feed.xml` and minifies `css/styles.css` in-place)
+- `npm run build:feed` - Generate standard RSS 2.0 / Atom feed (`feed.xml`) from events and resources
 - `npm run lint-css` - Lint CSS files
 - `npm run lint-html` - Lint HTML files
-- `npm run validate` - Run all linting checks
+- `npm run validate` - Run all verification checks (feed build, CSS/HTML linting, images, and SEO)
+- `npm run validate-seo` - Run comprehensive SEO, schema, canonical, and feed autodiscovery validator
 - `npm run serve` - Start a production-style server
 - `npm run preview` - Build and serve production version
 

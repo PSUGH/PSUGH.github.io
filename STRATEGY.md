@@ -10,8 +10,9 @@ Viele Website-Besucher und Interessierte vergessen Termine im Alltag, wenn sie n
 * **1-Click „Zum Kalender hinzufügen“ (`.ics` / Outlook / Google / Apple):**
   * Direkter Download-Button für `.ics`-Dateien und `webcal://`-Abonnements auf `index.html` und `events.html`.
   * Ermöglicht das Eintragen mit einem Klick in geschäftliche Outlook-Kalender inklusive automatischer Terminerinnerung.
-* **RSS / Atom Feed (`feed.xml`):**
-  * Bereitstellung eines standardisierten RSS-Feeds für neue Monatstreffen und Ressourcen-Artikel für Admins und DevOps-Engineers, die Newsreader (Feedly, Inoreader, Thunderbird) nutzen.
+* **RSS / Atom Feed (`feed.xml`) (✅ Umgesetzt):**
+  * Bereitstellung eines standardisierten RSS 2.0 / Atom-Feeds für neue Monatstreffen und Ressourcen-Artikel für Admins und DevOps-Engineers, die Newsreader (Feedly, Inoreader, Thunderbird) nutzen.
+  * Automatische Generierung via `npm run build:feed` (`scripts/generate-feed.js`) und PowerShell (`scripts/New-RssFeed.ps1`). Autodiscovery-Header (`<link rel="alternate">`) auf allen Seiten und RSS-Links in Social-Media, Kalender und Footer integriert.
 
 ---
 

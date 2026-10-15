@@ -67,6 +67,7 @@ button:focus-visible {
     --social-github: #24292e;
     --social-discord: #5865f2;
     --social-linkedin: #0077b5;
+    --social-rss: #f26522;
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -874,6 +875,9 @@ td code {
 }
 .social-link.linkedin:hover {
     color: var(--social-linkedin);
+}
+.social-link.rss:hover {
+    color: var(--social-rss);
 }
 .newsletter-cta {
     display: flex;

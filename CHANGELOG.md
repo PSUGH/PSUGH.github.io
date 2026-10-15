@@ -3,6 +3,14 @@
 ## [Unreleased]
 
 ### Added
+- Standard-compliant RSS 2.0 / Atom feed ([`feed.xml`](file:///home/marco/Projects/PSUGH.github.io/feed.xml)):
+  - Aggregates upcoming monthly meetings from [`current-meeting.json`](file:///home/marco/Projects/PSUGH.github.io/current-meeting.json), recent community events from [`past-events.json`](file:///home/marco/Projects/PSUGH.github.io/past-events.json), and practical resource tutorials from [`ressourcen/*.html`](file:///home/marco/Projects/PSUGH.github.io/ressourcen/).
+  - Supports Atom namespace (`xmlns:atom="http://www.w3.org/2005/Atom"`) with canonical self-reference link, channel image logo, categories, and permalink GUIDs.
+  - Added automated build script [`scripts/generate-feed.js`](file:///home/marco/Projects/PSUGH.github.io/scripts/generate-feed.js) integrated with `npm run build:feed`, `npm run build`, and `npm run validate`.
+  - Added native PowerShell generator script [`scripts/New-RssFeed.ps1`](file:///home/marco/Projects/PSUGH.github.io/scripts/New-RssFeed.ps1) outputting structured `[PSCustomObject]` reports.
+  - Added RSS autodiscovery tags (`<link rel="alternate" type="application/rss+xml" ...>`) across all 11 HTML pages (`index.html`, `events.html`, `impressum.html`, all `ressourcen/*.html`, and [`scripts/_template.html`](file:///home/marco/Projects/PSUGH.github.io/scripts/_template.html)).
+  - Added dedicated RSS buttons and links to the hero meeting links, community social icons, calendar overview, and site footers.
+  - Added `feed.xml` structure and autodiscovery link verification into [`scripts/validate-seo.js`](file:///home/marco/Projects/PSUGH.github.io/scripts/validate-seo.js).
 - Linked past PSUGH events directly to their official LinkedIn Event pages:
   - Added `linkedinUrl` entries to past events in [`past-events.json`](file:///home/marco/Projects/PSUGH.github.io/past-events.json) for 2026-09-18 ("MSIX-Publishing mit Zero Portal"), 2026-08-14 ("Besser Skripten mit dem PSScriptAnalyzer"), 2026-04-17 ("Real-Time Terminal Dashboards mit PowerShell"), and 2026-03-13 ("Proxmox 💜 Powershell - es muss nicht immer Bash sein").
   - Added "💼 Auf LinkedIn" action link rendering for past events in [`events.html`](file:///home/marco/Projects/PSUGH.github.io/events.html).
