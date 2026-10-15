@@ -654,6 +654,16 @@
                     linksContainer.appendChild(materialsLink);
                 }
 
+                if (event.linkedinUrl) {
+                    const linkedinLink = document.createElement('a');
+                    linkedinLink.href = event.linkedinUrl;
+                    linkedinLink.target = '_blank';
+                    linkedinLink.rel = 'noopener';
+                    linkedinLink.className = 'event-link secondary';
+                    linkedinLink.textContent = '💼 Auf LinkedIn';
+                    linksContainer.appendChild(linkedinLink);
+                }
+
                 if (linksContainer.hasChildNodes()) {
                     card.appendChild(linksContainer);
                 }

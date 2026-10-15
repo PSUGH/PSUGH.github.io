@@ -3,6 +3,10 @@
 ## [Unreleased]
 
 ### Added
+- Linked past PSUGH events directly to their official LinkedIn Event pages:
+  - Added `linkedinUrl` entries to past events in [`past-events.json`](file:///home/marco/Projects/PSUGH.github.io/past-events.json) for 2026-09-18 ("MSIX-Publishing mit Zero Portal"), 2026-08-14 ("Besser Skripten mit dem PSScriptAnalyzer"), 2026-04-17 ("Real-Time Terminal Dashboards mit PowerShell"), and 2026-03-13 ("Proxmox 💜 Powershell - es muss nicht immer Bash sein").
+  - Added "💼 Auf LinkedIn" action link rendering for past events in [`events.html`](file:///home/marco/Projects/PSUGH.github.io/events.html).
+  - Enriched Schema.org `offers.url` structured data for these past events with their respective LinkedIn event URLs.
 - Linked the current October 16, 2026 meeting directly to its official LinkedIn Event post (`urn:li:activity:7516166052813189120`):
   - Added dedicated "Auf LinkedIn" action button in `index.html`'s meeting links.
   - Added dynamic LinkedIn button handling in `index.html` from `current-meeting.json`.
