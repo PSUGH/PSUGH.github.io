@@ -359,6 +359,43 @@ htmlFiles.forEach(
                                 `ld+json block ${i + 1} Event missing recommended endDate`,
                             );
                         }
+                        const offersUrl = parsed.offers && parsed.offers.url;
+                        if (offersUrl && offersUrl.includes('linkedin.com')) {
+                            result(
+                                'pass',
+                                `ld+json block ${i + 1} Event has LinkedIn offers URL`,
+                                offersUrl,
+                            );
+                        } else if (offersUrl) {
+                            result(
+                                'warn',
+                                `ld+json block ${i + 1} Event offers.url is not a LinkedIn link`,
+                                offersUrl,
+                            );
+                        } else {
+                            result(
+                                'fail',
+                                `ld+json block ${i + 1} Event missing offers.url registration link`,
+                            );
+                        }
+                    }
+
+                    if (parsed.sameAs && Array.isArray(parsed.sameAs)) {
+                        const linkedinProfile = parsed.sameAs.find((u) =>
+                            typeof u === 'string' && u.includes('linkedin.com'),
+                        );
+                        if (linkedinProfile) {
+                            result(
+                                'pass',
+                                `ld+json block ${i + 1} sameAs includes LinkedIn profile`,
+                                linkedinProfile,
+                            );
+                        } else {
+                            result(
+                                'warn',
+                                `ld+json block ${i + 1} sameAs missing LinkedIn profile`,
+                            );
+                        }
                     }
                 } catch (e) {
                     result(
@@ -370,18 +407,30 @@ htmlFiles.forEach(
             });
         } else if (dynamicSchema) {
             // Schema is injected at runtime via JS — verify the injection function exists in source
-            if (/injectEventSchemas/.test(raw))
+            if (/injectEventSchemas/.test(raw)) {
                 result(
                     'pass',
                     'Structured data (ld+json)',
                     'dynamic injection via injectEventSchemas()',
                 );
-            else
+                if (/linkedinUrl/.test(raw)) {
+                    result(
+                        'pass',
+                        'Dynamic Event schema supports LinkedIn event URLs',
+                    );
+                } else {
+                    result(
+                        'warn',
+                        'Dynamic Event schema missing LinkedIn event URL support',
+                    );
+                }
+            } else {
                 result(
                     'fail',
                     'Structured data (ld+json)',
                     'dynamicSchema=true but injectEventSchemas() not found in source',
                 );
+            }
         } else {
             result(
                 noindex ? 'pass' : 'fail',
@@ -415,6 +464,40 @@ htmlFiles.forEach(
         if (/gtag|googletagmanager/.test(content))
             result('pass', 'Google Analytics (GA4)');
         else result('warn', 'Google Analytics not detected');
+
+        // ── LinkedIn links (SEO & Entity Social Signals) ─────────────────────────
+        if (file === 'index.html') {
+            const linkedinTagMatch = content.match(
+                /<a\b[^>]*\bid="next-meeting-linkedin"[^>]*>/i,
+            );
+            const nextMeetingLinkedIn = linkedinTagMatch
+                ? extract(linkedinTagMatch[0], /href="([^"]+)"/i)
+                : null;
+            if (nextMeetingLinkedIn && nextMeetingLinkedIn.includes('linkedin.com')) {
+                result(
+                    'pass',
+                    'Next meeting LinkedIn link available',
+                    nextMeetingLinkedIn,
+                );
+            } else if (nextMeetingLinkedIn) {
+                result(
+                    'warn',
+                    'Next meeting LinkedIn link is not a LinkedIn URL',
+                    nextMeetingLinkedIn,
+                );
+            } else {
+                result(
+                    'fail',
+                    'Next meeting LinkedIn link (#next-meeting-linkedin) missing',
+                );
+            }
+
+            if (/https:\/\/www\.linkedin\.com\/company\/psugh\/?/i.test(content)) {
+                result('pass', 'LinkedIn company page linked (Entity SEO)');
+            } else {
+                result('warn', 'LinkedIn company page link missing from page');
+            }
+        }
 
         // ── Google Search Console verification ───────────────────────────────────
         if (STRICT) {
@@ -474,6 +557,43 @@ if (fs.existsSync('site.webmanifest')) {
     }
 } else {
     result('fail', 'site.webmanifest not found');
+}
+
+// ─── 6. Event SEO & Social Links Data ───────────────────────────────────────
+console.log(`\n${c.bold}💼 Event SEO & Social Links Data${c.reset}`);
+if (fs.existsSync('current-meeting.json')) {
+    try {
+        const meetingRaw = JSON.parse(
+            fs.readFileSync('current-meeting.json', 'utf8'),
+        );
+        const currentMeeting =
+            meetingRaw.nextMeeting || meetingRaw.currentMeeting || meetingRaw;
+        if (
+            currentMeeting.linkedinUrl &&
+            currentMeeting.linkedinUrl.includes('linkedin.com')
+        ) {
+            result(
+                'pass',
+                'current-meeting.json has valid LinkedIn event URL',
+                currentMeeting.linkedinUrl,
+            );
+        } else if (currentMeeting.linkedinUrl) {
+            result(
+                'warn',
+                'current-meeting.json linkedinUrl is not a LinkedIn link',
+                currentMeeting.linkedinUrl,
+            );
+        } else {
+            result(
+                'fail',
+                'current-meeting.json missing linkedinUrl for event SEO',
+            );
+        }
+    } catch (e) {
+        result('fail', 'current-meeting.json invalid JSON', e.message);
+    }
+} else {
+    result('fail', 'current-meeting.json not found');
 }
 
 // ─── Summary ─────────────────────────────────────────────────────────────────
