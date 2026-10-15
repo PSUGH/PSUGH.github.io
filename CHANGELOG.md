@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- Added [`STRATEGY.md`](file:///home/marco/Projects/PSUGH.github.io/STRATEGY.md) outlining actionable growth and visibility measures across 5 pillars (calendar integration, content SEO, LinkedIn & social multipliers, community aggregators, and speaker outreach).
+
 ### Fixed
 - Fixed Lighthouse "Properly size images" and aspect ratio audit warning for `img/psugh-logo.webp`:
   - Regenerated high-resolution WebP logo (`988×120px`, 2x Retina) from the original vector master, replacing the pixelated `200×24px` thumbnail.
