@@ -47,8 +47,8 @@ if ($articles.Count -eq 0) {
 
 Write-Host "$($articles.Count) Artikel zur Verlinkung gefunden.`n" -ForegroundColor Green
 
-# Update Loop (Regex sucht nach Start-Tag und End-Tag ignorierend aller Newlines)
-$navRegex = '(?s)<nav class="article-nav"[^>]*>.*?</nav>'
+# Update Loop (Regex sucht nach führenden Leerzeichen, Start-Tag und End-Tag)
+$navRegex = '(?s)[ \t]*<nav class="article-nav"[^>]*>.*?</nav>'
 
 for ($i = 0; $i -lt $articles.Count; $i++) {
     $current = $articles[$i]
@@ -69,13 +69,13 @@ for ($i = 0; $i -lt $articles.Count; $i++) {
     if ($prev) {
         $navHtml.Add("                        <a href=""$($prev.File)"">&larr; $($prev.Title)</a>")
     } else {
-        $navHtml.Add("                        <span></span>")
+        $navHtml.Add('                        <a href="index.html">&larr; Zurück zur Übersicht</a>')
     }
 
     if ($next) {
         $navHtml.Add("                        <a href=""$($next.File)"">$($next.Title) &rarr;</a>")
     } else {
-        $navHtml.Add("                        <span></span>")
+        $navHtml.Add('                        <a href="index.html">Zurück zur Übersicht &rarr;</a>')
     }
 
     $navHtml.Add('                    </nav>')

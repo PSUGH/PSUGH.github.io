@@ -2,23 +2,33 @@
 
 ## [Unreleased]
 
+## [3.2.0] - 2026-10-15
+
 ### Added
-- Implemented Dark Mode with automatic system theme detection (`prefers-color-scheme: dark`) and live OS listener.
-- Added accessible theme toggle button with SVG Sun/Moon icons, ARIA state attributes, and `localStorage` persistence.
-- Added desktop floating action overlay for theme toggle at bottom-right viewport with elevation shadow and hover micro-interaction.
-- Integrated mobile-responsive in-header theme toggle next to the hamburger menu in `.nav-actions`.
-- Added synchronous anti-FOUC script to `<head>` across all 12 HTML pages to prevent theme flashing on load.
-- Added cross-tab synchronization of theme preferences using the `storage` event.
-- Enhanced dark mode component styling (cards, tables, code terminals, calendar) with WCAG AA compliant Slate palette.
-- Converted event video teaser to VP9 WebM format (`img/irrer_wissenschaftler.webm`) with a static WebP poster frame (`img/irrer_wissenschaftler_poster.webp`) for instant buffering and ~70% bandwidth savings.
-- Enhanced event video player rendering on `index.html` and `events.html` with accessible `aria-label` attributes and `preload="metadata"`.
-- Added `@media (prefers-reduced-motion: reduce)` CSS rules to disable auto-playing video teasers for users who prefer reduced motion.
-- Added `scripts/Convert-ToWebM.ps1` PowerShell automation script for converting MP4 videos to WebM and generating poster frames.
-- Added square modern PWA and apple-touch-icon (`img/psugh-icon.webp`) in WebP format to resolve PWA verification warnings and fix icon squashing on iOS.
-- Added preloading for hero background image `img/hintergrund.webp` and minified styles on `index.html`, `events.html`, and `impressum.html` to improve Largest Contentful Paint (LCP) performance.
-- Added preloading for JSON data files on `events.html` to load event data as early as possible.
+- Implemented complete design system consolidation and architecture improvements:
+  - Added `--bg-surface`, `--border-color`, and `--card-border` tokens across `:root` and `[data-theme="dark"]`, resolving transparent theme toggle styling.
+  - Added `.hero-header-subpage` modifier (38vh) across all subpages (`events.html`, `impressum.html`, and `ressourcen/*.html`).
+  - Added alternating section backgrounds (`.section-alt`) on `events.html` for card contrast.
+  - Added `white-space: pre-line` to `.topic-description` for clean multi-line event descriptions.
+  - Added global inline code styling (`p code, li code, td code`) and overflow protection for `.terminal-content`.
+- Standardized `img/psugh_social.webp` (1200×630px) as high-resolution OpenGraph and Twitter social share banner across all 11 HTML pages.
+- Added font preloads for Inter 400 and Inter 700 to `impressum.html` and `scripts/_template.html`.
 
 ### Changed
+- Standardized German ISO 8601 Monday week start for Event-Kalender on `events.html` (`Mo, Di, Mi, Do, Fr, Sa, So`).
+- Harmonized card systems: consolidated `.event-card` and `.resource-card`, unified borders with `--card-border`, and removed redundant duplicate selectors.
+- Harmonized `.event-link` with the `.btn` design token system and improved dark mode hover contrast.
+- Corrected 1%–3% opacity artifacts on mobile navigation, hamburger button, calendar container, and LinkedIn partner links.
+- Cleaned focus states: removed legacy mouse-click `:focus` outlines while retaining clean 3px `:focus-visible` accessibility rings.
+- Streamlined `css/fonts.css` from 436 lines of redundant subset duplicates to 7 clean `@font-face` definitions.
+- Removed 12 orphaned `Roboto-*.ttf` font files (~2.1 MB) from `fonts/`.
+- Consolidated 6 scattered `@media (max-width: 768px)` blocks and merged `prefers-reduced-motion` blocks into unified media queries.
+- Updated all terminal code examples from legacy `meeting-data.json` to real `current-meeting.json` URL.
+- Prefixed icon paths in `site.webmanifest` with leading `/` for reliable resolution across subdirectories.
+- Updated logo links in `index.html` and `impressum.html` to relative root (`/`).
+- Centered `.about-content` on `index.html` (`margin: 0 auto;`).
+- Renamed `scripts/New-ResourceArticel.ps1` to `scripts/New-ResourceArticle.ps1`, fixed project root path traversal, and cleaned indentation cascading in `scripts/Update-ArticleNavigation.ps1`.
+
 - Scheduled Marco Kleinert's GraphTools session ("GraphTools: Zero-Dependency Microsoft Graph REST Engine") as current meeting for October 16, 2026.
 - Archived Andreas Nick's ZeroPortal session ("MSIX-Publishing mit Zero Portal", September 18, 2026) and Christian Ritter's PSScriptAnalyzer session ("Besser Skripten mit dem PSScriptAnalyzer", August 14, 2026) to past events.
 - Archived Peter Klaffehn's M365 Security/Maester session (July 17, 2026) to past events.
