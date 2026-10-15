@@ -3,6 +3,10 @@
 ## [Unreleased]
 
 ### Fixed
+- Fixed Lighthouse "Properly size images" and aspect ratio audit warning for `img/psugh-logo.webp`:
+  - Regenerated high-resolution WebP logo (`988×120px`, 2x Retina) from the original vector master, replacing the pixelated `200×24px` thumbnail.
+  - Corrected HTML image attributes from `width="180" height="60"` (distorted 3:1 ratio) to `width="494" height="60"` (exact 8.23:1 ratio) across all 11 HTML pages and templates.
+  - Added responsive CSS constraints (`max-width: 100%` and mobile scaling `max-width: min(260px, calc(100vw - 120px))`).
 - Fixed WCAG 2.1 AA/AAA contrast failure on `.keywords` (`<p class="keywords">`) in the "Das sind wir" section by updating light-mode `--text-muted` from `#8b949e` (2.92:1) to accessible slate `#475569` (7.19:1 contrast ratio against `#f8f9fa`).
 - Fixed missing `startDate` critical error and `endDate` warning in Schema.org `Event` structured data on `index.html` for Google Rich Results / Search Console.
 - Synchronized static `Event` schema with the current October 16, 2026 meeting (GraphTools by Marco Kleinert, 18:30–21:30 CEST).
