@@ -157,7 +157,7 @@
             "price": "0",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "url": "https://www.meetup.com/psugh-hannover/",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/",
             "validFrom": "2026-10-16T18:30:00+02:00"
         },
         "audience": {
@@ -319,8 +319,10 @@
                         </div>
                         <div class="meeting-links">
                             <a href="https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join" target="_blank"
-                                rel="noopener" class="btn btn-outline">Online teilnehmen</a> <a
-                                href="https://www.meetup.com/psugh-hannover/events/" target="_blank" rel="noopener"
+                                rel="noopener" class="btn btn-outline">Online teilnehmen</a>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/" target="_blank"
+                                rel="noopener" class="btn btn-outline" id="next-meeting-linkedin">Auf LinkedIn</a>
+                            <a href="https://www.meetup.com/psugh-hannover/events/" target="_blank" rel="noopener"
                                 class="btn btn-outline">Bei Meetup anmelden</a>
                             <a href="events.html" class="btn btn-outline">📅 Alle Events &amp; Kalender</a>
                         </div>
@@ -603,6 +605,17 @@
 
                         topicsContainer.appendChild(topicCard);
                     });
+                }
+
+                // Update LinkedIn button
+                const linkedinBtn = document.getElementById('next-meeting-linkedin');
+                if (linkedinBtn) {
+                    if (meeting.linkedinUrl) {
+                        linkedinBtn.href = meeting.linkedinUrl;
+                        linkedinBtn.style.display = '';
+                    } else {
+                        linkedinBtn.style.display = 'none';
+                    }
                 }
 
                 // Update Event schema with dynamic data from current-meeting.json

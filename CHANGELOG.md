@@ -3,6 +3,11 @@
 ## [Unreleased]
 
 ### Added
+- Linked the current October 16, 2026 meeting directly to its official LinkedIn Event post (`urn:li:activity:7516166052813189120`):
+  - Added dedicated "Auf LinkedIn" action button in `index.html`'s meeting links.
+  - Added dynamic LinkedIn button handling in `index.html` from `current-meeting.json`.
+  - Added action buttons for upcoming events on `events.html` ("🌐 Online teilnehmen", "💼 Auf LinkedIn", "👥 Meetup").
+  - Updated Schema.org `offers.url` to the LinkedIn Event link for rich results.
 - Added [`STRATEGY.md`](file:///home/marco/Projects/PSUGH.github.io/STRATEGY.md) outlining actionable growth and visibility measures across 5 pillars (calendar integration, content SEO, LinkedIn & social multipliers, community aggregators, and speaker outreach).
 
 ### Fixed
