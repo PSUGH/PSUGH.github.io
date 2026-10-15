@@ -3,6 +3,7 @@
         "date": "Freitag, den 16.10.2026, ab 18:30h",
         "isoDate": "2026-10-16T18:30:00+02:00",
         "description": "Microsoft Graph ohne SDK-Ballast: GraphTools",
+        "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/",
         "topics": [
             {
                 "title": "GraphTools: Zero-Dependency Microsoft Graph REST Engine",

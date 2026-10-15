@@ -404,7 +404,9 @@
                         title: currentMeeting.description || 'Nächstes Treffen',
                         description: currentMeeting.description,
                         topics: currentMeeting.topics,
-                        isoDate: currentMeeting.isoDate
+                        isoDate: currentMeeting.isoDate,
+                        linkedinUrl: currentMeeting.linkedinUrl,
+                        onlineUrl: currentMeeting.onlineUrl
                     });
                 }
                 upcomingEvents.forEach(event => {
@@ -576,6 +578,47 @@
                 card.appendChild(topicsContainer);
             }
 
+            // Add links for upcoming events (Online teilnehmen, LinkedIn, Meetup)
+            if (type === 'upcoming') {
+                const linksContainer = document.createElement('div');
+                linksContainer.className = 'event-links';
+
+                const onlineHref = event.onlineUrl || (event.isoDate ? 'https://onlineclass.netz-weise.de/rooms/yty-j7d-jme-wmv/join' : null);
+                if (onlineHref) {
+                    const onlineLink = document.createElement('a');
+                    onlineLink.href = onlineHref;
+                    onlineLink.target = '_blank';
+                    onlineLink.rel = 'noopener';
+                    onlineLink.className = 'event-link';
+                    onlineLink.textContent = '🌐 Online teilnehmen';
+                    linksContainer.appendChild(onlineLink);
+                }
+
+                if (event.linkedinUrl) {
+                    const linkedinLink = document.createElement('a');
+                    linkedinLink.href = event.linkedinUrl;
+                    linkedinLink.target = '_blank';
+                    linkedinLink.rel = 'noopener';
+                    linkedinLink.className = 'event-link';
+                    linkedinLink.textContent = '💼 Auf LinkedIn';
+                    linksContainer.appendChild(linkedinLink);
+                }
+
+                if (event.meetupUrl) {
+                    const meetupLink = document.createElement('a');
+                    meetupLink.href = event.meetupUrl;
+                    meetupLink.target = '_blank';
+                    meetupLink.rel = 'noopener';
+                    meetupLink.className = 'event-link secondary';
+                    meetupLink.textContent = '👥 Meetup';
+                    linksContainer.appendChild(meetupLink);
+                }
+
+                if (linksContainer.hasChildNodes()) {
+                    card.appendChild(linksContainer);
+                }
+            }
+
             // Add links for past events (recordings, slides)
             if (type === 'past') {
                 const linksContainer = document.createElement('div');
@@ -692,7 +735,7 @@
                         "price": "0",
                         "priceCurrency": "EUR",
                         "availability": "https://schema.org/InStock",
-                        "url": "https://www.meetup.com/psugh-hannover/",
+                        "url": event.linkedinUrl || "https://www.meetup.com/psugh-hannover/",
                         "validFrom": startISO
                     }
                 };
