@@ -34,16 +34,18 @@
     <meta property="og:description"
         content="Praxisnahe PowerShell-Tutorials, Cmdlet-Erklärungen und Zusammenfassungen von PSUGH-Vorträgen – für Einsteiger und Profis.">
     <meta property="og:url" content="https://psugh.org/ressourcen/">
-    <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="https://psugh.org/img/psugh_social.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PowerShell Usergroup Hannover Community Banner">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@psughannover">
     <meta name="twitter:title" content="PowerShell Ressourcen – Tutorials & HowTos | PSUGH">
     <meta name="twitter:description"
         content="Praxisnahe PowerShell-Tutorials, Cmdlet-Erklärungen und Zusammenfassungen von PSUGH-Vorträgen – für Einsteiger und Profis.">
-    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh_social.webp">
 
     <script type="application/ld+json">
     {
@@ -81,7 +83,7 @@
 <body>
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-    <header class="hero-header" role="banner">
+    <header class="hero-header hero-header-subpage" role="banner">
         <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
             <div class="nav-container">
                 <a href="../" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
@@ -255,7 +257,7 @@ Write-Output "Läuft bei Non-Terminating Errors trotzdem weiter!"</code>
                             </div>
                             <div class="terminal-content">
                                 <code
-                                    class="terminal-command">Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json</code>
+                                    class="terminal-command">Invoke-WebRequest https://psugh.org/current-meeting.json | ConvertFrom-Json</code>
                             </div>
                         </div>
                         <p>Das wird zum Beispiel in unseren Terminanzeigen verwendet.</p>
@@ -276,7 +278,7 @@ Write-Output "Läuft bei Non-Terminating Errors trotzdem weiter!"</code>
                                 <span class="terminal-title">PowerShell</span>
                             </div>
                             <div class="terminal-content">
-                                <code class="terminal-command">$data = Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json
+                                <code class="terminal-command">$data = Invoke-WebRequest https://psugh.org/current-meeting.json | ConvertFrom-Json
 $data.nextMeeting.date</code>
                             </div>
                         </div>

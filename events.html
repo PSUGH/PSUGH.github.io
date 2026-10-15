@@ -58,8 +58,11 @@
     <meta property="og:title" content="PowerShell Events Hannover | PSUGH Treffen & Kalender">
     <meta property="og:description"
         content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
-    <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
-    <meta property="og:site_name" content="PSUGH">
+    <meta property="og:image" content="https://psugh.org/img/psugh_social.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PowerShell Usergroup Hannover Community Banner">
+    <meta property="og:site_name" content="PowerShell Usergroup Hannover">
     <meta property="og:locale" content="de_DE">
 
     <!-- Twitter Card -->
@@ -68,7 +71,7 @@
     <meta name="twitter:title" content="PowerShell Events Hannover | PSUGH Treffen & Kalender">
     <meta name="twitter:description"
         content="Vergangene Treffen, Aufzeichnungen und Event-Kalender der PowerShell Usergroup Hannover">
-    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh_social.webp">
 </head>
 
 <body>
@@ -76,7 +79,7 @@
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
     <!-- Header with Navigation -->
-    <header class="hero-header" role="banner">
+    <header class="hero-header hero-header-subpage" role="banner">
         <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
             <div class="nav-container">
                 <a href="/" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
@@ -148,7 +151,7 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Event Calendar Section -->
-        <section class="section">
+        <section class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Event-Kalender</h2>
                 <p class="section-subtitle">Übersicht aller PowerShell Usergroup Treffen - jeden 3. Freitag im Monat</p>
@@ -177,7 +180,7 @@
         </section>
 
         <!-- Past Events Section -->
-        <section class="section">
+        <section class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Vergangene Treffen</h2>
                 <p class="section-subtitle">Schaue dir Aufzeichnungen und Materialien vergangener Treffen an</p>
@@ -209,7 +212,7 @@
                     'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
                     'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
                 ];
-                this.dayNames = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+                this.dayNames = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
 
                 this.init();
             }
@@ -257,7 +260,8 @@
                 const firstDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
                 const lastDay = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 0);
                 const startDate = new Date(firstDay);
-                startDate.setDate(startDate.getDate() - firstDay.getDay());
+                const dayOffset = (firstDay.getDay() + 6) % 7;
+                startDate.setDate(startDate.getDate() - dayOffset);
 
                 // Render 6 weeks
                 for (let week = 0; week < 6; week++) {

@@ -47,7 +47,8 @@ if (-not $Slug)
     } until ($Slug -match '^[a-z0-9][a-z0-9-]+$')
 }
 
-$resourceDir = Join-Path $ScriptDir 'ressourcen'
+$ProjectRoot = Split-Path -Parent $ScriptDir
+$resourceDir = Join-Path $ProjectRoot 'ressourcen'
 $OutputPath = Join-Path $resourceDir "$Slug.html"
 
 if (Test-Path $OutputPath)

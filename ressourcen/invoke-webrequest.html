@@ -30,16 +30,18 @@
     <meta property="og:description"
         content="Lerne Invoke-WebRequest (iwr): Webseiten, APIs und JSON-Daten direkt mit PowerShell laden – mit praktischen Beispielen der PSUGH.">
     <meta property="og:url" content="https://psugh.org/ressourcen/invoke-webrequest.html">
-    <meta property="og:image" content="https://psugh.org/img/psugh-logo.webp">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="https://psugh.org/img/psugh_social.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PowerShell Usergroup Hannover Community Banner">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@psughannover">
     <meta name="twitter:title" content="Invoke-WebRequest in PowerShell – Tutorial | PSUGH">
     <meta name="twitter:description"
         content="Lerne Invoke-WebRequest (iwr): Webseiten, APIs und JSON-Daten direkt mit PowerShell laden – mit praktischen Beispielen der PSUGH.">
-    <meta name="twitter:image" content="https://psugh.org/img/psugh-logo.webp">
+    <meta name="twitter:image" content="https://psugh.org/img/psugh_social.webp">
 
     <script type="application/ld+json">
     {
@@ -82,7 +84,7 @@
 <body>
     <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-    <header class="hero-header" role="banner">
+    <header class="hero-header hero-header-subpage" role="banner">
         <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
             <div class="nav-container">
                 <a href="../" class="logo-link" aria-label="PowerShell Usergroup Hannover Startseite">
@@ -176,7 +178,7 @@
                         </div>
                         <div class="terminal-content">
                             <code
-                                class="terminal-command">Invoke-WebRequest https://psugh.github.io/meeting-data.json</code>
+                                class="terminal-command">Invoke-WebRequest https://psugh.org/current-meeting.json</code>
                         </div>
                     </div>
                     <p class="section-subtitle">Das Ergebnis ist ein <code>HtmlWebResponseObject</code>, das du weiter
@@ -194,7 +196,7 @@
                         </div>
                         <div class="terminal-content">
                             <code
-                                class="terminal-command">Invoke-WebRequest https://psugh.github.io/meeting-data.json | ConvertFrom-Json</code>
+                                class="terminal-command">Invoke-WebRequest https://psugh.org/current-meeting.json | ConvertFrom-Json</code>
                         </div>
                     </div>
                     <p class="section-subtitle">Damit kannst du bequem auf Eigenschaften wie
@@ -238,7 +240,7 @@ Invoke-WebRequest "https://api.example.com/data" -Credential $creds</code>
                         oft
                         noch bequemer, da es
                         automatisch JSON parst.</p>
-                                                                                <nav class="article-nav" aria-label="Artikel-Navigation">
+                    <nav class="article-nav" aria-label="Artikel-Navigation">
                         <a href="throw-write-error.html">&larr; Fehler melden: throw &amp; Write-Error</a>
                         <a href="convertfrom-json.html">ConvertFrom-Json: JSON in PowerShell-Objekte &rarr;</a>
                     </nav>
