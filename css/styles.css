@@ -319,6 +319,7 @@ p a {
 .logo-link img {
     height: 60px;
     width: auto;
+    max-width: 100%;
 }
 .nav-links {
     display: flex;
@@ -1192,7 +1193,9 @@ td code {
         margin: 0 auto;
     }
     .logo-link img {
-        height: 50px;
+        height: auto;
+        max-height: 44px;
+        max-width: min(260px, calc(100vw - 120px));
     }
     .mobile-menu-toggle {
         padding: var(--spacing-sm);
