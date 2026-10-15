@@ -119,21 +119,16 @@
     {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "PowerShell Usergroup Hannover Treffen",
-        "description": "Monatliches Treffen der PowerShell Usergroup Hannover zum Lernen und Austausch über PowerShell und Azure",
-        "image": "https://psugh.org/img/psugh-logo.webp",
+        "name": "PowerShell Usergroup Hannover Treffen: Microsoft Graph ohne SDK-Ballast: GraphTools",
+        "description": "Monatliches Treffen der PowerShell Usergroup Hannover zum Lernen und Austausch über PowerShell und Azure. Session: GraphTools: Zero-Dependency Microsoft Graph REST Engine von Marco Kleinert.",
+        "startDate": "2026-10-16T18:30:00+02:00",
+        "endDate": "2026-10-16T21:30:00+02:00",
+        "image": "https://psugh.org/img/GraphTools.webp",
         "eventStatus": "https://schema.org/EventScheduled",
-        "eventSchedule": {
-            "@type": "Schedule",
-            "repeatFrequency": "P1M",
-            "byDay": "http://schema.org/Friday",
-            "byMonthWeek": 3
-        },
         "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
         "performer": {
-            "@type": "Organization",
-            "name": "PowerShell Usergroup Hannover",
-            "url": "https://psugh.org"
+            "@type": "Person",
+            "name": "Marco Kleinert"
         },
         "location": [
             {
@@ -163,7 +158,7 @@
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
             "url": "https://www.meetup.com/psugh-hannover/",
-            "validFrom": "2026-01-01T00:00:00+01:00"
+            "validFrom": "2026-10-16T18:30:00+02:00"
         },
         "audience": {
             "@type": "Audience",
@@ -615,12 +610,15 @@
                     const eventSchema = document.querySelector('script[type="application/ld+json"]:last-of-type');
                     if (eventSchema) {
                         const schemaData = JSON.parse(eventSchema.textContent);
-                        // startDate + endDate from isoDate
+                        // startDate + endDate from isoDate (3 hours duration)
                         if (meeting.isoDate) {
                             schemaData.startDate = meeting.isoDate;
                             schemaData.endDate = new Date(
-                                new Date(meeting.isoDate).getTime() + 2 * 60 * 60 * 1000
+                                new Date(meeting.isoDate).getTime() + 3 * 60 * 60 * 1000
                             ).toISOString();
+                            if (schemaData.offers) {
+                                schemaData.offers.validFrom = meeting.isoDate;
+                            }
                         }
                         // performer: collect speakers from topics[]
                         const speakers = (meeting.topics || [])
@@ -631,11 +629,14 @@
                                 '@type': 'Person', 'name': name
                             }));
                         }
-                        // description from meeting.description if available
+                        // description and title from meeting.description
                         if (meeting.description) {
-                            schemaData.name = meeting.description;
+                            schemaData.name = `PowerShell Usergroup Hannover Treffen: ${meeting.description}`;
                         }
-                        eventSchema.textContent = JSON.stringify(schemaData);
+                        if (meeting.topics && meeting.topics[0] && meeting.topics[0].picture) {
+                            schemaData.image = `https://psugh.org/${meeting.topics[0].picture}`;
+                        }
+                        eventSchema.textContent = JSON.stringify(schemaData, null, 4);
                     }
                 } catch (schemaError) {
                     console.warn('Could not update Event schema:', schemaError);
