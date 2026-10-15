@@ -349,39 +349,42 @@ p a {
     width: 100%;
 }
 .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+    display: contents;
 }
 .theme-toggle {
+    position: fixed;
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    right: calc(2rem + env(safe-area-inset-right, 0px));
+    z-index: 1000;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgb(255 255 255 / 10%);
-    border: 1px solid rgb(255 255 255 / 20%);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    color: var(--text-inverse);
+    color: var(--text-primary);
     cursor: pointer;
     padding: var(--spacing-xs);
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 15%), 0 2px 6px rgb(0 0 0 / 8%);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .theme-toggle:hover {
-    background: rgb(255 255 255 / 20%);
-    border-color: rgb(255 255 255 / 40%);
-    transform: scale(1.05);
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 22%), 0 3px 8px rgb(0 0 0 / 12%);
 }
 .theme-toggle:active {
-    transform: scale(0.95);
+    transform: translateY(0) scale(0.96);
 }
 .theme-toggle:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
 }
 .theme-toggle svg {
     width: 20px;
@@ -963,11 +966,42 @@ p a {
         display: none;
     }
     .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
         position: absolute;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
         z-index: 101;
+    }
+    .theme-toggle {
+        position: static;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        background-color: rgb(255 255 255 / 10%);
+        border: 1px solid rgb(255 255 255 / 20%);
+        color: var(--text-inverse);
+        box-shadow: none;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transform: none;
+    }
+    .theme-toggle:hover {
+        background-color: rgb(255 255 255 / 20%);
+        border-color: rgb(255 255 255 / 40%);
+        color: var(--text-inverse);
+        transform: scale(1.05);
+        box-shadow: none;
+    }
+    .theme-toggle:active {
+        transform: scale(0.95);
+    }
+    .theme-toggle:focus-visible {
+        outline: 3px solid var(--accent-color);
+        outline-offset: 2px;
     }
     .mobile-menu-toggle {
         display: flex;
@@ -1677,6 +1711,12 @@ button:focus {
     background-color: var(--bg-secondary);
     color: var(--primary-color);
 }
+[data-theme="dark"] .theme-toggle {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 45%), 0 2px 8px rgb(0 0 0 / 30%);
+}
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--bg-tertiary);
+}
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .terminal-window {
@@ -1709,6 +1749,18 @@ button:focus {
     :root:not([data-theme="light"]) .event-link.secondary:hover {
         background-color: var(--bg-secondary);
         color: var(--primary-color);
+    }
+    :root:not([data-theme="light"]) .theme-toggle {
+        box-shadow: 0 4px 20px rgb(0 0 0 / 45%), 0 2px 8px rgb(0 0 0 / 30%);
+    }
+    :root:not([data-theme="light"]) .theme-toggle:hover {
+        background-color: var(--bg-tertiary);
+    }
+}
+
+@media print {
+    .theme-toggle {
+        display: none !important;
     }
 }
 
