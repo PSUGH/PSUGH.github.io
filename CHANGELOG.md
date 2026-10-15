@@ -3,6 +3,13 @@
 ## [Unreleased]
 
 ### Added
+- Implemented Dark Mode with automatic system theme detection (`prefers-color-scheme: dark`) and live OS listener.
+- Added accessible theme toggle button with SVG Sun/Moon icons, ARIA state attributes, and `localStorage` persistence.
+- Added desktop floating action overlay for theme toggle at bottom-right viewport with elevation shadow and hover micro-interaction.
+- Integrated mobile-responsive in-header theme toggle next to the hamburger menu in `.nav-actions`.
+- Added synchronous anti-FOUC script to `<head>` across all 12 HTML pages to prevent theme flashing on load.
+- Added cross-tab synchronization of theme preferences using the `storage` event.
+- Enhanced dark mode component styling (cards, tables, code terminals, calendar) with WCAG AA compliant Slate palette.
 - Converted event video teaser to VP9 WebM format (`img/irrer_wissenschaftler.webm`) with a static WebP poster frame (`img/irrer_wissenschaftler_poster.webp`) for instant buffering and ~70% bandwidth savings.
 - Enhanced event video player rendering on `index.html` and `events.html` with accessible `aria-label` attributes and `preload="metadata"`.
 - Added `@media (prefers-reduced-motion: reduce)` CSS rules to disable auto-playing video teasers for users who prefer reduced motion.

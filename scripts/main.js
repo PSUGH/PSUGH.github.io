@@ -99,6 +99,74 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footerYear) {
         footerYear.textContent = new Date().getFullYear();
     }
+
+    // 5. Dark Mode Theme Controller
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function updateToggleLabels(isDark) {
+        themeToggles.forEach(btn => {
+            btn.setAttribute('aria-label', isDark ? 'Zu hellem Design wechseln' : 'Zu dunklem Design wechseln');
+            btn.setAttribute('title', isDark ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren');
+            btn.setAttribute('aria-pressed', String(isDark));
+        });
+    }
+
+    function applyTheme(newTheme, save = true) {
+        if (newTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (save) {
+                try {
+                    localStorage.setItem('theme', 'dark');
+                } catch (e) {
+                    console.warn('localStorage not accessible', e);
+                }
+            }
+            updateToggleLabels(true);
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            if (save) {
+                try {
+                    localStorage.setItem('theme', 'light');
+                } catch (e) {
+                    console.warn('localStorage not accessible', e);
+                }
+            }
+            updateToggleLabels(false);
+        }
+    }
+
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const isDark = currentTheme === 'dark' || (!currentTheme && mediaQuery.matches);
+            applyTheme(isDark ? 'light' : 'dark', true);
+        });
+    });
+
+    // Listen for OS system theme changes when user has not manually set a preference
+    mediaQuery.addEventListener('change', (e) => {
+        try {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light', false);
+            }
+        } catch (err) {
+            console.warn('Theme listener error', err);
+        }
+    });
+
+    // Sync theme across browser tabs
+    window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') {
+            const newTheme = e.newValue || (mediaQuery.matches ? 'dark' : 'light');
+            applyTheme(newTheme, false);
+        }
+    });
+
+    // Initial label sync
+    const initialTheme = document.documentElement.getAttribute('data-theme');
+    updateToggleLabels(initialTheme === 'dark' || (!initialTheme && mediaQuery.matches));
 });
 
 // 5. Global Copy-to-Clipboard Utility (exposed to global scope for HTML inline calls)

@@ -12,6 +12,7 @@ Visit us at: **[https://psugh.org](https://psugh.org)**
 ## ✨ Features
 
 - **Modern Design**: Clean, professional design with CSS Grid and Flexbox
+- **Dark Mode Support**: Automatic OS preference detection (`prefers-color-scheme: dark`) with manual floating overlay toggle on desktop, in-header toggle on mobile, zero FOUC, and cross-tab synchronization
 - **Fully Responsive**: Optimized for all devices and screen sizes with enhanced mobile navigation
 - **Mobile Optimized**: Touch-friendly interface with glassmorphism hamburger menu and centered buttons
 - **Accessible**: WCAG 2.1 compliant with proper semantic HTML and ARIA labels
