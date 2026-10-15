@@ -638,8 +638,8 @@
                 }
                 if (!startISO) return null;
 
-                // endDate: startDate + 2 hours (typical meeting duration)
-                const endISO = new Date(new Date(startISO).getTime() + 2 * 60 * 60 * 1000).toISOString();
+                // endDate: startDate + 3 hours (typical meeting duration 18:30 - 21:30)
+                const endISO = new Date(new Date(startISO).getTime() + 3 * 60 * 60 * 1000).toISOString();
 
                 // eventStatus: use explicit field from JSON, default to EventScheduled
                 const eventStatus = event.eventStatus || 'https://schema.org/EventScheduled';

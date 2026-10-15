@@ -332,8 +332,34 @@ htmlFiles.forEach(
             ];
             jsonBlocks.forEach((m, i) => {
                 try {
-                    JSON.parse(m[1]);
+                    const parsed = JSON.parse(m[1]);
                     result('pass', `ld+json block ${i + 1} valid JSON`);
+                    if (parsed['@type'] === 'Event') {
+                        if (parsed.startDate) {
+                            result(
+                                'pass',
+                                `ld+json block ${i + 1} Event has startDate`,
+                                parsed.startDate,
+                            );
+                        } else {
+                            result(
+                                'fail',
+                                `ld+json block ${i + 1} Event missing required startDate`,
+                            );
+                        }
+                        if (parsed.endDate) {
+                            result(
+                                'pass',
+                                `ld+json block ${i + 1} Event has endDate`,
+                                parsed.endDate,
+                            );
+                        } else {
+                            result(
+                                'warn',
+                                `ld+json block ${i + 1} Event missing recommended endDate`,
+                            );
+                        }
+                    }
                 } catch (e) {
                     result(
                         'fail',

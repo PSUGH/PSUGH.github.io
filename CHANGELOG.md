@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Fixed
+- Fixed missing `startDate` critical error and `endDate` warning in Schema.org `Event` structured data on `index.html` for Google Rich Results / Search Console.
+- Synchronized static `Event` schema with the current October 16, 2026 meeting (GraphTools by Marco Kleinert, 18:30–21:30 CEST).
+- Enhanced `scripts/validate-seo.js` to automatically assert required `startDate` and recommended `endDate` on all `Event` structured data blocks.
+
 ## [3.2.0] - 2026-10-15
 
 ### Added
