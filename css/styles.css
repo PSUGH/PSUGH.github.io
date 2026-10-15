@@ -103,6 +103,48 @@ button:focus-visible {
     --line-height-base: 1.5;
     --line-height-relaxed: 1.75;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-dark: #090d16;
+        --bg-overlay: rgb(15 23 42 / 92%);
+        --primary-color: #38bdf8;
+        --primary-light: #7dd3fc;
+        --primary-dark: #0284c7;
+        --primary-faint: rgb(56 189 248 / 15%);
+        --card-border: #334155;
+        --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+        --shadow-md: 0 4px 6px rgb(0 0 0 / 40%);
+        --shadow-lg: 0 10px 15px rgb(0 0 0 / 50%);
+        --shadow-xl: 0 20px 25px rgb(0 0 0 / 60%);
+    }
+}
+
+[data-theme="dark"] {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-dark: #090d16;
+    --bg-overlay: rgb(15 23 42 / 92%);
+    --primary-color: #38bdf8;
+    --primary-light: #7dd3fc;
+    --primary-dark: #0284c7;
+    --primary-faint: rgb(56 189 248 / 15%);
+    --card-border: #334155;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+    --shadow-md: 0 4px 6px rgb(0 0 0 / 40%);
+    --shadow-lg: 0 10px 15px rgb(0 0 0 / 50%);
+    --shadow-xl: 0 20px 25px rgb(0 0 0 / 60%);
+}
 *,
 ::after,
 ::before {
@@ -306,6 +348,74 @@ p a {
 .nav-link:hover::after {
     width: 100%;
 }
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 50%;
+    color: var(--text-inverse);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.theme-toggle:hover {
+    background: rgb(255 255 255 / 20%);
+    border-color: rgb(255 255 255 / 40%);
+    transform: scale(1.05);
+}
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+.theme-toggle:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+}
+.theme-toggle .icon-sun {
+    display: none;
+}
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+        display: block;
+    }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+        display: none;
+    }
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -852,13 +962,15 @@ p a {
     .nav-links {
         display: none;
     }
-    .mobile-menu-toggle {
-        display: flex;
+    .nav-actions {
         position: absolute;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
         z-index: 101;
+    }
+    .mobile-menu-toggle {
+        display: flex;
         flex-direction: column;
         background: rgb(0 0 0 / 10%);
         border-radius: var(--border-radius);
@@ -961,6 +1073,13 @@ p a {
     }
     .mobile-menu-toggle {
         padding: var(--spacing-sm);
+    }
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        padding: 6px;
     }
     .hamburger-line {
         width: 22px;
@@ -1523,6 +1642,73 @@ button:focus {
     .topic-picture video,
     video.topic-picture {
         display: none;
+    }
+}
+
+/* Dark Mode Component Overrides */
+[data-theme="dark"] .terminal-window {
+    border: 1px solid var(--bg-tertiary);
+}
+[data-theme="dark"] .comparison-table th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+[data-theme="dark"] .calendar-day-header {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+[data-theme="dark"] .calendar-day.has-event {
+    background-color: var(--primary-faint);
+    color: var(--primary-color);
+}
+[data-theme="dark"] .btn-primary {
+    color: #0f172a;
+    font-weight: var(--font-weight-semibold);
+}
+[data-theme="dark"] .event-link {
+    color: #0f172a;
+    font-weight: var(--font-weight-semibold);
+}
+[data-theme="dark"] .event-link.secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+[data-theme="dark"] .event-link.secondary:hover {
+    background-color: var(--bg-secondary);
+    color: var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .terminal-window {
+        border: 1px solid var(--bg-tertiary);
+    }
+    :root:not([data-theme="light"]) .comparison-table th {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+    :root:not([data-theme="light"]) .calendar-day-header {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+    :root:not([data-theme="light"]) .calendar-day.has-event {
+        background-color: var(--primary-faint);
+        color: var(--primary-color);
+    }
+    :root:not([data-theme="light"]) .btn-primary {
+        color: #0f172a;
+        font-weight: var(--font-weight-semibold);
+    }
+    :root:not([data-theme="light"]) .event-link {
+        color: #0f172a;
+        font-weight: var(--font-weight-semibold);
+    }
+    :root:not([data-theme="light"]) .event-link.secondary {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+    :root:not([data-theme="light"]) .event-link.secondary:hover {
+        background-color: var(--bg-secondary);
+        color: var(--primary-color);
     }
 }
 

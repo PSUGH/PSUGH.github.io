@@ -3,6 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <meta name="description"
         content="Alle kommenden und vergangenen PSUGH-Treffen: Kalender, Aufzeichnungen und Community-Highlights zu PowerShell, Automation und Azure in Hannover.">
     <meta name="keywords" content="PowerShell, Hannover, Events, Treffen, Aufzeichnungen, Kalender, Community">
@@ -84,13 +94,32 @@
                     <li role="none"><a href="impressum.html" class="nav-link" role="menuitem">Impressum</a></li>
                 </ul>
 
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
-                    aria-label="Menü öffnen">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" aria-label="Design umschalten" title="Design umschalten">
+                        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                        aria-label="Menü öffnen">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
             </div>
 
             <!-- Mobile Navigation -->
