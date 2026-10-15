@@ -12,6 +12,12 @@
   - Added dynamic LinkedIn button handling in `index.html` from `current-meeting.json`.
   - Added action buttons for upcoming events on `events.html` ("🌐 Online teilnehmen", "💼 Auf LinkedIn", "👥 Meetup").
   - Updated Schema.org `offers.url` to the LinkedIn Event link for rich results.
+- Added LinkedIn SEO validation checks to [`scripts/validate-seo.js`](file:///home/marco/Projects/PSUGH.github.io/scripts/validate-seo.js):
+  - Verified Schema.org `Event` structured data has a valid LinkedIn `offers.url` registration link for Google Rich Results.
+  - Verified Schema.org `WebSite`/`Organization` `sameAs` array includes the official PSUGH LinkedIn company profile.
+  - Verified dynamic `injectEventSchemas()` on `events.html` supports `linkedinUrl`.
+  - Verified on-page meeting CTA button (`#next-meeting-linkedin`) and LinkedIn company page link on `index.html`.
+  - Added dedicated Section 6 to validate `linkedinUrl` in `current-meeting.json`.
 - Added [`STRATEGY.md`](file:///home/marco/Projects/PSUGH.github.io/STRATEGY.md) outlining actionable growth and visibility measures across 5 pillars (calendar integration, content SEO, LinkedIn & social multipliers, community aggregators, and speaker outreach).
 
 ### Fixed
