@@ -5,7 +5,7 @@
     <link>https://psugh.org/</link>
     <description>Monatstreffen, praxisnahe PowerShell-, Azure- &amp; DevOps-Vorträge sowie praxisnahe Ressourcen-Artikel der PowerShell Usergroup Hannover.</description>
     <language>de-DE</language>
-    <lastBuildDate>Thu, 15 Oct 2026 17:07:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 17:03:20 GMT</lastBuildDate>
     <atom:link href="https://psugh.org/feed.xml" rel="self" type="application/rss+xml"/>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>PSUGH Feed Generator</generator>
@@ -15,12 +15,20 @@
       <link>https://psugh.org/</link>
     </image>
     <item>
-      <title>[Treffen] Microsoft Graph ohne SDK-Ballast: GraphTools (Referent: Marco Kleinert)</title>
+      <title>[Treffen] PowerShell 7.0 bis 7.7: Stand der Dinge &amp; Zukunft (Referent: Holger Voges &amp; Community)</title>
       <link>https://psugh.org/events.html</link>
+      <guid isPermaLink="true">https://psugh.org/events.html#2026-11-20</guid>
+      <pubDate>Fri, 20 Nov 2026 17:30:00 GMT</pubDate>
+      <category>Monatstreffen</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 20.11.2026, ab 18:30h</p><p><strong>Thema:</strong> PowerShell 7.0 bis 7.7: Stand der Dinge &amp; Zukunft</p><p><strong>Referent:</strong> Holger Voges &amp; Community</p><p>PowerShell steht gerade vor einem großen Umbruch. Microsoft hat angekündigt, ab der nächsten Windows-Version PowerShell 7 zusammen mit dem OS auszuliefern. Gleichzeitig wird es mit PowerShell 7.7 keinen MSI-Installer mehr geben. Zeit für uns, mal den Stand der Dinge zusammenzufassen.<br><br>Das Format dieses Usergroup-Treffens wird sich ein wenig von den letzten Treffen unterscheiden. Es wird keinen großen Vortrag geben. Stattdessen wird Holger Voges eine Zusammenfassung der Änderungen von PowerShell 7 von der Version 7.0 bis 7.7 vorstellen. Anschließend soll jeder seine eigenen Erfahrungen mit PowerShell 7 einbringen, sodass wir am Ende einen einigermaßen vollständigen Überblick darüber haben werden, was PowerShell 7 von PowerShell 5.1 heute unterscheidet, wo es Probleme gibt, wie man sie umschiffen kann (oder auch nicht), und wie die Zukunft von PowerShell aussehen wird. Und anschließend können die rauchenden Köpfe vor Ort mit Bier gelöscht werden.<br><br>Das Treffen ist dieses Mal vor Ort geplant. Wer online teilnehmen möchte, kontaktiert mich bitte direkt.</p><p><a href="https://www.linkedin.com/events/7529217389389840385/">Event auf LinkedIn öffnen</a></p><p><a href="https://psugh.org/events.html">Details &amp; Kalendereintrag auf psugh.org</a></p>]]></description>
+    </item>
+    <item>
+      <title>[Rückblick] GraphTools: Zero-Dependency Microsoft Graph REST Engine (Marco Kleinert)</title>
+      <link>https://psugh.org/events.html#2026-10-16</link>
       <guid isPermaLink="true">https://psugh.org/events.html#2026-10-16</guid>
       <pubDate>Fri, 16 Oct 2026 16:30:00 GMT</pubDate>
-      <category>Monatstreffen</category>
-      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 16.10.2026, ab 18:30h</p><p><strong>Thema:</strong> GraphTools: Zero-Dependency Microsoft Graph REST Engine</p><p><strong>Referent:</strong> Marco Kleinert</p><p>Schwere SDK-Module und lange Kaltstartzeiten adé!<br><br>Mit Version 0.20.0 erhält GraphTools eine native Zero-Dependency REST-Engine, die Laufzeitabhängigkeiten von den schwergewichtigen Microsoft.Graph.*-SDK-Modulen komplett eliminiert. Dank nativer .NET-Kryptografie, OAuth 2.0 Token-Caching und resilienter HTTP-Batch-Verarbeitung sinken Kaltstarts von ~1,8s auf ca. 120ms – bei voller Enterprise-Zuverlässigkeit.<br><br>In dieser Session zeigt euch Marco Kleinert die Architektur hinter der neuen REST-Engine, demonstriert zertifikatsbasierte Authentifizierung (RFC 7523) ohne Key-Export und gibt praxisnahe Einblicke in Incident-Response- und Governance-Szenarien für Microsoft Entra ID.</p><p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/">Event auf LinkedIn öffnen</a></p><p><a href="https://psugh.org/events.html">Details &amp; Kalendereintrag auf psugh.org</a></p>]]></description>
+      <category>Community-Archiv</category>
+      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 16.10.2026</p><p><strong>Referent:</strong> Marco Kleinert</p><p>Schwere SDK-Module und lange Kaltstartzeiten adé!<br><br>Mit Version 0.20.0 erhält GraphTools eine native Zero-Dependency REST-Engine, die Laufzeitabhängigkeiten von den schwergewichtigen Microsoft.Graph.*-SDK-Modulen komplett eliminiert. Dank nativer .NET-Kryptografie, OAuth 2.0 Token-Caching und resilienter HTTP-Batch-Verarbeitung sinken Kaltstarts von ~1,8s auf ca. 120ms – bei voller Enterprise-Zuverlässigkeit.<br><br>In dieser Session zeigt euch Marco Kleinert die Architektur hinter der neuen REST-Engine, demonstriert zertifikatsbasierte Authentifizierung (RFC 7523) ohne Key-Export und gibt praxisnahe Einblicke in Incident-Response- und Governance-Szenarien für Microsoft Entra ID.</p><p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7516166052813189120/">Diskussion auf LinkedIn</a></p>]]></description>
     </item>
     <item>
       <title>[Rückblick] MSIX-Publishing mit Zero Portal (Andreas Nick)</title>
@@ -149,14 +157,6 @@
       <pubDate>Fri, 28 Nov 2025 17:30:00 GMT</pubDate>
       <category>Community-Archiv</category>
       <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 28.11.2025</p><p><strong>Referent:</strong> Evgenij Smirnov</p><p>Dieses Mal am 4. Freitag im Monat, weil wir einen besonderen Gast haben - Evgenij Smirnov, langjähriger MVP und Organisiator der Powershell Usergroup Berlin, hat uns einen Deep Dive zum Thema P/Invoke und AD mitgebracht. P/Invoke erlaubt es, direkt auf die Win32-API zuzugreifen - im wahrsten Sinne das Innenleben von Windows.<br>Wer Kerberos-Authentifizierung troubleshooten muss, braucht gute Nerven – und das richtige Toolset. Klist ist super, aber PowerShell bietet mehr Möglichkeiten, mit Daten zu hantieren – Filtern, sortieren usw. Wir bauen das altbewährte Tool in PowerShell nach.</p><p><a href="https://www.linkedin.com/events/p-invokeextrem-evgenijsmirnovba7395775570803998720/">Diskussion auf LinkedIn</a></p>]]></description>
-    </item>
-    <item>
-      <title>[Rückblick] PKI zähmen mit dem PowerShell-Modul Tame my Certs (Holger Voges)</title>
-      <link>https://psugh.org/events.html#2025-09-19</link>
-      <guid isPermaLink="true">https://psugh.org/events.html#2025-09-19</guid>
-      <pubDate>Fri, 19 Sep 2025 16:30:00 GMT</pubDate>
-      <category>Community-Archiv</category>
-      <description><![CDATA[<p><strong>Datum:</strong> Freitag, den 19.09.2025</p><p><strong>Referent:</strong> Holger Voges</p><p>Mit seinem Modul "Tame my Cert" hat Uwe Gradenegger eine Powershell-Erweiterung gebaut, die als Policy-Modul installiert werden kann und steuer, welche Inhalte eine Zertifikats-Anfrage beinhalten muss, um ausgestellt zu werden.<br>In dieser Session werde ich Euch zeigen, wie man das Modul einsetzt, um seine Zertifikats-Server sicherer betreiben und automatisieren zu können. 😉</p>]]></description>
     </item>
   </channel>
 </rss>
